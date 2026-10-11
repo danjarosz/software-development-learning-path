@@ -4,27 +4,27 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A learning plan (software-engineering skills, written in Polish) prepared for deployment to Linear, team **LEA**. Not an application: the "code" is one deploy script, the data is one JSON file, and the rest is Markdown for human review. Nothing has been created in Linear yet. It isn't a git repository.
+A learning plan (software-engineering skills, written in Polish) prepared for deployment to Linear, team **LEA**. Not an application: the "code" is one deploy script, the data is one JSON file, and the rest is Markdown for human review. Nothing has been created in Linear yet. Everything related to creating the tasks in Linear lives in `linear/`.
 
-- `linear-plan.json` is the machine-readable plan that `deploy_linear.py` consumes.
-- `00-kolejnosc-i-zaleznosci.md` is the overview: how the plan maps to Linear, prerequisites, starting points, project order and the cross-project task relations.
-- `01-…md` to `22-…md` hold one Linear project each: project fields and description, milestones, start task, dependency flow, tasks per milestone, relations to other projects.
+- `linear/linear-plan.json` is the machine-readable plan that `linear/deploy_linear.py` consumes. The script's state file (`linear-deploy-state.json`) and key mapping (`mapowanie-kluczy.csv`) are written next to it, in `linear/`.
+- `linear/00-kolejnosc-i-zaleznosci.md` is the overview: how the plan maps to Linear, prerequisites, starting points, project order and the cross-project task relations.
+- `linear/01-…md` to `linear/22-…md` hold one Linear project each: project fields and description, milestones, start task, dependency flow, tasks per milestone, relations to other projects.
 
-The JSON and the Markdown files contain the same data, and the generator that produced them is not in this directory. **An edit to a project, milestone, task or relation has to go into `linear-plan.json` and into the matching `NN-*.md` file, and into `00-…md` when it changes order, cross-project relations or counts.** Counts are quoted in several places: 22 projects, 153 milestones, 985 tasks, 1779 "blocks" relations, plus per-project totals in each file's "W skrócie" line and in the `00` table.
+The JSON and the Markdown files contain the same data, and the generator that produced them is not in this directory. **An edit to a project, milestone, task or relation has to go into `linear/linear-plan.json` and into the matching `linear/NN-*.md` file, and into `linear/00-…md` when it changes order, cross-project relations or counts.** Counts are quoted in several places: 22 projects, 153 milestones, 985 tasks, 1779 "blocks" relations, plus per-project totals in each file's "W skrócie" line and in the `00` table.
 
 ## Commands
 
 The script needs only Python 3.9+ and the standard library.
 
 ```bash
-python3 deploy_linear.py --dry-run          # print plan counts and resume state; makes no API calls
+python3 linear/deploy_linear.py --dry-run   # print plan counts and resume state; makes no API calls
 export LINEAR_API_KEY=lin_api_...
-python3 deploy_linear.py                    # deploy to Linear (options: --team LEA, --plan, --pause 0.25)
+python3 linear/deploy_linear.py             # deploy to Linear (options: --team LEA, --plan, --pause 0.25)
 ```
 
 There are no tests or linter. To validate the JSON after an edit, run `--dry-run` and check the graph yourself: every `blockedBy` key exists, there are no cycles, and only `S01-START` and `S02-START` have no blockers.
 
-## Data model (`linear-plan.json`)
+## Data model (`linear/linear-plan.json`)
 
 - `projects[]`: `key` (`S01`…`S22`), `name`, `summary` (truncated to 255 chars as the Linear summary), `description` (Markdown, used as project content), `start`/`target` dates, `label` (`warstwa-0`…`warstwa-8`), `blockedBy` (informational only, the script doesn't deploy it), `milestones[]` (`key`, `name`, `description`).
 - `issues[]`: `key`, `project`, `milestone` (null for start tasks), `title`, `description`, `labels`, `status` (`Todo` or `Backlog`), `blockedBy` (list of issue keys).
@@ -47,7 +47,7 @@ Dependency rules, which edits must preserve:
 - Optional stages (TinyML and embedded Linux/Zephyr in sections 21 and 22) block nothing.
 - Only `S01-START` and `S02-START` are `Todo`; everything else is `Backlog`.
 
-## `deploy_linear.py` behavior
+## `linear/deploy_linear.py` behavior
 
 - It deploys in this order: team states, then issue labels (`ISSUE_LABELS` defines their colors), project labels, projects and milestones, issues, `blocks` relations, and finally `mapowanie-kluczy.csv` (key to `LEA-…` identifier).
 - It can resume. The IDs of everything it creates are saved to `linear-deploy-state.json` after each object, and keys already in that file are skipped. Deleting the file or changing keys after a partial deploy leads to duplicates in Linear.
