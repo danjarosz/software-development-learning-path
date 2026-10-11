@@ -1,6 +1,6 @@
 # 01. Praca z AI w chmurze: Claude i Claude Code: plan wdrożenia w Linear
 
-Team **LEA** (https://linear.app/daankh/team/LEA/overview). Plan do przeglądu przed wdrożeniem: nic nie zostało jeszcze utworzone w Linear. Klucze zadań (np. `S01-E0-M1`) są robocze; po wdrożeniu dostaną identyfikatory `LEA-…`.
+Team **LEA** (https://linear.app/daankh/team/LEA/overview). Plan jest wdrożony w Linear. Klucze zadań (np. `S01-E0-M1`) są robocze, a identyfikator każdego zadania w Linear (`LEA-…`) jest w kolumnie „Linear” tabel zadań i w pliku `mapowanie-kluczy.csv`.
 
 **W skrócie:** 7 kamieni milowych, 50 zadań (1 start, 38 materiałów, 7 dowodów, 4 praktyki). Plik główny z kolejnością projektów: `00-kolejnosc-i-zaleznosci.md`.
 
@@ -64,7 +64,7 @@ Jeden kamień milowy na etap ścieżki. Kamień milowy jest zamknięty, gdy zamk
 
 ## 3. Punkt startu
 
-Zadanie **`S01-START` · Start: 1. Praca z AI w chmurze: Claude i Claude Code** to jedyne wejście do projektu: wszystkie zadania pierwszego etapu są przez nie blokowane.
+Zadanie **`S01-START` · Start: 1. Praca z AI w chmurze: Claude i Claude Code** (LEA-1 w Linear) to jedyne wejście do projektu: wszystkie zadania pierwszego etapu są przez nie blokowane.
 
 - **Blokowane przez:** —
 - **Odblokowuje:** `S01-E0-M1`, `S01-E0-M2`, `S01-E0-M3`, `S01-E0-M4`, `S01-E0-M5`
@@ -120,14 +120,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Krótka notatka (1–2 strony) dla siebie i do oferty: jak działa agent kodujący, czego nie widzi, kiedy halucynuje, który model do jakich zadań; plus 5 przypadków halucynacji lub błędów modelu zebranych z własnej pracy, każdy z opisem, jak go wykryto.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S01-E0-M1` | Przerobić: „Deep Dive into LLMs like ChatGPT” | materiał | 3–4 h | 0 zł | https://www.youtube.com/watch?v=7xTGNNLPyMI | `S01-START` | `S01-E0-D` | `01-praca-z-ai-w-chmurze/e0-jak-dzialaja-llm-i-agenci-kodujacy/` |
-| `S01-E0-M2` | Przerobić: Kursy Anthropic Academy: „Claude 101”, „AI Fluency: Framework & Foundations”… | materiał | 5–7 h | 0 zł | https://anthropic.skilljar.com/claude-101, https://anthropic.skilljar.com/ai-fluency-framework-foundations, https://anthropic.skilljar.com/ai-capabilities-and-limitations | `S01-START` | `S01-E0-D` | `01-praca-z-ai-w-chmurze/e0-jak-dzialaja-llm-i-agenci-kodujacy/` |
-| `S01-E0-M3` | Przerobić: Dokumentacja Claude Code: „How Claude Code works”, „Explore the context window” | materiał | 2–3 h | 0 zł | https://code.claude.com/docs/en/how-claude-code-works, https://code.claude.com/docs/en/context-window | `S01-START` | `S01-E0-D` | `01-praca-z-ai-w-chmurze/e0-jak-dzialaja-llm-i-agenci-kodujacy/` |
-| `S01-E0-M4` | Przerobić: Dokumentacja API: przegląd modeli, „Choosing a model”, okna kontekstu, „Reduce hallucinations” | materiał | 2–3 h | 0 zł | https://platform.claude.com/docs/en/about-claude/models/choosing-a-model, https://platform.claude.com/docs/en/build-with-claude/context-windows, https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations | `S01-START` | `S01-E0-D` | `01-praca-z-ai-w-chmurze/e0-jak-dzialaja-llm-i-agenci-kodujacy/` |
-| `S01-E0-M5` | Przerobić: „How AI assistance impacts the formation of coding skills” (styczeń 2026) | materiał | 1 h | 0 zł | https://www.anthropic.com/research/AI-assistance-coding-skills | `S01-START` | `S01-E0-D` | `01-praca-z-ai-w-chmurze/e0-jak-dzialaja-llm-i-agenci-kodujacy/` |
-| `S01-E0-D` | Dowód etapu 0: jak działają LLM i agenci kodujący | dowód | — | — | — | `S01-E0-M1`, `S01-E0-M2`, `S01-E0-M3`, `S01-E0-M4`, `S01-E0-M5` | `S01-E1-M1`, `S01-E1-M2`, `S01-E1-M3`, `S01-E1-M4`, `S01-E1-M5` | `01-praca-z-ai-w-chmurze/e0-jak-dzialaja-llm-i-agenci-kodujacy/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S01-E0-M1` | LEA-2 | Przerobić: „Deep Dive into LLMs like ChatGPT” | materiał | 3–4 h | 0 zł | https://www.youtube.com/watch?v=7xTGNNLPyMI | `S01-START` | `S01-E0-D` | `01-praca-z-ai-w-chmurze/e0-jak-dzialaja-llm-i-agenci-kodujacy/` |
+| `S01-E0-M2` | LEA-3 | Przerobić: Kursy Anthropic Academy: „Claude 101”, „AI Fluency: Framework & Foundations”… | materiał | 5–7 h | 0 zł | https://anthropic.skilljar.com/claude-101, https://anthropic.skilljar.com/ai-fluency-framework-foundations, https://anthropic.skilljar.com/ai-capabilities-and-limitations | `S01-START` | `S01-E0-D` | `01-praca-z-ai-w-chmurze/e0-jak-dzialaja-llm-i-agenci-kodujacy/` |
+| `S01-E0-M3` | LEA-4 | Przerobić: Dokumentacja Claude Code: „How Claude Code works”, „Explore the context window” | materiał | 2–3 h | 0 zł | https://code.claude.com/docs/en/how-claude-code-works, https://code.claude.com/docs/en/context-window | `S01-START` | `S01-E0-D` | `01-praca-z-ai-w-chmurze/e0-jak-dzialaja-llm-i-agenci-kodujacy/` |
+| `S01-E0-M4` | LEA-5 | Przerobić: Dokumentacja API: przegląd modeli, „Choosing a model”, okna kontekstu, „Reduce hallucinations” | materiał | 2–3 h | 0 zł | https://platform.claude.com/docs/en/about-claude/models/choosing-a-model, https://platform.claude.com/docs/en/build-with-claude/context-windows, https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations | `S01-START` | `S01-E0-D` | `01-praca-z-ai-w-chmurze/e0-jak-dzialaja-llm-i-agenci-kodujacy/` |
+| `S01-E0-M5` | LEA-6 | Przerobić: „How AI assistance impacts the formation of coding skills” (styczeń 2026) | materiał | 1 h | 0 zł | https://www.anthropic.com/research/AI-assistance-coding-skills | `S01-START` | `S01-E0-D` | `01-praca-z-ai-w-chmurze/e0-jak-dzialaja-llm-i-agenci-kodujacy/` |
+| `S01-E0-D` | LEA-7 | Dowód etapu 0: jak działają LLM i agenci kodujący | dowód | — | — | — | `S01-E0-M1`, `S01-E0-M2`, `S01-E0-M3`, `S01-E0-M4`, `S01-E0-M5` | `S01-E1-M1`, `S01-E1-M2`, `S01-E1-M3`, `S01-E1-M4`, `S01-E1-M5` | `01-praca-z-ai-w-chmurze/e0-jak-dzialaja-llm-i-agenci-kodujacy/` |
 
 **`S01-E0-D` · Dowód etapu 0: jak działają LLM i agenci kodujący**
 
@@ -149,14 +149,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Jedna funkcja w istniejącej aplikacji zrealizowana z Claude Code w cyklu eksploracja, plan, implementacja, commit, z zatwierdzonym przez człowieka planem, testami uruchomionymi przez agenta i notatką: ile poprawek wymagał wynik i dlaczego; do tego `CLAUDE.md` dla repozytorium testowego „przejmowanej” aplikacji (polecenia budowania i testów, pułapki, zakazy) przycięty po tygodniu pracy na podstawie tego, czego agent faktycznie nie przestrzegał.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S01-E1-M1` | Przerobić: Kursy Anthropic Academy: „Claude Code 101”, „Claude Code in Action” | materiał | 6–8 h | 0 zł | https://anthropic.skilljar.com/claude-code-101, https://anthropic.skilljar.com/claude-code-in-action | `S01-E0-D` | `S01-E1-D` | `01-praca-z-ai-w-chmurze/e1-codzienna-praca-z-claude-code/` |
-| `S01-E1-M2` | Przerobić: Dokumentacja Claude Code: Best practices, Common workflows | materiał | 4–6 h | 0 zł | https://code.claude.com/docs/en/best-practices, https://code.claude.com/docs/en/common-workflows | `S01-E0-D` | `S01-E1-D` | `01-praca-z-ai-w-chmurze/e1-codzienna-praca-z-claude-code/` |
-| `S01-E1-M3` | Przerobić: Dokumentacja Claude Code: pamięć i `CLAUDE.md`, sesje, punkty kontrolne, tryb interaktywny | materiał | 3–4 h | 0 zł | https://code.claude.com/docs/en/memory, https://code.claude.com/docs/en/sessions, https://code.claude.com/docs/en/checkpointing, https://code.claude.com/docs/en/interactive-mode | `S01-E0-D` | `S01-E1-D` | `01-praca-z-ai-w-chmurze/e1-codzienna-praca-z-claude-code/` |
-| `S01-E1-M4` | Przerobić: Dokumentacja Claude Code: worktree, konfiguracja modelu i poziomu wysiłku | materiał | 2–3 h | 0 zł | https://code.claude.com/docs/en/worktrees, https://code.claude.com/docs/en/model-config | `S01-E0-D` | `S01-E1-D` | `01-praca-z-ai-w-chmurze/e1-codzienna-praca-z-claude-code/` |
-| `S01-E1-M5` | Przerobić: „Here’s how I use LLMs to help me write code” (marzec 2025) i tag „ai-assisted-programming” | materiał | 3–4 h | 0 zł | https://simonwillison.net/2025/Mar/11/using-llms-for-code/, https://simonwillison.net/tags/ai-assisted-programming/ | `S01-E0-D` | `S01-E1-D` | `01-praca-z-ai-w-chmurze/e1-codzienna-praca-z-claude-code/` |
-| `S01-E1-D` | Dowód etapu 1: codzienna praca z Claude Code | dowód | — | — | — | `S01-E1-M1`, `S01-E1-M2`, `S01-E1-M3`, `S01-E1-M4`, `S01-E1-M5` | `S01-E2-M1`, `S01-E2-M2`, `S01-E2-M3`, `S01-E2-M4`, `S07-E4-M1`, `S07-E4-M2`, `S07-E4-M3`, `S07-E4-M4`, `S07-E4-M5`, `S07-E4-M6`, `S11-START`, `S20-START`, `S21-START` | `01-praca-z-ai-w-chmurze/e1-codzienna-praca-z-claude-code/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S01-E1-M1` | LEA-8 | Przerobić: Kursy Anthropic Academy: „Claude Code 101”, „Claude Code in Action” | materiał | 6–8 h | 0 zł | https://anthropic.skilljar.com/claude-code-101, https://anthropic.skilljar.com/claude-code-in-action | `S01-E0-D` | `S01-E1-D` | `01-praca-z-ai-w-chmurze/e1-codzienna-praca-z-claude-code/` |
+| `S01-E1-M2` | LEA-9 | Przerobić: Dokumentacja Claude Code: Best practices, Common workflows | materiał | 4–6 h | 0 zł | https://code.claude.com/docs/en/best-practices, https://code.claude.com/docs/en/common-workflows | `S01-E0-D` | `S01-E1-D` | `01-praca-z-ai-w-chmurze/e1-codzienna-praca-z-claude-code/` |
+| `S01-E1-M3` | LEA-10 | Przerobić: Dokumentacja Claude Code: pamięć i `CLAUDE.md`, sesje, punkty kontrolne, tryb interaktywny | materiał | 3–4 h | 0 zł | https://code.claude.com/docs/en/memory, https://code.claude.com/docs/en/sessions, https://code.claude.com/docs/en/checkpointing, https://code.claude.com/docs/en/interactive-mode | `S01-E0-D` | `S01-E1-D` | `01-praca-z-ai-w-chmurze/e1-codzienna-praca-z-claude-code/` |
+| `S01-E1-M4` | LEA-11 | Przerobić: Dokumentacja Claude Code: worktree, konfiguracja modelu i poziomu wysiłku | materiał | 2–3 h | 0 zł | https://code.claude.com/docs/en/worktrees, https://code.claude.com/docs/en/model-config | `S01-E0-D` | `S01-E1-D` | `01-praca-z-ai-w-chmurze/e1-codzienna-praca-z-claude-code/` |
+| `S01-E1-M5` | LEA-12 | Przerobić: „Here’s how I use LLMs to help me write code” (marzec 2025) i tag „ai-assisted-programming” | materiał | 3–4 h | 0 zł | https://simonwillison.net/2025/Mar/11/using-llms-for-code/, https://simonwillison.net/tags/ai-assisted-programming/ | `S01-E0-D` | `S01-E1-D` | `01-praca-z-ai-w-chmurze/e1-codzienna-praca-z-claude-code/` |
+| `S01-E1-D` | LEA-13 | Dowód etapu 1: codzienna praca z Claude Code | dowód | — | — | — | `S01-E1-M1`, `S01-E1-M2`, `S01-E1-M3`, `S01-E1-M4`, `S01-E1-M5` | `S01-E2-M1`, `S01-E2-M2`, `S01-E2-M3`, `S01-E2-M4`, `S07-E4-M1`, `S07-E4-M2`, `S07-E4-M3`, `S07-E4-M4`, `S07-E4-M5`, `S07-E4-M6`, `S11-START`, `S20-START`, `S21-START` | `01-praca-z-ai-w-chmurze/e1-codzienna-praca-z-claude-code/` |
 
 **`S01-E1-D` · Dowód etapu 1: codzienna praca z Claude Code**
 
@@ -180,13 +180,13 @@ Interaktywny samouczek prompt engineeringu powstał dla modeli Claude 3, więc j
 
 **Dowód:** Szablon raportu z audytu przejmowanej aplikacji przygotowany z Claude w projekcie (struktura, skala oceny znalezisk, streszczenie dla zarządu), wypełniony dla aplikacji testowej; każdy fakt i odwołanie do normy (OWASP ASVS, CRA, RODO) sprawdzone ręcznie, z listą poprawek, które trzeba było wprowadzić po AI.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S01-E2-M1` | Przerobić: Prompt engineering: przegląd i „Prompting best practices” | materiał | 3–4 h | 0 zł | https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview, https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices | `S01-E1-D` | `S01-E2-D` | `01-praca-z-ai-w-chmurze/e2-claude-w-aplikacji-i-pisanie-promptow/` |
-| `S01-E2-M2` | Przerobić: „Prompt engineering interactive tutorial” | materiał, płatny, opcjonalne | 6–8 h | 0 zł (zużycie API płatne) | https://github.com/anthropics/prompt-eng-interactive-tutorial | `S01-E1-D` | — | `01-praca-z-ai-w-chmurze/e2-claude-w-aplikacji-i-pisanie-promptow/` |
-| `S01-E2-M3` | Przerobić: Centrum pomocy: „What are projects?”, „Using Research on Claude” | materiał | 1–2 h | 0 zł | https://support.claude.com/en/articles/9517075-what-are-projects, https://support.claude.com/en/articles/11088861-using-research-on-claude | `S01-E1-D` | `S01-E2-D` | `01-praca-z-ai-w-chmurze/e2-claude-w-aplikacji-i-pisanie-promptow/` |
-| `S01-E2-M4` | Przerobić: Kurs Anthropic Academy „AI Fluency for Small Businesses” | materiał | 2–3 h | 0 zł | https://anthropic.skilljar.com/ai-fluency-for-small-businesses | `S01-E1-D` | `S01-E2-D` | `01-praca-z-ai-w-chmurze/e2-claude-w-aplikacji-i-pisanie-promptow/` |
-| `S01-E2-D` | Dowód etapu 2: Claude w aplikacji i pisanie promptów | dowód | — | — | — | `S01-E2-M1`, `S01-E2-M3`, `S01-E2-M4` | `S01-E3-M1`, `S01-E3-M2`, `S01-E3-M3`, `S01-E3-M4` | `01-praca-z-ai-w-chmurze/e2-claude-w-aplikacji-i-pisanie-promptow/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S01-E2-M1` | LEA-14 | Przerobić: Prompt engineering: przegląd i „Prompting best practices” | materiał | 3–4 h | 0 zł | https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview, https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices | `S01-E1-D` | `S01-E2-D` | `01-praca-z-ai-w-chmurze/e2-claude-w-aplikacji-i-pisanie-promptow/` |
+| `S01-E2-M2` | LEA-15 | Przerobić: „Prompt engineering interactive tutorial” | materiał, płatny, opcjonalne | 6–8 h | 0 zł (zużycie API płatne) | https://github.com/anthropics/prompt-eng-interactive-tutorial | `S01-E1-D` | — | `01-praca-z-ai-w-chmurze/e2-claude-w-aplikacji-i-pisanie-promptow/` |
+| `S01-E2-M3` | LEA-16 | Przerobić: Centrum pomocy: „What are projects?”, „Using Research on Claude” | materiał | 1–2 h | 0 zł | https://support.claude.com/en/articles/9517075-what-are-projects, https://support.claude.com/en/articles/11088861-using-research-on-claude | `S01-E1-D` | `S01-E2-D` | `01-praca-z-ai-w-chmurze/e2-claude-w-aplikacji-i-pisanie-promptow/` |
+| `S01-E2-M4` | LEA-17 | Przerobić: Kurs Anthropic Academy „AI Fluency for Small Businesses” | materiał | 2–3 h | 0 zł | https://anthropic.skilljar.com/ai-fluency-for-small-businesses | `S01-E1-D` | `S01-E2-D` | `01-praca-z-ai-w-chmurze/e2-claude-w-aplikacji-i-pisanie-promptow/` |
+| `S01-E2-D` | LEA-18 | Dowód etapu 2: Claude w aplikacji i pisanie promptów | dowód | — | — | — | `S01-E2-M1`, `S01-E2-M3`, `S01-E2-M4` | `S01-E3-M1`, `S01-E3-M2`, `S01-E3-M3`, `S01-E3-M4` | `01-praca-z-ai-w-chmurze/e2-claude-w-aplikacji-i-pisanie-promptow/` |
 
 **`S01-E2-D` · Dowód etapu 2: Claude w aplikacji i pisanie promptów**
 
@@ -208,13 +208,13 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Skrypt, który dla repozytorium klienta przygotowuje szkic inwentarza do audytu (streszczenia modułów, lista zależności i punktów wejścia) przez przetwarzanie wsadowe lub `claude -p`, z limitem wydatków na osobnym obszarze roboczym, kluczem poza repozytorium, filtrem plików z sekretami i danymi osobowymi oraz zapisem kosztu przebiegu.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S01-E3-M1` | Przerobić: Get started, klucze API, obszary robocze | materiał | 2–3 h | 0 zł | https://platform.claude.com/docs/en/get-started, https://platform.claude.com/docs/en/get-api-key, https://platform.claude.com/docs/en/manage-claude/workspaces | `S01-E2-D` | `S01-E3-D` | `01-praca-z-ai-w-chmurze/e3-api-claude-do-automatyzacji-wlasnej-pracy/` |
-| `S01-E3-M2` | Przerobić: Limity zapytań, liczenie tokenów, przetwarzanie wsadowe, Usage and Cost API | materiał | 3–4 h | 0 zł | https://platform.claude.com/docs/en/api/rate-limits, https://platform.claude.com/docs/en/build-with-claude/token-counting, https://platform.claude.com/docs/en/build-with-claude/batch-processing, https://platform.claude.com/docs/en/manage-claude/usage-cost-api | `S01-E2-D` | `S01-E3-D` | `01-praca-z-ai-w-chmurze/e3-api-claude-do-automatyzacji-wlasnej-pracy/` |
-| `S01-E3-M3` | Przerobić: Claude Code w trybie nieinteraktywnym (`claude -p`) | materiał | 1–2 h | 0 zł | https://code.claude.com/docs/en/headless | `S01-E2-D` | `S01-E3-D` | `01-praca-z-ai-w-chmurze/e3-api-claude-do-automatyzacji-wlasnej-pracy/` |
-| `S01-E3-M4` | Przerobić: Kursy Anthropic Academy „Claude Platform 101” i „Building with the Claude API” | materiał, płatny | 5–7 h | 0 zł (zużycie API płatne) | https://anthropic.skilljar.com/claude-platform-101, https://anthropic.skilljar.com/claude-with-the-anthropic-api | `S01-E2-D` | `S01-E3-D` | `01-praca-z-ai-w-chmurze/e3-api-claude-do-automatyzacji-wlasnej-pracy/` |
-| `S01-E3-D` | Dowód etapu 3: API Claude do automatyzacji własnej pracy | dowód | — | — | — | `S01-E3-M1`, `S01-E3-M2`, `S01-E3-M3`, `S01-E3-M4` | `S01-E4-M1`, `S01-E4-M2`, `S01-E4-M3`, `S01-E4-M4`, `S01-E4-M5`, `S01-E4-M6`, `S01-E4-M7`, `S01-E4-M8`, `S01-E4-M9` | `01-praca-z-ai-w-chmurze/e3-api-claude-do-automatyzacji-wlasnej-pracy/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S01-E3-M1` | LEA-19 | Przerobić: Get started, klucze API, obszary robocze | materiał | 2–3 h | 0 zł | https://platform.claude.com/docs/en/get-started, https://platform.claude.com/docs/en/get-api-key, https://platform.claude.com/docs/en/manage-claude/workspaces | `S01-E2-D` | `S01-E3-D` | `01-praca-z-ai-w-chmurze/e3-api-claude-do-automatyzacji-wlasnej-pracy/` |
+| `S01-E3-M2` | LEA-20 | Przerobić: Limity zapytań, liczenie tokenów, przetwarzanie wsadowe, Usage and Cost API | materiał | 3–4 h | 0 zł | https://platform.claude.com/docs/en/api/rate-limits, https://platform.claude.com/docs/en/build-with-claude/token-counting, https://platform.claude.com/docs/en/build-with-claude/batch-processing, https://platform.claude.com/docs/en/manage-claude/usage-cost-api | `S01-E2-D` | `S01-E3-D` | `01-praca-z-ai-w-chmurze/e3-api-claude-do-automatyzacji-wlasnej-pracy/` |
+| `S01-E3-M3` | LEA-21 | Przerobić: Claude Code w trybie nieinteraktywnym (`claude -p`) | materiał | 1–2 h | 0 zł | https://code.claude.com/docs/en/headless | `S01-E2-D` | `S01-E3-D` | `01-praca-z-ai-w-chmurze/e3-api-claude-do-automatyzacji-wlasnej-pracy/` |
+| `S01-E3-M4` | LEA-22 | Przerobić: Kursy Anthropic Academy „Claude Platform 101” i „Building with the Claude API” | materiał, płatny | 5–7 h | 0 zł (zużycie API płatne) | https://anthropic.skilljar.com/claude-platform-101, https://anthropic.skilljar.com/claude-with-the-anthropic-api | `S01-E2-D` | `S01-E3-D` | `01-praca-z-ai-w-chmurze/e3-api-claude-do-automatyzacji-wlasnej-pracy/` |
+| `S01-E3-D` | LEA-23 | Dowód etapu 3: API Claude do automatyzacji własnej pracy | dowód | — | — | — | `S01-E3-M1`, `S01-E3-M2`, `S01-E3-M3`, `S01-E3-M4` | `S01-E4-M1`, `S01-E4-M2`, `S01-E4-M3`, `S01-E4-M4`, `S01-E4-M5`, `S01-E4-M6`, `S01-E4-M7`, `S01-E4-M8`, `S01-E4-M9` | `01-praca-z-ai-w-chmurze/e3-api-claude-do-automatyzacji-wlasnej-pracy/` |
 
 **`S01-E3-D` · Dowód etapu 3: API Claude do automatyzacji własnej pracy**
 
@@ -245,18 +245,18 @@ Wniosek do weryfikacji z prawnikiem: plan Max założony w biznesplanie wystarcz
 
 **Dowód:** „polityka danych dla AI” jako załącznik do oferty i wzoru umowy powierzenia: klasy danych klienta i dozwolone narzędzia dla każdej (Claude na planie komercyjnym, model lokalny, zakaz), podprocesorzy z odnośnikiem do listy Anthropic, podstawa transferu poza EOG, retencja, sposób anonimizacji danych testowych, procedura przy przypadkowym wysłaniu sekretu; do tego rozdział o AI Act: rejestr własnych kompetencji w zakresie AI (art. 4: ukończone kursy i dowody z tej sekcji) i zasady przejrzystości (art. 50) dla funkcji AI dostarczanych klientom; dokument przejrzany przez prawnika, z listą zmian po przeglądzie.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S01-E4-M1` | Przerobić: Dokumentacja Claude Code: Data usage, Legal and compliance, Zero data retention | materiał | 2–3 h | 0 zł | https://code.claude.com/docs/en/data-usage, https://code.claude.com/docs/en/legal-and-compliance, https://code.claude.com/docs/en/zero-data-retention | `S01-E3-D` | `S01-E4-D` | `01-praca-z-ai-w-chmurze/e4-dane-klienta-rodo-i-umowy/` |
-| `S01-E4-M2` | Przerobić: Consumer Terms, Commercial Terms, Privacy Policy | materiał | 3–4 h | 0 zł | https://www.anthropic.com/legal/consumer-terms, https://www.anthropic.com/legal/commercial-terms, https://www.anthropic.com/legal/privacy | `S01-E3-D` | `S01-E4-D` | `01-praca-z-ai-w-chmurze/e4-dane-klienta-rodo-i-umowy/` |
-| `S01-E4-M3` | Przerobić: Data Processing Addendum (z SCC) i lista podprocesorów | materiał | 2–3 h | 0 zł | https://www.anthropic.com/legal/data-processing-addendum, https://trust.anthropic.com/subprocessors | `S01-E3-D` | `S01-E4-D` | `01-praca-z-ai-w-chmurze/e4-dane-klienta-rodo-i-umowy/` |
-| `S01-E4-M4` | Przerobić: Privacy Center: trenowanie na danych, okresy przechowywania, DPA dla produktów komercyjnych | materiał | 1–2 h | 0 zł | https://privacy.claude.com, https://privacy.claude.com/en/articles/7996862 | `S01-E3-D` | `S01-E4-D` | `01-praca-z-ai-w-chmurze/e4-dane-klienta-rodo-i-umowy/` |
-| `S01-E4-M5` | Przerobić: Data residency w API | materiał | 0,5 h | 0 zł | https://platform.claude.com/docs/en/build-with-claude/data-residency | `S01-E3-D` | `S01-E4-D` | `01-praca-z-ai-w-chmurze/e4-dane-klienta-rodo-i-umowy/` |
-| `S01-E4-M6` | Przerobić: Trust Center (certyfikaty, raporty) | materiał | 1 h | 0 zł | https://trust.anthropic.com | `S01-E3-D` | `S01-E4-D` | `01-praca-z-ai-w-chmurze/e4-dane-klienta-rodo-i-umowy/` |
-| `S01-E4-M7` | Przerobić: „AI Privacy Risks & Mitigations: Large Language Models (LLMs)” (kwiecień 2025) | materiał | 3–4 h | 0 zł | https://www.edpb.europa.eu/our-work-tools/our-documents/support-pool-experts-projects/ai-privacy-risks-mitigations-large_en | `S01-E3-D` | `S01-E4-D` | `01-praca-z-ai-w-chmurze/e4-dane-klienta-rodo-i-umowy/` |
-| `S01-E4-M8` | Przerobić: Akt w sprawie sztucznej inteligencji (rozporządzenie (UE) 2024/1689): art. 4… | materiał | 2–3 h | 0 zł | https://eur-lex.europa.eu/eli/reg/2024/1689/oj, https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-4, https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-50 | `S01-E3-D` | `S01-E4-D` | `01-praca-z-ai-w-chmurze/e4-dane-klienta-rodo-i-umowy/` |
-| `S01-E4-M9` | Przerobić: „AI Literacy – Questions & Answers” | materiał | 1 h | 0 zł | https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers | `S01-E3-D` | `S01-E4-D` | `01-praca-z-ai-w-chmurze/e4-dane-klienta-rodo-i-umowy/` |
-| `S01-E4-D` | Dowód etapu 4: dane klienta, RODO i umowy | dowód | — | — | — | `S01-E4-M1`, `S01-E4-M2`, `S01-E4-M3`, `S01-E4-M4`, `S01-E4-M5`, `S01-E4-M6`, `S01-E4-M7`, `S01-E4-M8`, `S01-E4-M9` | `S01-E5-M1`, `S01-E5-M2`, `S01-E5-M3`, `S01-E5-M4`, `S01-E5-M5`, `S01-E5-M6`, `S01-E5-M7`, `S01-E5-M8` | `01-praca-z-ai-w-chmurze/e4-dane-klienta-rodo-i-umowy/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S01-E4-M1` | LEA-24 | Przerobić: Dokumentacja Claude Code: Data usage, Legal and compliance, Zero data retention | materiał | 2–3 h | 0 zł | https://code.claude.com/docs/en/data-usage, https://code.claude.com/docs/en/legal-and-compliance, https://code.claude.com/docs/en/zero-data-retention | `S01-E3-D` | `S01-E4-D` | `01-praca-z-ai-w-chmurze/e4-dane-klienta-rodo-i-umowy/` |
+| `S01-E4-M2` | LEA-25 | Przerobić: Consumer Terms, Commercial Terms, Privacy Policy | materiał | 3–4 h | 0 zł | https://www.anthropic.com/legal/consumer-terms, https://www.anthropic.com/legal/commercial-terms, https://www.anthropic.com/legal/privacy | `S01-E3-D` | `S01-E4-D` | `01-praca-z-ai-w-chmurze/e4-dane-klienta-rodo-i-umowy/` |
+| `S01-E4-M3` | LEA-26 | Przerobić: Data Processing Addendum (z SCC) i lista podprocesorów | materiał | 2–3 h | 0 zł | https://www.anthropic.com/legal/data-processing-addendum, https://trust.anthropic.com/subprocessors | `S01-E3-D` | `S01-E4-D` | `01-praca-z-ai-w-chmurze/e4-dane-klienta-rodo-i-umowy/` |
+| `S01-E4-M4` | LEA-27 | Przerobić: Privacy Center: trenowanie na danych, okresy przechowywania, DPA dla produktów komercyjnych | materiał | 1–2 h | 0 zł | https://privacy.claude.com, https://privacy.claude.com/en/articles/7996862 | `S01-E3-D` | `S01-E4-D` | `01-praca-z-ai-w-chmurze/e4-dane-klienta-rodo-i-umowy/` |
+| `S01-E4-M5` | LEA-28 | Przerobić: Data residency w API | materiał | 0,5 h | 0 zł | https://platform.claude.com/docs/en/build-with-claude/data-residency | `S01-E3-D` | `S01-E4-D` | `01-praca-z-ai-w-chmurze/e4-dane-klienta-rodo-i-umowy/` |
+| `S01-E4-M6` | LEA-29 | Przerobić: Trust Center (certyfikaty, raporty) | materiał | 1 h | 0 zł | https://trust.anthropic.com | `S01-E3-D` | `S01-E4-D` | `01-praca-z-ai-w-chmurze/e4-dane-klienta-rodo-i-umowy/` |
+| `S01-E4-M7` | LEA-30 | Przerobić: „AI Privacy Risks & Mitigations: Large Language Models (LLMs)” (kwiecień 2025) | materiał | 3–4 h | 0 zł | https://www.edpb.europa.eu/our-work-tools/our-documents/support-pool-experts-projects/ai-privacy-risks-mitigations-large_en | `S01-E3-D` | `S01-E4-D` | `01-praca-z-ai-w-chmurze/e4-dane-klienta-rodo-i-umowy/` |
+| `S01-E4-M8` | LEA-31 | Przerobić: Akt w sprawie sztucznej inteligencji (rozporządzenie (UE) 2024/1689): art. 4… | materiał | 2–3 h | 0 zł | https://eur-lex.europa.eu/eli/reg/2024/1689/oj, https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-4, https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-50 | `S01-E3-D` | `S01-E4-D` | `01-praca-z-ai-w-chmurze/e4-dane-klienta-rodo-i-umowy/` |
+| `S01-E4-M9` | LEA-32 | Przerobić: „AI Literacy – Questions & Answers” | materiał | 1 h | 0 zł | https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers | `S01-E3-D` | `S01-E4-D` | `01-praca-z-ai-w-chmurze/e4-dane-klienta-rodo-i-umowy/` |
+| `S01-E4-D` | LEA-33 | Dowód etapu 4: dane klienta, RODO i umowy | dowód | — | — | — | `S01-E4-M1`, `S01-E4-M2`, `S01-E4-M3`, `S01-E4-M4`, `S01-E4-M5`, `S01-E4-M6`, `S01-E4-M7`, `S01-E4-M8`, `S01-E4-M9` | `S01-E5-M1`, `S01-E5-M2`, `S01-E5-M3`, `S01-E5-M4`, `S01-E5-M5`, `S01-E5-M6`, `S01-E5-M7`, `S01-E5-M8` | `01-praca-z-ai-w-chmurze/e4-dane-klienta-rodo-i-umowy/` |
 
 **`S01-E4-D` · Dowód etapu 4: dane klienta, RODO i umowy**
 
@@ -278,17 +278,17 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Miesięczny raport kosztu AI: koszt planu i kredytów, zużycie według projektów i rodzajów zadań, koszt na zadanie dla trzech typowych zadań (audyt modułu, poprawka bezpieczeństwa, raport), udział w przychodzie względem progu 5% i decyzje na kolejny miesiąc; do tego jednostronicowy plan B: co robić przy awarii, wyczerpaniu limitu lub zmianie warunków (drugi agent kodujący innego dostawcy lub bramka LLM, model lokalny, praca ręczna), sprawdzony w praktyce jednym dniem pracy bez Claude.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S01-E5-M1` | Przerobić: Dokumentacja Claude Code: „Manage costs effectively”, Monitoring (OpenTelemetry) | materiał | 2–3 h | 0 zł | https://code.claude.com/docs/en/costs, https://code.claude.com/docs/en/monitoring-usage | `S01-E4-D` | `S01-E5-D` | `01-praca-z-ai-w-chmurze/e5-koszty-limity-i-plan-b/` |
-| `S01-E5-M2` | Przerobić: Centrum pomocy: limity planu Max | materiał | 0,5 h | 0 zł | https://support.claude.com/en/articles/11014257-about-claude-s-max-plan-usage | `S01-E4-D` | `S01-E5-D` | `01-praca-z-ai-w-chmurze/e5-koszty-limity-i-plan-b/` |
-| `S01-E5-M3` | Przerobić: Cennik planów i cennik API | materiał | 1 h | 0 zł | https://claude.com/pricing, https://platform.claude.com/docs/en/about-claude/pricing | `S01-E4-D` | `S01-E5-D` | `01-praca-z-ai-w-chmurze/e5-koszty-limity-i-plan-b/` |
-| `S01-E5-M4` | Przerobić: Dokumentacja Claude Code: bramki LLM | materiał | 1–2 h | 0 zł | https://code.claude.com/docs/en/llm-gateway | `S01-E4-D` | `S01-E5-D` | `01-praca-z-ai-w-chmurze/e5-koszty-limity-i-plan-b/` |
-| `S01-E5-M5` | Przerobić: Status usług | materiał | wg potrzeb | 0 zł | https://status.claude.com | `S01-E4-D` | `S01-E5-D` | `01-praca-z-ai-w-chmurze/e5-koszty-limity-i-plan-b/` |
-| `S01-E5-M6` | Przerobić: Codex CLI: dokumentacja (instalacja, `AGENTS.md`, tryby zatwierdzania) | materiał, płatny | 2–3 h | 0 zł (zużycie API płatne lub plan ChatGPT) | https://developers.openai.com/codex/cli | `S01-E4-D` | `S01-E5-D` | `01-praca-z-ai-w-chmurze/e5-koszty-limity-i-plan-b/` |
-| `S01-E5-M7` | Przerobić: Gemini CLI: dokumentacja | materiał, opcjonalne | 2–3 h | 0 zł (bezpłatny limit z kontem Google) | https://geminicli.com/docs/ | `S01-E4-D` | — | `01-praca-z-ai-w-chmurze/e5-koszty-limity-i-plan-b/` |
-| `S01-E5-M8` | Przerobić: LiteLLM: dokumentacja i LiteLLM Proxy (bramka LLM) | materiał, opcjonalne | 2–3 h | 0 zł | https://docs.litellm.ai/docs/, https://docs.litellm.ai/docs/simple_proxy | `S01-E4-D` | — | `01-praca-z-ai-w-chmurze/e5-koszty-limity-i-plan-b/` |
-| `S01-E5-D` | Dowód etapu 5: koszty, limity i plan B | dowód | — | — | — | `S01-E5-M1`, `S01-E5-M2`, `S01-E5-M3`, `S01-E5-M4`, `S01-E5-M5`, `S01-E5-M6` | `S01-E6-M1`, `S01-E6-M2`, `S01-E6-M3`, `S01-E6-P1`, `S01-E6-P2`, `S01-E6-P3`, `S01-E6-P4` | `01-praca-z-ai-w-chmurze/e5-koszty-limity-i-plan-b/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S01-E5-M1` | LEA-34 | Przerobić: Dokumentacja Claude Code: „Manage costs effectively”, Monitoring (OpenTelemetry) | materiał | 2–3 h | 0 zł | https://code.claude.com/docs/en/costs, https://code.claude.com/docs/en/monitoring-usage | `S01-E4-D` | `S01-E5-D` | `01-praca-z-ai-w-chmurze/e5-koszty-limity-i-plan-b/` |
+| `S01-E5-M2` | LEA-35 | Przerobić: Centrum pomocy: limity planu Max | materiał | 0,5 h | 0 zł | https://support.claude.com/en/articles/11014257-about-claude-s-max-plan-usage | `S01-E4-D` | `S01-E5-D` | `01-praca-z-ai-w-chmurze/e5-koszty-limity-i-plan-b/` |
+| `S01-E5-M3` | LEA-36 | Przerobić: Cennik planów i cennik API | materiał | 1 h | 0 zł | https://claude.com/pricing, https://platform.claude.com/docs/en/about-claude/pricing | `S01-E4-D` | `S01-E5-D` | `01-praca-z-ai-w-chmurze/e5-koszty-limity-i-plan-b/` |
+| `S01-E5-M4` | LEA-37 | Przerobić: Dokumentacja Claude Code: bramki LLM | materiał | 1–2 h | 0 zł | https://code.claude.com/docs/en/llm-gateway | `S01-E4-D` | `S01-E5-D` | `01-praca-z-ai-w-chmurze/e5-koszty-limity-i-plan-b/` |
+| `S01-E5-M5` | LEA-38 | Przerobić: Status usług | materiał | wg potrzeb | 0 zł | https://status.claude.com | `S01-E4-D` | `S01-E5-D` | `01-praca-z-ai-w-chmurze/e5-koszty-limity-i-plan-b/` |
+| `S01-E5-M6` | LEA-39 | Przerobić: Codex CLI: dokumentacja (instalacja, `AGENTS.md`, tryby zatwierdzania) | materiał, płatny | 2–3 h | 0 zł (zużycie API płatne lub plan ChatGPT) | https://developers.openai.com/codex/cli | `S01-E4-D` | `S01-E5-D` | `01-praca-z-ai-w-chmurze/e5-koszty-limity-i-plan-b/` |
+| `S01-E5-M7` | LEA-40 | Przerobić: Gemini CLI: dokumentacja | materiał, opcjonalne | 2–3 h | 0 zł (bezpłatny limit z kontem Google) | https://geminicli.com/docs/ | `S01-E4-D` | — | `01-praca-z-ai-w-chmurze/e5-koszty-limity-i-plan-b/` |
+| `S01-E5-M8` | LEA-41 | Przerobić: LiteLLM: dokumentacja i LiteLLM Proxy (bramka LLM) | materiał, opcjonalne | 2–3 h | 0 zł | https://docs.litellm.ai/docs/, https://docs.litellm.ai/docs/simple_proxy | `S01-E4-D` | — | `01-praca-z-ai-w-chmurze/e5-koszty-limity-i-plan-b/` |
+| `S01-E5-D` | LEA-42 | Dowód etapu 5: koszty, limity i plan B | dowód | — | — | — | `S01-E5-M1`, `S01-E5-M2`, `S01-E5-M3`, `S01-E5-M4`, `S01-E5-M5`, `S01-E5-M6` | `S01-E6-M1`, `S01-E6-M2`, `S01-E6-M3`, `S01-E6-P1`, `S01-E6-P2`, `S01-E6-P3`, `S01-E6-P4` | `01-praca-z-ai-w-chmurze/e5-koszty-limity-i-plan-b/` |
 
 **`S01-E5-D` · Dowód etapu 5: koszty, limity i plan B**
 
@@ -308,16 +308,16 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód poziomu E:** Przejmujesz nieznaną aplikację klienta i w 1 dzień przeprowadzasz z Claude Code wstępny audyt na danych dopuszczonych polityką danych dla AI: przygotowujesz kontekst (`CLAUDE.md`, specyfikacja zadania), prowadzisz równoległe sesje, przerywasz te, które błądzą, a gotowy raport z audytu zawiera tylko zweryfikowane znaleziska, koszt AI tego dnia i informację, które dane i w jakim narzędziu były przetwarzane; potrafisz też wyjaśnić klientowi, dlaczego tak, a nie inaczej.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S01-E6-M1` | Przerobić: Informacje o zmianach Claude Code („What’s new”, changelog) | materiał | ok. 0,5 h tygodniowo | 0 zł | https://code.claude.com/docs/en/whats-new, https://code.claude.com/docs/en/changelog | `S01-E5-D` | `S01-E6-D` | `01-praca-z-ai-w-chmurze/e6-ekspert/` |
-| `S01-E6-M2` | Przerobić: Aktualności Anthropic i Privacy Center (zmiany warunków i retencji) | materiał | wg potrzeb | 0 zł | https://www.anthropic.com/news, https://privacy.claude.com | `S01-E5-D` | `S01-E6-D` | `01-praca-z-ai-w-chmurze/e6-ekspert/` |
-| `S01-E6-M3` | Przerobić: Simon Willison’s Weblog | materiał | ok. 0,5 h tygodniowo | 0 zł | https://simonwillison.net | `S01-E5-D` | `S01-E6-D` | `01-praca-z-ai-w-chmurze/e6-ekspert/` |
-| `S01-E6-P1` | Praktyka: praca równoległa pod kontrolą | praktyka | — | — | — | `S01-E5-D` | `S01-E6-D` | `01-praca-z-ai-w-chmurze/e6-ekspert/` |
-| `S01-E6-P2` | Praktyka: pomiar własnej pracy | praktyka | — | — | — | `S01-E5-D` | `S01-E6-D` | `01-praca-z-ai-w-chmurze/e6-ekspert/` |
-| `S01-E6-P3` | Praktyka: przegląd warunków co kwartał | praktyka | — | — | — | `S01-E5-D` | `S01-E6-D` | `01-praca-z-ai-w-chmurze/e6-ekspert/` |
-| `S01-E6-P4` | Praktyka: praca bez agenta | praktyka | — | — | — | `S01-E5-D` | `S01-E6-D` | `01-praca-z-ai-w-chmurze/e6-ekspert/` |
-| `S01-E6-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S01-E6-M1`, `S01-E6-M2`, `S01-E6-M3`, `S01-E6-P1`, `S01-E6-P2`, `S01-E6-P3`, `S01-E6-P4` | — | `01-praca-z-ai-w-chmurze/e6-ekspert/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S01-E6-M1` | LEA-43 | Przerobić: Informacje o zmianach Claude Code („What’s new”, changelog) | materiał | ok. 0,5 h tygodniowo | 0 zł | https://code.claude.com/docs/en/whats-new, https://code.claude.com/docs/en/changelog | `S01-E5-D` | `S01-E6-D` | `01-praca-z-ai-w-chmurze/e6-ekspert/` |
+| `S01-E6-M2` | LEA-44 | Przerobić: Aktualności Anthropic i Privacy Center (zmiany warunków i retencji) | materiał | wg potrzeb | 0 zł | https://www.anthropic.com/news, https://privacy.claude.com | `S01-E5-D` | `S01-E6-D` | `01-praca-z-ai-w-chmurze/e6-ekspert/` |
+| `S01-E6-M3` | LEA-45 | Przerobić: Simon Willison’s Weblog | materiał | ok. 0,5 h tygodniowo | 0 zł | https://simonwillison.net | `S01-E5-D` | `S01-E6-D` | `01-praca-z-ai-w-chmurze/e6-ekspert/` |
+| `S01-E6-P1` | LEA-46 | Praktyka: praca równoległa pod kontrolą | praktyka | — | — | — | `S01-E5-D` | `S01-E6-D` | `01-praca-z-ai-w-chmurze/e6-ekspert/` |
+| `S01-E6-P2` | LEA-47 | Praktyka: pomiar własnej pracy | praktyka | — | — | — | `S01-E5-D` | `S01-E6-D` | `01-praca-z-ai-w-chmurze/e6-ekspert/` |
+| `S01-E6-P3` | LEA-48 | Praktyka: przegląd warunków co kwartał | praktyka | — | — | — | `S01-E5-D` | `S01-E6-D` | `01-praca-z-ai-w-chmurze/e6-ekspert/` |
+| `S01-E6-P4` | LEA-49 | Praktyka: praca bez agenta | praktyka | — | — | — | `S01-E5-D` | `S01-E6-D` | `01-praca-z-ai-w-chmurze/e6-ekspert/` |
+| `S01-E6-D` | LEA-50 | Dowód poziomu E: ekspert | dowód | — | — | — | `S01-E6-M1`, `S01-E6-M2`, `S01-E6-M3`, `S01-E6-P1`, `S01-E6-P2`, `S01-E6-P3`, `S01-E6-P4` | — | `01-praca-z-ai-w-chmurze/e6-ekspert/` |
 
 **`S01-E6-P1` · Praktyka: praca równoległa pod kontrolą**
 

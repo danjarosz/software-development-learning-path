@@ -19,6 +19,15 @@ I = plan["issues"]
 BYKEY = {i["key"]: i for i in I}
 PBY = {p["key"]: p for p in P}
 MS = {m["key"]: (p, m) for p in P for m in p["milestones"]}
+STATE_PATH = os.path.join(LIN, "linear-deploy-state.json")
+DEPLOYED = json.load(open(STATE_PATH, encoding="utf-8"))["issues"] if os.path.exists(STATE_PATH) else {}
+
+
+def lea(key):
+    """Identyfikator zadania w Linear albo „—”, jeśli zadanie nie jest wdrożone."""
+    return DEPLOYED[key]["identifier"] if key in DEPLOYED else "—"
+
+
 BLOCKS = collections.defaultdict(list)
 for i in I:
     for b in i["blockedBy"]:
@@ -210,7 +219,10 @@ def render_section(p):
     first_m = next(i["key"] for i in iss if kind(i) == "M")
     L = []
     L.append(f"# {p['name']}: plan wdrożenia w Linear\n")
-    L.append(f"Team **LEA** (https://linear.app/daankh/team/LEA/overview). Plan do przeglądu przed wdrożeniem: nic nie zostało jeszcze utworzone w Linear. Klucze zadań (np. `{first_m}`) są robocze; po wdrożeniu dostaną identyfikatory `LEA-…`.\n")
+    if DEPLOYED:
+        L.append(f"Team **LEA** (https://linear.app/daankh/team/LEA/overview). Plan jest wdrożony w Linear. Klucze zadań (np. `{first_m}`) są robocze, a identyfikator każdego zadania w Linear (`LEA-…`) jest w kolumnie „Linear” tabel zadań i w pliku `mapowanie-kluczy.csv`.\n")
+    else:
+        L.append(f"Team **LEA** (https://linear.app/daankh/team/LEA/overview). Plan do przeglądu przed wdrożeniem: nic nie zostało jeszcze utworzone w Linear. Klucze zadań (np. `{first_m}`) są robocze; po wdrożeniu dostaną identyfikatory `LEA-…`.\n")
     L.append(f"**W skrócie:** {short_summary(pk)}. Plik główny z kolejnością projektów: `00-kolejnosc-i-zaleznosci.md`.\n")
     L.append("## 1. Projekt\n")
     L.append("| Pole | Wartość |\n|---|---|")
@@ -241,7 +253,8 @@ def render_section(p):
     L.append("")
     L.append("## 3. Punkt startu\n")
     has_supp = any(is_supp(m) for m in p["milestones"])
-    L.append(f"Zadanie **`{start['key']}` · {start['title']}** to jedyne wejście do projektu: wszystkie zadania pierwszego etapu{' i ścieżek uzupełniających' if has_supp else ''} są przez nie blokowane.\n")
+    linear_ref = f" ({lea(start['key'])} w Linear)" if start["key"] in DEPLOYED else ""
+    L.append(f"Zadanie **`{start['key']}` · {start['title']}**{linear_ref} to jedyne wejście do projektu: wszystkie zadania pierwszego etapu{' i ścieżek uzupełniających' if has_supp else ''} są przez nie blokowane.\n")
     L.append(f"- **Blokowane przez:** {keys(start['blockedBy'])}")
     L.append(f"- **Odblokowuje:** {keys(BLOCKS[start['key']])}")
     if start["status"] == "Todo":
@@ -274,7 +287,7 @@ def render_section(p):
         L.append(f"### {m['name']}\n")
         L.append("Opis kamienia milowego (do wklejenia):\n")
         L.append(m["description"] + "\n")
-        L.append("| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |\n|---|---|---|---|---|---|---|---|---|")
+        L.append("| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |\n|---|---|---|---|---|---|---|---|---|---|")
         mi = [i for i in iss if i["milestone"] == m["key"]]
         for i in mi:
             if kind(i) == "M":
@@ -282,7 +295,7 @@ def render_section(p):
                 cz, ko, li = field(d, "Czas"), field(d, "Koszt"), field(d, "Link")
             else:
                 cz = ko = li = "—"
-            L.append(f"| `{i['key']}` | {i['title']} | {typ(i)} | {cz} | {ko} | {li} | {keys(i['blockedBy'])} | {keys(BLOCKS[i['key']])} | `{ms_folder(m)}` |")
+            L.append(f"| `{i['key']}` | {lea(i['key'])} | {i['title']} | {typ(i)} | {cz} | {ko} | {li} | {keys(i['blockedBy'])} | {keys(BLOCKS[i['key']])} | `{ms_folder(m)}` |")
         L.append("")
         for i in mi:
             if kind(i) in ("P", "D"):

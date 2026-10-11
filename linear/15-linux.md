@@ -1,6 +1,6 @@
 # 15. Linux: plan wdrożenia w Linear
 
-Team **LEA** (https://linear.app/daankh/team/LEA/overview). Plan do przeglądu przed wdrożeniem: nic nie zostało jeszcze utworzone w Linear. Klucze zadań (np. `S15-E0-M1`) są robocze; po wdrożeniu dostaną identyfikatory `LEA-…`.
+Team **LEA** (https://linear.app/daankh/team/LEA/overview). Plan jest wdrożony w Linear. Klucze zadań (np. `S15-E0-M1`) są robocze, a identyfikator każdego zadania w Linear (`LEA-…`) jest w kolumnie „Linear” tabel zadań i w pliku `mapowanie-kluczy.csv`.
 
 **W skrócie:** 4 kamienie milowe, 31 zadań (1 start, 23 materiały, 4 dowody, 3 praktyki). Plik główny z kolejnością projektów: `00-kolejnosc-i-zaleznosci.md`.
 
@@ -49,7 +49,7 @@ Jeden kamień milowy na etap ścieżki. Kamień milowy jest zamknięty, gdy zamk
 
 ## 3. Punkt startu
 
-Zadanie **`S15-START` · Start: 15. Linux** to jedyne wejście do projektu: wszystkie zadania pierwszego etapu są przez nie blokowane.
+Zadanie **`S15-START` · Start: 15. Linux** (LEA-891 w Linear) to jedyne wejście do projektu: wszystkie zadania pierwszego etapu są przez nie blokowane.
 
 - **Blokowane przez:** `S09-E2-D`, `S14-E1-D`
 - **Odblokowuje:** `S15-E0-M1`, `S15-E0-M2`, `S15-E0-M3`
@@ -104,12 +104,12 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Binarka skanera z sekcji 14 uruchamiana jako usługa użytkownika systemd z timerem (nocny skan wybranych repozytoriów), logami w journald i poprawnym zakończeniem po `SIGTERM`; lista symboli glibc, od których zależy binarka, z najwyższą wymaganą wersją.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S15-E0-M1` | Przerobić: How Linux Works, 3rd Edition | materiał, płatny | 20–25 h | płatna | https://nostarch.com/howlinuxworks3 | `S15-START` | `S15-E0-D` | `15-linux/e0-linux-od-strony-aplikacji/` |
-| `S15-E0-M2` | Przerobić: The Linux Programming Interface… | materiał, płatny | 8–10 h | płatna | https://man7.org/tlpi/ | `S15-START` | `S15-E0-D` | `15-linux/e0-linux-od-strony-aplikacji/` |
-| `S15-E0-M3` | Przerobić: systemd: dokumentacja i strony podręcznika (`systemd.unit`, `systemd.service`, usługi użytkownika) | materiał | 3–4 h | 0 zł | https://systemd.io | `S15-START` | `S15-E0-D` | `15-linux/e0-linux-od-strony-aplikacji/` |
-| `S15-E0-D` | Dowód etapu 0: Linux od strony aplikacji | dowód | — | — | — | `S15-E0-M1`, `S15-E0-M2`, `S15-E0-M3` | `S15-E1-M1`, `S15-E1-M2`, `S15-E1-M3`, `S15-E1-M4` | `15-linux/e0-linux-od-strony-aplikacji/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S15-E0-M1` | LEA-896 | Przerobić: How Linux Works, 3rd Edition | materiał, płatny | 20–25 h | płatna | https://nostarch.com/howlinuxworks3 | `S15-START` | `S15-E0-D` | `15-linux/e0-linux-od-strony-aplikacji/` |
+| `S15-E0-M2` | LEA-897 | Przerobić: The Linux Programming Interface… | materiał, płatny | 8–10 h | płatna | https://man7.org/tlpi/ | `S15-START` | `S15-E0-D` | `15-linux/e0-linux-od-strony-aplikacji/` |
+| `S15-E0-M3` | LEA-898 | Przerobić: systemd: dokumentacja i strony podręcznika (`systemd.unit`, `systemd.service`, usługi użytkownika) | materiał | 3–4 h | 0 zł | https://systemd.io | `S15-START` | `S15-E0-D` | `15-linux/e0-linux-od-strony-aplikacji/` |
+| `S15-E0-D` | LEA-901 | Dowód etapu 0: Linux od strony aplikacji | dowód | — | — | — | `S15-E0-M1`, `S15-E0-M2`, `S15-E0-M3` | `S15-E1-M1`, `S15-E1-M2`, `S15-E1-M3`, `S15-E1-M4` | `15-linux/e0-linux-od-strony-aplikacji/` |
 
 **`S15-E0-D` · Dowód etapu 0: Linux od strony aplikacji**
 
@@ -131,13 +131,13 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Aplikacja Tauri z sekcji 14 z poprawnym plikiem `.desktop`, ikonami w kilku rozmiarach, plikiem MetaInfo przechodzącym walidację, danymi w ścieżkach XDG, autostartem przez plik autostart i powiadomieniem o wykrytym sekrecie; przetestowana w sesji Wayland i X11 na GNOME oraz KDE.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S15-E1-M1` | Przerobić: Specyfikacje freedesktop.org: Desktop Entry, Base Directory, Autostart, Notification, Icon Theme… | materiał | 6–8 h | 0 zł | https://specifications.freedesktop.org | `S15-E0-D` | `S15-E1-D` | `15-linux/e1-integracja-z-pulpitem/` |
-| `S15-E1-M2` | Przerobić: XDG Desktop Portal: dokumentacja API (File Chooser, Secret, Background, Notification, OpenURI) | materiał | 4–5 h | 0 zł | https://flatpak.github.io/xdg-desktop-portal/docs/ | `S15-E0-D` | `S15-E1-D` | `15-linux/e1-integracja-z-pulpitem/` |
-| `S15-E1-M3` | Przerobić: The Wayland Protocol | materiał | 4–6 h | 0 zł | https://wayland-book.com | `S15-E0-D` | `S15-E1-D` | `15-linux/e1-integracja-z-pulpitem/` |
-| `S15-E1-M4` | Przerobić: AppStream: format metadanych MetaInfo | materiał | 1–2 h | 0 zł | https://www.freedesktop.org/software/appstream/docs/ | `S15-E0-D` | `S15-E1-D` | `15-linux/e1-integracja-z-pulpitem/` |
-| `S15-E1-D` | Dowód etapu 1: integracja z pulpitem | dowód | — | — | — | `S15-E1-M1`, `S15-E1-M2`, `S15-E1-M3`, `S15-E1-M4` | `S15-E2-M1`, `S15-E2-M2`, `S15-E2-M3`, `S15-E2-M4`, `S15-E2-M5`, `S15-E2-M6`, `S15-E2-M7`, `S15-E2-M8`, `S15-E2-M9`, `S15-E2-M10`, `S15-E2-M11`, `S15-E2-M12`, `S15-E2-M13`, `S15-E2-M14` | `15-linux/e1-integracja-z-pulpitem/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S15-E1-M1` | LEA-908 | Przerobić: Specyfikacje freedesktop.org: Desktop Entry, Base Directory, Autostart, Notification, Icon Theme… | materiał | 6–8 h | 0 zł | https://specifications.freedesktop.org | `S15-E0-D` | `S15-E1-D` | `15-linux/e1-integracja-z-pulpitem/` |
+| `S15-E1-M2` | LEA-910 | Przerobić: XDG Desktop Portal: dokumentacja API (File Chooser, Secret, Background, Notification, OpenURI) | materiał | 4–5 h | 0 zł | https://flatpak.github.io/xdg-desktop-portal/docs/ | `S15-E0-D` | `S15-E1-D` | `15-linux/e1-integracja-z-pulpitem/` |
+| `S15-E1-M3` | LEA-912 | Przerobić: The Wayland Protocol | materiał | 4–6 h | 0 zł | https://wayland-book.com | `S15-E0-D` | `S15-E1-D` | `15-linux/e1-integracja-z-pulpitem/` |
+| `S15-E1-M4` | LEA-913 | Przerobić: AppStream: format metadanych MetaInfo | materiał | 1–2 h | 0 zł | https://www.freedesktop.org/software/appstream/docs/ | `S15-E0-D` | `S15-E1-D` | `15-linux/e1-integracja-z-pulpitem/` |
+| `S15-E1-D` | LEA-924 | Dowód etapu 1: integracja z pulpitem | dowód | — | — | — | `S15-E1-M1`, `S15-E1-M2`, `S15-E1-M3`, `S15-E1-M4` | `S15-E2-M1`, `S15-E2-M2`, `S15-E2-M3`, `S15-E2-M4`, `S15-E2-M5`, `S15-E2-M6`, `S15-E2-M7`, `S15-E2-M8`, `S15-E2-M9`, `S15-E2-M10`, `S15-E2-M11`, `S15-E2-M12`, `S15-E2-M13`, `S15-E2-M14` | `15-linux/e1-integracja-z-pulpitem/` |
 
 **`S15-E1-D` · Dowód etapu 1: integracja z pulpitem**
 
@@ -159,23 +159,23 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Narzędzie z sekcji 14 wydane jako `.deb`, `.rpm`, AppImage i Flatpak dla x86_64 oraz `.deb` i AppImage dla aarch64, zbudowane w CI na obrazie bazowym najstarszej wspieranej LTS; własne repozytorium APT i RPM z podpisanym indeksem, instrukcją z `Signed-By` i działającą aktualizacją przez `apt upgrade` i `dnf upgrade`; manifest Flatpak przechodzący `flatpak-builder-lint`, z dostępem do repozytoriów tylko przez portal File Chooser; test dymny (uruchomienie i skan przykładowego repozytorium) na czystym Ubuntu 24.04 z domyślną konfiguracją AppArmor, na aarch64 i na Fedora Silverblue (Flatpak, bez nakładania pakietów przez `rpm-ostree`).
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S15-E2-M1` | Przerobić: Guide for Debian Maintainers (następca Debian New Maintainers’ Guide) | materiał | 6–8 h | 0 zł | https://www.debian.org/doc/manuals/debmake-doc/ | `S15-E1-D` | `S15-E2-D` | `15-linux/e2-pakiety-i-repozytoria/` |
-| `S15-E2-M2` | Przerobić: Debian Policy Manual (rozdziały o plikach kontrolnych, zależnościach, skryptach maintainera) | materiał, opcjonalne | 4–6 h | 0 zł | https://www.debian.org/doc/debian-policy/ | `S15-E1-D` | — | `15-linux/e2-pakiety-i-repozytoria/` |
-| `S15-E2-M3` | Przerobić: `apt-secure(8)`: podpisane pliki `Release`/`InRelease` i `Signed-By` | materiał | 1–2 h | 0 zł | https://manpages.debian.org/apt-secure | `S15-E1-D` | `S15-E2-D` | `15-linux/e2-pakiety-i-repozytoria/` |
-| `S15-E2-M4` | Przerobić: RPM Packaging Guide | materiał | 5–6 h | 0 zł | https://rpm-packaging-guide.github.io | `S15-E1-D` | `S15-E2-D` | `15-linux/e2-pakiety-i-repozytoria/` |
-| `S15-E2-M5` | Przerobić: Fedora Packaging Guidelines, w tym Rust Packaging Guidelines | materiał, opcjonalne | 3–4 h | 0 zł | https://docs.fedoraproject.org/en-US/packaging-guidelines/ | `S15-E1-D` | — | `15-linux/e2-pakiety-i-repozytoria/` |
-| `S15-E2-M6` | Przerobić: Dokumentacja AppImage: Packaging Guide, Best practices, aktualizacje przez zsync | materiał | 3–4 h | 0 zł | https://docs.appimage.org | `S15-E1-D` | `S15-E2-D` | `15-linux/e2-pakiety-i-repozytoria/` |
-| `S15-E2-M7` | Przerobić: Dokumentacja Flatpak: Building, Sandbox Permissions, Portals, Publishing | materiał | 6–8 h | 0 zł | https://docs.flatpak.org/en/latest/ | `S15-E1-D` | `S15-E2-D` | `15-linux/e2-pakiety-i-repozytoria/` |
-| `S15-E2-M8` | Przerobić: Flathub dla autorów: Requirements, MetaInfo Guidelines, Submission, Verification, zasady… | materiał | 3–4 h | 0 zł | https://docs.flathub.org/docs/for-app-authors/requirements | `S15-E1-D` | `S15-E2-D` | `15-linux/e2-pakiety-i-repozytoria/` |
-| `S15-E2-M9` | Przerobić: Snap documentation | materiał, opcjonalne | 2–3 h | 0 zł | https://snapcraft.io/docs | `S15-E1-D` | — | `15-linux/e2-pakiety-i-repozytoria/` |
-| `S15-E2-M10` | Przerobić: Tauri: Debian, RPM, AppImage, Flathub, Snapcraft, AUR, Linux Code Signing | materiał | 2–3 h | 0 zł | https://v2.tauri.app/distribute/ | `S15-E1-D` | `S15-E2-D` | `15-linux/e2-pakiety-i-repozytoria/` |
-| `S15-E2-M11` | Przerobić: `cargo-deb`, `cargo-generate-rpm` (pakiety dla aplikacji bez Tauri) | materiał, opcjonalne | 1–2 h | 0 zł | https://docs.rs/cargo-deb, https://github.com/cat-in-136/cargo-generate-rpm | `S15-E1-D` | — | `15-linux/e2-pakiety-i-repozytoria/` |
-| `S15-E2-M12` | Przerobić: Tauri: AppImage, sekcja „AppImages for ARM-based devices” i runnery GitHub `ubuntu-24.04-arm`… | materiał | 1–2 h | 0 zł | https://v2.tauri.app/distribute/appimage/, https://docs.github.com/en/actions/reference/runners/github-hosted-runners | `S15-E1-D` | `S15-E2-D` | `15-linux/e2-pakiety-i-repozytoria/` |
-| `S15-E2-M13` | Przerobić: Ubuntu: ograniczenie nieuprzywilejowanych przestrzeni nazw użytkownika przez AppArmor i profile… | materiał | 1–2 h | 0 zł | https://ubuntu.com/blog/ubuntu-23-10-restricted-unprivileged-user-namespaces, https://documentation.ubuntu.com/server/how-to/security/apparmor/ | `S15-E1-D` | `S15-E2-D` | `15-linux/e2-pakiety-i-repozytoria/` |
-| `S15-E2-M14` | Przerobić: Fedora Silverblue: dokumentacja (system niezmienny, `rpm-ostree`, Flatpak i Toolbx) | materiał | 1–2 h | 0 zł | https://docs.fedoraproject.org/en-US/fedora-silverblue/ | `S15-E1-D` | `S15-E2-D` | `15-linux/e2-pakiety-i-repozytoria/` |
-| `S15-E2-D` | Dowód etapu 2: pakiety i repozytoria | dowód | — | — | — | `S15-E2-M1`, `S15-E2-M3`, `S15-E2-M4`, `S15-E2-M6`, `S15-E2-M7`, `S15-E2-M8`, `S15-E2-M10`, `S15-E2-M12`, `S15-E2-M13`, `S15-E2-M14` | `S15-E3-M1`, `S15-E3-M2`, `S15-E3-P1`, `S15-E3-P2`, `S15-E3-P3` | `15-linux/e2-pakiety-i-repozytoria/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S15-E2-M1` | LEA-951 | Przerobić: Guide for Debian Maintainers (następca Debian New Maintainers’ Guide) | materiał | 6–8 h | 0 zł | https://www.debian.org/doc/manuals/debmake-doc/ | `S15-E1-D` | `S15-E2-D` | `15-linux/e2-pakiety-i-repozytoria/` |
+| `S15-E2-M2` | LEA-953 | Przerobić: Debian Policy Manual (rozdziały o plikach kontrolnych, zależnościach, skryptach maintainera) | materiał, opcjonalne | 4–6 h | 0 zł | https://www.debian.org/doc/debian-policy/ | `S15-E1-D` | — | `15-linux/e2-pakiety-i-repozytoria/` |
+| `S15-E2-M3` | LEA-955 | Przerobić: `apt-secure(8)`: podpisane pliki `Release`/`InRelease` i `Signed-By` | materiał | 1–2 h | 0 zł | https://manpages.debian.org/apt-secure | `S15-E1-D` | `S15-E2-D` | `15-linux/e2-pakiety-i-repozytoria/` |
+| `S15-E2-M4` | LEA-957 | Przerobić: RPM Packaging Guide | materiał | 5–6 h | 0 zł | https://rpm-packaging-guide.github.io | `S15-E1-D` | `S15-E2-D` | `15-linux/e2-pakiety-i-repozytoria/` |
+| `S15-E2-M5` | LEA-958 | Przerobić: Fedora Packaging Guidelines, w tym Rust Packaging Guidelines | materiał, opcjonalne | 3–4 h | 0 zł | https://docs.fedoraproject.org/en-US/packaging-guidelines/ | `S15-E1-D` | — | `15-linux/e2-pakiety-i-repozytoria/` |
+| `S15-E2-M6` | LEA-960 | Przerobić: Dokumentacja AppImage: Packaging Guide, Best practices, aktualizacje przez zsync | materiał | 3–4 h | 0 zł | https://docs.appimage.org | `S15-E1-D` | `S15-E2-D` | `15-linux/e2-pakiety-i-repozytoria/` |
+| `S15-E2-M7` | LEA-961 | Przerobić: Dokumentacja Flatpak: Building, Sandbox Permissions, Portals, Publishing | materiał | 6–8 h | 0 zł | https://docs.flatpak.org/en/latest/ | `S15-E1-D` | `S15-E2-D` | `15-linux/e2-pakiety-i-repozytoria/` |
+| `S15-E2-M8` | LEA-977 | Przerobić: Flathub dla autorów: Requirements, MetaInfo Guidelines, Submission, Verification, zasady… | materiał | 3–4 h | 0 zł | https://docs.flathub.org/docs/for-app-authors/requirements | `S15-E1-D` | `S15-E2-D` | `15-linux/e2-pakiety-i-repozytoria/` |
+| `S15-E2-M9` | LEA-978 | Przerobić: Snap documentation | materiał, opcjonalne | 2–3 h | 0 zł | https://snapcraft.io/docs | `S15-E1-D` | — | `15-linux/e2-pakiety-i-repozytoria/` |
+| `S15-E2-M10` | LEA-979 | Przerobić: Tauri: Debian, RPM, AppImage, Flathub, Snapcraft, AUR, Linux Code Signing | materiał | 2–3 h | 0 zł | https://v2.tauri.app/distribute/ | `S15-E1-D` | `S15-E2-D` | `15-linux/e2-pakiety-i-repozytoria/` |
+| `S15-E2-M11` | LEA-980 | Przerobić: `cargo-deb`, `cargo-generate-rpm` (pakiety dla aplikacji bez Tauri) | materiał, opcjonalne | 1–2 h | 0 zł | https://docs.rs/cargo-deb, https://github.com/cat-in-136/cargo-generate-rpm | `S15-E1-D` | — | `15-linux/e2-pakiety-i-repozytoria/` |
+| `S15-E2-M12` | LEA-981 | Przerobić: Tauri: AppImage, sekcja „AppImages for ARM-based devices” i runnery GitHub `ubuntu-24.04-arm`… | materiał | 1–2 h | 0 zł | https://v2.tauri.app/distribute/appimage/, https://docs.github.com/en/actions/reference/runners/github-hosted-runners | `S15-E1-D` | `S15-E2-D` | `15-linux/e2-pakiety-i-repozytoria/` |
+| `S15-E2-M13` | LEA-982 | Przerobić: Ubuntu: ograniczenie nieuprzywilejowanych przestrzeni nazw użytkownika przez AppArmor i profile… | materiał | 1–2 h | 0 zł | https://ubuntu.com/blog/ubuntu-23-10-restricted-unprivileged-user-namespaces, https://documentation.ubuntu.com/server/how-to/security/apparmor/ | `S15-E1-D` | `S15-E2-D` | `15-linux/e2-pakiety-i-repozytoria/` |
+| `S15-E2-M14` | LEA-984 | Przerobić: Fedora Silverblue: dokumentacja (system niezmienny, `rpm-ostree`, Flatpak i Toolbx) | materiał | 1–2 h | 0 zł | https://docs.fedoraproject.org/en-US/fedora-silverblue/ | `S15-E1-D` | `S15-E2-D` | `15-linux/e2-pakiety-i-repozytoria/` |
+| `S15-E2-D` | LEA-991 | Dowód etapu 2: pakiety i repozytoria | dowód | — | — | — | `S15-E2-M1`, `S15-E2-M3`, `S15-E2-M4`, `S15-E2-M6`, `S15-E2-M7`, `S15-E2-M8`, `S15-E2-M10`, `S15-E2-M12`, `S15-E2-M13`, `S15-E2-M14` | `S15-E3-M1`, `S15-E3-M2`, `S15-E3-P1`, `S15-E3-P2`, `S15-E3-P3` | `15-linux/e2-pakiety-i-repozytoria/` |
 
 **`S15-E2-D` · Dowód etapu 2: pakiety i repozytoria**
 
@@ -195,14 +195,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód poziomu E:** Samodzielnie, bez agenta, w 1 dzień diagnozujesz i naprawiasz błąd zgłoszony przez użytkownika jednej dystrybucji (np. brakująca biblioteka, zbyt nowa glibc, problem z Wayland lub portalem), wydajesz poprawione pakiety we wszystkich kanałach i umiesz wyjaśnić przyczynę osobie nietechnicznej.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S15-E3-M1` | Przerobić: Komunikaty bezpieczeństwa WebKitGTK i informacje o wydaniach dystrybucji (Debian, Ubuntu, Fedora) | materiał | ok. 30 min tygodniowo | 0 zł | https://webkitgtk.org/security.html | `S15-E2-D` | `S15-E3-D` | `15-linux/e3-ekspert/` |
-| `S15-E3-M2` | Przerobić: Open Build Service: budowanie pakietów dla wielu dystrybucji | materiał | 4–6 h | 0 zł | https://openbuildservice.org/help/manuals/obs-user-guide/ | `S15-E2-D` | `S15-E3-D` | `15-linux/e3-ekspert/` |
-| `S15-E3-P1` | Praktyka: recenzja kodu AI | praktyka | — | — | — | `S15-E2-D` | `S15-E3-D` | `15-linux/e3-ekspert/` |
-| `S15-E3-P2` | Praktyka: macierz zgodności | praktyka | — | — | — | `S15-E2-D` | `S15-E3-D` | `15-linux/e3-ekspert/` |
-| `S15-E3-P3` | Praktyka: rotacja klucza repozytorium | praktyka | — | — | — | `S15-E2-D` | `S15-E3-D` | `15-linux/e3-ekspert/` |
-| `S15-E3-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S15-E3-M1`, `S15-E3-M2`, `S15-E3-P1`, `S15-E3-P2`, `S15-E3-P3` | — | `15-linux/e3-ekspert/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S15-E3-M1` | LEA-1006 | Przerobić: Komunikaty bezpieczeństwa WebKitGTK i informacje o wydaniach dystrybucji (Debian, Ubuntu, Fedora) | materiał | ok. 30 min tygodniowo | 0 zł | https://webkitgtk.org/security.html | `S15-E2-D` | `S15-E3-D` | `15-linux/e3-ekspert/` |
+| `S15-E3-M2` | LEA-1008 | Przerobić: Open Build Service: budowanie pakietów dla wielu dystrybucji | materiał | 4–6 h | 0 zł | https://openbuildservice.org/help/manuals/obs-user-guide/ | `S15-E2-D` | `S15-E3-D` | `15-linux/e3-ekspert/` |
+| `S15-E3-P1` | LEA-1010 | Praktyka: recenzja kodu AI | praktyka | — | — | — | `S15-E2-D` | `S15-E3-D` | `15-linux/e3-ekspert/` |
+| `S15-E3-P2` | LEA-1012 | Praktyka: macierz zgodności | praktyka | — | — | — | `S15-E2-D` | `S15-E3-D` | `15-linux/e3-ekspert/` |
+| `S15-E3-P3` | LEA-1013 | Praktyka: rotacja klucza repozytorium | praktyka | — | — | — | `S15-E2-D` | `S15-E3-D` | `15-linux/e3-ekspert/` |
+| `S15-E3-D` | LEA-1018 | Dowód poziomu E: ekspert | dowód | — | — | — | `S15-E3-M1`, `S15-E3-M2`, `S15-E3-P1`, `S15-E3-P2`, `S15-E3-P3` | — | `15-linux/e3-ekspert/` |
 
 **`S15-E3-P1` · Praktyka: recenzja kodu AI**
 

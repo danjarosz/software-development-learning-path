@@ -1,6 +1,6 @@
 # 11. Weryfikacja pracy AI i budowa procesu: plan wdrożenia w Linear
 
-Team **LEA** (https://linear.app/daankh/team/LEA/overview). Plan do przeglądu przed wdrożeniem: nic nie zostało jeszcze utworzone w Linear. Klucze zadań (np. `S11-E1-M1`) są robocze; po wdrożeniu dostaną identyfikatory `LEA-…`.
+Team **LEA** (https://linear.app/daankh/team/LEA/overview). Plan jest wdrożony w Linear. Klucze zadań (np. `S11-E1-M1`) są robocze, a identyfikator każdego zadania w Linear (`LEA-…`) jest w kolumnie „Linear” tabel zadań i w pliku `mapowanie-kluczy.csv`.
 
 **W skrócie:** 6 kamieni milowych, 40 zadań (1 start, 29 materiałów, 6 dowodów, 4 praktyki). Plik główny z kolejnością projektów: `00-kolejnosc-i-zaleznosci.md`.
 
@@ -55,7 +55,7 @@ Jeden kamień milowy na etap ścieżki. Kamień milowy jest zamknięty, gdy zamk
 
 ## 3. Punkt startu
 
-Zadanie **`S11-START` · Start: 11. Weryfikacja pracy AI i budowa procesu** to jedyne wejście do projektu: wszystkie zadania pierwszego etapu są przez nie blokowane.
+Zadanie **`S11-START` · Start: 11. Weryfikacja pracy AI i budowa procesu** (LEA-464 w Linear) to jedyne wejście do projektu: wszystkie zadania pierwszego etapu są przez nie blokowane.
 
 - **Blokowane przez:** `S01-E1-D`, `S02-E1-D`, `S06-E1-D`, `S07-E1-D`, `S08-E1-D`, `S10-E1-D`
 - **Odblokowuje:** `S11-E1-M1`, `S11-E1-M2`, `S11-E1-M3`, `S11-E1-M4`, `S11-E1-M5`
@@ -124,14 +124,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Pierwsza wersja pluginu vicrafter: ustawienia uprawnień dla repozytorium klienta (bez poświadczeń produkcyjnych, sieć tylko do listy domen), hook blokujący zapis w katalogu migracji i hook uruchamiający testy przed zakończeniem pracy, jeden skill i jeden subagent recenzujący; wszystko w repozytorium z opisem, dlaczego dana reguła istnieje.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S11-E1-M1` | Przerobić: Dokumentacja: Permissions, Settings, Sandboxing, Security | materiał | 6–8 h | 0 zł | https://code.claude.com/docs/en/permissions, https://code.claude.com/docs/en/settings, https://code.claude.com/docs/en/sandboxing, https://code.claude.com/docs/en/security | `S11-START` | `S11-E1-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e1-konfiguracja-i-rozszerzanie-claude-code/` |
-| `S11-E1-M2` | Przerobić: Dokumentacja: Skills, Subagents, Hooks (przewodnik i referencja), Plugins | materiał | 10–12 h | 0 zł | https://code.claude.com/docs/en/skills, https://code.claude.com/docs/en/sub-agents, https://code.claude.com/docs/en/hooks-guide, https://code.claude.com/docs/en/hooks, https://code.claude.com/docs/en/plugins/overview | `S11-START` | `S11-E1-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e1-konfiguracja-i-rozszerzanie-claude-code/` |
-| `S11-E1-M3` | Przerobić: Dokumentacja: tryb nieinteraktywny, GitHub Actions, monitorowanie (OpenTelemetry) | materiał | 4–6 h | 0 zł | https://code.claude.com/docs/en/headless, https://code.claude.com/docs/en/github-actions, https://code.claude.com/docs/en/monitoring-usage | `S11-START` | `S11-E1-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e1-konfiguracja-i-rozszerzanie-claude-code/` |
-| `S11-E1-M4` | Przerobić: Kursy Anthropic Academy: „Introduction to agent skills”, „Introduction to subagents”… | materiał | 8–10 h | 0 zł | https://anthropic.skilljar.com | `S11-START` | `S11-E1-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e1-konfiguracja-i-rozszerzanie-claude-code/` |
-| `S11-E1-M5` | Przerobić: Model Context Protocol: architektura, budowa serwera, specyfikacja | materiał | 6–8 h | 0 zł | https://modelcontextprotocol.io | `S11-START` | `S11-E1-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e1-konfiguracja-i-rozszerzanie-claude-code/` |
-| `S11-E1-D` | Dowód etapu 1: konfiguracja i rozszerzanie Claude Code | dowód | — | — | — | `S11-E1-M1`, `S11-E1-M2`, `S11-E1-M3`, `S11-E1-M4`, `S11-E1-M5` | `S11-E2-M1`, `S11-E2-M2`, `S11-E2-M3` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e1-konfiguracja-i-rozszerzanie-claude-code/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S11-E1-M1` | LEA-498 | Przerobić: Dokumentacja: Permissions, Settings, Sandboxing, Security | materiał | 6–8 h | 0 zł | https://code.claude.com/docs/en/permissions, https://code.claude.com/docs/en/settings, https://code.claude.com/docs/en/sandboxing, https://code.claude.com/docs/en/security | `S11-START` | `S11-E1-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e1-konfiguracja-i-rozszerzanie-claude-code/` |
+| `S11-E1-M2` | LEA-500 | Przerobić: Dokumentacja: Skills, Subagents, Hooks (przewodnik i referencja), Plugins | materiał | 10–12 h | 0 zł | https://code.claude.com/docs/en/skills, https://code.claude.com/docs/en/sub-agents, https://code.claude.com/docs/en/hooks-guide, https://code.claude.com/docs/en/hooks, https://code.claude.com/docs/en/plugins/overview | `S11-START` | `S11-E1-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e1-konfiguracja-i-rozszerzanie-claude-code/` |
+| `S11-E1-M3` | LEA-501 | Przerobić: Dokumentacja: tryb nieinteraktywny, GitHub Actions, monitorowanie (OpenTelemetry) | materiał | 4–6 h | 0 zł | https://code.claude.com/docs/en/headless, https://code.claude.com/docs/en/github-actions, https://code.claude.com/docs/en/monitoring-usage | `S11-START` | `S11-E1-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e1-konfiguracja-i-rozszerzanie-claude-code/` |
+| `S11-E1-M4` | LEA-503 | Przerobić: Kursy Anthropic Academy: „Introduction to agent skills”, „Introduction to subagents”… | materiał | 8–10 h | 0 zł | https://anthropic.skilljar.com | `S11-START` | `S11-E1-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e1-konfiguracja-i-rozszerzanie-claude-code/` |
+| `S11-E1-M5` | LEA-504 | Przerobić: Model Context Protocol: architektura, budowa serwera, specyfikacja | materiał | 6–8 h | 0 zł | https://modelcontextprotocol.io | `S11-START` | `S11-E1-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e1-konfiguracja-i-rozszerzanie-claude-code/` |
+| `S11-E1-D` | LEA-544 | Dowód etapu 1: konfiguracja i rozszerzanie Claude Code | dowód | — | — | — | `S11-E1-M1`, `S11-E1-M2`, `S11-E1-M3`, `S11-E1-M4`, `S11-E1-M5` | `S11-E2-M1`, `S11-E2-M2`, `S11-E2-M3` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e1-konfiguracja-i-rozszerzanie-claude-code/` |
 
 **`S11-E1-D` · Dowód etapu 1: konfiguracja i rozszerzanie Claude Code**
 
@@ -153,12 +153,12 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Lista kontrolna recenzji kodu z AI (z odesłaniami do sekcji 3, 6 i 10) i 20 pull requestów agentów zrecenzowanych według niej; dla każdego zapis znalezionych błędów, czasu recenzji i tego, które błędy wychwyciły narzędzia, a które tylko człowiek.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S11-E2-M1` | Przerobić: Google Engineering Practices: „How to do a code review” i „The CL author’s guide” | materiał | 3–4 h | 0 zł | https://google.github.io/eng-practices/review/ | `S11-E1-D` | `S11-E2-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e2-recenzja-kodu/` |
-| `S11-E2-M2` | Przerobić: Simon Willison’s Weblog, tag „ai-assisted-programming” | materiał | 8–10 h (wybór wpisów) | 0 zł | https://simonwillison.net/tags/ai-assisted-programming/ | `S11-E1-D` | `S11-E2-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e2-recenzja-kodu/` |
-| `S11-E2-M3` | Przerobić: Dokumentacja Claude Code: „Add an adversarial review step”, `/code-review`, `/security-review` | materiał | 1–2 h | 0 zł | https://code.claude.com/docs/en/best-practices | `S11-E1-D` | `S11-E2-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e2-recenzja-kodu/` |
-| `S11-E2-D` | Dowód etapu 2: recenzja kodu | dowód | — | — | — | `S11-E2-M1`, `S11-E2-M2`, `S11-E2-M3` | `S10-E8-M1`, `S10-E8-M2`, `S10-E8-M3`, `S10-E8-P1`, `S10-E8-P2`, `S10-E8-P3`, `S10-E8-P4`, `S11-E3-M1`, `S11-E3-M2`, `S11-E3-M3`, `S11-E3-M4`, `S11-E3-M5`, `S11-E3-M6`, `S11-E3-M7`, `S11-E3-M8` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e2-recenzja-kodu/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S11-E2-M1` | LEA-554 | Przerobić: Google Engineering Practices: „How to do a code review” i „The CL author’s guide” | materiał | 3–4 h | 0 zł | https://google.github.io/eng-practices/review/ | `S11-E1-D` | `S11-E2-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e2-recenzja-kodu/` |
+| `S11-E2-M2` | LEA-555 | Przerobić: Simon Willison’s Weblog, tag „ai-assisted-programming” | materiał | 8–10 h (wybór wpisów) | 0 zł | https://simonwillison.net/tags/ai-assisted-programming/ | `S11-E1-D` | `S11-E2-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e2-recenzja-kodu/` |
+| `S11-E2-M3` | LEA-556 | Przerobić: Dokumentacja Claude Code: „Add an adversarial review step”, `/code-review`, `/security-review` | materiał | 1–2 h | 0 zł | https://code.claude.com/docs/en/best-practices | `S11-E1-D` | `S11-E2-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e2-recenzja-kodu/` |
+| `S11-E2-D` | LEA-567 | Dowód etapu 2: recenzja kodu | dowód | — | — | — | `S11-E2-M1`, `S11-E2-M2`, `S11-E2-M3` | `S10-E8-M1`, `S10-E8-M2`, `S10-E8-M3`, `S10-E8-P1`, `S10-E8-P2`, `S10-E8-P3`, `S10-E8-P4`, `S11-E3-M1`, `S11-E3-M2`, `S11-E3-M3`, `S11-E3-M4`, `S11-E3-M5`, `S11-E3-M6`, `S11-E3-M7`, `S11-E3-M8` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e2-recenzja-kodu/` |
 
 **`S11-E2-D` · Dowód etapu 2: recenzja kodu**
 
@@ -182,17 +182,17 @@ Kurs Maven jest opcjonalny: darmowe artykuły tych samych autorów wystarczą do
 
 **Dowód:** Zestaw ewaluacji vicrafter w Inspect (albo promptfoo): 30 zadań z repozytoriów testowych (naprawa błędu, test charakteryzujący, poprawka bezpieczeństwa) z automatycznym oceniaczem, uruchamiany w CI przy każdej zmianie pluginu; raport porównujący dwie wersje skilla lub dwa modele z liczbą powtórzeń i rozrzutem wyników; wyliczenie kosztu API jednego pełnego przebiegu (30 zadań × N powtórzeń) i miesięcznego budżetu przy uruchamianiu w CI.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S11-E3-M1` | Przerobić: „Demystifying evals for AI agents” (styczeń 2026) | materiał | 1–2 h | 0 zł | https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents | `S11-E2-D` | `S11-E3-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e3-ewaluacje/` |
-| `S11-E3-M2` | Przerobić: Kurs „Prompt evaluations” | materiał, płatny | 6–8 h | 0 zł (zużycie API płatne) | https://github.com/anthropics/courses | `S11-E2-D` | `S11-E3-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e3-ewaluacje/` |
-| `S11-E3-M3` | Przerobić: „Your AI Product Needs Evals”, „Using LLM-as-a-Judge”… | materiał | 8–10 h | 0 zł | https://hamel.dev/blog/posts/evals/, https://hamel.dev/blog/posts/evals-faq/ | `S11-E2-D` | `S11-E3-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e3-ewaluacje/` |
-| `S11-E3-M4` | Przerobić: AI Evals For Engineers & PMs | materiał, płatny, opcjonalne | 30–40 h | płatny | https://maven.com/parlance-labs/evals | `S11-E2-D` | — | `11-weryfikacja-pracy-ai-i-budowa-procesu/e3-ewaluacje/` |
-| `S11-E3-M5` | Przerobić: AI Engineering: Building Applications with Foundation Models (O’Reilly 2025), rozdziały o ewaluacji | materiał, płatny | 10–12 h (rozdziały 3–4) | płatna | https://huyenchip.com/books/ | `S11-E2-D` | `S11-E3-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e3-ewaluacje/` |
-| `S11-E3-M6` | Przerobić: Inspect: framework do ewaluacji LLM i agentów… | materiał, płatny | 6–8 h | 0 zł (zużycie API płatne) | https://inspect.aisi.org.uk/ | `S11-E2-D` | `S11-E3-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e3-ewaluacje/` |
-| `S11-E3-M7` | Przerobić: promptfoo: ewaluacje promptów i agentów w konfiguracji YAML, integracja z CI/CD | materiał, płatny, opcjonalne | 3–4 h | 0 zł (zużycie API płatne) | https://www.promptfoo.dev/docs/intro/, https://www.promptfoo.dev/docs/integrations/ci-cd/ | `S11-E2-D` | — | `11-weryfikacja-pracy-ai-i-budowa-procesu/e3-ewaluacje/` |
-| `S11-E3-M8` | Przerobić: Cennik API i Message Batches API (koszt przebiegów ewaluacji, przetwarzanie wsadowe) | materiał | 1 h | 0 zł | https://www.anthropic.com/pricing, https://docs.claude.com/en/docs/build-with-claude/batch-processing | `S11-E2-D` | `S11-E3-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e3-ewaluacje/` |
-| `S11-E3-D` | Dowód etapu 3: ewaluacje | dowód | — | — | — | `S11-E3-M1`, `S11-E3-M2`, `S11-E3-M3`, `S11-E3-M5`, `S11-E3-M6`, `S11-E3-M8` | `S11-E4-M1`, `S11-E4-M2`, `S11-E4-M3`, `S11-E4-M4`, `S21-START` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e3-ewaluacje/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S11-E3-M1` | LEA-608 | Przerobić: „Demystifying evals for AI agents” (styczeń 2026) | materiał | 1–2 h | 0 zł | https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents | `S11-E2-D` | `S11-E3-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e3-ewaluacje/` |
+| `S11-E3-M2` | LEA-610 | Przerobić: Kurs „Prompt evaluations” | materiał, płatny | 6–8 h | 0 zł (zużycie API płatne) | https://github.com/anthropics/courses | `S11-E2-D` | `S11-E3-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e3-ewaluacje/` |
+| `S11-E3-M3` | LEA-613 | Przerobić: „Your AI Product Needs Evals”, „Using LLM-as-a-Judge”… | materiał | 8–10 h | 0 zł | https://hamel.dev/blog/posts/evals/, https://hamel.dev/blog/posts/evals-faq/ | `S11-E2-D` | `S11-E3-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e3-ewaluacje/` |
+| `S11-E3-M4` | LEA-615 | Przerobić: AI Evals For Engineers & PMs | materiał, płatny, opcjonalne | 30–40 h | płatny | https://maven.com/parlance-labs/evals | `S11-E2-D` | — | `11-weryfikacja-pracy-ai-i-budowa-procesu/e3-ewaluacje/` |
+| `S11-E3-M5` | LEA-617 | Przerobić: AI Engineering: Building Applications with Foundation Models (O’Reilly 2025), rozdziały o ewaluacji | materiał, płatny | 10–12 h (rozdziały 3–4) | płatna | https://huyenchip.com/books/ | `S11-E2-D` | `S11-E3-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e3-ewaluacje/` |
+| `S11-E3-M6` | LEA-618 | Przerobić: Inspect: framework do ewaluacji LLM i agentów… | materiał, płatny | 6–8 h | 0 zł (zużycie API płatne) | https://inspect.aisi.org.uk/ | `S11-E2-D` | `S11-E3-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e3-ewaluacje/` |
+| `S11-E3-M7` | LEA-619 | Przerobić: promptfoo: ewaluacje promptów i agentów w konfiguracji YAML, integracja z CI/CD | materiał, płatny, opcjonalne | 3–4 h | 0 zł (zużycie API płatne) | https://www.promptfoo.dev/docs/intro/, https://www.promptfoo.dev/docs/integrations/ci-cd/ | `S11-E2-D` | — | `11-weryfikacja-pracy-ai-i-budowa-procesu/e3-ewaluacje/` |
+| `S11-E3-M8` | LEA-623 | Przerobić: Cennik API i Message Batches API (koszt przebiegów ewaluacji, przetwarzanie wsadowe) | materiał | 1 h | 0 zł | https://www.anthropic.com/pricing, https://docs.claude.com/en/docs/build-with-claude/batch-processing | `S11-E2-D` | `S11-E3-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e3-ewaluacje/` |
+| `S11-E3-D` | LEA-641 | Dowód etapu 3: ewaluacje | dowód | — | — | — | `S11-E3-M1`, `S11-E3-M2`, `S11-E3-M3`, `S11-E3-M5`, `S11-E3-M6`, `S11-E3-M8` | `S11-E4-M1`, `S11-E4-M2`, `S11-E4-M3`, `S11-E4-M4`, `S21-START` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e3-ewaluacje/` |
 
 **`S11-E3-D` · Dowód etapu 3: ewaluacje**
 
@@ -214,13 +214,13 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Model zagrożeń STRIDE (zob. sekcja 10, etap 3) dla własnego stanowiska pracy z agentami i vicrafter; 10 przygotowanych przypadków prompt injection umieszczonych w repozytorium testowym (komentarze, README, zgłoszenia) dołączonych do ewaluacji z etapu 3, z wynikiem: które ataki zablokowały uprawnienia, sandbox lub hooki, a które wymagały poprawek.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S11-E4-M1` | Przerobić: OWASP Top 10 for LLM Applications 2025 | materiał | 4–5 h | 0 zł | https://genai.owasp.org/llm-top-10/ | `S11-E3-D`, `S10-E3-D` | `S11-E4-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e4-bezpieczenstwo-agentow-i-integracji-llm/` |
-| `S11-E4-M2` | Przerobić: OWASP Top 10 for Agentic Applications for 2026 (grudzień 2025) | materiał | 3–4 h | 0 zł | https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/ | `S11-E3-D`, `S10-E3-D` | `S11-E4-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e4-bezpieczenstwo-agentow-i-integracji-llm/` |
-| `S11-E4-M3` | Przerobić: MCP: Security Best Practices | materiał | 3–4 h | 0 zł | https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices | `S11-E3-D`, `S10-E3-D` | `S11-E4-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e4-bezpieczenstwo-agentow-i-integracji-llm/` |
-| `S11-E4-M4` | Przerobić: „The lethal trifecta for AI agents” i tag „prompt-injection” | materiał | 4–6 h | 0 zł | https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/, https://simonwillison.net/tags/prompt-injection/ | `S11-E3-D`, `S10-E3-D` | `S11-E4-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e4-bezpieczenstwo-agentow-i-integracji-llm/` |
-| `S11-E4-D` | Dowód etapu 4: bezpieczeństwo agentów i integracji LLM | dowód | — | — | — | `S11-E4-M1`, `S11-E4-M2`, `S11-E4-M3`, `S11-E4-M4` | `S11-E5-M1`, `S11-E5-M2`, `S11-E5-M3`, `S11-E5-M4`, `S11-E5-M5`, `S21-START` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e4-bezpieczenstwo-agentow-i-integracji-llm/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S11-E4-M1` | LEA-663 | Przerobić: OWASP Top 10 for LLM Applications 2025 | materiał | 4–5 h | 0 zł | https://genai.owasp.org/llm-top-10/ | `S11-E3-D`, `S10-E3-D` | `S11-E4-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e4-bezpieczenstwo-agentow-i-integracji-llm/` |
+| `S11-E4-M2` | LEA-665 | Przerobić: OWASP Top 10 for Agentic Applications for 2026 (grudzień 2025) | materiał | 3–4 h | 0 zł | https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/ | `S11-E3-D`, `S10-E3-D` | `S11-E4-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e4-bezpieczenstwo-agentow-i-integracji-llm/` |
+| `S11-E4-M3` | LEA-667 | Przerobić: MCP: Security Best Practices | materiał | 3–4 h | 0 zł | https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices | `S11-E3-D`, `S10-E3-D` | `S11-E4-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e4-bezpieczenstwo-agentow-i-integracji-llm/` |
+| `S11-E4-M4` | LEA-668 | Przerobić: „The lethal trifecta for AI agents” i tag „prompt-injection” | materiał | 4–6 h | 0 zł | https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/, https://simonwillison.net/tags/prompt-injection/ | `S11-E3-D`, `S10-E3-D` | `S11-E4-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e4-bezpieczenstwo-agentow-i-integracji-llm/` |
+| `S11-E4-D` | LEA-679 | Dowód etapu 4: bezpieczeństwo agentów i integracji LLM | dowód | — | — | — | `S11-E4-M1`, `S11-E4-M2`, `S11-E4-M3`, `S11-E4-M4` | `S11-E5-M1`, `S11-E5-M2`, `S11-E5-M3`, `S11-E5-M4`, `S11-E5-M5`, `S21-START` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e4-bezpieczenstwo-agentow-i-integracji-llm/` |
 
 **`S11-E4-D` · Dowód etapu 4: bezpieczeństwo agentów i integracji LLM**
 
@@ -242,14 +242,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Jeden przepływ vicrafter (np. triage zgłoszeń klienta albo przygotowanie raportu z audytu) przebudowany według tych zasad, z pomiarem przed i po na zestawie ewaluacji z etapu 3 (jakość, czas, koszt tokenów).
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S11-E5-M1` | Przerobić: „Building effective agents” (grudzień 2024) | materiał | 1–2 h | 0 zł | https://www.anthropic.com/engineering/building-effective-agents | `S11-E4-D` | `S11-E5-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e5-architektura-agentow-i-projektowanie-narzedzi/` |
-| `S11-E5-M2` | Przerobić: „Writing effective tools for agents — with agents” i… | materiał | 2–3 h | 0 zł | https://www.anthropic.com/engineering/writing-tools-for-agents, https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents | `S11-E4-D` | `S11-E5-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e5-architektura-agentow-i-projektowanie-narzedzi/` |
-| `S11-E5-M3` | Przerobić: Claude Agent SDK | materiał | 4–6 h | 0 zł | https://code.claude.com/docs/en/agent-sdk/overview | `S11-E4-D` | `S11-E5-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e5-architektura-agentow-i-projektowanie-narzedzi/` |
-| `S11-E5-M4` | Przerobić: Kurs „Tool use” | materiał, płatny | 4–6 h | 0 zł (zużycie API płatne) | https://github.com/anthropics/courses | `S11-E4-D` | `S11-E5-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e5-architektura-agentow-i-projektowanie-narzedzi/` |
-| `S11-E5-M5` | Przerobić: AI Engineering, rozdziały o agentach, RAG i architekturze | materiał, płatny | 6–8 h | płatna (ta sama co w etapie 3) | https://huyenchip.com/books/ | `S11-E4-D` | `S11-E5-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e5-architektura-agentow-i-projektowanie-narzedzi/` |
-| `S11-E5-D` | Dowód etapu 5: architektura agentów i projektowanie narzędzi | dowód | — | — | — | `S11-E5-M1`, `S11-E5-M2`, `S11-E5-M3`, `S11-E5-M4`, `S11-E5-M5` | `S11-E6-M1`, `S11-E6-M2`, `S11-E6-M3`, `S11-E6-M4`, `S11-E6-P1`, `S11-E6-P2`, `S11-E6-P3`, `S11-E6-P4` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e5-architektura-agentow-i-projektowanie-narzedzi/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S11-E5-M1` | LEA-706 | Przerobić: „Building effective agents” (grudzień 2024) | materiał | 1–2 h | 0 zł | https://www.anthropic.com/engineering/building-effective-agents | `S11-E4-D` | `S11-E5-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e5-architektura-agentow-i-projektowanie-narzedzi/` |
+| `S11-E5-M2` | LEA-707 | Przerobić: „Writing effective tools for agents — with agents” i… | materiał | 2–3 h | 0 zł | https://www.anthropic.com/engineering/writing-tools-for-agents, https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents | `S11-E4-D` | `S11-E5-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e5-architektura-agentow-i-projektowanie-narzedzi/` |
+| `S11-E5-M3` | LEA-708 | Przerobić: Claude Agent SDK | materiał | 4–6 h | 0 zł | https://code.claude.com/docs/en/agent-sdk/overview | `S11-E4-D` | `S11-E5-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e5-architektura-agentow-i-projektowanie-narzedzi/` |
+| `S11-E5-M4` | LEA-709 | Przerobić: Kurs „Tool use” | materiał, płatny | 4–6 h | 0 zł (zużycie API płatne) | https://github.com/anthropics/courses | `S11-E4-D` | `S11-E5-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e5-architektura-agentow-i-projektowanie-narzedzi/` |
+| `S11-E5-M5` | LEA-710 | Przerobić: AI Engineering, rozdziały o agentach, RAG i architekturze | materiał, płatny | 6–8 h | płatna (ta sama co w etapie 3) | https://huyenchip.com/books/ | `S11-E4-D` | `S11-E5-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e5-architektura-agentow-i-projektowanie-narzedzi/` |
+| `S11-E5-D` | LEA-739 | Dowód etapu 5: architektura agentów i projektowanie narzędzi | dowód | — | — | — | `S11-E5-M1`, `S11-E5-M2`, `S11-E5-M3`, `S11-E5-M4`, `S11-E5-M5` | `S11-E6-M1`, `S11-E6-M2`, `S11-E6-M3`, `S11-E6-M4`, `S11-E6-P1`, `S11-E6-P2`, `S11-E6-P3`, `S11-E6-P4` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e5-architektura-agentow-i-projektowanie-narzedzi/` |
 
 **`S11-E5-D` · Dowód etapu 5: architektura agentów i projektowanie narzędzi**
 
@@ -269,17 +269,17 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód poziomu E:** Dla zmiany w nieznanym repozytorium potrafisz w 1 dzień ustalić, czy praca agenta jest poprawna i bezpieczna, wskazać błąd, którego nie znalazł recenzent AI, i wykazać na danych z ewaluacji, czy nowa wersja modelu lub skilla poprawiła, czy pogorszyła wyniki vicrafter.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S11-E6-M1` | Przerobić: Blog inżynieryjny Anthropic i informacje o zmianach Claude Code | materiał | ok. 1 h tygodniowo | 0 zł | https://www.anthropic.com/engineering, https://code.claude.com/docs | `S11-E5-D`, `S20-E0-D` | `S11-E6-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e6-ekspert/` |
-| `S11-E6-M2` | Przerobić: Simon Willison’s Weblog | materiał | ok. 0,5 h tygodniowo | 0 zł | https://simonwillison.net | `S11-E5-D`, `S20-E0-D` | `S11-E6-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e6-ekspert/` |
-| `S11-E6-M3` | Przerobić: Specyfikacja MCP (nowe wersje i zmiany w autoryzacji) | materiał, opcjonalne | wg potrzeb | 0 zł | https://modelcontextprotocol.io | `S11-E5-D`, `S20-E0-D` | — | `11-weryfikacja-pracy-ai-i-budowa-procesu/e6-ekspert/` |
-| `S11-E6-M4` | Przerobić: LiteLLM: jedna bramka (proxy) do modeli różnych dostawców i modeli lokalnych (Ollama), limity… | materiał | 3–4 h | 0 zł | https://docs.litellm.ai/docs/, https://docs.litellm.ai/docs/simple_proxy | `S11-E5-D`, `S20-E0-D` | `S11-E6-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e6-ekspert/` |
-| `S11-E6-P1` | Praktyka: recenzja krzyżowa | praktyka | — | — | — | `S11-E5-D`, `S20-E0-D` | `S11-E6-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e6-ekspert/` |
-| `S11-E6-P2` | Praktyka: pomiar procesu | praktyka | — | — | — | `S11-E5-D`, `S20-E0-D` | `S11-E6-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e6-ekspert/` |
-| `S11-E6-P3` | Praktyka: aktualizacja ewaluacji | praktyka | — | — | — | `S11-E5-D`, `S20-E0-D` | `S11-E6-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e6-ekspert/` |
-| `S11-E6-P4` | Praktyka: praca bez agenta | praktyka | — | — | — | `S11-E5-D`, `S20-E0-D` | `S11-E6-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e6-ekspert/` |
-| `S11-E6-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S11-E6-M1`, `S11-E6-M2`, `S11-E6-M4`, `S11-E6-P1`, `S11-E6-P2`, `S11-E6-P3`, `S11-E6-P4` | — | `11-weryfikacja-pracy-ai-i-budowa-procesu/e6-ekspert/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S11-E6-M1` | LEA-769 | Przerobić: Blog inżynieryjny Anthropic i informacje o zmianach Claude Code | materiał | ok. 1 h tygodniowo | 0 zł | https://www.anthropic.com/engineering, https://code.claude.com/docs | `S11-E5-D`, `S20-E0-D` | `S11-E6-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e6-ekspert/` |
+| `S11-E6-M2` | LEA-770 | Przerobić: Simon Willison’s Weblog | materiał | ok. 0,5 h tygodniowo | 0 zł | https://simonwillison.net | `S11-E5-D`, `S20-E0-D` | `S11-E6-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e6-ekspert/` |
+| `S11-E6-M3` | LEA-772 | Przerobić: Specyfikacja MCP (nowe wersje i zmiany w autoryzacji) | materiał, opcjonalne | wg potrzeb | 0 zł | https://modelcontextprotocol.io | `S11-E5-D`, `S20-E0-D` | — | `11-weryfikacja-pracy-ai-i-budowa-procesu/e6-ekspert/` |
+| `S11-E6-M4` | LEA-774 | Przerobić: LiteLLM: jedna bramka (proxy) do modeli różnych dostawców i modeli lokalnych (Ollama), limity… | materiał | 3–4 h | 0 zł | https://docs.litellm.ai/docs/, https://docs.litellm.ai/docs/simple_proxy | `S11-E5-D`, `S20-E0-D` | `S11-E6-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e6-ekspert/` |
+| `S11-E6-P1` | LEA-776 | Praktyka: recenzja krzyżowa | praktyka | — | — | — | `S11-E5-D`, `S20-E0-D` | `S11-E6-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e6-ekspert/` |
+| `S11-E6-P2` | LEA-777 | Praktyka: pomiar procesu | praktyka | — | — | — | `S11-E5-D`, `S20-E0-D` | `S11-E6-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e6-ekspert/` |
+| `S11-E6-P3` | LEA-778 | Praktyka: aktualizacja ewaluacji | praktyka | — | — | — | `S11-E5-D`, `S20-E0-D` | `S11-E6-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e6-ekspert/` |
+| `S11-E6-P4` | LEA-779 | Praktyka: praca bez agenta | praktyka | — | — | — | `S11-E5-D`, `S20-E0-D` | `S11-E6-D` | `11-weryfikacja-pracy-ai-i-budowa-procesu/e6-ekspert/` |
+| `S11-E6-D` | LEA-786 | Dowód poziomu E: ekspert | dowód | — | — | — | `S11-E6-M1`, `S11-E6-M2`, `S11-E6-M4`, `S11-E6-P1`, `S11-E6-P2`, `S11-E6-P3`, `S11-E6-P4` | — | `11-weryfikacja-pracy-ai-i-budowa-procesu/e6-ekspert/` |
 
 **`S11-E6-P1` · Praktyka: recenzja krzyżowa**
 

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A learning plan (software-engineering skills, written in Polish) prepared for deployment to Linear, team **LEA**. Not an application: the "code" is one deploy script plus the plan tools in `linear/tools/`, the data is one JSON file, and the rest is generated Markdown for human review. Nothing has been created in Linear yet. Everything related to creating the tasks in Linear lives in `linear/`.
+A learning plan (software-engineering skills, written in Polish) deployed to Linear, team **LEA**. Not an application: the "code" is one deploy script plus the plan tools in `linear/tools/`, the data is one JSON file, and the rest is generated Markdown for human review. The whole plan is deployed (22 projects, issues `LEA-1` to `LEA-1121`); `linear/linear-deploy-state.json` holds the Linear IDs of every object and `linear/mapowanie-kluczy.csv` maps keys to `LEA-…`. Everything related to creating the tasks in Linear lives in `linear/`.
 
 - `linear/linear-plan.json` is the machine-readable plan that `linear/deploy_linear.py` consumes. The script's state file (`linear-deploy-state.json`) and key mapping (`mapowanie-kluczy.csv`) are written next to it, in `linear/`.
 - `linear/00-kolejnosc-i-zaleznosci.md` is the overview: how the plan maps to Linear, prerequisites, starting points, project order and the cross-project task relations.
@@ -55,13 +55,22 @@ Dependency rules, which edits must preserve:
 - Optional stages (embedded Linux/Zephyr and TinyML, both in section 22) block nothing; all their tasks carry `opcjonalne`.
 - Only `S01-START` and `S02-START` are `Todo`; everything else is `Backlog`.
 
+## Changing the plan after deployment
+
+The plan is live in Linear, so every change has two sides: the repository and Linear. Nothing syncs them automatically.
+
+- Keys must stay stable. `apply.py` refuses an edit that renumbers or removes a deployed issue or milestone (exit code 2, nothing written). Add new materials at the end of their stage, new stages at the end of a project or as a supplementary path. `--allow-renumber` exists only for a deliberate migration of Linear and the state file.
+- After an edit `apply.py` prints what to carry over to Linear: issues, milestones and projects whose text, labels, status or milestone changed, relations to add or remove, and new objects. Update changed objects in Linear by hand or through the Linear MCP tools (`save_issue` / `save_milestone` / `save_project` with the ID from the state file). `deploy_linear.py` creates only missing objects and relations; it never updates or deletes existing ones.
+- Never delete `linear/linear-deploy-state.json`; commit it together with `linear-plan.json` so the state matches the plan in every commit.
+- Project-level dependencies ("Blokowany przez") are deliberately not set in Linear: project order comes from the "NN." name prefix (projects view sorted by name), and the exact unlock conditions are the issue relations. The column in `00-…md` is informational.
+
 ## `linear/deploy_linear.py` behavior
 
 - Before any API call, and in `--dry-run`, it runs `check_plan()` (keys, blockers, labels, milestones, cycles) and stops on errors.
 - It deploys in this order: team states, then issue labels (`ISSUE_LABELS` defines their colors), project labels, projects and milestones, issues, `blocks` relations, and finally `mapowanie-kluczy.csv` (key to `LEA-…` identifier).
 - It can resume. The IDs of everything it creates are saved to `linear-deploy-state.json` after each object, and keys already in that file are skipped. Deleting the file or changing keys after a partial deploy leads to duplicates in Linear.
 - It retries with backoff on rate limits, 5xx responses and network errors.
-- It doesn't create project-level dependencies. The script tells the user to add them by hand.
+- It doesn't create project-level dependencies (deliberately not used in this plan).
 - Linear's Free plan caps a workspace at 250 issues, so this plan needs a paid plan.
 
 ## Writing conventions

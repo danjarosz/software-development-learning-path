@@ -1,6 +1,6 @@
 # 12. Rust jako wspólny fundament: plan wdrożenia w Linear
 
-Team **LEA** (https://linear.app/daankh/team/LEA/overview). Plan do przeglądu przed wdrożeniem: nic nie zostało jeszcze utworzone w Linear. Klucze zadań (np. `S12-E0-M1`) są robocze; po wdrożeniu dostaną identyfikatory `LEA-…`.
+Team **LEA** (https://linear.app/daankh/team/LEA/overview). Plan jest wdrożony w Linear. Klucze zadań (np. `S12-E0-M1`) są robocze, a identyfikator każdego zadania w Linear (`LEA-…`) jest w kolumnie „Linear” tabel zadań i w pliku `mapowanie-kluczy.csv`.
 
 **W skrócie:** 10 kamieni milowych, 68 zadań (1 start, 54 materiały, 10 dowodów, 3 praktyki). Plik główny z kolejnością projektów: `00-kolejnosc-i-zaleznosci.md`.
 
@@ -64,7 +64,7 @@ Jeden kamień milowy na etap ścieżki. Kamień milowy jest zamknięty, gdy zamk
 
 ## 3. Punkt startu
 
-Zadanie **`S12-START` · Start: 12. Rust jako wspólny fundament** to jedyne wejście do projektu: wszystkie zadania pierwszego etapu i ścieżek uzupełniających są przez nie blokowane.
+Zadanie **`S12-START` · Start: 12. Rust jako wspólny fundament** (LEA-397 w Linear) to jedyne wejście do projektu: wszystkie zadania pierwszego etapu i ścieżek uzupełniających są przez nie blokowane.
 
 - **Blokowane przez:** `S02-E1-D`, `S05-E1-D`, `S06-E1-D`, `S08-E1-D`, `S09-E2-D`
 - **Odblokowuje:** `S12-E0-M1`, `S12-E0-M2`, `S12-E0-M3`, `S12-E0-M4`, `S12-E0-M5`, `S12-U1-M1`, `S12-U1-M2`, `S12-U1-M3`, `S12-U1-M4`, `S12-U1-M5`, `S12-U1-M6`, `S12-U2-M1`, `S12-U2-M2`, `S12-U2-M3`, `S12-U2-M4`, `S12-U2-M5`
@@ -137,14 +137,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Narzędzie CLI w `clap` (np. walidator plików JSON lub CSV) w edycji 2024, z `cargo fmt`, `cargo clippy` i `cargo test` uruchamianymi w CI na Linuksie, macOS i Windows.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S12-E0-M1` | Przerobić: Strona „Learn” i instalacja przez `rustup` | materiał | 1–2 h | 0 zł | https://www.rust-lang.org/learn | `S12-START` | `S12-E0-D` | `12-rust-jako-wspolny-fundament/e0-narzedzia-i-pierwsze-programy/` |
-| `S12-E0-M2` | Przerobić: The Cargo Book: rozdziały „Getting Started” i „Cargo Guide” | materiał | 3–4 h | 0 zł | https://doc.rust-lang.org/cargo/ | `S12-START` | `S12-E0-D` | `12-rust-jako-wspolny-fundament/e0-narzedzia-i-pierwsze-programy/` |
-| `S12-E0-M3` | Przerobić: The Rust Edition Guide: Rust 2024 | materiał | 1–2 h | 0 zł | https://doc.rust-lang.org/edition-guide/rust-2024/index.html | `S12-START` | `S12-E0-D` | `12-rust-jako-wspolny-fundament/e0-narzedzia-i-pierwsze-programy/` |
-| `S12-E0-M4` | Przerobić: rust-analyzer | materiał | 1 h | 0 zł | https://rust-analyzer.github.io | `S12-START` | `S12-E0-D` | `12-rust-jako-wspolny-fundament/e0-narzedzia-i-pierwsze-programy/` |
-| `S12-E0-M5` | Przerobić: Command Line Applications in Rust | materiał | 4–5 h | 0 zł | https://rust-cli.github.io/book/ | `S12-START` | `S12-E0-D` | `12-rust-jako-wspolny-fundament/e0-narzedzia-i-pierwsze-programy/` |
-| `S12-E0-D` | Dowód etapu 0: narzędzia i pierwsze programy | dowód | — | — | — | `S12-E0-M1`, `S12-E0-M2`, `S12-E0-M3`, `S12-E0-M4`, `S12-E0-M5` | `S12-E1-M1`, `S12-E1-M2`, `S12-E1-M3`, `S12-E1-M4`, `S12-E1-M5`, `S12-E1-M6` | `12-rust-jako-wspolny-fundament/e0-narzedzia-i-pierwsze-programy/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S12-E0-M1` | LEA-413 | Przerobić: Strona „Learn” i instalacja przez `rustup` | materiał | 1–2 h | 0 zł | https://www.rust-lang.org/learn | `S12-START` | `S12-E0-D` | `12-rust-jako-wspolny-fundament/e0-narzedzia-i-pierwsze-programy/` |
+| `S12-E0-M2` | LEA-415 | Przerobić: The Cargo Book: rozdziały „Getting Started” i „Cargo Guide” | materiał | 3–4 h | 0 zł | https://doc.rust-lang.org/cargo/ | `S12-START` | `S12-E0-D` | `12-rust-jako-wspolny-fundament/e0-narzedzia-i-pierwsze-programy/` |
+| `S12-E0-M3` | LEA-416 | Przerobić: The Rust Edition Guide: Rust 2024 | materiał | 1–2 h | 0 zł | https://doc.rust-lang.org/edition-guide/rust-2024/index.html | `S12-START` | `S12-E0-D` | `12-rust-jako-wspolny-fundament/e0-narzedzia-i-pierwsze-programy/` |
+| `S12-E0-M4` | LEA-419 | Przerobić: rust-analyzer | materiał | 1 h | 0 zł | https://rust-analyzer.github.io | `S12-START` | `S12-E0-D` | `12-rust-jako-wspolny-fundament/e0-narzedzia-i-pierwsze-programy/` |
+| `S12-E0-M5` | LEA-421 | Przerobić: Command Line Applications in Rust | materiał | 4–5 h | 0 zł | https://rust-cli.github.io/book/ | `S12-START` | `S12-E0-D` | `12-rust-jako-wspolny-fundament/e0-narzedzia-i-pierwsze-programy/` |
+| `S12-E0-D` | LEA-474 | Dowód etapu 0: narzędzia i pierwsze programy | dowód | — | — | — | `S12-E0-M1`, `S12-E0-M2`, `S12-E0-M3`, `S12-E0-M4`, `S12-E0-M5` | `S12-E1-M1`, `S12-E1-M2`, `S12-E1-M3`, `S12-E1-M4`, `S12-E1-M5`, `S12-E1-M6` | `12-rust-jako-wspolny-fundament/e0-narzedzia-i-pierwsze-programy/` |
 
 **`S12-E0-D` · Dowód etapu 0: narzędzia i pierwsze programy**
 
@@ -164,15 +164,15 @@ Wystarczy jedno z dwóch: Rustlings z Rust by Example (obowiązkowe) albo 100 Ex
 
 **Dowód:** Parser i walidator małego formatu (np. pliku konfiguracji) z typami błędów w `thiserror`, bez `unwrap()` poza testami, z testami jednostkowymi i dokumentacją `cargo doc`.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S12-E1-M1` | Przerobić: The Rust Programming Language… | materiał | 30–40 h | 0 zł online / płatna (druk) | https://doc.rust-lang.org/book/ | `S12-E0-D` | `S12-E1-D` | `12-rust-jako-wspolny-fundament/e1-jezyk/` |
-| `S12-E1-M2` | Przerobić: Wersja interaktywna tej książki z quizami i wizualizacjami własności | materiał, opcjonalne | 30–40 h | 0 zł | https://rust-book.cs.brown.edu | `S12-E0-D` | — | `12-rust-jako-wspolny-fundament/e1-jezyk/` |
-| `S12-E1-M3` | Przerobić: Rustlings | materiał | 10–15 h | 0 zł | https://rustlings.rust-lang.org | `S12-E0-D` | `S12-E1-D` | `12-rust-jako-wspolny-fundament/e1-jezyk/` |
-| `S12-E1-M4` | Przerobić: Rust by Example | materiał | 8–10 h | 0 zł | https://doc.rust-lang.org/rust-by-example/ | `S12-E0-D` | `S12-E1-D` | `12-rust-jako-wspolny-fundament/e1-jezyk/` |
-| `S12-E1-M5` | Przerobić: 100 Exercises To Learn Rust | materiał, opcjonalne | 15–20 h | 0 zł | https://rust-exercises.com/100-exercises/ | `S12-E0-D` | — | `12-rust-jako-wspolny-fundament/e1-jezyk/` |
-| `S12-E1-M6` | Przerobić: Comprehensive Rust: Rust Fundamentals (4 dni) | materiał, opcjonalne | 20–25 h | 0 zł | https://google.github.io/comprehensive-rust/ | `S12-E0-D` | — | `12-rust-jako-wspolny-fundament/e1-jezyk/` |
-| `S12-E1-D` | Dowód etapu 1: język | dowód | — | — | — | `S12-E1-M1`, `S12-E1-M3`, `S12-E1-M4` | `S12-E2-M1`, `S12-E2-M2`, `S12-E2-M3`, `S12-E2-M4`, `S12-E2-M5` | `12-rust-jako-wspolny-fundament/e1-jezyk/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S12-E1-M1` | LEA-523 | Przerobić: The Rust Programming Language… | materiał | 30–40 h | 0 zł online / płatna (druk) | https://doc.rust-lang.org/book/ | `S12-E0-D` | `S12-E1-D` | `12-rust-jako-wspolny-fundament/e1-jezyk/` |
+| `S12-E1-M2` | LEA-524 | Przerobić: Wersja interaktywna tej książki z quizami i wizualizacjami własności | materiał, opcjonalne | 30–40 h | 0 zł | https://rust-book.cs.brown.edu | `S12-E0-D` | — | `12-rust-jako-wspolny-fundament/e1-jezyk/` |
+| `S12-E1-M3` | LEA-525 | Przerobić: Rustlings | materiał | 10–15 h | 0 zł | https://rustlings.rust-lang.org | `S12-E0-D` | `S12-E1-D` | `12-rust-jako-wspolny-fundament/e1-jezyk/` |
+| `S12-E1-M4` | LEA-526 | Przerobić: Rust by Example | materiał | 8–10 h | 0 zł | https://doc.rust-lang.org/rust-by-example/ | `S12-E0-D` | `S12-E1-D` | `12-rust-jako-wspolny-fundament/e1-jezyk/` |
+| `S12-E1-M5` | LEA-527 | Przerobić: 100 Exercises To Learn Rust | materiał, opcjonalne | 15–20 h | 0 zł | https://rust-exercises.com/100-exercises/ | `S12-E0-D` | — | `12-rust-jako-wspolny-fundament/e1-jezyk/` |
+| `S12-E1-M6` | LEA-528 | Przerobić: Comprehensive Rust: Rust Fundamentals (4 dni) | materiał, opcjonalne | 20–25 h | 0 zł | https://google.github.io/comprehensive-rust/ | `S12-E0-D` | — | `12-rust-jako-wspolny-fundament/e1-jezyk/` |
+| `S12-E1-D` | LEA-572 | Dowód etapu 1: język | dowód | — | — | — | `S12-E1-M1`, `S12-E1-M3`, `S12-E1-M4` | `S12-E2-M1`, `S12-E2-M2`, `S12-E2-M3`, `S12-E2-M4`, `S12-E2-M5` | `12-rust-jako-wspolny-fundament/e1-jezyk/` |
 
 **`S12-E1-D` · Dowód etapu 1: język**
 
@@ -192,14 +192,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Model domeny rdzenia własnej aplikacji (np. dokumenty, licencje, synchronizacja) z poprawnym podziałem własności, bez zbędnych `.clone()` i `Rc<RefCell<…>>`, z jednym typem z jawnymi czasami życia (np. parser bez kopiowania danych wejściowych).
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S12-E2-M1` | Przerobić: Programming Rust (wydanie 2, 2021) | materiał, płatny | 30–40 h | płatna | https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586/ | `S12-E1-D` | `S12-E2-D` | `12-rust-jako-wspolny-fundament/e2-wlasnosc-pozyczanie-czasy-zycia/` |
-| `S12-E2-M2` | Przerobić: Effective Rust | materiał | 10–12 h | 0 zł online / płatna (druk) | https://effective-rust.com | `S12-E1-D` | `S12-E2-D` | `12-rust-jako-wspolny-fundament/e2-wlasnosc-pozyczanie-czasy-zycia/` |
-| `S12-E2-M3` | Przerobić: Learning Rust With Entirely Too Many Linked Lists | materiał | 8–10 h | 0 zł | https://rust-unofficial.github.io/too-many-lists/ | `S12-E1-D` | `S12-E2-D` | `12-rust-jako-wspolny-fundament/e2-wlasnosc-pozyczanie-czasy-zycia/` |
-| `S12-E2-M4` | Przerobić: Rust Design Patterns | materiał | 5–6 h | 0 zł | https://rust-unofficial.github.io/patterns/ | `S12-E1-D` | `S12-E2-D` | `12-rust-jako-wspolny-fundament/e2-wlasnosc-pozyczanie-czasy-zycia/` |
-| `S12-E2-M5` | Przerobić: Rust Language Cheat Sheet | materiał, opcjonalne | wg potrzeb | 0 zł | https://cheats.rs | `S12-E1-D` | — | `12-rust-jako-wspolny-fundament/e2-wlasnosc-pozyczanie-czasy-zycia/` |
-| `S12-E2-D` | Dowód etapu 2: własność, pożyczanie, czasy życia | dowód | — | — | — | `S12-E2-M1`, `S12-E2-M2`, `S12-E2-M3`, `S12-E2-M4` | `S04-E7-M1`, `S04-E7-M2`, `S04-E7-M3`, `S04-E7-M4`, `S04-E7-M5`, `S04-E7-M6`, `S04-E7-M7`, `S05-E9-M1`, `S05-E9-M2`, `S05-E9-M3`, `S05-E9-M4`, `S05-E9-M5`, `S05-E9-M6`, `S05-E9-M7`, `S05-E9-M8`, `S05-E9-M9`, `S06-E4-M1`, `S06-E4-M2`, `S06-E4-M3`, `S12-E3-M1`, `S12-E3-M2`, `S12-E3-M3`, `S12-E3-M4`, `S12-E3-M5`, `S12-E3-M6`, `S12-E3-M7`, `S12-E3-M8`, `S14-START`, `S18-START`, `S19-START`, `S20-START` | `12-rust-jako-wspolny-fundament/e2-wlasnosc-pozyczanie-czasy-zycia/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S12-E2-M1` | LEA-594 | Przerobić: Programming Rust (wydanie 2, 2021) | materiał, płatny | 30–40 h | płatna | https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586/ | `S12-E1-D` | `S12-E2-D` | `12-rust-jako-wspolny-fundament/e2-wlasnosc-pozyczanie-czasy-zycia/` |
+| `S12-E2-M2` | LEA-596 | Przerobić: Effective Rust | materiał | 10–12 h | 0 zł online / płatna (druk) | https://effective-rust.com | `S12-E1-D` | `S12-E2-D` | `12-rust-jako-wspolny-fundament/e2-wlasnosc-pozyczanie-czasy-zycia/` |
+| `S12-E2-M3` | LEA-598 | Przerobić: Learning Rust With Entirely Too Many Linked Lists | materiał | 8–10 h | 0 zł | https://rust-unofficial.github.io/too-many-lists/ | `S12-E1-D` | `S12-E2-D` | `12-rust-jako-wspolny-fundament/e2-wlasnosc-pozyczanie-czasy-zycia/` |
+| `S12-E2-M4` | LEA-601 | Przerobić: Rust Design Patterns | materiał | 5–6 h | 0 zł | https://rust-unofficial.github.io/patterns/ | `S12-E1-D` | `S12-E2-D` | `12-rust-jako-wspolny-fundament/e2-wlasnosc-pozyczanie-czasy-zycia/` |
+| `S12-E2-M5` | LEA-603 | Przerobić: Rust Language Cheat Sheet | materiał, opcjonalne | wg potrzeb | 0 zł | https://cheats.rs | `S12-E1-D` | — | `12-rust-jako-wspolny-fundament/e2-wlasnosc-pozyczanie-czasy-zycia/` |
+| `S12-E2-D` | LEA-621 | Dowód etapu 2: własność, pożyczanie, czasy życia | dowód | — | — | — | `S12-E2-M1`, `S12-E2-M2`, `S12-E2-M3`, `S12-E2-M4` | `S04-E7-M1`, `S04-E7-M2`, `S04-E7-M3`, `S04-E7-M4`, `S04-E7-M5`, `S04-E7-M6`, `S04-E7-M7`, `S05-E9-M1`, `S05-E9-M2`, `S05-E9-M3`, `S05-E9-M4`, `S05-E9-M5`, `S05-E9-M6`, `S05-E9-M7`, `S05-E9-M8`, `S05-E9-M9`, `S06-E4-M1`, `S06-E4-M2`, `S06-E4-M3`, `S12-E3-M1`, `S12-E3-M2`, `S12-E3-M3`, `S12-E3-M4`, `S12-E3-M5`, `S12-E3-M6`, `S12-E3-M7`, `S12-E3-M8`, `S14-START`, `S18-START`, `S19-START`, `S20-START` | `12-rust-jako-wspolny-fundament/e2-wlasnosc-pozyczanie-czasy-zycia/` |
 
 **`S12-E2-D` · Dowód etapu 2: własność, pożyczanie, czasy życia**
 
@@ -221,17 +221,17 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Biblioteka w workspace z rdzeniem aplikacji, z udokumentowanym publicznym API zgodnym z listą kontrolną API Guidelines, `#![deny(missing_docs)]`, wybranymi lintami `pedantic` w `[lints]`, testami właściwości i sprawdzeniem semver (`cargo-semver-checks`) w CI; jedno makro `derive` w osobnym crate (`syn`, `quote`) z testami `trybuild`.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S12-E3-M1` | Przerobić: Rust for Rustaceans | materiał, płatny | 15–20 h | płatna | https://rust-for-rustaceans.com | `S12-E2-D` | `S12-E3-D` | `12-rust-jako-wspolny-fundament/e3-projektowanie-api-i-jakosc/` |
-| `S12-E3-M2` | Przerobić: Rust API Guidelines | materiał | 4–5 h | 0 zł | https://rust-lang.github.io/api-guidelines/ | `S12-E2-D` | `S12-E3-D` | `12-rust-jako-wspolny-fundament/e3-projektowanie-api-i-jakosc/` |
-| `S12-E3-M3` | Przerobić: Clippy: lista lintów i grupy (`correctness`, `suspicious`, `pedantic`, `restriction` i inne) | materiał | 3–4 h | 0 zł | https://rust-lang.github.io/rust-clippy/stable/index.html | `S12-E2-D` | `S12-E3-D` | `12-rust-jako-wspolny-fundament/e3-projektowanie-api-i-jakosc/` |
-| `S12-E3-M4` | Przerobić: The Cargo Book: features, workspace’y, profile, publikowanie | materiał | 4–5 h | 0 zł | https://doc.rust-lang.org/cargo/ | `S12-E2-D` | `S12-E3-D` | `12-rust-jako-wspolny-fundament/e3-projektowanie-api-i-jakosc/` |
-| `S12-E3-M5` | Przerobić: The rustdoc book | materiał | 2 h | 0 zł | https://doc.rust-lang.org/rustdoc/ | `S12-E2-D` | `S12-E3-D` | `12-rust-jako-wspolny-fundament/e3-projektowanie-api-i-jakosc/` |
-| `S12-E3-M6` | Przerobić: The Little Book of Rust Macros (część o makrach proceduralnych niepełna) | materiał | 4–6 h | 0 zł | https://lukaswirth.dev/tlborm/ | `S12-E2-D` | `S12-E3-D` | `12-rust-jako-wspolny-fundament/e3-projektowanie-api-i-jakosc/` |
-| `S12-E3-M7` | Przerobić: Makra proceduralne: The Rust Reference („Procedural Macros”) i ćwiczenia proc-macro-workshop… | materiał | 6–8 h | 0 zł | https://doc.rust-lang.org/reference/procedural-macros.html, https://github.com/dtolnay/proc-macro-workshop | `S12-E2-D` | `S12-E3-D` | `12-rust-jako-wspolny-fundament/e3-projektowanie-api-i-jakosc/` |
-| `S12-E3-M8` | Przerobić: Nagrania „Crust of Rust” | materiał, opcjonalne | wg potrzeb | 0 zł | https://www.youtube.com/@jonhoo | `S12-E2-D` | — | `12-rust-jako-wspolny-fundament/e3-projektowanie-api-i-jakosc/` |
-| `S12-E3-D` | Dowód etapu 3: projektowanie API i jakość | dowód | — | — | — | `S12-E3-M1`, `S12-E3-M2`, `S12-E3-M3`, `S12-E3-M4`, `S12-E3-M5`, `S12-E3-M6`, `S12-E3-M7` | `S12-E4-M1`, `S12-E4-M2`, `S12-E4-M3`, `S12-E4-M4`, `S12-E4-M5` | `12-rust-jako-wspolny-fundament/e3-projektowanie-api-i-jakosc/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S12-E3-M1` | LEA-660 | Przerobić: Rust for Rustaceans | materiał, płatny | 15–20 h | płatna | https://rust-for-rustaceans.com | `S12-E2-D` | `S12-E3-D` | `12-rust-jako-wspolny-fundament/e3-projektowanie-api-i-jakosc/` |
+| `S12-E3-M2` | LEA-662 | Przerobić: Rust API Guidelines | materiał | 4–5 h | 0 zł | https://rust-lang.github.io/api-guidelines/ | `S12-E2-D` | `S12-E3-D` | `12-rust-jako-wspolny-fundament/e3-projektowanie-api-i-jakosc/` |
+| `S12-E3-M3` | LEA-664 | Przerobić: Clippy: lista lintów i grupy (`correctness`, `suspicious`, `pedantic`, `restriction` i inne) | materiał | 3–4 h | 0 zł | https://rust-lang.github.io/rust-clippy/stable/index.html | `S12-E2-D` | `S12-E3-D` | `12-rust-jako-wspolny-fundament/e3-projektowanie-api-i-jakosc/` |
+| `S12-E3-M4` | LEA-666 | Przerobić: The Cargo Book: features, workspace’y, profile, publikowanie | materiał | 4–5 h | 0 zł | https://doc.rust-lang.org/cargo/ | `S12-E2-D` | `S12-E3-D` | `12-rust-jako-wspolny-fundament/e3-projektowanie-api-i-jakosc/` |
+| `S12-E3-M5` | LEA-669 | Przerobić: The rustdoc book | materiał | 2 h | 0 zł | https://doc.rust-lang.org/rustdoc/ | `S12-E2-D` | `S12-E3-D` | `12-rust-jako-wspolny-fundament/e3-projektowanie-api-i-jakosc/` |
+| `S12-E3-M6` | LEA-671 | Przerobić: The Little Book of Rust Macros (część o makrach proceduralnych niepełna) | materiał | 4–6 h | 0 zł | https://lukaswirth.dev/tlborm/ | `S12-E2-D` | `S12-E3-D` | `12-rust-jako-wspolny-fundament/e3-projektowanie-api-i-jakosc/` |
+| `S12-E3-M7` | LEA-672 | Przerobić: Makra proceduralne: The Rust Reference („Procedural Macros”) i ćwiczenia proc-macro-workshop… | materiał | 6–8 h | 0 zł | https://doc.rust-lang.org/reference/procedural-macros.html, https://github.com/dtolnay/proc-macro-workshop | `S12-E2-D` | `S12-E3-D` | `12-rust-jako-wspolny-fundament/e3-projektowanie-api-i-jakosc/` |
+| `S12-E3-M8` | LEA-673 | Przerobić: Nagrania „Crust of Rust” | materiał, opcjonalne | wg potrzeb | 0 zł | https://www.youtube.com/@jonhoo | `S12-E2-D` | — | `12-rust-jako-wspolny-fundament/e3-projektowanie-api-i-jakosc/` |
+| `S12-E3-D` | LEA-688 | Dowód etapu 3: projektowanie API i jakość | dowód | — | — | — | `S12-E3-M1`, `S12-E3-M2`, `S12-E3-M3`, `S12-E3-M4`, `S12-E3-M5`, `S12-E3-M6`, `S12-E3-M7` | `S12-E4-M1`, `S12-E4-M2`, `S12-E4-M3`, `S12-E4-M4`, `S12-E4-M5` | `12-rust-jako-wspolny-fundament/e3-projektowanie-api-i-jakosc/` |
 
 **`S12-E3-D` · Dowód etapu 3: projektowanie API i jakość**
 
@@ -253,14 +253,14 @@ Książka zespołu Rusta o async jest przepisywana i ma luki, więc podstawą je
 
 **Dowód:** Usługa w Tokio z kolejką zadań w tle, limitem współbieżności, łagodnym zamykaniem i anulowaniem, z testami (`#[tokio::test]`, kontrola czasu przez `tokio::time::pause`) i bez blokujących wywołań w kodzie async; jedna struktura danych z atomikami opisana komentarzem uzasadniającym wybrane porządki pamięci.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S12-E4-M1` | Przerobić: Tokio Tutorial i rozdziały „Bridging with sync code”, „Graceful Shutdown”, „Tracing” | materiał | 10–12 h | 0 zł | https://tokio.rs/tokio/tutorial | `S12-E3-D` | `S12-E4-D` | `12-rust-jako-wspolny-fundament/e4-async-i-wspolbieznosc/` |
-| `S12-E4-M2` | Przerobić: Asynchronous Programming in Rust (w trakcie przepisywania, niekompletna) | materiał | 4–6 h | 0 zł | https://rust-lang.github.io/async-book/ | `S12-E3-D` | `S12-E4-D` | `12-rust-jako-wspolny-fundament/e4-async-i-wspolbieznosc/` |
-| `S12-E4-M3` | Przerobić: Async Rust | materiał, płatny, opcjonalne | 12–15 h | płatna | https://www.oreilly.com/library/view/async-rust/9781098149086/ | `S12-E3-D` | — | `12-rust-jako-wspolny-fundament/e4-async-i-wspolbieznosc/` |
-| `S12-E4-M4` | Przerobić: Rust Atomics and Locks | materiał | 12–15 h | 0 zł online / płatna (druk) | https://mara.nl/atomics/ | `S12-E3-D` | `S12-E4-D` | `12-rust-jako-wspolny-fundament/e4-async-i-wspolbieznosc/` |
-| `S12-E4-M5` | Przerobić: Comprehensive Rust: Concurrency (1 dzień) | materiał | 6–8 h | 0 zł | https://google.github.io/comprehensive-rust/ | `S12-E3-D` | `S12-E4-D` | `12-rust-jako-wspolny-fundament/e4-async-i-wspolbieznosc/` |
-| `S12-E4-D` | Dowód etapu 4: async i współbieżność | dowód | — | — | — | `S12-E4-M1`, `S12-E4-M2`, `S12-E4-M4`, `S12-E4-M5` | `S12-E5-M1`, `S12-E5-M2`, `S12-E5-M3`, `S12-E5-M4`, `S12-E5-M5`, `S12-E5-M6`, `S12-E5-M7` | `12-rust-jako-wspolny-fundament/e4-async-i-wspolbieznosc/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S12-E4-M1` | LEA-718 | Przerobić: Tokio Tutorial i rozdziały „Bridging with sync code”, „Graceful Shutdown”, „Tracing” | materiał | 10–12 h | 0 zł | https://tokio.rs/tokio/tutorial | `S12-E3-D` | `S12-E4-D` | `12-rust-jako-wspolny-fundament/e4-async-i-wspolbieznosc/` |
+| `S12-E4-M2` | LEA-720 | Przerobić: Asynchronous Programming in Rust (w trakcie przepisywania, niekompletna) | materiał | 4–6 h | 0 zł | https://rust-lang.github.io/async-book/ | `S12-E3-D` | `S12-E4-D` | `12-rust-jako-wspolny-fundament/e4-async-i-wspolbieznosc/` |
+| `S12-E4-M3` | LEA-723 | Przerobić: Async Rust | materiał, płatny, opcjonalne | 12–15 h | płatna | https://www.oreilly.com/library/view/async-rust/9781098149086/ | `S12-E3-D` | — | `12-rust-jako-wspolny-fundament/e4-async-i-wspolbieznosc/` |
+| `S12-E4-M4` | LEA-725 | Przerobić: Rust Atomics and Locks | materiał | 12–15 h | 0 zł online / płatna (druk) | https://mara.nl/atomics/ | `S12-E3-D` | `S12-E4-D` | `12-rust-jako-wspolny-fundament/e4-async-i-wspolbieznosc/` |
+| `S12-E4-M5` | LEA-727 | Przerobić: Comprehensive Rust: Concurrency (1 dzień) | materiał | 6–8 h | 0 zł | https://google.github.io/comprehensive-rust/ | `S12-E3-D` | `S12-E4-D` | `12-rust-jako-wspolny-fundament/e4-async-i-wspolbieznosc/` |
+| `S12-E4-D` | LEA-741 | Dowód etapu 4: async i współbieżność | dowód | — | — | — | `S12-E4-M1`, `S12-E4-M2`, `S12-E4-M4`, `S12-E4-M5` | `S12-E5-M1`, `S12-E5-M2`, `S12-E5-M3`, `S12-E5-M4`, `S12-E5-M5`, `S12-E5-M6`, `S12-E5-M7` | `12-rust-jako-wspolny-fundament/e4-async-i-wspolbieznosc/` |
 
 **`S12-E4-D` · Dowód etapu 4: async i współbieżność**
 
@@ -280,16 +280,16 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Biblioteka w Ruście (np. walidacja licencji albo parser z rdzenia aplikacji) wystawiona przez UniFFI do Kotlina i Swifta albo przez `cbindgen` do C: wiązania generowane w CI, testy wywołujące bibliotekę z języka docelowego, kod `unsafe` z komentarzami `SAFETY:` i testami pod Miri.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S12-E5-M1` | Przerobić: The Rustonomicon | materiał | 10–15 h | 0 zł | https://doc.rust-lang.org/nomicon/ | `S12-E4-D`, `S12-U1-D` | `S12-E5-D` | `12-rust-jako-wspolny-fundament/e5-unsafe-i-ffi-uniffi-cbindgen-miri/` |
-| `S12-E5-M2` | Przerobić: Safety comments policy (zasady komentarzy `SAFETY:`) | materiał | 1 h | 0 zł | https://std-dev-guide.rust-lang.org/policy/safety-comments.html | `S12-E4-D`, `S12-U1-D` | `S12-E5-D` | `12-rust-jako-wspolny-fundament/e5-unsafe-i-ffi-uniffi-cbindgen-miri/` |
-| `S12-E5-M3` | Przerobić: Miri | materiał | 2–3 h | 0 zł | https://github.com/rust-lang/miri | `S12-E4-D`, `S12-U1-D` | `S12-E5-D` | `12-rust-jako-wspolny-fundament/e5-unsafe-i-ffi-uniffi-cbindgen-miri/` |
-| `S12-E5-M4` | Przerobić: Comprehensive Rust: Unsafe Rust (z ćwiczeniem FFI) | materiał | 2 h | 0 zł | https://google.github.io/comprehensive-rust/unsafe-rust.html | `S12-E4-D`, `S12-U1-D` | `S12-E5-D` | `12-rust-jako-wspolny-fundament/e5-unsafe-i-ffi-uniffi-cbindgen-miri/` |
-| `S12-E5-M5` | Przerobić: The UniFFI User Guide (Kotlin, Swift, Python) | materiał | 6–8 h | 0 zł | https://mozilla.github.io/uniffi-rs/latest/ | `S12-E4-D`, `S12-U1-D` | `S12-E5-D` | `12-rust-jako-wspolny-fundament/e5-unsafe-i-ffi-uniffi-cbindgen-miri/` |
-| `S12-E5-M6` | Przerobić: cbindgen: dokumentacja | materiał | 2–3 h | 0 zł | https://github.com/mozilla/cbindgen/blob/main/docs.md | `S12-E4-D`, `S12-U1-D` | `S12-E5-D` | `12-rust-jako-wspolny-fundament/e5-unsafe-i-ffi-uniffi-cbindgen-miri/` |
-| `S12-E5-M7` | Przerobić: WebAssembly z Rusta: przewodnik `wasm-bindgen` i „Compiling from Rust to WebAssembly” | materiał, opcjonalne | 4–6 h | 0 zł | https://wasm-bindgen.github.io/wasm-bindgen/, https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Rust_to_Wasm | `S12-E4-D`, `S12-U1-D` | — | `12-rust-jako-wspolny-fundament/e5-unsafe-i-ffi-uniffi-cbindgen-miri/` |
-| `S12-E5-D` | Dowód etapu 5: `unsafe` i FFI (UniFFI, `cbindgen`, Miri) | dowód | — | — | — | `S12-E5-M1`, `S12-E5-M2`, `S12-E5-M3`, `S12-E5-M4`, `S12-E5-M5`, `S12-E5-M6` | `S08-E6-M1`, `S08-E6-M2`, `S08-E6-M3`, `S08-E6-M4`, `S08-E6-M5`, `S10-E7-M1`, `S10-E7-M2`, `S10-E7-M3`, `S12-E6-M1`, `S12-E6-M2`, `S12-E6-M3`, `S18-E4-M1`, `S18-E4-M2`, `S18-E4-M3`, `S18-E4-M4`, `S18-E4-M5`, `S18-E4-M6`, `S18-E4-M7`, `S18-E4-M8`, `S19-E4-M1`, `S19-E4-M2`, `S19-E4-M3`, `S19-E4-M4`, `S19-E4-M5`, `S19-E4-M6`, `S19-E4-M7` | `12-rust-jako-wspolny-fundament/e5-unsafe-i-ffi-uniffi-cbindgen-miri/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S12-E5-M1` | LEA-780 | Przerobić: The Rustonomicon | materiał | 10–15 h | 0 zł | https://doc.rust-lang.org/nomicon/ | `S12-E4-D`, `S12-U1-D` | `S12-E5-D` | `12-rust-jako-wspolny-fundament/e5-unsafe-i-ffi-uniffi-cbindgen-miri/` |
+| `S12-E5-M2` | LEA-783 | Przerobić: Safety comments policy (zasady komentarzy `SAFETY:`) | materiał | 1 h | 0 zł | https://std-dev-guide.rust-lang.org/policy/safety-comments.html | `S12-E4-D`, `S12-U1-D` | `S12-E5-D` | `12-rust-jako-wspolny-fundament/e5-unsafe-i-ffi-uniffi-cbindgen-miri/` |
+| `S12-E5-M3` | LEA-785 | Przerobić: Miri | materiał | 2–3 h | 0 zł | https://github.com/rust-lang/miri | `S12-E4-D`, `S12-U1-D` | `S12-E5-D` | `12-rust-jako-wspolny-fundament/e5-unsafe-i-ffi-uniffi-cbindgen-miri/` |
+| `S12-E5-M4` | LEA-788 | Przerobić: Comprehensive Rust: Unsafe Rust (z ćwiczeniem FFI) | materiał | 2 h | 0 zł | https://google.github.io/comprehensive-rust/unsafe-rust.html | `S12-E4-D`, `S12-U1-D` | `S12-E5-D` | `12-rust-jako-wspolny-fundament/e5-unsafe-i-ffi-uniffi-cbindgen-miri/` |
+| `S12-E5-M5` | LEA-789 | Przerobić: The UniFFI User Guide (Kotlin, Swift, Python) | materiał | 6–8 h | 0 zł | https://mozilla.github.io/uniffi-rs/latest/ | `S12-E4-D`, `S12-U1-D` | `S12-E5-D` | `12-rust-jako-wspolny-fundament/e5-unsafe-i-ffi-uniffi-cbindgen-miri/` |
+| `S12-E5-M6` | LEA-791 | Przerobić: cbindgen: dokumentacja | materiał | 2–3 h | 0 zł | https://github.com/mozilla/cbindgen/blob/main/docs.md | `S12-E4-D`, `S12-U1-D` | `S12-E5-D` | `12-rust-jako-wspolny-fundament/e5-unsafe-i-ffi-uniffi-cbindgen-miri/` |
+| `S12-E5-M7` | LEA-794 | Przerobić: WebAssembly z Rusta: przewodnik `wasm-bindgen` i „Compiling from Rust to WebAssembly” | materiał, opcjonalne | 4–6 h | 0 zł | https://wasm-bindgen.github.io/wasm-bindgen/, https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Rust_to_Wasm | `S12-E4-D`, `S12-U1-D` | — | `12-rust-jako-wspolny-fundament/e5-unsafe-i-ffi-uniffi-cbindgen-miri/` |
+| `S12-E5-D` | LEA-816 | Dowód etapu 5: `unsafe` i FFI (UniFFI, `cbindgen`, Miri) | dowód | — | — | — | `S12-E5-M1`, `S12-E5-M2`, `S12-E5-M3`, `S12-E5-M4`, `S12-E5-M5`, `S12-E5-M6` | `S08-E6-M1`, `S08-E6-M2`, `S08-E6-M3`, `S08-E6-M4`, `S08-E6-M5`, `S10-E7-M1`, `S10-E7-M2`, `S10-E7-M3`, `S12-E6-M1`, `S12-E6-M2`, `S12-E6-M3`, `S18-E4-M1`, `S18-E4-M2`, `S18-E4-M3`, `S18-E4-M4`, `S18-E4-M5`, `S18-E4-M6`, `S18-E4-M7`, `S18-E4-M8`, `S19-E4-M1`, `S19-E4-M2`, `S19-E4-M3`, `S19-E4-M4`, `S19-E4-M5`, `S19-E4-M6`, `S19-E4-M7` | `12-rust-jako-wspolny-fundament/e5-unsafe-i-ffi-uniffi-cbindgen-miri/` |
 
 **`S12-E5-D` · Dowód etapu 5: `unsafe` i FFI (UniFFI, `cbindgen`, Miri)**
 
@@ -311,12 +311,12 @@ Zero To Production prowadzi przez budowę backendu od zera do wdrożenia (testy,
 
 **Dowód:** Backend Axum z SQLx dla własnej aplikacji (licencje lub synchronizacja), z testami integracyjnymi na prawdziwej bazie, `tracing` z OpenTelemetry, obsługą błędów bez paniki na ścieżce żądania, binarkami dla trzech systemów z CI (w tym Linux ARM64 albo musl przez `cross` lub `cargo-zigbuild`) oraz SBOM CycloneDX i `cargo-deny` jako bramką wydania (CRA).
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S12-E6-M1` | Przerobić: Zero To Production in Rust | materiał, płatny | 40–50 h | płatna (darmowa próbka) | https://www.zero2prod.com | `S12-E5-D` | `S12-E6-D` | `12-rust-jako-wspolny-fundament/e6-aplikacja-produkcyjna/` |
-| `S12-E6-M2` | Przerobić: Dokumentacja i przykłady Axum | materiał | 6–8 h | 0 zł | https://docs.rs/axum, https://github.com/tokio-rs/axum/tree/main/examples | `S12-E5-D` | `S12-E6-D` | `12-rust-jako-wspolny-fundament/e6-aplikacja-produkcyjna/` |
-| `S12-E6-M3` | Przerobić: Kompilacja skrośna: rustc „Platform Support”, `cross` i `cargo-zigbuild` | materiał | 3–4 h | 0 zł | https://doc.rust-lang.org/rustc/platform-support.html, https://github.com/cross-rs/cross, https://github.com/rust-cross/cargo-zigbuild | `S12-E5-D` | `S12-E6-D` | `12-rust-jako-wspolny-fundament/e6-aplikacja-produkcyjna/` |
-| `S12-E6-D` | Dowód etapu 6: aplikacja produkcyjna | dowód | — | — | — | `S12-E6-M1`, `S12-E6-M2`, `S12-E6-M3` | `S12-E7-M1`, `S12-E7-M2`, `S12-E7-M3`, `S12-E7-M4`, `S12-E7-P1`, `S12-E7-P2`, `S12-E7-P3`, `S22-START` | `12-rust-jako-wspolny-fundament/e6-aplikacja-produkcyjna/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S12-E6-M1` | LEA-848 | Przerobić: Zero To Production in Rust | materiał, płatny | 40–50 h | płatna (darmowa próbka) | https://www.zero2prod.com | `S12-E5-D` | `S12-E6-D` | `12-rust-jako-wspolny-fundament/e6-aplikacja-produkcyjna/` |
+| `S12-E6-M2` | LEA-849 | Przerobić: Dokumentacja i przykłady Axum | materiał | 6–8 h | 0 zł | https://docs.rs/axum, https://github.com/tokio-rs/axum/tree/main/examples | `S12-E5-D` | `S12-E6-D` | `12-rust-jako-wspolny-fundament/e6-aplikacja-produkcyjna/` |
+| `S12-E6-M3` | LEA-850 | Przerobić: Kompilacja skrośna: rustc „Platform Support”, `cross` i `cargo-zigbuild` | materiał | 3–4 h | 0 zł | https://doc.rust-lang.org/rustc/platform-support.html, https://github.com/cross-rs/cross, https://github.com/rust-cross/cargo-zigbuild | `S12-E5-D` | `S12-E6-D` | `12-rust-jako-wspolny-fundament/e6-aplikacja-produkcyjna/` |
+| `S12-E6-D` | LEA-874 | Dowód etapu 6: aplikacja produkcyjna | dowód | — | — | — | `S12-E6-M1`, `S12-E6-M2`, `S12-E6-M3` | `S12-E7-M1`, `S12-E7-M2`, `S12-E7-M3`, `S12-E7-M4`, `S12-E7-P1`, `S12-E7-P2`, `S12-E7-P3`, `S22-START` | `12-rust-jako-wspolny-fundament/e6-aplikacja-produkcyjna/` |
 
 **`S12-E6-D` · Dowód etapu 6: aplikacja produkcyjna**
 
@@ -334,16 +334,16 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód poziomu E:** Samodzielnie, bez agenta, w 1 dzień diagnozujesz i naprawiasz w nieznanym kodzie Rusta błąd niezdefiniowanego zachowania wykryty przez Miri, zakleszczenie w async albo awarię na granicy FFI (UniFFI lub C) i umiesz wyjaśnić przyczynę osobie nietechnicznej.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S12-E7-M1` | Przerobić: The Rust Reference | materiał, opcjonalne | wg potrzeb | 0 zł | https://doc.rust-lang.org/reference/ | `S12-E6-D`, `S12-U2-D` | — | `12-rust-jako-wspolny-fundament/e7-ekspert/` |
-| `S12-E7-M2` | Przerobić: The Rust Performance Book | materiał | 4–5 h | 0 zł | https://nnethercote.github.io/perf-book/ | `S12-E6-D`, `S12-U2-D` | `S12-E7-D` | `12-rust-jako-wspolny-fundament/e7-ekspert/` |
-| `S12-E7-M3` | Przerobić: Rust Fuzz Book (`cargo-fuzz`, `afl.rs`) | materiał | 3–4 h | 0 zł | https://rust-fuzz.github.io/book/ | `S12-E6-D`, `S12-U2-D` | `S12-E7-D` | `12-rust-jako-wspolny-fundament/e7-ekspert/` |
-| `S12-E7-M4` | Przerobić: Blog Rusta, informacje o wydaniach, RFC | materiał | ok. 1 h tygodniowo | 0 zł | https://blog.rust-lang.org | `S12-E6-D`, `S12-U2-D` | `S12-E7-D` | `12-rust-jako-wspolny-fundament/e7-ekspert/` |
-| `S12-E7-P1` | Praktyka: recenzja kodu AI | praktyka | — | — | — | `S12-E6-D`, `S12-U2-D` | `S12-E7-D` | `12-rust-jako-wspolny-fundament/e7-ekspert/` |
-| `S12-E7-P2` | Praktyka: wydajność | praktyka | — | — | — | `S12-E6-D`, `S12-U2-D` | `S12-E7-D` | `12-rust-jako-wspolny-fundament/e7-ekspert/` |
-| `S12-E7-P3` | Praktyka: przegląd zależności | praktyka | — | — | — | `S12-E6-D`, `S12-U2-D` | `S12-E7-D` | `12-rust-jako-wspolny-fundament/e7-ekspert/` |
-| `S12-E7-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S12-E7-M2`, `S12-E7-M3`, `S12-E7-M4`, `S12-E7-P1`, `S12-E7-P2`, `S12-E7-P3` | — | `12-rust-jako-wspolny-fundament/e7-ekspert/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S12-E7-M1` | LEA-904 | Przerobić: The Rust Reference | materiał, opcjonalne | wg potrzeb | 0 zł | https://doc.rust-lang.org/reference/ | `S12-E6-D`, `S12-U2-D` | — | `12-rust-jako-wspolny-fundament/e7-ekspert/` |
+| `S12-E7-M2` | LEA-905 | Przerobić: The Rust Performance Book | materiał | 4–5 h | 0 zł | https://nnethercote.github.io/perf-book/ | `S12-E6-D`, `S12-U2-D` | `S12-E7-D` | `12-rust-jako-wspolny-fundament/e7-ekspert/` |
+| `S12-E7-M3` | LEA-906 | Przerobić: Rust Fuzz Book (`cargo-fuzz`, `afl.rs`) | materiał | 3–4 h | 0 zł | https://rust-fuzz.github.io/book/ | `S12-E6-D`, `S12-U2-D` | `S12-E7-D` | `12-rust-jako-wspolny-fundament/e7-ekspert/` |
+| `S12-E7-M4` | LEA-907 | Przerobić: Blog Rusta, informacje o wydaniach, RFC | materiał | ok. 1 h tygodniowo | 0 zł | https://blog.rust-lang.org | `S12-E6-D`, `S12-U2-D` | `S12-E7-D` | `12-rust-jako-wspolny-fundament/e7-ekspert/` |
+| `S12-E7-P1` | LEA-909 | Praktyka: recenzja kodu AI | praktyka | — | — | — | `S12-E6-D`, `S12-U2-D` | `S12-E7-D` | `12-rust-jako-wspolny-fundament/e7-ekspert/` |
+| `S12-E7-P2` | LEA-911 | Praktyka: wydajność | praktyka | — | — | — | `S12-E6-D`, `S12-U2-D` | `S12-E7-D` | `12-rust-jako-wspolny-fundament/e7-ekspert/` |
+| `S12-E7-P3` | LEA-914 | Praktyka: przegląd zależności | praktyka | — | — | — | `S12-E6-D`, `S12-U2-D` | `S12-E7-D` | `12-rust-jako-wspolny-fundament/e7-ekspert/` |
+| `S12-E7-D` | LEA-954 | Dowód poziomu E: ekspert | dowód | — | — | — | `S12-E7-M2`, `S12-E7-M3`, `S12-E7-M4`, `S12-E7-P1`, `S12-E7-P2`, `S12-E7-P3` | — | `12-rust-jako-wspolny-fundament/e7-ekspert/` |
 
 **`S12-E7-P1` · Praktyka: recenzja kodu AI**
 
@@ -387,15 +387,15 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Bezpieczna obudowa w Ruście dla małej biblioteki C (np. kompresji lub parsera) przez `bindgen`, z testami uruchamianymi pod AddressSanitizer po stronie C i notatką, kto i kiedy zwalnia każdy zasób.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S12-U1-M1` | Przerobić: Beej’s Guide to C Programming | materiał | 15–20 h | 0 zł | https://beej.us/guide/bgc/ | `S12-START` | `S12-U1-D` | `12-rust-jako-wspolny-fundament/u1-c-ogolnie-i-ffi-z-rustem/` |
-| `S12-U1-M2` | Przerobić: Modern C (wydanie 3, C23) | materiał | 20–25 h | 0 zł (PDF autora) / płatna (druk) | https://gustedt.gitlabpages.inria.fr/modern-c/ | `S12-START` | `S12-U1-D` | `12-rust-jako-wspolny-fundament/u1-c-ogolnie-i-ffi-z-rustem/` |
-| `S12-U1-M3` | Przerobić: Effective C (wydanie 2, C23) | materiał, płatny | 12–15 h | płatna | https://nostarch.com/effective-c-2nd-edition | `S12-START` | `S12-U1-D` | `12-rust-jako-wspolny-fundament/u1-c-ogolnie-i-ffi-z-rustem/` |
-| `S12-U1-M4` | Przerobić: SEI CERT C Coding Standard | materiał, opcjonalne | wg potrzeb | 0 zł | https://wiki.sei.cmu.edu/confluence/display/c/SEI+CERT+C+Coding+Standard | `S12-START` | — | `12-rust-jako-wspolny-fundament/u1-c-ogolnie-i-ffi-z-rustem/` |
-| `S12-U1-M5` | Przerobić: AddressSanitizer i pokrewne sanitizery | materiał | 2–3 h | 0 zł | https://clang.llvm.org/docs/AddressSanitizer.html | `S12-START` | `S12-U1-D` | `12-rust-jako-wspolny-fundament/u1-c-ogolnie-i-ffi-z-rustem/` |
-| `S12-U1-M6` | Przerobić: The Rustonomicon: rozdział FFI; The bindgen User Guide | materiał | 4–6 h | 0 zł | https://doc.rust-lang.org/nomicon/ffi.html, https://rust-lang.github.io/rust-bindgen/ | `S12-START` | `S12-U1-D` | `12-rust-jako-wspolny-fundament/u1-c-ogolnie-i-ffi-z-rustem/` |
-| `S12-U1-D` | Dowód (12.2): C ogólnie i FFI z Rustem | dowód | — | — | — | `S12-U1-M1`, `S12-U1-M2`, `S12-U1-M3`, `S12-U1-M5`, `S12-U1-M6` | `S12-E5-M1`, `S12-E5-M2`, `S12-E5-M3`, `S12-E5-M4`, `S12-E5-M5`, `S12-E5-M6`, `S12-E5-M7`, `S22-START` | `12-rust-jako-wspolny-fundament/u1-c-ogolnie-i-ffi-z-rustem/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S12-U1-M1` | LEA-423 | Przerobić: Beej’s Guide to C Programming | materiał | 15–20 h | 0 zł | https://beej.us/guide/bgc/ | `S12-START` | `S12-U1-D` | `12-rust-jako-wspolny-fundament/u1-c-ogolnie-i-ffi-z-rustem/` |
+| `S12-U1-M2` | LEA-426 | Przerobić: Modern C (wydanie 3, C23) | materiał | 20–25 h | 0 zł (PDF autora) / płatna (druk) | https://gustedt.gitlabpages.inria.fr/modern-c/ | `S12-START` | `S12-U1-D` | `12-rust-jako-wspolny-fundament/u1-c-ogolnie-i-ffi-z-rustem/` |
+| `S12-U1-M3` | LEA-428 | Przerobić: Effective C (wydanie 2, C23) | materiał, płatny | 12–15 h | płatna | https://nostarch.com/effective-c-2nd-edition | `S12-START` | `S12-U1-D` | `12-rust-jako-wspolny-fundament/u1-c-ogolnie-i-ffi-z-rustem/` |
+| `S12-U1-M4` | LEA-475 | Przerobić: SEI CERT C Coding Standard | materiał, opcjonalne | wg potrzeb | 0 zł | https://wiki.sei.cmu.edu/confluence/display/c/SEI+CERT+C+Coding+Standard | `S12-START` | — | `12-rust-jako-wspolny-fundament/u1-c-ogolnie-i-ffi-z-rustem/` |
+| `S12-U1-M5` | LEA-476 | Przerobić: AddressSanitizer i pokrewne sanitizery | materiał | 2–3 h | 0 zł | https://clang.llvm.org/docs/AddressSanitizer.html | `S12-START` | `S12-U1-D` | `12-rust-jako-wspolny-fundament/u1-c-ogolnie-i-ffi-z-rustem/` |
+| `S12-U1-M6` | LEA-477 | Przerobić: The Rustonomicon: rozdział FFI; The bindgen User Guide | materiał | 4–6 h | 0 zł | https://doc.rust-lang.org/nomicon/ffi.html, https://rust-lang.github.io/rust-bindgen/ | `S12-START` | `S12-U1-D` | `12-rust-jako-wspolny-fundament/u1-c-ogolnie-i-ffi-z-rustem/` |
+| `S12-U1-D` | LEA-531 | Dowód (12.2): C ogólnie i FFI z Rustem | dowód | — | — | — | `S12-U1-M1`, `S12-U1-M2`, `S12-U1-M3`, `S12-U1-M5`, `S12-U1-M6` | `S12-E5-M1`, `S12-E5-M2`, `S12-E5-M3`, `S12-E5-M4`, `S12-E5-M5`, `S12-E5-M6`, `S12-E5-M7`, `S22-START` | `12-rust-jako-wspolny-fundament/u1-c-ogolnie-i-ffi-z-rustem/` |
 
 **`S12-U1-D` · Dowód (12.2): C ogólnie i FFI z Rustem**
 
@@ -417,14 +417,14 @@ Celem jest czytanie, nie pisanie: zrozumieć, co robi fragment biblioteki platfo
 
 **Dowód:** Notatka z analizy fragmentu cudzego kodu w każdym z trzech języków (np. biblioteki C++ używanej przez llama.cpp, klasy Javy z Android SDK, starego modułu Objective-C w przejmowanej aplikacji iOS), opisująca przepływ danych, własność pamięci i miejsca ryzyka.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S12-U2-M1` | Przerobić: LearnCpp.com… | materiał | 8–10 h | 0 zł | https://www.learncpp.com | `S12-START` | `S12-U2-D` | `12-rust-jako-wspolny-fundament/u2-czytanie-c-javy-i-objective-c/` |
-| `S12-U2-M2` | Przerobić: C++ Core Guidelines | materiał | 2–3 h (wybrane sekcje) | 0 zł | https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines | `S12-START` | `S12-U2-D` | `12-rust-jako-wspolny-fundament/u2-czytanie-c-javy-i-objective-c/` |
-| `S12-U2-M3` | Przerobić: Learn Java | materiał | 5–8 h | 0 zł | https://dev.java/learn/ | `S12-START` | `S12-U2-D` | `12-rust-jako-wspolny-fundament/u2-czytanie-c-javy-i-objective-c/` |
-| `S12-U2-M4` | Przerobić: Programming with Objective-C… | materiał | 3–4 h | 0 zł | https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html | `S12-START` | `S12-U2-D` | `12-rust-jako-wspolny-fundament/u2-czytanie-c-javy-i-objective-c/` |
-| `S12-U2-M5` | Przerobić: Importing Objective-C into Swift | materiał | 1 h | 0 zł | https://developer.apple.com/documentation/swift/importing-objective-c-into-swift | `S12-START` | `S12-U2-D` | `12-rust-jako-wspolny-fundament/u2-czytanie-c-javy-i-objective-c/` |
-| `S12-U2-D` | Dowód (12.2): czytanie C++, Javy i Objective-C | dowód | — | — | — | `S12-U2-M1`, `S12-U2-M2`, `S12-U2-M3`, `S12-U2-M4`, `S12-U2-M5` | `S12-E7-M1`, `S12-E7-M2`, `S12-E7-M3`, `S12-E7-M4`, `S12-E7-P1`, `S12-E7-P2`, `S12-E7-P3`, `S18-E4-M1`, `S18-E4-M2`, `S18-E4-M3`, `S18-E4-M4`, `S18-E4-M5`, `S18-E4-M6`, `S18-E4-M7`, `S18-E4-M8`, `S19-E4-M1`, `S19-E4-M2`, `S19-E4-M3`, `S19-E4-M4`, `S19-E4-M5`, `S19-E4-M6`, `S19-E4-M7` | `12-rust-jako-wspolny-fundament/u2-czytanie-c-javy-i-objective-c/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S12-U2-M1` | LEA-479 | Przerobić: LearnCpp.com… | materiał | 8–10 h | 0 zł | https://www.learncpp.com | `S12-START` | `S12-U2-D` | `12-rust-jako-wspolny-fundament/u2-czytanie-c-javy-i-objective-c/` |
+| `S12-U2-M2` | LEA-481 | Przerobić: C++ Core Guidelines | materiał | 2–3 h (wybrane sekcje) | 0 zł | https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines | `S12-START` | `S12-U2-D` | `12-rust-jako-wspolny-fundament/u2-czytanie-c-javy-i-objective-c/` |
+| `S12-U2-M3` | LEA-482 | Przerobić: Learn Java | materiał | 5–8 h | 0 zł | https://dev.java/learn/ | `S12-START` | `S12-U2-D` | `12-rust-jako-wspolny-fundament/u2-czytanie-c-javy-i-objective-c/` |
+| `S12-U2-M4` | LEA-483 | Przerobić: Programming with Objective-C… | materiał | 3–4 h | 0 zł | https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html | `S12-START` | `S12-U2-D` | `12-rust-jako-wspolny-fundament/u2-czytanie-c-javy-i-objective-c/` |
+| `S12-U2-M5` | LEA-534 | Przerobić: Importing Objective-C into Swift | materiał | 1 h | 0 zł | https://developer.apple.com/documentation/swift/importing-objective-c-into-swift | `S12-START` | `S12-U2-D` | `12-rust-jako-wspolny-fundament/u2-czytanie-c-javy-i-objective-c/` |
+| `S12-U2-D` | LEA-574 | Dowód (12.2): czytanie C++, Javy i Objective-C | dowód | — | — | — | `S12-U2-M1`, `S12-U2-M2`, `S12-U2-M3`, `S12-U2-M4`, `S12-U2-M5` | `S12-E7-M1`, `S12-E7-M2`, `S12-E7-M3`, `S12-E7-M4`, `S12-E7-P1`, `S12-E7-P2`, `S12-E7-P3`, `S18-E4-M1`, `S18-E4-M2`, `S18-E4-M3`, `S18-E4-M4`, `S18-E4-M5`, `S18-E4-M6`, `S18-E4-M7`, `S18-E4-M8`, `S19-E4-M1`, `S19-E4-M2`, `S19-E4-M3`, `S19-E4-M4`, `S19-E4-M5`, `S19-E4-M6`, `S19-E4-M7` | `12-rust-jako-wspolny-fundament/u2-czytanie-c-javy-i-objective-c/` |
 
 **`S12-U2-D` · Dowód (12.2): czytanie C++, Javy i Objective-C**
 

@@ -1,6 +1,6 @@
 # 16. macOS: plan wdrożenia w Linear
 
-Team **LEA** (https://linear.app/daankh/team/LEA/overview). Plan do przeglądu przed wdrożeniem: nic nie zostało jeszcze utworzone w Linear. Klucze zadań (np. `S16-E0-M1`) są robocze; po wdrożeniu dostaną identyfikatory `LEA-…`.
+Team **LEA** (https://linear.app/daankh/team/LEA/overview). Plan jest wdrożony w Linear. Klucze zadań (np. `S16-E0-M1`) są robocze, a identyfikator każdego zadania w Linear (`LEA-…`) jest w kolumnie „Linear” tabel zadań i w pliku `mapowanie-kluczy.csv`.
 
 **W skrócie:** 4 kamienie milowe, 33 zadania (1 start, 25 materiałów, 4 dowody, 3 praktyki). Plik główny z kolejnością projektów: `00-kolejnosc-i-zaleznosci.md`.
 
@@ -50,7 +50,7 @@ Jeden kamień milowy na etap ścieżki. Kamień milowy jest zamknięty, gdy zamk
 
 ## 3. Punkt startu
 
-Zadanie **`S16-START` · Start: 16. macOS** to jedyne wejście do projektu: wszystkie zadania pierwszego etapu są przez nie blokowane.
+Zadanie **`S16-START` · Start: 16. macOS** (LEA-431 w Linear) to jedyne wejście do projektu: wszystkie zadania pierwszego etapu są przez nie blokowane.
 
 - **Blokowane przez:** `S09-E2-D`, `S14-E1-D`
 - **Odblokowuje:** `S16-E0-M1`, `S16-E0-M2`, `S16-E0-M3`, `S16-E0-M4`, `S16-E0-M5`, `S16-E0-M6`
@@ -106,15 +106,15 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Narzędzie z sekcji 14 jako uniwersalna binarka w DMG, z menu aplikacji zgodnym z konwencjami macOS, ikoną w pasku menu pokazującą wynik ostatniego skanu, tokenami w Keychain i opcjonalnym uruchamianiem przy logowaniu przez `SMAppService`; `lipo -info` potwierdza obie architektury; `minimumSystemVersion` uzasadnione w README (wersja macOS, odpowiadająca jej wersja Safari/WebKit, lista użytych funkcji webowych sprawdzona dla tej wersji).
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S16-E0-M1` | Przerobić: Placing content in a bundle (struktura `.app`, `Info.plist`, zasoby) | materiał | 2–3 h | 0 zł | https://developer.apple.com/documentation/bundleresources/placing-content-in-a-bundle | `S16-START` | `S16-E0-D` | `16-macos/e0-budowa-aplikacji-na-macos/` |
-| `S16-E0-M2` | Przerobić: Building a universal macOS binary (`lipo`, `arm64` i `x86_64`) | materiał | 1–2 h | 0 zł | https://developer.apple.com/documentation/apple-silicon/building-a-universal-macos-binary | `S16-START` | `S16-E0-D` | `16-macos/e0-budowa-aplikacji-na-macos/` |
-| `S16-E0-M3` | Przerobić: Tauri: macOS Application Bundle, DMG | materiał | 2–3 h | 0 zł | https://v2.tauri.app/distribute/macos-application-bundle/, https://v2.tauri.app/distribute/dmg/ | `S16-START` | `S16-E0-D` | `16-macos/e0-budowa-aplikacji-na-macos/` |
-| `S16-E0-M4` | Przerobić: Keychain services: specyfika macOS… | materiał | 1–2 h | 0 zł | https://developer.apple.com/documentation/security/keychain-services | `S16-START` | `S16-E0-D` | `16-macos/e0-budowa-aplikacji-na-macos/` |
-| `S16-E0-M5` | Przerobić: SMAppService (elementy logowania i usługi w tle) | materiał | 1–2 h | 0 zł | https://developer.apple.com/documentation/servicemanagement/smappservice | `S16-START` | `S16-E0-D` | `16-macos/e0-budowa-aplikacji-na-macos/` |
-| `S16-E0-M6` | Przerobić: AppKit i crate’y `objc2`, `objc2-app-kit` (wywołania API systemu z Rusta, gdy plugin nie wystarcza) | materiał | 6–8 h | 0 zł | https://developer.apple.com/documentation/appkit, https://docs.rs/objc2 | `S16-START` | `S16-E0-D` | `16-macos/e0-budowa-aplikacji-na-macos/` |
-| `S16-E0-D` | Dowód etapu 0: budowa aplikacji na macOS | dowód | — | — | — | `S16-E0-M1`, `S16-E0-M2`, `S16-E0-M3`, `S16-E0-M4`, `S16-E0-M5`, `S16-E0-M6` | `S16-E1-M1`, `S16-E1-M2`, `S16-E1-M3`, `S16-E1-M4`, `S16-E1-M5`, `S16-E1-M6`, `S16-E1-M7`, `S16-E1-M8`, `S16-E1-M9`, `S16-E1-M10`, `S16-E1-M11` | `16-macos/e0-budowa-aplikacji-na-macos/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S16-E0-M1` | LEA-485 | Przerobić: Placing content in a bundle (struktura `.app`, `Info.plist`, zasoby) | materiał | 2–3 h | 0 zł | https://developer.apple.com/documentation/bundleresources/placing-content-in-a-bundle | `S16-START` | `S16-E0-D` | `16-macos/e0-budowa-aplikacji-na-macos/` |
+| `S16-E0-M2` | LEA-486 | Przerobić: Building a universal macOS binary (`lipo`, `arm64` i `x86_64`) | materiał | 1–2 h | 0 zł | https://developer.apple.com/documentation/apple-silicon/building-a-universal-macos-binary | `S16-START` | `S16-E0-D` | `16-macos/e0-budowa-aplikacji-na-macos/` |
+| `S16-E0-M3` | LEA-487 | Przerobić: Tauri: macOS Application Bundle, DMG | materiał | 2–3 h | 0 zł | https://v2.tauri.app/distribute/macos-application-bundle/, https://v2.tauri.app/distribute/dmg/ | `S16-START` | `S16-E0-D` | `16-macos/e0-budowa-aplikacji-na-macos/` |
+| `S16-E0-M4` | LEA-488 | Przerobić: Keychain services: specyfika macOS… | materiał | 1–2 h | 0 zł | https://developer.apple.com/documentation/security/keychain-services | `S16-START` | `S16-E0-D` | `16-macos/e0-budowa-aplikacji-na-macos/` |
+| `S16-E0-M5` | LEA-490 | Przerobić: SMAppService (elementy logowania i usługi w tle) | materiał | 1–2 h | 0 zł | https://developer.apple.com/documentation/servicemanagement/smappservice | `S16-START` | `S16-E0-D` | `16-macos/e0-budowa-aplikacji-na-macos/` |
+| `S16-E0-M6` | LEA-491 | Przerobić: AppKit i crate’y `objc2`, `objc2-app-kit` (wywołania API systemu z Rusta, gdy plugin nie wystarcza) | materiał | 6–8 h | 0 zł | https://developer.apple.com/documentation/appkit, https://docs.rs/objc2 | `S16-START` | `S16-E0-D` | `16-macos/e0-budowa-aplikacji-na-macos/` |
+| `S16-E0-D` | LEA-543 | Dowód etapu 0: budowa aplikacji na macOS | dowód | — | — | — | `S16-E0-M1`, `S16-E0-M2`, `S16-E0-M3`, `S16-E0-M4`, `S16-E0-M5`, `S16-E0-M6` | `S16-E1-M1`, `S16-E1-M2`, `S16-E1-M3`, `S16-E1-M4`, `S16-E1-M5`, `S16-E1-M6`, `S16-E1-M7`, `S16-E1-M8`, `S16-E1-M9`, `S16-E1-M10`, `S16-E1-M11` | `16-macos/e0-budowa-aplikacji-na-macos/` |
 
 **`S16-E0-D` · Dowód etapu 0: budowa aplikacji na macOS**
 
@@ -136,20 +136,20 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** DMG z aplikacją podpisaną Developer ID, z hardened runtime i minimalnym zestawem entitlements, notaryzowaną przez `notarytool` z kluczem API App Store Connect i ze zszytym biletem; na czystym Macu bez sieci aplikacja otwiera się bez ostrzeżenia Gatekeepera; `codesign --verify --deep --strict` i `spctl --assess` przechodzą; aktualizacja z N do N+1 przez updater Tauri zachowuje wpisy w Keychain i zgody prywatności.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S16-E1-M1` | Przerobić: Signing Mac Software with Developer ID | materiał | 1 h | 0 zł | https://developer.apple.com/developer-id/ | `S16-E0-D`, `S14-E4-D` | `S16-E1-D` | `16-macos/e1-podpis-notaryzacja-i-dystrybucja-poza-sklepem/` |
-| `S16-E1-M2` | Przerobić: Creating distribution-signed code for macOS | materiał | 2–3 h | 0 zł | https://developer.apple.com/documentation/xcode/creating-distribution-signed-code-for-the-mac | `S16-E0-D`, `S14-E4-D` | `S16-E1-D` | `16-macos/e1-podpis-notaryzacja-i-dystrybucja-poza-sklepem/` |
-| `S16-E1-M3` | Przerobić: Hardened Runtime | materiał | 1–2 h | 0 zł | https://developer.apple.com/documentation/security/hardened-runtime | `S16-E0-D`, `S14-E4-D` | `S16-E1-D` | `16-macos/e1-podpis-notaryzacja-i-dystrybucja-poza-sklepem/` |
-| `S16-E1-M4` | Przerobić: Notarizing macOS software before distribution, Customizing the notarization workflow, Resolving… | materiał | 3–4 h | 0 zł | https://developer.apple.com/documentation/security/notarizing-macos-software-before-distribution | `S16-E0-D`, `S14-E4-D` | `S16-E1-D` | `16-macos/e1-podpis-notaryzacja-i-dystrybucja-poza-sklepem/` |
-| `S16-E1-M5` | Przerobić: Packaging Mac software for distribution (ZIP, DMG, PKG) | materiał | 1–2 h | 0 zł | https://developer.apple.com/documentation/xcode/packaging-mac-software-for-distribution | `S16-E0-D`, `S14-E4-D` | `S16-E1-D` | `16-macos/e1-podpis-notaryzacja-i-dystrybucja-poza-sklepem/` |
-| `S16-E1-M6` | Przerobić: TN3125, TN3126, TN3127: Inside Code Signing (profile, skróty, wymagania) | materiał | 4–5 h | 0 zł | https://developer.apple.com/documentation/technotes/tn3127-inside-code-signing-requirements | `S16-E0-D`, `S14-E4-D` | `S16-E1-D` | `16-macos/e1-podpis-notaryzacja-i-dystrybucja-poza-sklepem/` |
-| `S16-E1-M7` | Przerobić: Code Signing: strona wsparcia z odnośnikami do przewodników i wątków forum | materiał, opcjonalne | 1–2 h | 0 zł | https://developer.apple.com/support/code-signing/ | `S16-E0-D`, `S14-E4-D` | — | `16-macos/e1-podpis-notaryzacja-i-dystrybucja-poza-sklepem/` |
-| `S16-E1-M8` | Przerobić: „Resolving Trusted Execution Problems” | materiał | 2–3 h | 0 zł | https://developer.apple.com/forums/thread/706442 | `S16-E0-D`, `S14-E4-D` | `S16-E1-D` | `16-macos/e1-podpis-notaryzacja-i-dystrybucja-poza-sklepem/` |
-| `S16-E1-M9` | Przerobić: Tauri: macOS Code Signing (Developer ID, klucz API App Store Connect, zmienne dla CI) | materiał | 1–2 h | 0 zł | https://v2.tauri.app/distribute/sign/macos/ | `S16-E0-D`, `S14-E4-D` | `S16-E1-D` | `16-macos/e1-podpis-notaryzacja-i-dystrybucja-poza-sklepem/` |
-| `S16-E1-M10` | Przerobić: Sparkle: dokumentacja (podpis EdDSA aktualizacji; dla aplikacji natywnych bez Tauri) | materiał, opcjonalne | 2 h | 0 zł | https://sparkle-project.github.io/documentation/ | `S16-E0-D`, `S14-E4-D` | — | `16-macos/e1-podpis-notaryzacja-i-dystrybucja-poza-sklepem/` |
-| `S16-E1-M11` | Przerobić: Apple Code Signing (`rcodesign`: podpis i notaryzacja z Linuksa) | materiał, opcjonalne | 1–2 h | 0 zł | https://gregoryszorc.com/docs/apple-codesign/stable/ | `S16-E0-D`, `S14-E4-D` | — | `16-macos/e1-podpis-notaryzacja-i-dystrybucja-poza-sklepem/` |
-| `S16-E1-D` | Dowód etapu 1: podpis, notaryzacja i dystrybucja poza sklepem | dowód | — | — | — | `S16-E1-M1`, `S16-E1-M2`, `S16-E1-M3`, `S16-E1-M4`, `S16-E1-M5`, `S16-E1-M6`, `S16-E1-M8`, `S16-E1-M9` | `S16-E2-M1`, `S16-E2-M2`, `S16-E2-M3`, `S16-E2-M4` | `16-macos/e1-podpis-notaryzacja-i-dystrybucja-poza-sklepem/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S16-E1-M1` | LEA-576 | Przerobić: Signing Mac Software with Developer ID | materiał | 1 h | 0 zł | https://developer.apple.com/developer-id/ | `S16-E0-D`, `S14-E4-D` | `S16-E1-D` | `16-macos/e1-podpis-notaryzacja-i-dystrybucja-poza-sklepem/` |
+| `S16-E1-M2` | LEA-578 | Przerobić: Creating distribution-signed code for macOS | materiał | 2–3 h | 0 zł | https://developer.apple.com/documentation/xcode/creating-distribution-signed-code-for-the-mac | `S16-E0-D`, `S14-E4-D` | `S16-E1-D` | `16-macos/e1-podpis-notaryzacja-i-dystrybucja-poza-sklepem/` |
+| `S16-E1-M3` | LEA-580 | Przerobić: Hardened Runtime | materiał | 1–2 h | 0 zł | https://developer.apple.com/documentation/security/hardened-runtime | `S16-E0-D`, `S14-E4-D` | `S16-E1-D` | `16-macos/e1-podpis-notaryzacja-i-dystrybucja-poza-sklepem/` |
+| `S16-E1-M4` | LEA-582 | Przerobić: Notarizing macOS software before distribution, Customizing the notarization workflow, Resolving… | materiał | 3–4 h | 0 zł | https://developer.apple.com/documentation/security/notarizing-macos-software-before-distribution | `S16-E0-D`, `S14-E4-D` | `S16-E1-D` | `16-macos/e1-podpis-notaryzacja-i-dystrybucja-poza-sklepem/` |
+| `S16-E1-M5` | LEA-584 | Przerobić: Packaging Mac software for distribution (ZIP, DMG, PKG) | materiał | 1–2 h | 0 zł | https://developer.apple.com/documentation/xcode/packaging-mac-software-for-distribution | `S16-E0-D`, `S14-E4-D` | `S16-E1-D` | `16-macos/e1-podpis-notaryzacja-i-dystrybucja-poza-sklepem/` |
+| `S16-E1-M6` | LEA-586 | Przerobić: TN3125, TN3126, TN3127: Inside Code Signing (profile, skróty, wymagania) | materiał | 4–5 h | 0 zł | https://developer.apple.com/documentation/technotes/tn3127-inside-code-signing-requirements | `S16-E0-D`, `S14-E4-D` | `S16-E1-D` | `16-macos/e1-podpis-notaryzacja-i-dystrybucja-poza-sklepem/` |
+| `S16-E1-M7` | LEA-587 | Przerobić: Code Signing: strona wsparcia z odnośnikami do przewodników i wątków forum | materiał, opcjonalne | 1–2 h | 0 zł | https://developer.apple.com/support/code-signing/ | `S16-E0-D`, `S14-E4-D` | — | `16-macos/e1-podpis-notaryzacja-i-dystrybucja-poza-sklepem/` |
+| `S16-E1-M8` | LEA-588 | Przerobić: „Resolving Trusted Execution Problems” | materiał | 2–3 h | 0 zł | https://developer.apple.com/forums/thread/706442 | `S16-E0-D`, `S14-E4-D` | `S16-E1-D` | `16-macos/e1-podpis-notaryzacja-i-dystrybucja-poza-sklepem/` |
+| `S16-E1-M9` | LEA-605 | Przerobić: Tauri: macOS Code Signing (Developer ID, klucz API App Store Connect, zmienne dla CI) | materiał | 1–2 h | 0 zł | https://v2.tauri.app/distribute/sign/macos/ | `S16-E0-D`, `S14-E4-D` | `S16-E1-D` | `16-macos/e1-podpis-notaryzacja-i-dystrybucja-poza-sklepem/` |
+| `S16-E1-M10` | LEA-609 | Przerobić: Sparkle: dokumentacja (podpis EdDSA aktualizacji; dla aplikacji natywnych bez Tauri) | materiał, opcjonalne | 2 h | 0 zł | https://sparkle-project.github.io/documentation/ | `S16-E0-D`, `S14-E4-D` | — | `16-macos/e1-podpis-notaryzacja-i-dystrybucja-poza-sklepem/` |
+| `S16-E1-M11` | LEA-611 | Przerobić: Apple Code Signing (`rcodesign`: podpis i notaryzacja z Linuksa) | materiał, opcjonalne | 1–2 h | 0 zł | https://gregoryszorc.com/docs/apple-codesign/stable/ | `S16-E0-D`, `S14-E4-D` | — | `16-macos/e1-podpis-notaryzacja-i-dystrybucja-poza-sklepem/` |
+| `S16-E1-D` | LEA-622 | Dowód etapu 1: podpis, notaryzacja i dystrybucja poza sklepem | dowód | — | — | — | `S16-E1-M1`, `S16-E1-M2`, `S16-E1-M3`, `S16-E1-M4`, `S16-E1-M5`, `S16-E1-M6`, `S16-E1-M8`, `S16-E1-M9` | `S16-E2-M1`, `S16-E2-M2`, `S16-E2-M3`, `S16-E2-M4` | `16-macos/e1-podpis-notaryzacja-i-dystrybucja-poza-sklepem/` |
 
 **`S16-E1-D` · Dowód etapu 1: podpis, notaryzacja i dystrybucja poza sklepem**
 
@@ -171,13 +171,13 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Osobny wariant budowania (flaga Cargo i osobny plik konfiguracji) bez updatera, z sandboxem, dostępem do repozytorium wybranego okienkiem systemowym i zapamiętanym przez zakładkę bezpieczeństwa; licencja jako zakup w aplikacji (StoreKit 2, produkt jednorazowy albo subskrypcja) odblokowuje funkcję płatną, a przywracanie zakupów działa; wariant przechodzi walidację w App Store Connect i trafia do testów w TestFlight; lista różnic między wariantem sklepowym a wariantem Developer ID w dokumentacji wydania.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S16-E2-M1` | Przerobić: App Sandbox, Configuring the macOS App Sandbox | materiał | 3–4 h | 0 zł | https://developer.apple.com/documentation/security/app-sandbox | `S16-E1-D` | `S16-E2-D` | `16-macos/e2-mac-app-store/` |
-| `S16-E2-M2` | Przerobić: App Review Guidelines… | materiał | 3–4 h | 0 zł | https://developer.apple.com/app-store/review/guidelines/ | `S16-E1-D` | `S16-E2-D` | `16-macos/e2-mac-app-store/` |
-| `S16-E2-M3` | Przerobić: Tauri: App Store (entitlements sandboxa, profil provisioningu, paczka `.pkg`, wysyłka) | materiał | 2–3 h | 0 zł | https://v2.tauri.app/distribute/app-store/ | `S16-E1-D` | `S16-E2-D` | `16-macos/e2-mac-app-store/` |
-| `S16-E2-M4` | Przerobić: In-App Purchase (StoreKit 2: produkty, `Transaction`, przywracanie zakupów, StoreKit Testing) i… | materiał | 5–6 h | 0 zł | https://developer.apple.com/documentation/storekit/in-app-purchase, https://developer.apple.com/documentation/appstoreserverapi | `S16-E1-D` | `S16-E2-D` | `16-macos/e2-mac-app-store/` |
-| `S16-E2-D` | Dowód etapu 2: Mac App Store | dowód | — | — | — | `S16-E2-M1`, `S16-E2-M2`, `S16-E2-M3`, `S16-E2-M4` | `S16-E3-M1`, `S16-E3-M2`, `S16-E3-M3`, `S16-E3-M4`, `S16-E3-P1`, `S16-E3-P2`, `S16-E3-P3` | `16-macos/e2-mac-app-store/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S16-E2-M1` | LEA-674 | Przerobić: App Sandbox, Configuring the macOS App Sandbox | materiał | 3–4 h | 0 zł | https://developer.apple.com/documentation/security/app-sandbox | `S16-E1-D` | `S16-E2-D` | `16-macos/e2-mac-app-store/` |
+| `S16-E2-M2` | LEA-675 | Przerobić: App Review Guidelines… | materiał | 3–4 h | 0 zł | https://developer.apple.com/app-store/review/guidelines/ | `S16-E1-D` | `S16-E2-D` | `16-macos/e2-mac-app-store/` |
+| `S16-E2-M3` | LEA-676 | Przerobić: Tauri: App Store (entitlements sandboxa, profil provisioningu, paczka `.pkg`, wysyłka) | materiał | 2–3 h | 0 zł | https://v2.tauri.app/distribute/app-store/ | `S16-E1-D` | `S16-E2-D` | `16-macos/e2-mac-app-store/` |
+| `S16-E2-M4` | LEA-677 | Przerobić: In-App Purchase (StoreKit 2: produkty, `Transaction`, przywracanie zakupów, StoreKit Testing) i… | materiał | 5–6 h | 0 zł | https://developer.apple.com/documentation/storekit/in-app-purchase, https://developer.apple.com/documentation/appstoreserverapi | `S16-E1-D` | `S16-E2-D` | `16-macos/e2-mac-app-store/` |
+| `S16-E2-D` | LEA-689 | Dowód etapu 2: Mac App Store | dowód | — | — | — | `S16-E2-M1`, `S16-E2-M2`, `S16-E2-M3`, `S16-E2-M4` | `S16-E3-M1`, `S16-E3-M2`, `S16-E3-M3`, `S16-E3-M4`, `S16-E3-P1`, `S16-E3-P2`, `S16-E3-P3` | `16-macos/e2-mac-app-store/` |
 
 **`S16-E2-D` · Dowód etapu 2: Mac App Store**
 
@@ -197,16 +197,16 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód poziomu E:** Samodzielnie, bez agenta, w 1 dzień diagnozujesz i naprawiasz odrzuconą notaryzację albo problem z uruchomieniem zgłoszony przez użytkownika (log notaryzacji, `codesign`, `spctl`, logi systemowe), wydajesz poprawioną wersję i umiesz wyjaśnić przyczynę osobie nietechnicznej.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S16-E3-M1` | Przerobić: Apple Platform Security | materiał | 8–10 h | 0 zł | https://support.apple.com/guide/security/welcome/web | `S16-E2-D` | `S16-E3-D` | `16-macos/e3-ekspert/` |
-| `S16-E3-M2` | Przerobić: The Art of Mac Malware, tom I i II | materiał | 15–20 h | 0 zł online, druk płatny | https://taomm.org | `S16-E2-D` | `S16-E3-D` | `16-macos/e3-ekspert/` |
-| `S16-E3-M3` | Przerobić: The Eclectic Light Company (Gatekeeper, XProtect, podpisy, zmiany w kolejnych wersjach macOS) | materiał | ok. 30 min tygodniowo | 0 zł | https://eclecticlight.co | `S16-E2-D` | `S16-E3-D` | `16-macos/e3-ekspert/` |
-| `S16-E3-M4` | Przerobić: Informacje o wydaniach Xcode i macOS, forum Apple Developer (tagi Code Signing, Notarization) | materiał | ok. 30 min tygodniowo | 0 zł | https://developer.apple.com/forums/tags/code-signing | `S16-E2-D` | `S16-E3-D` | `16-macos/e3-ekspert/` |
-| `S16-E3-P1` | Praktyka: recenzja kodu AI | praktyka | — | — | — | `S16-E2-D` | `S16-E3-D` | `16-macos/e3-ekspert/` |
-| `S16-E3-P2` | Praktyka: macierz wersji | praktyka | — | — | — | `S16-E2-D` | `S16-E3-D` | `16-macos/e3-ekspert/` |
-| `S16-E3-P3` | Praktyka: ćwiczenie wygaśnięcia lub unieważnienia certyfikatu | praktyka | — | — | — | `S16-E2-D` | `S16-E3-D` | `16-macos/e3-ekspert/` |
-| `S16-E3-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S16-E3-M1`, `S16-E3-M2`, `S16-E3-M3`, `S16-E3-M4`, `S16-E3-P1`, `S16-E3-P2`, `S16-E3-P3` | — | `16-macos/e3-ekspert/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S16-E3-M1` | LEA-729 | Przerobić: Apple Platform Security | materiał | 8–10 h | 0 zł | https://support.apple.com/guide/security/welcome/web | `S16-E2-D` | `S16-E3-D` | `16-macos/e3-ekspert/` |
+| `S16-E3-M2` | LEA-731 | Przerobić: The Art of Mac Malware, tom I i II | materiał | 15–20 h | 0 zł online, druk płatny | https://taomm.org | `S16-E2-D` | `S16-E3-D` | `16-macos/e3-ekspert/` |
+| `S16-E3-M3` | LEA-733 | Przerobić: The Eclectic Light Company (Gatekeeper, XProtect, podpisy, zmiany w kolejnych wersjach macOS) | materiał | ok. 30 min tygodniowo | 0 zł | https://eclecticlight.co | `S16-E2-D` | `S16-E3-D` | `16-macos/e3-ekspert/` |
+| `S16-E3-M4` | LEA-734 | Przerobić: Informacje o wydaniach Xcode i macOS, forum Apple Developer (tagi Code Signing, Notarization) | materiał | ok. 30 min tygodniowo | 0 zł | https://developer.apple.com/forums/tags/code-signing | `S16-E2-D` | `S16-E3-D` | `16-macos/e3-ekspert/` |
+| `S16-E3-P1` | LEA-735 | Praktyka: recenzja kodu AI | praktyka | — | — | — | `S16-E2-D` | `S16-E3-D` | `16-macos/e3-ekspert/` |
+| `S16-E3-P2` | LEA-737 | Praktyka: macierz wersji | praktyka | — | — | — | `S16-E2-D` | `S16-E3-D` | `16-macos/e3-ekspert/` |
+| `S16-E3-P3` | LEA-738 | Praktyka: ćwiczenie wygaśnięcia lub unieważnienia certyfikatu | praktyka | — | — | — | `S16-E2-D` | `S16-E3-D` | `16-macos/e3-ekspert/` |
+| `S16-E3-D` | LEA-742 | Dowód poziomu E: ekspert | dowód | — | — | — | `S16-E3-M1`, `S16-E3-M2`, `S16-E3-M3`, `S16-E3-M4`, `S16-E3-P1`, `S16-E3-P2`, `S16-E3-P3` | — | `16-macos/e3-ekspert/` |
 
 **`S16-E3-P1` · Praktyka: recenzja kodu AI**
 

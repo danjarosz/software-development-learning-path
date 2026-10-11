@@ -1,6 +1,6 @@
 # 07. Wymagania i specyfikacje: plan wdrożenia w Linear
 
-Team **LEA** (https://linear.app/daankh/team/LEA/overview). Plan do przeglądu przed wdrożeniem: nic nie zostało jeszcze utworzone w Linear. Klucze zadań (np. `S07-E0-M1`) są robocze; po wdrożeniu dostaną identyfikatory `LEA-…`.
+Team **LEA** (https://linear.app/daankh/team/LEA/overview). Plan jest wdrożony w Linear. Klucze zadań (np. `S07-E0-M1`) są robocze, a identyfikator każdego zadania w Linear (`LEA-…`) jest w kolumnie „Linear” tabel zadań i w pliku `mapowanie-kluczy.csv`.
 
 **W skrócie:** 7 kamieni milowych, 47 zadań (1 start, 35 materiałów, 7 dowodów, 4 praktyki). Plik główny z kolejnością projektów: `00-kolejnosc-i-zaleznosci.md`.
 
@@ -62,7 +62,7 @@ Jeden kamień milowy na etap ścieżki. Kamień milowy jest zamknięty, gdy zamk
 
 ## 3. Punkt startu
 
-Zadanie **`S07-START` · Start: 7. Wymagania i specyfikacje** to jedyne wejście do projektu: wszystkie zadania pierwszego etapu są przez nie blokowane.
+Zadanie **`S07-START` · Start: 7. Wymagania i specyfikacje** (LEA-249 w Linear) to jedyne wejście do projektu: wszystkie zadania pierwszego etapu są przez nie blokowane.
 
 - **Blokowane przez:** `S03-E2-D`, `S05-E1-D`, `S06-E1-D`
 - **Odblokowuje:** `S07-E0-M1`, `S07-E0-M2`, `S07-E0-M3`
@@ -126,12 +126,12 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Jednostronicowy słownik pojęć do oferty i umowy (wymaganie, kryterium akceptacji, specyfikacja, propozycja zmiany, odbiór, błąd, luka w specyfikacji) oraz rozbiór jednej istniejącej specyfikacji lub zgłoszenia od klienta: każde zdanie sklasyfikowane według rodzaju wymagania i ocenione według cech dobrego wymagania, z listą zdań do przepisania.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S07-E0-M1` | Przerobić: CPRE Foundation Level, sylabus 3.3.0, słownik CPRE 2.2.0 i podręcznik (Handbook) | materiał | 12–15 h | 0 zł (podręcznik po założeniu darmowego konta; egzamin płatny, opcjonalny) | https://cpre.ireb.org/en/downloads-and-resources/downloads | `S07-START` | `S07-E0-D` | `07-wymagania-i-specyfikacje/e0-podstawy-inzynierii-wymagan/` |
-| `S07-E0-M2` | Przerobić: Software Requirements Essentials: Core Practices for Successful Business Analysis (2023) | materiał, płatny | 8–10 h | płatna | https://www.informit.com/store/software-requirements-essentials-core-practices-for-9780138190286 | `S07-START` | `S07-E0-D` | `07-wymagania-i-specyfikacje/e0-podstawy-inzynierii-wymagan/` |
-| `S07-E0-M3` | Przerobić: ISO/IEC/IEEE 29148:2018 (procesy i cechy dobrych wymagań; w rewizji, nowe wydanie w fazie DIS) | materiał, płatny, opcjonalne | wg potrzeb | płatna | https://www.iso.org/standard/72089.html | `S07-START` | — | `07-wymagania-i-specyfikacje/e0-podstawy-inzynierii-wymagan/` |
-| `S07-E0-D` | Dowód etapu 0: podstawy inżynierii wymagań | dowód | — | — | — | `S07-E0-M1`, `S07-E0-M2` | `S07-E1-M1`, `S07-E1-M2`, `S07-E1-M3`, `S07-E1-M4`, `S07-E1-M5`, `S07-E1-M6`, `S07-E1-M7`, `S07-E1-M8` | `07-wymagania-i-specyfikacje/e0-podstawy-inzynierii-wymagan/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S07-E0-M1` | LEA-264 | Przerobić: CPRE Foundation Level, sylabus 3.3.0, słownik CPRE 2.2.0 i podręcznik (Handbook) | materiał | 12–15 h | 0 zł (podręcznik po założeniu darmowego konta; egzamin płatny, opcjonalny) | https://cpre.ireb.org/en/downloads-and-resources/downloads | `S07-START` | `S07-E0-D` | `07-wymagania-i-specyfikacje/e0-podstawy-inzynierii-wymagan/` |
+| `S07-E0-M2` | LEA-265 | Przerobić: Software Requirements Essentials: Core Practices for Successful Business Analysis (2023) | materiał, płatny | 8–10 h | płatna | https://www.informit.com/store/software-requirements-essentials-core-practices-for-9780138190286 | `S07-START` | `S07-E0-D` | `07-wymagania-i-specyfikacje/e0-podstawy-inzynierii-wymagan/` |
+| `S07-E0-M3` | LEA-267 | Przerobić: ISO/IEC/IEEE 29148:2018 (procesy i cechy dobrych wymagań; w rewizji, nowe wydanie w fazie DIS) | materiał, płatny, opcjonalne | wg potrzeb | płatna | https://www.iso.org/standard/72089.html | `S07-START` | — | `07-wymagania-i-specyfikacje/e0-podstawy-inzynierii-wymagan/` |
+| `S07-E0-D` | LEA-301 | Dowód etapu 0: podstawy inżynierii wymagań | dowód | — | — | — | `S07-E0-M1`, `S07-E0-M2` | `S07-E1-M1`, `S07-E1-M2`, `S07-E1-M3`, `S07-E1-M4`, `S07-E1-M5`, `S07-E1-M6`, `S07-E1-M7`, `S07-E1-M8` | `07-wymagania-i-specyfikacje/e0-podstawy-inzynierii-wymagan/` |
 
 **`S07-E0-D` · Dowód etapu 0: podstawy inżynierii wymagań**
 
@@ -153,17 +153,17 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Dla jednego klienta lub poligonu z mapy nauki (rolę klienta może odegrać osoba spoza IT): notatki z dwóch wywiadów, mapa wpływu, story map z zaznaczonym pierwszym wydaniem, priorytety funkcji według MoSCoW z kategorią Kano i Cost of Delay (CD3) dla najważniejszych, klikalny prototyp jednej funkcji wygenerowany przez agenta i pokazany na sesji oraz example map dla dwóch funkcji; z tego wpisy wejściowe do `/vicrafter:specify` (vicrafter to własny plugin Claude Code do pracy z agentami, rozwijany w sekcji 11: intencja w kilku zdaniach, reguły, przykłady, pytania otwarte) i lista decyzji podjętych na warsztacie.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S07-E1-M1` | Przerobić: The Mom Test | materiał, płatny | 3–4 h | płatna | https://www.momtestbook.com | `S07-E0-D` | `S07-E1-D` | `07-wymagania-i-specyfikacje/e1-wydobywanie-wymagan-od-klienta/` |
-| `S07-E1-M2` | Przerobić: „Know Your Customers’ »Jobs to Be Done«” (wrzesień 2016) | materiał, płatny | 1 h | abonament (część artykułów bezpłatnie) | https://hbr.org/2016/09/know-your-customers-jobs-to-be-done | `S07-E0-D` | `S07-E1-D` | `07-wymagania-i-specyfikacje/e1-wydobywanie-wymagan-od-klienta/` |
-| `S07-E1-M3` | Przerobić: User Story Mapping (2014) | materiał, płatny | 8–10 h | płatna | https://www.oreilly.com/library/view/user-story-mapping/9781491904893/ | `S07-E0-D` | `S07-E1-D` | `07-wymagania-i-specyfikacje/e1-wydobywanie-wymagan-od-klienta/` |
-| `S07-E1-M4` | Przerobić: Impact Mapping (2012) i materiały warsztatowe na stronie projektu | materiał, płatny | 3–4 h | książka płatna, strona 0 zł | https://www.impactmapping.org | `S07-E0-D` | `S07-E1-D` | `07-wymagania-i-specyfikacje/e1-wydobywanie-wymagan-od-klienta/` |
-| `S07-E1-M5` | Przerobić: „Introducing Example Mapping” (2015) | materiał | 1 h | 0 zł | https://cucumber.io/blog/bdd/example-mapping-introduction/ | `S07-E0-D` | `S07-E1-D` | `07-wymagania-i-specyfikacje/e1-wydobywanie-wymagan-od-klienta/` |
-| `S07-E1-M6` | Przerobić: CPRE Requirements Elicitation, sylabus 3.2.0 | materiał | 6–8 h | 0 zł | https://cpre.ireb.org/en/downloads-and-resources/downloads | `S07-E0-D` | `S07-E1-D` | `07-wymagania-i-specyfikacje/e1-wydobywanie-wymagan-od-klienta/` |
-| `S07-E1-M7` | Przerobić: Priorytetyzacja: MoSCoW, model Kano, Cost of Delay i CD3 (podstawa WSJF) | materiał | 3–4 h | 0 zł | https://www.productplan.com/glossary/moscow-prioritization/, https://foldingburritos.com/blog/kano-model/, https://blackswanfarming.com/cost-of-delay/ | `S07-E0-D` | `S07-E1-D` | `07-wymagania-i-specyfikacje/e1-wydobywanie-wymagan-od-klienta/` |
-| `S07-E1-M8` | Przerobić: Prototyp jako technika wydobywania wymagań: „UX Prototypes: Low Fidelity vs. High Fidelity” i… | materiał | 1–2 h | 0 zł | https://www.nngroup.com/articles/ux-prototype-hi-lo-fidelity/, https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them | `S07-E0-D` | `S07-E1-D` | `07-wymagania-i-specyfikacje/e1-wydobywanie-wymagan-od-klienta/` |
-| `S07-E1-D` | Dowód etapu 1: wydobywanie wymagań od klienta | dowód | — | — | — | `S07-E1-M1`, `S07-E1-M2`, `S07-E1-M3`, `S07-E1-M4`, `S07-E1-M5`, `S07-E1-M6`, `S07-E1-M7`, `S07-E1-M8` | `S07-E2-M1`, `S07-E2-M2`, `S07-E2-M3`, `S07-E2-M4`, `S07-E2-M5`, `S07-E2-M6`, `S08-START`, `S11-START` | `07-wymagania-i-specyfikacje/e1-wydobywanie-wymagan-od-klienta/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S07-E1-M1` | LEA-312 | Przerobić: The Mom Test | materiał, płatny | 3–4 h | płatna | https://www.momtestbook.com | `S07-E0-D` | `S07-E1-D` | `07-wymagania-i-specyfikacje/e1-wydobywanie-wymagan-od-klienta/` |
+| `S07-E1-M2` | LEA-314 | Przerobić: „Know Your Customers’ »Jobs to Be Done«” (wrzesień 2016) | materiał, płatny | 1 h | abonament (część artykułów bezpłatnie) | https://hbr.org/2016/09/know-your-customers-jobs-to-be-done | `S07-E0-D` | `S07-E1-D` | `07-wymagania-i-specyfikacje/e1-wydobywanie-wymagan-od-klienta/` |
+| `S07-E1-M3` | LEA-317 | Przerobić: User Story Mapping (2014) | materiał, płatny | 8–10 h | płatna | https://www.oreilly.com/library/view/user-story-mapping/9781491904893/ | `S07-E0-D` | `S07-E1-D` | `07-wymagania-i-specyfikacje/e1-wydobywanie-wymagan-od-klienta/` |
+| `S07-E1-M4` | LEA-320 | Przerobić: Impact Mapping (2012) i materiały warsztatowe na stronie projektu | materiał, płatny | 3–4 h | książka płatna, strona 0 zł | https://www.impactmapping.org | `S07-E0-D` | `S07-E1-D` | `07-wymagania-i-specyfikacje/e1-wydobywanie-wymagan-od-klienta/` |
+| `S07-E1-M5` | LEA-322 | Przerobić: „Introducing Example Mapping” (2015) | materiał | 1 h | 0 zł | https://cucumber.io/blog/bdd/example-mapping-introduction/ | `S07-E0-D` | `S07-E1-D` | `07-wymagania-i-specyfikacje/e1-wydobywanie-wymagan-od-klienta/` |
+| `S07-E1-M6` | LEA-324 | Przerobić: CPRE Requirements Elicitation, sylabus 3.2.0 | materiał | 6–8 h | 0 zł | https://cpre.ireb.org/en/downloads-and-resources/downloads | `S07-E0-D` | `S07-E1-D` | `07-wymagania-i-specyfikacje/e1-wydobywanie-wymagan-od-klienta/` |
+| `S07-E1-M7` | LEA-327 | Przerobić: Priorytetyzacja: MoSCoW, model Kano, Cost of Delay i CD3 (podstawa WSJF) | materiał | 3–4 h | 0 zł | https://www.productplan.com/glossary/moscow-prioritization/, https://foldingburritos.com/blog/kano-model/, https://blackswanfarming.com/cost-of-delay/ | `S07-E0-D` | `S07-E1-D` | `07-wymagania-i-specyfikacje/e1-wydobywanie-wymagan-od-klienta/` |
+| `S07-E1-M8` | LEA-328 | Przerobić: Prototyp jako technika wydobywania wymagań: „UX Prototypes: Low Fidelity vs. High Fidelity” i… | materiał | 1–2 h | 0 zł | https://www.nngroup.com/articles/ux-prototype-hi-lo-fidelity/, https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them | `S07-E0-D` | `S07-E1-D` | `07-wymagania-i-specyfikacje/e1-wydobywanie-wymagan-od-klienta/` |
+| `S07-E1-D` | LEA-339 | Dowód etapu 1: wydobywanie wymagań od klienta | dowód | — | — | — | `S07-E1-M1`, `S07-E1-M2`, `S07-E1-M3`, `S07-E1-M4`, `S07-E1-M5`, `S07-E1-M6`, `S07-E1-M7`, `S07-E1-M8` | `S07-E2-M1`, `S07-E2-M2`, `S07-E2-M3`, `S07-E2-M4`, `S07-E2-M5`, `S07-E2-M6`, `S08-START`, `S11-START` | `07-wymagania-i-specyfikacje/e1-wydobywanie-wymagan-od-klienta/` |
 
 **`S07-E1-D` · Dowód etapu 1: wydobywanie wymagań od klienta**
 
@@ -185,15 +185,15 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Specyfikacja jednej funkcji klienta (rozmiar M, np. rezerwacja z limitem i wygasaniem) z 5–8 wymaganiami w EARS, kryteriami akceptacji pozytywnymi, negatywnymi i brzegowymi dla każdego R-n i sekcją „Poza zakresem”; obok ta sama funkcja w wersji napisanej przez agenta bez wskazówek, z listą znalezionych zapachów wymagań i poprawek, oraz notatka, ile pytań do klienta wynikło z recenzji.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S07-E2-M1` | Przerobić: EARS: przewodnik i reguły wzorców | materiał | 3–4 h | 0 zł | https://alistairmavin.com/ears/ | `S07-E1-D` | `S07-E2-D` | `07-wymagania-i-specyfikacje/e2-ears-kryteria-akceptacji-i-niejednoznacznosc/` |
-| `S07-E2-M2` | Przerobić: „Easy Approach to Requirements Syntax (EARS)” (RE ’09) | materiał, płatny | 1–2 h | płatny dostęp przez IEEE | https://research.manchester.ac.uk/en/publications/easy-approach-to-requirements-syntax-ears/ | `S07-E1-D` | `S07-E2-D` | `07-wymagania-i-specyfikacje/e2-ears-kryteria-akceptacji-i-niejednoznacznosc/` |
-| `S07-E2-M3` | Przerobić: Writing Great Specifications (2017) | materiał, płatny | 10–12 h | płatna | https://www.manning.com/books/writing-great-specifications | `S07-E1-D` | `S07-E2-D` | `07-wymagania-i-specyfikacje/e2-ears-kryteria-akceptacji-i-niejednoznacznosc/` |
-| `S07-E2-M4` | Przerobić: Fifty Quick Ideas to Improve Your User Stories | materiał, płatny | 4–5 h | płatna | https://leanpub.com/50quickideas | `S07-E1-D` | `S07-E2-D` | `07-wymagania-i-specyfikacje/e2-ears-kryteria-akceptacji-i-niejednoznacznosc/` |
-| `S07-E2-M5` | Przerobić: „Rapid quality assurance with Requirements Smells” (2016) | materiał | 1–2 h | 0 zł (arXiv) | https://arxiv.org/abs/1611.08847 | `S07-E1-D` | `S07-E2-D` | `07-wymagania-i-specyfikacje/e2-ears-kryteria-akceptacji-i-niejednoznacznosc/` |
-| `S07-E2-M6` | Przerobić: Guide to Writing Requirements: arkusz podsumowujący (summary sheet) | materiał | 1–2 h | 0 zł | https://www.incose.org/communities/working-groups-initiatives/requirements | `S07-E1-D` | `S07-E2-D` | `07-wymagania-i-specyfikacje/e2-ears-kryteria-akceptacji-i-niejednoznacznosc/` |
-| `S07-E2-D` | Dowód etapu 2: EARS, kryteria akceptacji i niejednoznaczność | dowód | — | — | — | `S07-E2-M1`, `S07-E2-M2`, `S07-E2-M3`, `S07-E2-M4`, `S07-E2-M5`, `S07-E2-M6` | `S07-E3-M1`, `S07-E3-M2`, `S07-E3-M3`, `S07-E3-M4`, `S07-E3-M5` | `07-wymagania-i-specyfikacje/e2-ears-kryteria-akceptacji-i-niejednoznacznosc/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S07-E2-M1` | LEA-356 | Przerobić: EARS: przewodnik i reguły wzorców | materiał | 3–4 h | 0 zł | https://alistairmavin.com/ears/ | `S07-E1-D` | `S07-E2-D` | `07-wymagania-i-specyfikacje/e2-ears-kryteria-akceptacji-i-niejednoznacznosc/` |
+| `S07-E2-M2` | LEA-359 | Przerobić: „Easy Approach to Requirements Syntax (EARS)” (RE ’09) | materiał, płatny | 1–2 h | płatny dostęp przez IEEE | https://research.manchester.ac.uk/en/publications/easy-approach-to-requirements-syntax-ears/ | `S07-E1-D` | `S07-E2-D` | `07-wymagania-i-specyfikacje/e2-ears-kryteria-akceptacji-i-niejednoznacznosc/` |
+| `S07-E2-M3` | LEA-361 | Przerobić: Writing Great Specifications (2017) | materiał, płatny | 10–12 h | płatna | https://www.manning.com/books/writing-great-specifications | `S07-E1-D` | `S07-E2-D` | `07-wymagania-i-specyfikacje/e2-ears-kryteria-akceptacji-i-niejednoznacznosc/` |
+| `S07-E2-M4` | LEA-363 | Przerobić: Fifty Quick Ideas to Improve Your User Stories | materiał, płatny | 4–5 h | płatna | https://leanpub.com/50quickideas | `S07-E1-D` | `S07-E2-D` | `07-wymagania-i-specyfikacje/e2-ears-kryteria-akceptacji-i-niejednoznacznosc/` |
+| `S07-E2-M5` | LEA-366 | Przerobić: „Rapid quality assurance with Requirements Smells” (2016) | materiał | 1–2 h | 0 zł (arXiv) | https://arxiv.org/abs/1611.08847 | `S07-E1-D` | `S07-E2-D` | `07-wymagania-i-specyfikacje/e2-ears-kryteria-akceptacji-i-niejednoznacznosc/` |
+| `S07-E2-M6` | LEA-367 | Przerobić: Guide to Writing Requirements: arkusz podsumowujący (summary sheet) | materiał | 1–2 h | 0 zł | https://www.incose.org/communities/working-groups-initiatives/requirements | `S07-E1-D` | `S07-E2-D` | `07-wymagania-i-specyfikacje/e2-ears-kryteria-akceptacji-i-niejednoznacznosc/` |
+| `S07-E2-D` | LEA-369 | Dowód etapu 2: EARS, kryteria akceptacji i niejednoznaczność | dowód | — | — | — | `S07-E2-M1`, `S07-E2-M2`, `S07-E2-M3`, `S07-E2-M4`, `S07-E2-M5`, `S07-E2-M6` | `S07-E3-M1`, `S07-E3-M2`, `S07-E3-M3`, `S07-E3-M4`, `S07-E3-M5` | `07-wymagania-i-specyfikacje/e2-ears-kryteria-akceptacji-i-niejednoznacznosc/` |
 
 **`S07-E2-D` · Dowód etapu 2: EARS, kryteria akceptacji i niejednoznaczność**
 
@@ -215,14 +215,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** `nfr.md` dla przejmowanej aplikacji klienta lub poligonu: dla każdej istotnej charakterystyki ISO 25010 wymaganie z miarą, progiem, warunkami pomiaru i sposobem weryfikacji (test, narzędzie, przegląd), z oznaczeniem, które progi system dziś spełnia, a których nie (wynik pomiaru), i które z nich trafiają do oferty jako płatne prace stabilizacyjne; do tego dla jednej funkcji AI (np. podsumowanie zgłoszeń modelem językowym) klasyfikacja według AI Act, decyzja o DPIA i wynikające z nich wymagania (np. oznaczenie treści generowanych, nadzór człowieka, rejestrowanie) zapisane jako mierzalne NFR.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S07-E3-M1` | Przerobić: ISO/IEC 25010:2023, model jakości produktu | materiał, płatny | 2–3 h (struktura i definicje) | płatna | https://www.iso.org/standard/78176.html | `S07-E2-D` | `S07-E3-D` | `07-wymagania-i-specyfikacje/e3-wymagania-niefunkcjonalne/` |
-| `S07-E3-M2` | Przerobić: arc42 Quality Model: charakterystyki jakości, przykładowe wymagania jakościowe, opis ISO 25010 | materiał | 4–6 h | 0 zł | https://quality.arc42.org, https://quality.arc42.org/standards/iso-25010 | `S07-E2-D` | `S07-E3-D` | `07-wymagania-i-specyfikacje/e3-wymagania-niefunkcjonalne/` |
-| `S07-E3-M3` | Przerobić: Mastering the Requirements Process, wydanie 3 (2012) | materiał, płatny | 6–8 h (rozdziały o wymaganiach niefunkcjonalnych i kryteriach dopasowania) | płatna | https://www.informit.com/store/mastering-the-requirements-process-getting-requirements-9780321815743 | `S07-E2-D` | `S07-E3-D` | `07-wymagania-i-specyfikacje/e3-wymagania-niefunkcjonalne/` |
-| `S07-E3-M4` | Przerobić: AI Act Explorer i EU AI Act Compliance Checker… | materiał | 2–3 h | 0 zł | https://artificialintelligenceact.eu/ai-act-explorer/, https://artificialintelligenceact.eu/assessment/eu-ai-act-compliance-checker/ | `S07-E2-D` | `S07-E3-D` | `07-wymagania-i-specyfikacje/e3-wymagania-niefunkcjonalne/` |
-| `S07-E3-M5` | Przerobić: Wytyczne dotyczące oceny skutków dla ochrony danych (DPIA), WP248 rev.01 | materiał | 2–3 h | 0 zł | https://ec.europa.eu/newsroom/article29/items/611236 | `S07-E2-D` | `S07-E3-D` | `07-wymagania-i-specyfikacje/e3-wymagania-niefunkcjonalne/` |
-| `S07-E3-D` | Dowód etapu 3: wymagania niefunkcjonalne | dowód | — | — | — | `S07-E3-M1`, `S07-E3-M2`, `S07-E3-M3`, `S07-E3-M4`, `S07-E3-M5` | `S07-E4-M1`, `S07-E4-M2`, `S07-E4-M3`, `S07-E4-M4`, `S07-E4-M5`, `S07-E4-M6` | `07-wymagania-i-specyfikacje/e3-wymagania-niefunkcjonalne/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S07-E3-M1` | LEA-383 | Przerobić: ISO/IEC 25010:2023, model jakości produktu | materiał, płatny | 2–3 h (struktura i definicje) | płatna | https://www.iso.org/standard/78176.html | `S07-E2-D` | `S07-E3-D` | `07-wymagania-i-specyfikacje/e3-wymagania-niefunkcjonalne/` |
+| `S07-E3-M2` | LEA-387 | Przerobić: arc42 Quality Model: charakterystyki jakości, przykładowe wymagania jakościowe, opis ISO 25010 | materiał | 4–6 h | 0 zł | https://quality.arc42.org, https://quality.arc42.org/standards/iso-25010 | `S07-E2-D` | `S07-E3-D` | `07-wymagania-i-specyfikacje/e3-wymagania-niefunkcjonalne/` |
+| `S07-E3-M3` | LEA-389 | Przerobić: Mastering the Requirements Process, wydanie 3 (2012) | materiał, płatny | 6–8 h (rozdziały o wymaganiach niefunkcjonalnych i kryteriach dopasowania) | płatna | https://www.informit.com/store/mastering-the-requirements-process-getting-requirements-9780321815743 | `S07-E2-D` | `S07-E3-D` | `07-wymagania-i-specyfikacje/e3-wymagania-niefunkcjonalne/` |
+| `S07-E3-M4` | LEA-392 | Przerobić: AI Act Explorer i EU AI Act Compliance Checker… | materiał | 2–3 h | 0 zł | https://artificialintelligenceact.eu/ai-act-explorer/, https://artificialintelligenceact.eu/assessment/eu-ai-act-compliance-checker/ | `S07-E2-D` | `S07-E3-D` | `07-wymagania-i-specyfikacje/e3-wymagania-niefunkcjonalne/` |
+| `S07-E3-M5` | LEA-395 | Przerobić: Wytyczne dotyczące oceny skutków dla ochrony danych (DPIA), WP248 rev.01 | materiał | 2–3 h | 0 zł | https://ec.europa.eu/newsroom/article29/items/611236 | `S07-E2-D` | `S07-E3-D` | `07-wymagania-i-specyfikacje/e3-wymagania-niefunkcjonalne/` |
+| `S07-E3-D` | LEA-405 | Dowód etapu 3: wymagania niefunkcjonalne | dowód | — | — | — | `S07-E3-M1`, `S07-E3-M2`, `S07-E3-M3`, `S07-E3-M4`, `S07-E3-M5` | `S07-E4-M1`, `S07-E4-M2`, `S07-E4-M3`, `S07-E4-M4`, `S07-E4-M5`, `S07-E4-M6` | `07-wymagania-i-specyfikacje/e3-wymagania-niefunkcjonalne/` |
 
 **`S07-E3-D` · Dowód etapu 3: wymagania niefunkcjonalne**
 
@@ -244,15 +244,15 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Ta sama funkcja z etapu 2 przeprowadzona przez Spec Kit w Claude Code (od `/speckit-specify` do `/speckit-analyze`) i przez przepływ vicrafter (`specify`, `clarify`, `approve`), z porównaniem: czas człowieka, liczba pytań wyjaśniających, problemy wykryte w analizie spójności, długość specyfikacji, liczba pytań osoby nietechnicznej (klienta lub kogoś spoza IT), która czyta dokument bez tłumaczenia; wnioski przeniesione do szablonu `spec.md` (zmiany w skillach vicrafter: sekcja 11).
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S07-E4-M1` | Przerobić: GitHub Spec Kit: „Specification-Driven Development”, Quickstart, „Existing Projects” | materiał | 6–8 h | 0 zł | https://github.com/github/spec-kit/blob/main/spec-driven.md, https://github.github.io/spec-kit/quickstart.html, https://github.github.io/spec-kit/guides/existing-projects.html | `S07-E3-D`, `S01-E1-D` | `S07-E4-D` | `07-wymagania-i-specyfikacje/e4-specyfikacje-dla-agentow/` |
-| `S07-E4-M2` | Przerobić: Kiro: specyfikacje funkcji i błędów | materiał | 2–3 h | 0 zł | https://kiro.dev/docs/specs/, https://kiro.dev/docs/specs/bugfix-specs/ | `S07-E3-D`, `S01-E1-D` | `S07-E4-D` | `07-wymagania-i-specyfikacje/e4-specyfikacje-dla-agentow/` |
-| `S07-E4-M3` | Przerobić: OpenSpec: koncepcje (delta specs) | materiał | 2–3 h | 0 zł | https://github.com/Fission-AI/OpenSpec/blob/main/docs/concepts.md | `S07-E3-D`, `S01-E1-D` | `S07-E4-D` | `07-wymagania-i-specyfikacje/e4-specyfikacje-dla-agentow/` |
-| `S07-E4-M4` | Przerobić: „Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl” (październik 2025) | materiał | 1 h | 0 zł | https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html | `S07-E3-D`, `S01-E1-D` | `S07-E4-D` | `07-wymagania-i-specyfikacje/e4-specyfikacje-dla-agentow/` |
-| `S07-E4-M5` | Przerobić: Spec-driven development w Technology Radar (listopad 2025, pierścień „Assess”) | materiał | 0,5 h | 0 zł | https://www.thoughtworks.com/radar/techniques/spec-driven-development | `S07-E3-D`, `S01-E1-D` | `S07-E4-D` | `07-wymagania-i-specyfikacje/e4-specyfikacje-dla-agentow/` |
-| `S07-E4-M6` | Przerobić: Dokumentacja Claude Code: „Let Claude interview you” (Best practices) | materiał | 0,5 h | 0 zł | https://code.claude.com/docs/en/best-practices | `S07-E3-D`, `S01-E1-D` | `S07-E4-D` | `07-wymagania-i-specyfikacje/e4-specyfikacje-dla-agentow/` |
-| `S07-E4-D` | Dowód etapu 4: specyfikacje dla agentów | dowód | — | — | — | `S07-E4-M1`, `S07-E4-M2`, `S07-E4-M3`, `S07-E4-M4`, `S07-E4-M5`, `S07-E4-M6` | `S07-E5-M1`, `S07-E5-M2`, `S07-E5-M3`, `S07-E5-M4` | `07-wymagania-i-specyfikacje/e4-specyfikacje-dla-agentow/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S07-E4-M1` | LEA-417 | Przerobić: GitHub Spec Kit: „Specification-Driven Development”, Quickstart, „Existing Projects” | materiał | 6–8 h | 0 zł | https://github.com/github/spec-kit/blob/main/spec-driven.md, https://github.github.io/spec-kit/quickstart.html, https://github.github.io/spec-kit/guides/existing-projects.html | `S07-E3-D`, `S01-E1-D` | `S07-E4-D` | `07-wymagania-i-specyfikacje/e4-specyfikacje-dla-agentow/` |
+| `S07-E4-M2` | LEA-420 | Przerobić: Kiro: specyfikacje funkcji i błędów | materiał | 2–3 h | 0 zł | https://kiro.dev/docs/specs/, https://kiro.dev/docs/specs/bugfix-specs/ | `S07-E3-D`, `S01-E1-D` | `S07-E4-D` | `07-wymagania-i-specyfikacje/e4-specyfikacje-dla-agentow/` |
+| `S07-E4-M3` | LEA-422 | Przerobić: OpenSpec: koncepcje (delta specs) | materiał | 2–3 h | 0 zł | https://github.com/Fission-AI/OpenSpec/blob/main/docs/concepts.md | `S07-E3-D`, `S01-E1-D` | `S07-E4-D` | `07-wymagania-i-specyfikacje/e4-specyfikacje-dla-agentow/` |
+| `S07-E4-M4` | LEA-424 | Przerobić: „Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl” (październik 2025) | materiał | 1 h | 0 zł | https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html | `S07-E3-D`, `S01-E1-D` | `S07-E4-D` | `07-wymagania-i-specyfikacje/e4-specyfikacje-dla-agentow/` |
+| `S07-E4-M5` | LEA-429 | Przerobić: Spec-driven development w Technology Radar (listopad 2025, pierścień „Assess”) | materiał | 0,5 h | 0 zł | https://www.thoughtworks.com/radar/techniques/spec-driven-development | `S07-E3-D`, `S01-E1-D` | `S07-E4-D` | `07-wymagania-i-specyfikacje/e4-specyfikacje-dla-agentow/` |
+| `S07-E4-M6` | LEA-432 | Przerobić: Dokumentacja Claude Code: „Let Claude interview you” (Best practices) | materiał | 0,5 h | 0 zł | https://code.claude.com/docs/en/best-practices | `S07-E3-D`, `S01-E1-D` | `S07-E4-D` | `07-wymagania-i-specyfikacje/e4-specyfikacje-dla-agentow/` |
+| `S07-E4-D` | LEA-440 | Dowód etapu 4: specyfikacje dla agentów | dowód | — | — | — | `S07-E4-M1`, `S07-E4-M2`, `S07-E4-M3`, `S07-E4-M4`, `S07-E4-M5`, `S07-E4-M6` | `S07-E5-M1`, `S07-E5-M2`, `S07-E5-M3`, `S07-E5-M4` | `07-wymagania-i-specyfikacje/e4-specyfikacje-dla-agentow/` |
 
 **`S07-E4-D` · Dowód etapu 4: specyfikacje dla agentów**
 
@@ -274,13 +274,13 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Komplet dokumentów z jednego projektu klienta lub poligonu (rolę klienta może odegrać osoba spoza IT): odtworzona specyfikacja w statusie `reconstructed` dla jednego obszaru przejmowanej aplikacji (z oznaczeniami `[DO WERYFIKACJI Z KLIENTEM]` i powiązaniem każdego opisanego zachowania z testem, który je utrwala), specyfikacja nowej funkcji z wyceną przedziałem i jawnymi założeniami, jedna propozycja zmiany (`proposal.md` i `spec-delta.md`) z wyceną i wpływem na termin, macierz śledzenia R → AC → T → test oraz protokół odbioru (`uat-protocol.md`) z sesji odbiorczej, z uwagami sklasyfikowanymi jako błąd, luka albo nowe życzenie.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S07-E5-M1` | Przerobić: Software Requirements, wydanie 3 (2013) | materiał, płatny | 12–15 h (rozdziały o priorytetyzacji, walidacji, zarządzaniu zmianą, śledzeniu powiązań i projektach przejmowanych) | płatna | https://www.pearson.com/en-us/subject-catalog/p/software-requirements/P200000000686/9780735679665 | `S07-E4-D` | `S07-E5-D` | `07-wymagania-i-specyfikacje/e5-umowa-zmiana-przejecie-i-odbior/` |
-| `S07-E5-M2` | Przerobić: Object-Oriented Reengineering Patterns | materiał | 6–8 h (rozdziały o pierwszym kontakcie z systemem i wstępnym zrozumieniu) | 0 zł (PDF) | https://www.oscar.nierstrasz.org/oorp/ | `S07-E4-D` | `S07-E5-D` | `07-wymagania-i-specyfikacje/e5-umowa-zmiana-przejecie-i-odbior/` |
-| `S07-E5-M3` | Przerobić: Certified Tester Acceptance Testing, sylabus v1.0 (2019) | materiał | 6–8 h | 0 zł (egzamin płatny, opcjonalny) | https://istqb.org/certifications/certified-tester-acceptance-testing-ct-act/ | `S07-E4-D` | `S07-E5-D` | `07-wymagania-i-specyfikacje/e5-umowa-zmiana-przejecie-i-odbior/` |
-| `S07-E5-M4` | Przerobić: Software Estimation: Demystifying the Black Art (2006) | materiał, płatny | 6–8 h (wybrane rozdziały) | płatna | https://www.microsoftpressstore.com/store/software-estimation-demystifying-the-black-art-9780735605350 | `S07-E4-D` | `S07-E5-D` | `07-wymagania-i-specyfikacje/e5-umowa-zmiana-przejecie-i-odbior/` |
-| `S07-E5-D` | Dowód etapu 5: umowa, zmiana, przejęcie i odbiór | dowód | — | — | — | `S07-E5-M1`, `S07-E5-M2`, `S07-E5-M3`, `S07-E5-M4` | `S07-E6-M1`, `S07-E6-M2`, `S07-E6-M3`, `S07-E6-P1`, `S07-E6-P2`, `S07-E6-P3`, `S07-E6-P4` | `07-wymagania-i-specyfikacje/e5-umowa-zmiana-przejecie-i-odbior/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S07-E5-M1` | LEA-448 | Przerobić: Software Requirements, wydanie 3 (2013) | materiał, płatny | 12–15 h (rozdziały o priorytetyzacji, walidacji, zarządzaniu zmianą, śledzeniu powiązań i projektach przejmowanych) | płatna | https://www.pearson.com/en-us/subject-catalog/p/software-requirements/P200000000686/9780735679665 | `S07-E4-D` | `S07-E5-D` | `07-wymagania-i-specyfikacje/e5-umowa-zmiana-przejecie-i-odbior/` |
+| `S07-E5-M2` | LEA-454 | Przerobić: Object-Oriented Reengineering Patterns | materiał | 6–8 h (rozdziały o pierwszym kontakcie z systemem i wstępnym zrozumieniu) | 0 zł (PDF) | https://www.oscar.nierstrasz.org/oorp/ | `S07-E4-D` | `S07-E5-D` | `07-wymagania-i-specyfikacje/e5-umowa-zmiana-przejecie-i-odbior/` |
+| `S07-E5-M3` | LEA-457 | Przerobić: Certified Tester Acceptance Testing, sylabus v1.0 (2019) | materiał | 6–8 h | 0 zł (egzamin płatny, opcjonalny) | https://istqb.org/certifications/certified-tester-acceptance-testing-ct-act/ | `S07-E4-D` | `S07-E5-D` | `07-wymagania-i-specyfikacje/e5-umowa-zmiana-przejecie-i-odbior/` |
+| `S07-E5-M4` | LEA-461 | Przerobić: Software Estimation: Demystifying the Black Art (2006) | materiał, płatny | 6–8 h (wybrane rozdziały) | płatna | https://www.microsoftpressstore.com/store/software-estimation-demystifying-the-black-art-9780735605350 | `S07-E4-D` | `S07-E5-D` | `07-wymagania-i-specyfikacje/e5-umowa-zmiana-przejecie-i-odbior/` |
+| `S07-E5-D` | LEA-489 | Dowód etapu 5: umowa, zmiana, przejęcie i odbiór | dowód | — | — | — | `S07-E5-M1`, `S07-E5-M2`, `S07-E5-M3`, `S07-E5-M4` | `S07-E6-M1`, `S07-E6-M2`, `S07-E6-M3`, `S07-E6-P1`, `S07-E6-P2`, `S07-E6-P3`, `S07-E6-P4` | `07-wymagania-i-specyfikacje/e5-umowa-zmiana-przejecie-i-odbior/` |
 
 **`S07-E5-D` · Dowód etapu 5: umowa, zmiana, przejęcie i odbiór**
 
@@ -300,16 +300,16 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód poziomu E:** Samodzielnie, bez agenta, w 1 dzień na podstawie przygotowanego briefu funkcji średniej wielkości z ukrytymi niejednoznacznościami (brief i wzorcowa lista ukrytych pozycji przygotowane wcześniej przez inną osobę albo przez agenta w osobnej sesji, lista zamknięta do czasu oddania pracy) przygotowujesz specyfikację (EARS, kryteria akceptacji pozytywne, negatywne i brzegowe, NFR z progami, „Poza zakresem”, lista pytań otwartych z propozycjami odpowiedzi) i wycenę przedziałem z jawnymi założeniami; następnie klasyfikujesz 10 przygotowanych próśb zgłoszonych „po zatwierdzeniu” jako błąd, luka w specyfikacji albo nowe życzenie i dla każdej piszesz wyjaśnienie dla klienta.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S07-E6-M1` | Przerobić: Wydania i dokumentacja Spec Kit, Kiro i OpenSpec | materiał | ok. 0,5 h tygodniowo | 0 zł | https://github.com/github/spec-kit/releases, https://kiro.dev/docs/, https://openspec.dev | `S07-E5-D` | `S07-E6-D` | `07-wymagania-i-specyfikacje/e6-ekspert/` |
-| `S07-E6-M2` | Przerobić: AI4RE (micro-credential, sylabus i przewodnik 1.0.0), RE@Agile, Requirements Modeling | materiał, opcjonalne | wg potrzeb | 0 zł (egzaminy płatne) | https://cpre.ireb.org/en/downloads-and-resources/downloads | `S07-E5-D` | — | `07-wymagania-i-specyfikacje/e6-ekspert/` |
-| `S07-E6-M3` | Przerobić: Kolejne wydanie ISO/IEC/IEEE 29148 (po publikacji) | materiał, płatny, opcjonalne | wg potrzeb | płatna | https://www.iso.org/standard/72089.html | `S07-E5-D` | — | `07-wymagania-i-specyfikacje/e6-ekspert/` |
-| `S07-E6-P1` | Praktyka: recenzja specyfikacji z AI | praktyka | — | — | — | `S07-E5-D` | `S07-E6-D` | `07-wymagania-i-specyfikacje/e6-ekspert/` |
-| `S07-E6-P2` | Praktyka: pomiar jakości specyfikacji | praktyka | — | — | — | `S07-E5-D` | `S07-E6-D` | `07-wymagania-i-specyfikacje/e6-ekspert/` |
-| `S07-E6-P3` | Praktyka: warsztat z klientem jako usługa | praktyka | — | — | — | `S07-E5-D` | `S07-E6-D` | `07-wymagania-i-specyfikacje/e6-ekspert/` |
-| `S07-E6-P4` | Praktyka: biblioteka wzorców | praktyka | — | — | — | `S07-E5-D` | `S07-E6-D` | `07-wymagania-i-specyfikacje/e6-ekspert/` |
-| `S07-E6-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S07-E6-M1`, `S07-E6-P1`, `S07-E6-P2`, `S07-E6-P3`, `S07-E6-P4` | — | `07-wymagania-i-specyfikacje/e6-ekspert/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S07-E6-M1` | LEA-529 | Przerobić: Wydania i dokumentacja Spec Kit, Kiro i OpenSpec | materiał | ok. 0,5 h tygodniowo | 0 zł | https://github.com/github/spec-kit/releases, https://kiro.dev/docs/, https://openspec.dev | `S07-E5-D` | `S07-E6-D` | `07-wymagania-i-specyfikacje/e6-ekspert/` |
+| `S07-E6-M2` | LEA-530 | Przerobić: AI4RE (micro-credential, sylabus i przewodnik 1.0.0), RE@Agile, Requirements Modeling | materiał, opcjonalne | wg potrzeb | 0 zł (egzaminy płatne) | https://cpre.ireb.org/en/downloads-and-resources/downloads | `S07-E5-D` | — | `07-wymagania-i-specyfikacje/e6-ekspert/` |
+| `S07-E6-M3` | LEA-532 | Przerobić: Kolejne wydanie ISO/IEC/IEEE 29148 (po publikacji) | materiał, płatny, opcjonalne | wg potrzeb | płatna | https://www.iso.org/standard/72089.html | `S07-E5-D` | — | `07-wymagania-i-specyfikacje/e6-ekspert/` |
+| `S07-E6-P1` | LEA-533 | Praktyka: recenzja specyfikacji z AI | praktyka | — | — | — | `S07-E5-D` | `S07-E6-D` | `07-wymagania-i-specyfikacje/e6-ekspert/` |
+| `S07-E6-P2` | LEA-535 | Praktyka: pomiar jakości specyfikacji | praktyka | — | — | — | `S07-E5-D` | `S07-E6-D` | `07-wymagania-i-specyfikacje/e6-ekspert/` |
+| `S07-E6-P3` | LEA-537 | Praktyka: warsztat z klientem jako usługa | praktyka | — | — | — | `S07-E5-D` | `S07-E6-D` | `07-wymagania-i-specyfikacje/e6-ekspert/` |
+| `S07-E6-P4` | LEA-539 | Praktyka: biblioteka wzorców | praktyka | — | — | — | `S07-E5-D` | `S07-E6-D` | `07-wymagania-i-specyfikacje/e6-ekspert/` |
+| `S07-E6-D` | LEA-550 | Dowód poziomu E: ekspert | dowód | — | — | — | `S07-E6-M1`, `S07-E6-P1`, `S07-E6-P2`, `S07-E6-P3`, `S07-E6-P4` | — | `07-wymagania-i-specyfikacje/e6-ekspert/` |
 
 **`S07-E6-P1` · Praktyka: recenzja specyfikacji z AI**
 

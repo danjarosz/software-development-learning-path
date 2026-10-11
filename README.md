@@ -94,6 +94,8 @@ Projekty są ułożone w warstwy: każdy opiera się wyłącznie na wcześniejsz
 
 ## Wdrożenie planu do Linear
 
+Plan jest wdrożony w Linear (team LEA, zadania `LEA-1` do `LEA-1121`). Identyfikatory wszystkich obiektów są w `linear/linear-deploy-state.json`, a mapowanie kluczy na `LEA-…` w `linear/mapowanie-kluczy.csv`. Zasady wprowadzania zmian po wdrożeniu są w [`linear/tools/README.md`](linear/tools/README.md#po-wdrożeniu).
+
 Skrypt wymaga tylko Pythona 3.9+ i biblioteki standardowej.
 
 ```bash
@@ -110,7 +112,7 @@ Przed pierwszym wywołaniem API skrypt sprawdza plan (istnienie blokad i kamieni
 Uwagi:
 
 - Plan ma 1121 zadań, a plan Free w Linear pozwala na 250, więc potrzebny jest plan płatny.
-- Skrypt nie tworzy zależności między projektami. Trzeba je dodać ręcznie według kolumny „Blokowany przez” w pliku przeglądowym.
+- Zależności między projektami nie są ustawione w Linear: kolejność wyznaczają numery projektów (widok projektów sortowany po nazwie), a dokładne warunki startu i etapów są w relacjach między zadaniami. Kolumna „Blokowany przez” w pliku przeglądowym ma charakter informacyjny.
 
 ## Zmiany w planie
 

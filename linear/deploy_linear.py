@@ -292,7 +292,7 @@ def main():
         for it in issues:
             f.write(f"{it['key']},{state['issues'][it['key']]['identifier']}\n")
     print(f"Gotowe. Zapytań w tym uruchomieniu: {lin.calls}. Mapowanie kluczy: {mp}")
-    print("Zależności między projektami (kolumna „Blokowany przez” w pliku 00) dodaj ręcznie w widoku projektu.")
+    print("Zależności między projektami nie są tworzone; kolejność wyznaczają numery projektów i relacje między zadaniami.")
 
 
 if __name__ == "__main__":

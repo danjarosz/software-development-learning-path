@@ -35,6 +35,15 @@ def apply(pl):
     pl.add_entry("S14-E3", "S13-E4-D", reason="natywny UI korzysta z tokenów projektowych z sekcji 13")
 ```
 
+## Po wdrożeniu
+
+Plan jest wdrożony w Linear, więc każda zmiana ma dwie strony: repozytorium i Linear. Nic ich nie synchronizuje samo.
+
+- **Klucze muszą zostać stałe.** `apply.py` przerywa edycję (kod wyjścia 2, nic nie zapisuje), jeśli zmienia klucz albo usuwa zadanie lub kamień milowy zapisany w `linear-deploy-state.json`. Nowe materiały dodawaj na końcu etapu (domyślne `add_material` bez `before=`), nowe etapy na końcu projektu albo jako ścieżkę uzupełniającą. Przełącznik `--allow-renumber` służy tylko do świadomej migracji Linear i pliku stanu.
+- **Przeniesienie zmian do Linear.** Po edycji `apply.py` wypisuje sekcję „Do przeniesienia do Linear”: zadania, kamienie i projekty ze zmienioną treścią, etykietami, statusem lub kamieniem, relacje do usunięcia oraz liczbę nowych obiektów i relacji. Zmienione obiekty aktualizujesz ręcznie albo narzędziami MCP Linear (`save_issue`, `save_milestone`, `save_project` z identyfikatorem z pliku stanu). Nowe obiekty i relacje utworzy `python3 linear/deploy_linear.py` (z kluczem API); skrypt nie aktualizuje ani nie usuwa istniejących obiektów.
+- **Plik stanu** `linear/linear-deploy-state.json` commituj razem z `linear-plan.json` i nigdy go nie usuwaj: bez niego skrypt utworzy cały plan od nowa.
+- **Zależności między projektami** (kolumna „Blokowany przez” w pliku 00) celowo nie są ustawione w Linear: kolejność wyznaczają numery projektów, a warunki odblokowania relacje między zadaniami.
+
 ## Identyfikatory i odwołania
 
 - Etapy i zadania mają identyfikatory równe kluczom z JSON w chwili wczytania (np. etap `S05-E2`, materiał `S05-E2-M3`, praktyka `S05-E11-P1`). Pozostają stałe przez całą edycję, nawet gdy etapy zmieniają kolejność. Nowe etapy i zadania dostają identyfikatory nadane przy dodawaniu (np. etap `S05-NOWY`).

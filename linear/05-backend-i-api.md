@@ -1,6 +1,6 @@
 # 05. Backend i API: plan wdrożenia w Linear
 
-Team **LEA** (https://linear.app/daankh/team/LEA/overview). Plan do przeglądu przed wdrożeniem: nic nie zostało jeszcze utworzone w Linear. Klucze zadań (np. `S05-E0-M1`) są robocze; po wdrożeniu dostaną identyfikatory `LEA-…`.
+Team **LEA** (https://linear.app/daankh/team/LEA/overview). Plan jest wdrożony w Linear. Klucze zadań (np. `S05-E0-M1`) są robocze, a identyfikator każdego zadania w Linear (`LEA-…`) jest w kolumnie „Linear” tabel zadań i w pliku `mapowanie-kluczy.csv`.
 
 **W skrócie:** 12 kamieni milowych, 92 zadania (1 start, 75 materiałów, 12 dowodów, 4 praktyki). Plik główny z kolejnością projektów: `00-kolejnosc-i-zaleznosci.md`.
 
@@ -65,7 +65,7 @@ Jeden kamień milowy na etap ścieżki. Kamień milowy jest zamknięty, gdy zamk
 
 ## 3. Punkt startu
 
-Zadanie **`S05-START` · Start: 5. Backend i API** to jedyne wejście do projektu: wszystkie zadania pierwszego etapu są przez nie blokowane.
+Zadanie **`S05-START` · Start: 5. Backend i API** (LEA-223 w Linear) to jedyne wejście do projektu: wszystkie zadania pierwszego etapu są przez nie blokowane.
 
 - **Blokowane przez:** `S03-E2-D`, `S04-E1-D`
 - **Odblokowuje:** `S05-E0-M1`, `S05-E0-M2`, `S05-E0-M3`, `S05-E0-M4`
@@ -140,13 +140,13 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Prosty serwer HTTP bez frameworka (moduł `http` w Node.js), który obsługuje `GET`, `PUT` z `If-Match`, zwraca błędy w formacie RFC 9457 i poprawne nagłówki cache; zestaw wywołań `curl` pokazujący każdy przypadek.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S05-E0-M1` | Przerobić: HTTP: przewodniki (przegląd, cache, CORS, ciasteczka, nagłówki, kody odpowiedzi) | materiał | 15–20 h | 0 zł | https://developer.mozilla.org/en-US/docs/Web/HTTP | `S05-START` | `S05-E0-D` | `05-backend-i-api/e0-http-i-rest/` |
-| `S05-E0-M2` | Przerobić: RFC 9110 „HTTP Semantics”… | materiał | 8–10 h | 0 zł | https://datatracker.ietf.org/doc/rfc9110/ | `S05-START` | `S05-E0-D` | `05-backend-i-api/e0-http-i-rest/` |
-| `S05-E0-M3` | Przerobić: RFC 9111 „HTTP Caching” | materiał | 3–4 h | 0 zł | https://datatracker.ietf.org/doc/rfc9111/ | `S05-START` | `S05-E0-D` | `05-backend-i-api/e0-http-i-rest/` |
-| `S05-E0-M4` | Przerobić: RFC 9457 „Problem Details for HTTP APIs” | materiał | 1–2 h | 0 zł | https://datatracker.ietf.org/doc/rfc9457/ | `S05-START` | `S05-E0-D` | `05-backend-i-api/e0-http-i-rest/` |
-| `S05-E0-D` | Dowód etapu 0: HTTP i REST | dowód | — | — | — | `S05-E0-M1`, `S05-E0-M2`, `S05-E0-M3`, `S05-E0-M4` | `S05-E1-M1`, `S05-E1-M2`, `S05-E1-M3` | `05-backend-i-api/e0-http-i-rest/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S05-E0-M1` | LEA-231 | Przerobić: HTTP: przewodniki (przegląd, cache, CORS, ciasteczka, nagłówki, kody odpowiedzi) | materiał | 15–20 h | 0 zł | https://developer.mozilla.org/en-US/docs/Web/HTTP | `S05-START` | `S05-E0-D` | `05-backend-i-api/e0-http-i-rest/` |
+| `S05-E0-M2` | LEA-232 | Przerobić: RFC 9110 „HTTP Semantics”… | materiał | 8–10 h | 0 zł | https://datatracker.ietf.org/doc/rfc9110/ | `S05-START` | `S05-E0-D` | `05-backend-i-api/e0-http-i-rest/` |
+| `S05-E0-M3` | LEA-233 | Przerobić: RFC 9111 „HTTP Caching” | materiał | 3–4 h | 0 zł | https://datatracker.ietf.org/doc/rfc9111/ | `S05-START` | `S05-E0-D` | `05-backend-i-api/e0-http-i-rest/` |
+| `S05-E0-M4` | LEA-234 | Przerobić: RFC 9457 „Problem Details for HTTP APIs” | materiał | 1–2 h | 0 zł | https://datatracker.ietf.org/doc/rfc9457/ | `S05-START` | `S05-E0-D` | `05-backend-i-api/e0-http-i-rest/` |
+| `S05-E0-D` | LEA-243 | Dowód etapu 0: HTTP i REST | dowód | — | — | — | `S05-E0-M1`, `S05-E0-M2`, `S05-E0-M3`, `S05-E0-M4` | `S05-E1-M1`, `S05-E1-M2`, `S05-E1-M3` | `05-backend-i-api/e0-http-i-rest/` |
 
 **`S05-E0-D` · Dowód etapu 0: HTTP i REST**
 
@@ -168,12 +168,12 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Audyt fragmentu serwerowego istniejącej aplikacji Node.js (route handlers lub API Express): lista znalezisk z priorytetami, w tym blokowanie pętli zdarzeń, brak limitów i brak łagodnego zamykania; dwie poprawki z testami.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S05-E1-M1` | Przerobić: Learn Node.js: pętla zdarzeń, „Don’t Block the Event Loop”, strumienie i backpressure, wbudowany… | materiał | 12–15 h | 0 zł | https://nodejs.org/en/learn | `S05-E0-D` | `S05-E1-D` | `05-backend-i-api/e1-node-js-po-stronie-serwera/` |
-| `S05-E1-M2` | Przerobić: Node.js Design Patterns (wydanie 4, Node.js 24) | materiał, płatny, opcjonalne | 25–35 h | płatna | https://www.nodejsdesignpatterns.com | `S05-E0-D` | — | `05-backend-i-api/e1-node-js-po-stronie-serwera/` |
-| `S05-E1-M3` | Przerobić: Dokumentacja API Node.js: `http`, `stream`, `worker_threads`, `AsyncLocalStorage` | materiał | 5–8 h | 0 zł | https://nodejs.org/api/ | `S05-E0-D` | `S05-E1-D` | `05-backend-i-api/e1-node-js-po-stronie-serwera/` |
-| `S05-E1-D` | Dowód etapu 1: Node.js po stronie serwera | dowód | — | — | — | `S05-E1-M1`, `S05-E1-M3` | `S04-E4-M1`, `S04-E4-M2`, `S04-E4-M3`, `S05-E2-M1`, `S05-E2-M2`, `S05-E2-M3`, `S05-E2-M4`, `S05-E2-M5`, `S05-E3-M1`, `S05-E3-M2`, `S05-E3-M3`, `S05-E3-M4`, `S05-E3-M5`, `S06-START`, `S07-START`, `S08-START`, `S10-START`, `S12-START`, `S21-START` | `05-backend-i-api/e1-node-js-po-stronie-serwera/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S05-E1-M1` | LEA-253 | Przerobić: Learn Node.js: pętla zdarzeń, „Don’t Block the Event Loop”, strumienie i backpressure, wbudowany… | materiał | 12–15 h | 0 zł | https://nodejs.org/en/learn | `S05-E0-D` | `S05-E1-D` | `05-backend-i-api/e1-node-js-po-stronie-serwera/` |
+| `S05-E1-M2` | LEA-255 | Przerobić: Node.js Design Patterns (wydanie 4, Node.js 24) | materiał, płatny, opcjonalne | 25–35 h | płatna | https://www.nodejsdesignpatterns.com | `S05-E0-D` | — | `05-backend-i-api/e1-node-js-po-stronie-serwera/` |
+| `S05-E1-M3` | LEA-257 | Przerobić: Dokumentacja API Node.js: `http`, `stream`, `worker_threads`, `AsyncLocalStorage` | materiał | 5–8 h | 0 zł | https://nodejs.org/api/ | `S05-E0-D` | `S05-E1-D` | `05-backend-i-api/e1-node-js-po-stronie-serwera/` |
+| `S05-E1-D` | LEA-262 | Dowód etapu 1: Node.js po stronie serwera | dowód | — | — | — | `S05-E1-M1`, `S05-E1-M3` | `S04-E4-M1`, `S04-E4-M2`, `S04-E4-M3`, `S05-E2-M1`, `S05-E2-M2`, `S05-E2-M3`, `S05-E2-M4`, `S05-E2-M5`, `S05-E3-M1`, `S05-E3-M2`, `S05-E3-M3`, `S05-E3-M4`, `S05-E3-M5`, `S06-START`, `S07-START`, `S08-START`, `S10-START`, `S12-START`, `S21-START` | `05-backend-i-api/e1-node-js-po-stronie-serwera/` |
 
 **`S05-E1-D` · Dowód etapu 1: Node.js po stronie serwera**
 
@@ -195,14 +195,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Usługa NestJS dla domeny rezerwacji zasobów (najemcy, zasoby, rezerwacje, przypomnienia) na PostgreSQL przez Prisma: walidowane DTO, guard z kluczem API, interceptor z identyfikatorem żądania w logach, filtr wyjątków RFC 9457, konfiguracja z walidacją przy starcie, OpenAPI z `@nestjs/swagger`, testy jednostkowe i e2e, łagodne zamykanie, obraz kontenera. To główna usługa, na której budują kolejne etapy.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S05-E2-M1` | Przerobić: Dokumentacja NestJS: „Overview”… | materiał | 15–20 h | 0 zł | https://docs.nestjs.com | `S05-E1-D` | `S05-E2-D` | `05-backend-i-api/e2-nestjs/` |
-| `S05-E2-M2` | Przerobić: Dokumentacja NestJS: „Techniques” (konfiguracja, walidacja, serializacja, logowanie, kolejki) i… | materiał | 6–8 h | 0 zł | https://docs.nestjs.com/techniques/configuration | `S05-E1-D` | `S05-E2-D` | `05-backend-i-api/e2-nestjs/` |
-| `S05-E2-M3` | Przerobić: Dokumentacja Prisma ORM (schemat, migracje `prisma migrate`, transakcje, relacje) i przepis… | materiał | 6–8 h | 0 zł | https://www.prisma.io/docs/orm | `S05-E1-D` | `S05-E2-D` | `05-backend-i-api/e2-nestjs/` |
-| `S05-E2-M4` | Przerobić: Drizzle ORM (alternatywa dla Prisma, bliżej SQL) | materiał, opcjonalne | 3–4 h | 0 zł | https://orm.drizzle.team/docs/overview | `S05-E1-D` | — | `05-backend-i-api/e2-nestjs/` |
-| `S05-E2-M5` | Przerobić: NestJS Fundamentals Course (oficjalny kurs wideo) | materiał, płatny, opcjonalne | 8–10 h | płatny | https://courses.nestjs.com | `S05-E1-D` | — | `05-backend-i-api/e2-nestjs/` |
-| `S05-E2-D` | Dowód etapu 2: NestJS | dowód | — | — | — | `S05-E2-M1`, `S05-E2-M2`, `S05-E2-M3` | `S05-E4-M1`, `S05-E4-M2`, `S05-E4-M3`, `S05-E4-M4`, `S05-E4-M5`, `S05-E4-M6`, `S05-E4-M7`, `S05-E4-M8`, `S05-E4-M9` | `05-backend-i-api/e2-nestjs/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S05-E2-M1` | LEA-277 | Przerobić: Dokumentacja NestJS: „Overview”… | materiał | 15–20 h | 0 zł | https://docs.nestjs.com | `S05-E1-D` | `S05-E2-D` | `05-backend-i-api/e2-nestjs/` |
+| `S05-E2-M2` | LEA-278 | Przerobić: Dokumentacja NestJS: „Techniques” (konfiguracja, walidacja, serializacja, logowanie, kolejki) i… | materiał | 6–8 h | 0 zł | https://docs.nestjs.com/techniques/configuration | `S05-E1-D` | `S05-E2-D` | `05-backend-i-api/e2-nestjs/` |
+| `S05-E2-M3` | LEA-279 | Przerobić: Dokumentacja Prisma ORM (schemat, migracje `prisma migrate`, transakcje, relacje) i przepis… | materiał | 6–8 h | 0 zł | https://www.prisma.io/docs/orm | `S05-E1-D` | `S05-E2-D` | `05-backend-i-api/e2-nestjs/` |
+| `S05-E2-M4` | LEA-280 | Przerobić: Drizzle ORM (alternatywa dla Prisma, bliżej SQL) | materiał, opcjonalne | 3–4 h | 0 zł | https://orm.drizzle.team/docs/overview | `S05-E1-D` | — | `05-backend-i-api/e2-nestjs/` |
+| `S05-E2-M5` | LEA-281 | Przerobić: NestJS Fundamentals Course (oficjalny kurs wideo) | materiał, płatny, opcjonalne | 8–10 h | płatny | https://courses.nestjs.com | `S05-E1-D` | — | `05-backend-i-api/e2-nestjs/` |
+| `S05-E2-D` | LEA-303 | Dowód etapu 2: NestJS | dowód | — | — | — | `S05-E2-M1`, `S05-E2-M2`, `S05-E2-M3` | `S05-E4-M1`, `S05-E4-M2`, `S05-E4-M3`, `S05-E4-M4`, `S05-E4-M5`, `S05-E4-M6`, `S05-E4-M7`, `S05-E4-M8`, `S05-E4-M9` | `05-backend-i-api/e2-nestjs/` |
 
 **`S05-E2-D` · Dowód etapu 2: NestJS**
 
@@ -224,14 +224,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Usługa FastAPI pomocnicza dla domeny z usługi NestJS: raporty obłożenia zasobów i eksport CSV, na PostgreSQL przez SQLAlchemy 2.0 (async) z migracjami Alembic, z modelami Pydantic v2, zależnościami, `lifespan`, testami `pytest` z `httpx` i obrazem kontenera; usługa NestJS wywołuje ją przez HTTP z timeoutem.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S05-E3-M1` | Przerobić: FastAPI: „Tutorial - User Guide”… | materiał | 12–15 h | 0 zł | https://fastapi.tiangolo.com/tutorial/ | `S05-E1-D`, `S02-E3-D` | `S05-E3-D` | `05-backend-i-api/e3-python-i-fastapi/` |
-| `S05-E3-M2` | Przerobić: Pydantic v2: modele, walidatory, serializacja, `pydantic-settings` | materiał | 4–5 h | 0 zł | https://docs.pydantic.dev/latest/ | `S05-E1-D`, `S02-E3-D` | `S05-E3-D` | `05-backend-i-api/e3-python-i-fastapi/` |
-| `S05-E3-M3` | Przerobić: SQLAlchemy 2.0: „Unified Tutorial” i „Asynchronous I/O (asyncio)” | materiał | 10–12 h | 0 zł | https://docs.sqlalchemy.org/en/20/tutorial/ | `S05-E1-D`, `S02-E3-D` | `S05-E3-D` | `05-backend-i-api/e3-python-i-fastapi/` |
-| `S05-E3-M4` | Przerobić: Alembic: „Tutorial” i „Auto Generating Migrations” | materiał | 2–3 h | 0 zł | https://alembic.sqlalchemy.org/en/latest/tutorial.html | `S05-E1-D`, `S02-E3-D` | `S05-E3-D` | `05-backend-i-api/e3-python-i-fastapi/` |
-| `S05-E3-M5` | Przerobić: FastAPI: „Deployment” (FastAPI CLI, Uvicorn, procesy robocze, obraz Dockera) | materiał | 2–3 h | 0 zł | https://fastapi.tiangolo.com/deployment/ | `S05-E1-D`, `S02-E3-D` | `S05-E3-D` | `05-backend-i-api/e3-python-i-fastapi/` |
-| `S05-E3-D` | Dowód etapu 3: Python i FastAPI | dowód | — | — | — | `S05-E3-M1`, `S05-E3-M2`, `S05-E3-M3`, `S05-E3-M4`, `S05-E3-M5` | `S05-E4-M1`, `S05-E4-M2`, `S05-E4-M3`, `S05-E4-M4`, `S05-E4-M5`, `S05-E4-M6`, `S05-E4-M7`, `S05-E4-M8`, `S05-E4-M9` | `05-backend-i-api/e3-python-i-fastapi/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S05-E3-M1` | LEA-282 | Przerobić: FastAPI: „Tutorial - User Guide”… | materiał | 12–15 h | 0 zł | https://fastapi.tiangolo.com/tutorial/ | `S05-E1-D`, `S02-E3-D` | `S05-E3-D` | `05-backend-i-api/e3-python-i-fastapi/` |
+| `S05-E3-M2` | LEA-283 | Przerobić: Pydantic v2: modele, walidatory, serializacja, `pydantic-settings` | materiał | 4–5 h | 0 zł | https://docs.pydantic.dev/latest/ | `S05-E1-D`, `S02-E3-D` | `S05-E3-D` | `05-backend-i-api/e3-python-i-fastapi/` |
+| `S05-E3-M3` | LEA-284 | Przerobić: SQLAlchemy 2.0: „Unified Tutorial” i „Asynchronous I/O (asyncio)” | materiał | 10–12 h | 0 zł | https://docs.sqlalchemy.org/en/20/tutorial/ | `S05-E1-D`, `S02-E3-D` | `S05-E3-D` | `05-backend-i-api/e3-python-i-fastapi/` |
+| `S05-E3-M4` | LEA-293 | Przerobić: Alembic: „Tutorial” i „Auto Generating Migrations” | materiał | 2–3 h | 0 zł | https://alembic.sqlalchemy.org/en/latest/tutorial.html | `S05-E1-D`, `S02-E3-D` | `S05-E3-D` | `05-backend-i-api/e3-python-i-fastapi/` |
+| `S05-E3-M5` | LEA-294 | Przerobić: FastAPI: „Deployment” (FastAPI CLI, Uvicorn, procesy robocze, obraz Dockera) | materiał | 2–3 h | 0 zł | https://fastapi.tiangolo.com/deployment/ | `S05-E1-D`, `S02-E3-D` | `S05-E3-D` | `05-backend-i-api/e3-python-i-fastapi/` |
+| `S05-E3-D` | LEA-304 | Dowód etapu 3: Python i FastAPI | dowód | — | — | — | `S05-E3-M1`, `S05-E3-M2`, `S05-E3-M3`, `S05-E3-M4`, `S05-E3-M5` | `S05-E4-M1`, `S05-E4-M2`, `S05-E4-M3`, `S05-E4-M4`, `S05-E4-M5`, `S05-E4-M6`, `S05-E4-M7`, `S05-E4-M8`, `S05-E4-M9` | `05-backend-i-api/e3-python-i-fastapi/` |
 
 **`S05-E3-D` · Dowód etapu 3: Python i FastAPI**
 
@@ -253,18 +253,18 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Kontrakt OpenAPI 3.1 usługi NestJS (code-first z `@nestjs/swagger` albo OpenAPI-first) zatwierdzany w repozytorium, z wygenerowanym z niego klientem TypeScript (`openapi-typescript` + `openapi-fetch`) używanym w testach e2e; w CI `oasdiff` blokuje scalenie przy łamiącej zmianie; Schemathesis sprawdza usługę NestJS i usługę FastAPI względem ich kontraktów; jedno wywołanie między usługami przez gRPC z jednym plikiem `.proto`; dokument decyzji projektowych odwołujący się do wytycznych Zalando.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S05-E4-M1` | Przerobić: OpenAPI Learn i specyfikacja OpenAPI (3.1 i 3.2) | materiał | 8–10 h | 0 zł | https://learn.openapis.org | `S05-E2-D`, `S05-E3-D` | `S05-E4-D` | `05-backend-i-api/e4-kontrakty-api/` |
-| `S05-E4-M2` | Przerobić: Microsoft REST API Guidelines (ogólne, Azure, Microsoft Graph) | materiał, opcjonalne | 5–6 h | 0 zł | https://github.com/microsoft/api-guidelines | `S05-E2-D`, `S05-E3-D` | — | `05-backend-i-api/e4-kontrakty-api/` |
-| `S05-E4-M3` | Przerobić: API Improvement Proposals (AIP) | materiał, opcjonalne | 6–8 h | 0 zł | https://google.aip.dev | `S05-E2-D`, `S05-E3-D` | — | `05-backend-i-api/e4-kontrakty-api/` |
-| `S05-E4-M4` | Przerobić: Zalando RESTful API and Event Guidelines | materiał | 5–6 h | 0 zł | https://opensource.zalando.com/restful-api-guidelines/ | `S05-E2-D`, `S05-E3-D` | `S05-E4-D` | `05-backend-i-api/e4-kontrakty-api/` |
-| `S05-E4-M5` | Przerobić: gRPC: Core concepts, Protocol Buffers | materiał | 4–6 h | 0 zł | https://grpc.io/docs/ | `S05-E2-D`, `S05-E3-D` | `S05-E4-D` | `05-backend-i-api/e4-kontrakty-api/` |
-| `S05-E4-M6` | Przerobić: `openapi-typescript` i `openapi-fetch`: typy i klient TypeScript generowane z OpenAPI | materiał | 2–3 h | 0 zł | https://openapi-ts.dev | `S05-E2-D`, `S05-E3-D` | `S05-E4-D` | `05-backend-i-api/e4-kontrakty-api/` |
-| `S05-E4-M7` | Przerobić: `oasdiff`: wykrywanie łamiących zmian w OpenAPI (w CI) | materiał | 1–2 h | 0 zł | https://github.com/oasdiff/oasdiff | `S05-E2-D`, `S05-E3-D` | `S05-E4-D` | `05-backend-i-api/e4-kontrakty-api/` |
-| `S05-E4-M8` | Przerobić: Schemathesis: testy właściwości i kontraktu API na podstawie OpenAPI | materiał | 3–4 h | 0 zł | https://schemathesis.readthedocs.io | `S05-E2-D`, `S05-E3-D` | `S05-E4-D` | `05-backend-i-api/e4-kontrakty-api/` |
-| `S05-E4-M9` | Przerobić: NestJS: „Microservices” → gRPC; gRPC dla Pythona: „Basics tutorial” | materiał | 4–5 h | 0 zł | https://docs.nestjs.com/microservices/grpc, https://grpc.io/docs/languages/python/basics/ | `S05-E2-D`, `S05-E3-D` | `S05-E4-D` | `05-backend-i-api/e4-kontrakty-api/` |
-| `S05-E4-D` | Dowód etapu 4: kontrakty API | dowód | — | — | — | `S05-E4-M1`, `S05-E4-M4`, `S05-E4-M5`, `S05-E4-M6`, `S05-E4-M7`, `S05-E4-M8`, `S05-E4-M9` | `S05-E5-M1`, `S05-E5-M2`, `S05-E5-M3`, `S05-E5-M4`, `S05-E5-M5`, `S05-E5-M6`, `S05-E5-M7`, `S05-E5-M8`, `S05-E5-M9`, `S05-E5-M10`, `S05-E9-M1`, `S05-E9-M2`, `S05-E9-M3`, `S05-E9-M4`, `S05-E9-M5`, `S05-E9-M6`, `S05-E9-M7`, `S05-E9-M8`, `S05-E9-M9` | `05-backend-i-api/e4-kontrakty-api/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S05-E4-M1` | LEA-315 | Przerobić: OpenAPI Learn i specyfikacja OpenAPI (3.1 i 3.2) | materiał | 8–10 h | 0 zł | https://learn.openapis.org | `S05-E2-D`, `S05-E3-D` | `S05-E4-D` | `05-backend-i-api/e4-kontrakty-api/` |
+| `S05-E4-M2` | LEA-318 | Przerobić: Microsoft REST API Guidelines (ogólne, Azure, Microsoft Graph) | materiał, opcjonalne | 5–6 h | 0 zł | https://github.com/microsoft/api-guidelines | `S05-E2-D`, `S05-E3-D` | — | `05-backend-i-api/e4-kontrakty-api/` |
+| `S05-E4-M3` | LEA-321 | Przerobić: API Improvement Proposals (AIP) | materiał, opcjonalne | 6–8 h | 0 zł | https://google.aip.dev | `S05-E2-D`, `S05-E3-D` | — | `05-backend-i-api/e4-kontrakty-api/` |
+| `S05-E4-M4` | LEA-325 | Przerobić: Zalando RESTful API and Event Guidelines | materiał | 5–6 h | 0 zł | https://opensource.zalando.com/restful-api-guidelines/ | `S05-E2-D`, `S05-E3-D` | `S05-E4-D` | `05-backend-i-api/e4-kontrakty-api/` |
+| `S05-E4-M5` | LEA-329 | Przerobić: gRPC: Core concepts, Protocol Buffers | materiał | 4–6 h | 0 zł | https://grpc.io/docs/ | `S05-E2-D`, `S05-E3-D` | `S05-E4-D` | `05-backend-i-api/e4-kontrakty-api/` |
+| `S05-E4-M6` | LEA-330 | Przerobić: `openapi-typescript` i `openapi-fetch`: typy i klient TypeScript generowane z OpenAPI | materiał | 2–3 h | 0 zł | https://openapi-ts.dev | `S05-E2-D`, `S05-E3-D` | `S05-E4-D` | `05-backend-i-api/e4-kontrakty-api/` |
+| `S05-E4-M7` | LEA-331 | Przerobić: `oasdiff`: wykrywanie łamiących zmian w OpenAPI (w CI) | materiał | 1–2 h | 0 zł | https://github.com/oasdiff/oasdiff | `S05-E2-D`, `S05-E3-D` | `S05-E4-D` | `05-backend-i-api/e4-kontrakty-api/` |
+| `S05-E4-M8` | LEA-332 | Przerobić: Schemathesis: testy właściwości i kontraktu API na podstawie OpenAPI | materiał | 3–4 h | 0 zł | https://schemathesis.readthedocs.io | `S05-E2-D`, `S05-E3-D` | `S05-E4-D` | `05-backend-i-api/e4-kontrakty-api/` |
+| `S05-E4-M9` | LEA-333 | Przerobić: NestJS: „Microservices” → gRPC; gRPC dla Pythona: „Basics tutorial” | materiał | 4–5 h | 0 zł | https://docs.nestjs.com/microservices/grpc, https://grpc.io/docs/languages/python/basics/ | `S05-E2-D`, `S05-E3-D` | `S05-E4-D` | `05-backend-i-api/e4-kontrakty-api/` |
+| `S05-E4-D` | LEA-338 | Dowód etapu 4: kontrakty API | dowód | — | — | — | `S05-E4-M1`, `S05-E4-M4`, `S05-E4-M5`, `S05-E4-M6`, `S05-E4-M7`, `S05-E4-M8`, `S05-E4-M9` | `S05-E5-M1`, `S05-E5-M2`, `S05-E5-M3`, `S05-E5-M4`, `S05-E5-M5`, `S05-E5-M6`, `S05-E5-M7`, `S05-E5-M8`, `S05-E5-M9`, `S05-E5-M10`, `S05-E9-M1`, `S05-E9-M2`, `S05-E9-M3`, `S05-E9-M4`, `S05-E9-M5`, `S05-E9-M6`, `S05-E9-M7`, `S05-E9-M8`, `S05-E9-M9` | `05-backend-i-api/e4-kontrakty-api/` |
 
 **`S05-E4-D` · Dowód etapu 4: kontrakty API**
 
@@ -286,19 +286,19 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** API GraphQL (code-first, `@nestjs/graphql`, sterownik Apollo lub Mercurius) w usłudze NestJS obok REST: zapytania z paginacją kursorową (Relay connections), mutacje z błędami domenowymi jako typami wyniku, DataLoader dla relacji, autoryzacja na poziomie pól, limit głębokości i złożoności zapytań, testy i kontrola zmian łamiących schemat w CI (GraphQL Inspector).
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S05-E5-M1` | Przerobić: Learn GraphQL… | materiał | 6–8 h | 0 zł | https://graphql.org/learn/ | `S05-E4-D` | `S05-E5-D` | `05-backend-i-api/e5-graphql/` |
-| `S05-E5-M2` | Przerobić: Specyfikacja GraphQL (wykonywanie, walidacja, błędy) i specyfikacja Relay… | materiał | 3–4 h | 0 zł | https://spec.graphql.org, https://relay.dev/graphql/connections.htm | `S05-E4-D` | `S05-E5-D` | `05-backend-i-api/e5-graphql/` |
-| `S05-E5-M3` | Przerobić: Dokumentacja NestJS: „GraphQL”… | materiał | 6–8 h | 0 zł | https://docs.nestjs.com/graphql/quick-start | `S05-E4-D` | `S05-E5-D` | `05-backend-i-api/e5-graphql/` |
-| `S05-E5-M4` | Przerobić: DataLoader: grupowanie i cache na żądanie (README i opis problemu N+1) | materiał | 1–2 h | 0 zł | https://github.com/graphql/dataloader | `S05-E4-D` | `S05-E5-D` | `05-backend-i-api/e5-graphql/` |
-| `S05-E5-M5` | Przerobić: OWASP GraphQL Cheat Sheet | materiał | 1–2 h | 0 zł | https://cheatsheetseries.owasp.org/cheatsheets/GraphQL_Cheat_Sheet.html | `S05-E4-D` | `S05-E5-D` | `05-backend-i-api/e5-graphql/` |
-| `S05-E5-M6` | Przerobić: GraphQL Inspector: porównanie schematów i wykrywanie zmian łamiących (CLI, GitHub Action) | materiał | 1–2 h | 0 zł | https://the-guild.dev/graphql/inspector/docs | `S05-E4-D` | `S05-E5-D` | `05-backend-i-api/e5-graphql/` |
-| `S05-E5-M7` | Przerobić: Production Ready GraphQL | materiał, płatny, opcjonalne | 8–10 h | płatna | https://book.productionreadygraphql.com | `S05-E4-D` | — | `05-backend-i-api/e5-graphql/` |
-| `S05-E5-M8` | Przerobić: Apollo Federation: łączenie schematów wielu usług | materiał, opcjonalne | 4–6 h | 0 zł | https://www.apollographql.com/docs/graphos/schema-design/federated-schemas/federation | `S05-E4-D` | — | `05-backend-i-api/e5-graphql/` |
-| `S05-E5-M9` | Przerobić: Strawberry (GraphQL w Pythonie, integracja z FastAPI) | materiał, opcjonalne | 3–4 h | 0 zł | https://strawberry.rocks/docs | `S05-E4-D` | — | `05-backend-i-api/e5-graphql/` |
-| `S05-E5-M10` | Przerobić: `async-graphql` (GraphQL w Ruście, integracja z Axum) | materiał, opcjonalne | 3–4 h | 0 zł | https://async-graphql.github.io/async-graphql/en/index.html | `S05-E4-D` | — | `05-backend-i-api/e5-graphql/` |
-| `S05-E5-D` | Dowód etapu 5: GraphQL | dowód | — | — | — | `S05-E5-M1`, `S05-E5-M2`, `S05-E5-M3`, `S05-E5-M4`, `S05-E5-M5`, `S05-E5-M6` | `S05-E6-M1`, `S05-E6-M2`, `S05-E6-M3`, `S05-E6-M4`, `S05-E6-M5`, `S05-E6-M6`, `S05-E6-M7`, `S05-E6-M8`, `S05-E6-M9` | `05-backend-i-api/e5-graphql/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S05-E5-M1` | LEA-343 | Przerobić: Learn GraphQL… | materiał | 6–8 h | 0 zł | https://graphql.org/learn/ | `S05-E4-D` | `S05-E5-D` | `05-backend-i-api/e5-graphql/` |
+| `S05-E5-M2` | LEA-346 | Przerobić: Specyfikacja GraphQL (wykonywanie, walidacja, błędy) i specyfikacja Relay… | materiał | 3–4 h | 0 zł | https://spec.graphql.org, https://relay.dev/graphql/connections.htm | `S05-E4-D` | `S05-E5-D` | `05-backend-i-api/e5-graphql/` |
+| `S05-E5-M3` | LEA-349 | Przerobić: Dokumentacja NestJS: „GraphQL”… | materiał | 6–8 h | 0 zł | https://docs.nestjs.com/graphql/quick-start | `S05-E4-D` | `S05-E5-D` | `05-backend-i-api/e5-graphql/` |
+| `S05-E5-M4` | LEA-352 | Przerobić: DataLoader: grupowanie i cache na żądanie (README i opis problemu N+1) | materiał | 1–2 h | 0 zł | https://github.com/graphql/dataloader | `S05-E4-D` | `S05-E5-D` | `05-backend-i-api/e5-graphql/` |
+| `S05-E5-M5` | LEA-354 | Przerobić: OWASP GraphQL Cheat Sheet | materiał | 1–2 h | 0 zł | https://cheatsheetseries.owasp.org/cheatsheets/GraphQL_Cheat_Sheet.html | `S05-E4-D` | `S05-E5-D` | `05-backend-i-api/e5-graphql/` |
+| `S05-E5-M6` | LEA-357 | Przerobić: GraphQL Inspector: porównanie schematów i wykrywanie zmian łamiących (CLI, GitHub Action) | materiał | 1–2 h | 0 zł | https://the-guild.dev/graphql/inspector/docs | `S05-E4-D` | `S05-E5-D` | `05-backend-i-api/e5-graphql/` |
+| `S05-E5-M7` | LEA-360 | Przerobić: Production Ready GraphQL | materiał, płatny, opcjonalne | 8–10 h | płatna | https://book.productionreadygraphql.com | `S05-E4-D` | — | `05-backend-i-api/e5-graphql/` |
+| `S05-E5-M8` | LEA-362 | Przerobić: Apollo Federation: łączenie schematów wielu usług | materiał, opcjonalne | 4–6 h | 0 zł | https://www.apollographql.com/docs/graphos/schema-design/federated-schemas/federation | `S05-E4-D` | — | `05-backend-i-api/e5-graphql/` |
+| `S05-E5-M9` | LEA-364 | Przerobić: Strawberry (GraphQL w Pythonie, integracja z FastAPI) | materiał, opcjonalne | 3–4 h | 0 zł | https://strawberry.rocks/docs | `S05-E4-D` | — | `05-backend-i-api/e5-graphql/` |
+| `S05-E5-M10` | LEA-365 | Przerobić: `async-graphql` (GraphQL w Ruście, integracja z Axum) | materiał, opcjonalne | 3–4 h | 0 zł | https://async-graphql.github.io/async-graphql/en/index.html | `S05-E4-D` | — | `05-backend-i-api/e5-graphql/` |
+| `S05-E5-D` | LEA-375 | Dowód etapu 5: GraphQL | dowód | — | — | — | `S05-E5-M1`, `S05-E5-M2`, `S05-E5-M3`, `S05-E5-M4`, `S05-E5-M5`, `S05-E5-M6` | `S05-E6-M1`, `S05-E6-M2`, `S05-E6-M3`, `S05-E6-M4`, `S05-E6-M5`, `S05-E6-M6`, `S05-E6-M7`, `S05-E6-M8`, `S05-E6-M9` | `05-backend-i-api/e5-graphql/` |
 
 **`S05-E5-D` · Dowód etapu 5: GraphQL**
 
@@ -322,18 +322,18 @@ Książka „OAuth 2 in Action” jest z 2017 r.: mechanika protokołu jest aktu
 
 **Dowód:** Logowanie przez zewnętrznego dostawcę OIDC (kod autoryzacyjny z PKCE, `openid-client`) do usługi NestJS, sesje w ciasteczkach `HttpOnly`, role i izolacja najemców w REST i w resolverach GraphQL; zestaw testów, który próbuje odczytać i zmienić obiekt innego najemcy, podmienić `state` i użyć wylogowanej sesji, i za każdym razem dostaje odmowę.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S05-E6-M1` | Przerobić: OAuth 2 in Action | materiał, płatny | 20–25 h | płatna | https://www.manning.com/books/oauth-2-in-action | `S05-E5-D` | `S05-E6-D` | `05-backend-i-api/e6-uwierzytelnianie-i-autoryzacja/` |
-| `S05-E6-M2` | Przerobić: RFC 6749 „The OAuth 2.0 Authorization Framework” | materiał | 4–6 h | 0 zł | https://datatracker.ietf.org/doc/rfc6749/ | `S05-E5-D` | `S05-E6-D` | `05-backend-i-api/e6-uwierzytelnianie-i-autoryzacja/` |
-| `S05-E6-M3` | Przerobić: „The OAuth 2.1 Authorization Framework” (draft, wersja 16 z września 2026 r., jeszcze nie RFC) | materiał | 3–4 h | 0 zł | https://datatracker.ietf.org/doc/draft-ietf-oauth-v2-1/ | `S05-E5-D` | `S05-E6-D` | `05-backend-i-api/e6-uwierzytelnianie-i-autoryzacja/` |
-| `S05-E6-M4` | Przerobić: RFC 9700 „Best Current Practice for OAuth 2.0 Security” (styczeń 2025) | materiał | 3–4 h | 0 zł | https://datatracker.ietf.org/doc/rfc9700/ | `S05-E5-D` | `S05-E6-D` | `05-backend-i-api/e6-uwierzytelnianie-i-autoryzacja/` |
-| `S05-E6-M5` | Przerobić: OpenID Connect Core 1.0 | materiał | 4–5 h | 0 zł | https://openid.net/specs/openid-connect-core-1_0.html | `S05-E5-D` | `S05-E6-D` | `05-backend-i-api/e6-uwierzytelnianie-i-autoryzacja/` |
-| `S05-E6-M6` | Przerobić: RFC 8725 „JSON Web Token Best Current Practices” | materiał | 1–2 h | 0 zł | https://datatracker.ietf.org/doc/rfc8725/ | `S05-E5-D` | `S05-E6-D` | `05-backend-i-api/e6-uwierzytelnianie-i-autoryzacja/` |
-| `S05-E6-M7` | Przerobić: Pilcrow’s auth book (następca „The Copenhagen Book”): sesje, hasła, passkeys, CSRF | materiał | 5–6 h | 0 zł | https://auth.pilcrowonpaper.com | `S05-E5-D` | `S05-E6-D` | `05-backend-i-api/e6-uwierzytelnianie-i-autoryzacja/` |
-| `S05-E6-M8` | Przerobić: Dokumentacja NestJS: „Security”… | materiał | 4–5 h | 0 zł | https://docs.nestjs.com/security/authentication | `S05-E5-D` | `S05-E6-D` | `05-backend-i-api/e6-uwierzytelnianie-i-autoryzacja/` |
-| `S05-E6-M9` | Przerobić: `openid-client`: certyfikowany klient OAuth 2.0 / OIDC dla Node.js | materiał | 2–3 h | 0 zł | https://github.com/panva/openid-client | `S05-E5-D` | `S05-E6-D` | `05-backend-i-api/e6-uwierzytelnianie-i-autoryzacja/` |
-| `S05-E6-D` | Dowód etapu 6: uwierzytelnianie i autoryzacja | dowód | — | — | — | `S05-E6-M1`, `S05-E6-M2`, `S05-E6-M3`, `S05-E6-M4`, `S05-E6-M5`, `S05-E6-M6`, `S05-E6-M7`, `S05-E6-M8`, `S05-E6-M9` | `S05-E7-M1`, `S05-E7-M2`, `S05-E7-M3`, `S05-E7-M4`, `S05-E7-M5`, `S05-E7-M6`, `S05-E7-M7`, `S05-E7-M8` | `05-backend-i-api/e6-uwierzytelnianie-i-autoryzacja/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S05-E6-M1` | LEA-409 | Przerobić: OAuth 2 in Action | materiał, płatny | 20–25 h | płatna | https://www.manning.com/books/oauth-2-in-action | `S05-E5-D` | `S05-E6-D` | `05-backend-i-api/e6-uwierzytelnianie-i-autoryzacja/` |
+| `S05-E6-M2` | LEA-410 | Przerobić: RFC 6749 „The OAuth 2.0 Authorization Framework” | materiał | 4–6 h | 0 zł | https://datatracker.ietf.org/doc/rfc6749/ | `S05-E5-D` | `S05-E6-D` | `05-backend-i-api/e6-uwierzytelnianie-i-autoryzacja/` |
+| `S05-E6-M3` | LEA-412 | Przerobić: „The OAuth 2.1 Authorization Framework” (draft, wersja 16 z września 2026 r., jeszcze nie RFC) | materiał | 3–4 h | 0 zł | https://datatracker.ietf.org/doc/draft-ietf-oauth-v2-1/ | `S05-E5-D` | `S05-E6-D` | `05-backend-i-api/e6-uwierzytelnianie-i-autoryzacja/` |
+| `S05-E6-M4` | LEA-414 | Przerobić: RFC 9700 „Best Current Practice for OAuth 2.0 Security” (styczeń 2025) | materiał | 3–4 h | 0 zł | https://datatracker.ietf.org/doc/rfc9700/ | `S05-E5-D` | `S05-E6-D` | `05-backend-i-api/e6-uwierzytelnianie-i-autoryzacja/` |
+| `S05-E6-M5` | LEA-418 | Przerobić: OpenID Connect Core 1.0 | materiał | 4–5 h | 0 zł | https://openid.net/specs/openid-connect-core-1_0.html | `S05-E5-D` | `S05-E6-D` | `05-backend-i-api/e6-uwierzytelnianie-i-autoryzacja/` |
+| `S05-E6-M6` | LEA-425 | Przerobić: RFC 8725 „JSON Web Token Best Current Practices” | materiał | 1–2 h | 0 zł | https://datatracker.ietf.org/doc/rfc8725/ | `S05-E5-D` | `S05-E6-D` | `05-backend-i-api/e6-uwierzytelnianie-i-autoryzacja/` |
+| `S05-E6-M7` | LEA-427 | Przerobić: Pilcrow’s auth book (następca „The Copenhagen Book”): sesje, hasła, passkeys, CSRF | materiał | 5–6 h | 0 zł | https://auth.pilcrowonpaper.com | `S05-E5-D` | `S05-E6-D` | `05-backend-i-api/e6-uwierzytelnianie-i-autoryzacja/` |
+| `S05-E6-M8` | LEA-430 | Przerobić: Dokumentacja NestJS: „Security”… | materiał | 4–5 h | 0 zł | https://docs.nestjs.com/security/authentication | `S05-E5-D` | `S05-E6-D` | `05-backend-i-api/e6-uwierzytelnianie-i-autoryzacja/` |
+| `S05-E6-M9` | LEA-433 | Przerobić: `openid-client`: certyfikowany klient OAuth 2.0 / OIDC dla Node.js | materiał | 2–3 h | 0 zł | https://github.com/panva/openid-client | `S05-E5-D` | `S05-E6-D` | `05-backend-i-api/e6-uwierzytelnianie-i-autoryzacja/` |
+| `S05-E6-D` | LEA-437 | Dowód etapu 6: uwierzytelnianie i autoryzacja | dowód | — | — | — | `S05-E6-M1`, `S05-E6-M2`, `S05-E6-M3`, `S05-E6-M4`, `S05-E6-M5`, `S05-E6-M6`, `S05-E6-M7`, `S05-E6-M8`, `S05-E6-M9` | `S05-E7-M1`, `S05-E7-M2`, `S05-E7-M3`, `S05-E7-M4`, `S05-E7-M5`, `S05-E7-M6`, `S05-E7-M7`, `S05-E7-M8` | `05-backend-i-api/e6-uwierzytelnianie-i-autoryzacja/` |
 
 **`S05-E6-D` · Dowód etapu 6: uwierzytelnianie i autoryzacja**
 
@@ -355,17 +355,17 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Odbiornik webhooków Stripe w usłudze NestJS z weryfikacją podpisu, deduplikacją i outboxem w PostgreSQL (wysyłka przez `pg-boss`); test, który wysyła to samo zdarzenie dwa razy, zdarzenia w odwrotnej kolejności i zdarzenie ze złym podpisem, oraz test awarii procesu między zapisem a wysłaniem e-maila, po którym nic nie ginie i nic się nie dubluje. Do tego załączniki rezerwacji przez presigned URL do magazynu zgodnego z S3 i e-mail transakcyjny z domeny z SPF, DKIM i DMARC.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S05-E7-M1` | Przerobić: Standard Webhooks: specyfikacja podpisu, identyfikatorów i ponowień | materiał | 2–3 h | 0 zł | https://github.com/standard-webhooks/standard-webhooks/blob/main/spec/standard-webhooks.md | `S05-E6-D` | `S05-E7-D` | `05-backend-i-api/e7-integracje-i-niezawodnosc/` |
-| `S05-E7-M2` | Przerobić: Stripe: odbieranie webhooków… | materiał | 2–3 h | 0 zł | https://docs.stripe.com/webhooks | `S05-E6-D` | `S05-E7-D` | `05-backend-i-api/e7-integracje-i-niezawodnosc/` |
-| `S05-E7-M3` | Przerobić: „Pattern: Transactional outbox” i powiązane wzorce (idempotent consumer, saga) | materiał | 3–4 h | 0 zł | https://microservices.io/patterns/data/transactional-outbox.html | `S05-E6-D` | `S05-E7-D` | `05-backend-i-api/e7-integracje-i-niezawodnosc/` |
-| `S05-E7-M4` | Przerobić: Kolejki na PostgreSQL: `pgmq`, `SELECT … FOR UPDATE SKIP LOCKED` | materiał | 4–5 h | 0 zł | https://github.com/pgmq/pgmq | `S05-E6-D` | `S05-E7-D` | `05-backend-i-api/e7-integracje-i-niezawodnosc/` |
-| `S05-E7-M5` | Przerobić: Rozdziały o przetwarzaniu strumieniowym i wsadowym w „Designing Data-Intensive Applications”… | materiał, płatny, opcjonalne | 8–10 h | płatna | https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/ | `S05-E6-D` | — | `05-backend-i-api/e7-integracje-i-niezawodnosc/` |
-| `S05-E7-M6` | Przerobić: `pg-boss`: kolejka zadań na PostgreSQL (`SKIP LOCKED`) dla Node.js | materiał | 2–3 h | 0 zł | https://github.com/timgit/pg-boss | `S05-E6-D` | `S05-E7-D` | `05-backend-i-api/e7-integracje-i-niezawodnosc/` |
-| `S05-E7-M7` | Przerobić: Amazon S3: przesyłanie plików przez presigned URL… | materiał | 2–3 h | 0 zł | https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html | `S05-E6-D` | `S05-E7-D` | `05-backend-i-api/e7-integracje-i-niezawodnosc/` |
-| `S05-E7-M8` | Przerobić: Wytyczne dla nadawców e-maili (SPF, DKIM, DMARC, rezygnacja jednym kliknięciem) | materiał | 1–2 h | 0 zł | https://support.google.com/a/answer/81126 | `S05-E6-D` | `S05-E7-D` | `05-backend-i-api/e7-integracje-i-niezawodnosc/` |
-| `S05-E7-D` | Dowód etapu 7: integracje i niezawodność | dowód | — | — | — | `S05-E7-M1`, `S05-E7-M2`, `S05-E7-M3`, `S05-E7-M4`, `S05-E7-M6`, `S05-E7-M7`, `S05-E7-M8` | `S05-E8-M1`, `S05-E8-M2`, `S05-E8-M3`, `S05-E8-M4`, `S05-E8-M5`, `S05-E8-M6`, `S05-E8-M7`, `S05-E8-M8`, `S05-E8-M9` | `05-backend-i-api/e7-integracje-i-niezawodnosc/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S05-E7-M1` | LEA-445 | Przerobić: Standard Webhooks: specyfikacja podpisu, identyfikatorów i ponowień | materiał | 2–3 h | 0 zł | https://github.com/standard-webhooks/standard-webhooks/blob/main/spec/standard-webhooks.md | `S05-E6-D` | `S05-E7-D` | `05-backend-i-api/e7-integracje-i-niezawodnosc/` |
+| `S05-E7-M2` | LEA-449 | Przerobić: Stripe: odbieranie webhooków… | materiał | 2–3 h | 0 zł | https://docs.stripe.com/webhooks | `S05-E6-D` | `S05-E7-D` | `05-backend-i-api/e7-integracje-i-niezawodnosc/` |
+| `S05-E7-M3` | LEA-451 | Przerobić: „Pattern: Transactional outbox” i powiązane wzorce (idempotent consumer, saga) | materiał | 3–4 h | 0 zł | https://microservices.io/patterns/data/transactional-outbox.html | `S05-E6-D` | `S05-E7-D` | `05-backend-i-api/e7-integracje-i-niezawodnosc/` |
+| `S05-E7-M4` | LEA-452 | Przerobić: Kolejki na PostgreSQL: `pgmq`, `SELECT … FOR UPDATE SKIP LOCKED` | materiał | 4–5 h | 0 zł | https://github.com/pgmq/pgmq | `S05-E6-D` | `S05-E7-D` | `05-backend-i-api/e7-integracje-i-niezawodnosc/` |
+| `S05-E7-M5` | LEA-455 | Przerobić: Rozdziały o przetwarzaniu strumieniowym i wsadowym w „Designing Data-Intensive Applications”… | materiał, płatny, opcjonalne | 8–10 h | płatna | https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/ | `S05-E6-D` | — | `05-backend-i-api/e7-integracje-i-niezawodnosc/` |
+| `S05-E7-M6` | LEA-459 | Przerobić: `pg-boss`: kolejka zadań na PostgreSQL (`SKIP LOCKED`) dla Node.js | materiał | 2–3 h | 0 zł | https://github.com/timgit/pg-boss | `S05-E6-D` | `S05-E7-D` | `05-backend-i-api/e7-integracje-i-niezawodnosc/` |
+| `S05-E7-M7` | LEA-462 | Przerobić: Amazon S3: przesyłanie plików przez presigned URL… | materiał | 2–3 h | 0 zł | https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html | `S05-E6-D` | `S05-E7-D` | `05-backend-i-api/e7-integracje-i-niezawodnosc/` |
+| `S05-E7-M8` | LEA-465 | Przerobić: Wytyczne dla nadawców e-maili (SPF, DKIM, DMARC, rezygnacja jednym kliknięciem) | materiał | 1–2 h | 0 zł | https://support.google.com/a/answer/81126 | `S05-E6-D` | `S05-E7-D` | `05-backend-i-api/e7-integracje-i-niezawodnosc/` |
+| `S05-E7-D` | LEA-478 | Dowód etapu 7: integracje i niezawodność | dowód | — | — | — | `S05-E7-M1`, `S05-E7-M2`, `S05-E7-M3`, `S05-E7-M4`, `S05-E7-M6`, `S05-E7-M7`, `S05-E7-M8` | `S05-E8-M1`, `S05-E8-M2`, `S05-E8-M3`, `S05-E8-M4`, `S05-E8-M5`, `S05-E8-M6`, `S05-E8-M7`, `S05-E8-M8`, `S05-E8-M9` | `05-backend-i-api/e7-integracje-i-niezawodnosc/` |
 
 **`S05-E7-D` · Dowód etapu 7: integracje i niezawodność**
 
@@ -387,18 +387,18 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Abonament w usłudze NestJS przez Stripe Billing lub Managed Payments, z obsługą odnowienia, nieudanej płatności, anulowania i zwrotu, sterowany wyłącznie webhookami z etapu integracji; klucz licencyjny (Keygen albo własny podpisany klucz) wydawany po opłaceniu i weryfikowany offline; usługa wdrożona na Fly.io z sekretami w platformie; oraz raport z audytu bezpieczeństwa przykładowego projektu Supabase lub Firebase (tabele bez RLS, zbyt szerokie polityki, klucze w kliencie) z poprawkami i testami, czyli wzór usługi audytu z biznesplanu.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S05-E8-M1` | Przerobić: Stripe Billing: abonamenty, okresy próbne, faktury, portal klienta | materiał | 8–10 h | 0 zł | https://docs.stripe.com/billing | `S05-E7-D` | `S05-E8-D` | `05-backend-i-api/e8-platnosci-i-platformy-klientow/` |
-| `S05-E8-M2` | Przerobić: Stripe: żądania idempotentne | materiał | 1 h | 0 zł | https://docs.stripe.com/api/idempotent_requests | `S05-E7-D` | `S05-E8-D` | `05-backend-i-api/e8-platnosci-i-platformy-klientow/` |
-| `S05-E8-M3` | Przerobić: Stripe Managed Payments… | materiał | 3–4 h | 0 zł | https://docs.stripe.com/payments/managed-payments | `S05-E7-D` | `S05-E8-D` | `05-backend-i-api/e8-platnosci-i-platformy-klientow/` |
-| `S05-E8-M4` | Przerobić: Paddle Billing (alternatywny Merchant of Record) | materiał, opcjonalne | 3–4 h | 0 zł | https://developer.paddle.com | `S05-E7-D` | — | `05-backend-i-api/e8-platnosci-i-platformy-klientow/` |
-| `S05-E8-M5` | Przerobić: Supabase: Row Level Security, klucze publishable i secret, Edge Functions | materiał | 6–8 h | 0 zł | https://supabase.com/docs/guides/database/postgres/row-level-security | `S05-E7-D` | `S05-E8-D` | `05-backend-i-api/e8-platnosci-i-platformy-klientow/` |
-| `S05-E8-M6` | Przerobić: Firebase Security Rules | materiał, opcjonalne | 4–5 h | 0 zł | https://firebase.google.com/docs/rules | `S05-E7-D` | — | `05-backend-i-api/e8-platnosci-i-platformy-klientow/` |
-| `S05-E8-M7` | Przerobić: Keygen: licencjonowanie oprogramowania (walidacja kluczy, aktywacja urządzeń, licencje offline) | materiał | 3–4 h | 0 zł | https://keygen.sh/docs/ | `S05-E7-D` | `S05-E8-D` | `05-backend-i-api/e8-platnosci-i-platformy-klientow/` |
-| `S05-E8-M8` | Przerobić: Vercel (projekty, zmienne środowiskowe, funkcje) i Fly.io (aplikacje, maszyny, sekrety, regiony) | materiał | 4–5 h | 0 zł | https://vercel.com/docs, https://fly.io/docs/ | `S05-E7-D` | `S05-E8-D` | `05-backend-i-api/e8-platnosci-i-platformy-klientow/` |
-| `S05-E8-M9` | Przerobić: Weryfikacja zakupów po stronie serwera: App Store Server API i powiadomienia, Google Play… | materiał, opcjonalne | 4–5 h | 0 zł | https://developer.apple.com/documentation/appstoreserverapi, https://developer.android.com/google/play/billing/rtdn-reference | `S05-E7-D` | — | `05-backend-i-api/e8-platnosci-i-platformy-klientow/` |
-| `S05-E8-D` | Dowód etapu 8: płatności i platformy klientów | dowód | — | — | — | `S05-E8-M1`, `S05-E8-M2`, `S05-E8-M3`, `S05-E8-M5`, `S05-E8-M7`, `S05-E8-M8` | `S05-E11-M1`, `S05-E11-M2`, `S05-E11-P1`, `S05-E11-P2`, `S05-E11-P3`, `S05-E11-P4`, `S14-E4-M1`, `S14-E4-M2`, `S14-E4-M3`, `S14-E4-M4`, `S14-E4-M5`, `S14-E4-M6`, `S14-E4-M7`, `S18-E5-M1`, `S18-E5-M2`, `S18-E5-M3`, `S18-E5-M4`, `S18-E5-M5`, `S18-E5-M6`, `S18-E5-M7`, `S18-E5-M8`, `S18-E5-M9`, `S18-E5-M10`, `S18-E5-M11`, `S19-E5-M1`, `S19-E5-M2`, `S19-E5-M3`, `S19-E5-M4`, `S19-E5-M5`, `S19-E5-M6`, `S19-E5-M7`, `S19-E5-M8`, `S19-E5-M9`, `S19-E5-M10` | `05-backend-i-api/e8-platnosci-i-platformy-klientow/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S05-E8-M1` | LEA-495 | Przerobić: Stripe Billing: abonamenty, okresy próbne, faktury, portal klienta | materiał | 8–10 h | 0 zł | https://docs.stripe.com/billing | `S05-E7-D` | `S05-E8-D` | `05-backend-i-api/e8-platnosci-i-platformy-klientow/` |
+| `S05-E8-M2` | LEA-496 | Przerobić: Stripe: żądania idempotentne | materiał | 1 h | 0 zł | https://docs.stripe.com/api/idempotent_requests | `S05-E7-D` | `S05-E8-D` | `05-backend-i-api/e8-platnosci-i-platformy-klientow/` |
+| `S05-E8-M3` | LEA-497 | Przerobić: Stripe Managed Payments… | materiał | 3–4 h | 0 zł | https://docs.stripe.com/payments/managed-payments | `S05-E7-D` | `S05-E8-D` | `05-backend-i-api/e8-platnosci-i-platformy-klientow/` |
+| `S05-E8-M4` | LEA-499 | Przerobić: Paddle Billing (alternatywny Merchant of Record) | materiał, opcjonalne | 3–4 h | 0 zł | https://developer.paddle.com | `S05-E7-D` | — | `05-backend-i-api/e8-platnosci-i-platformy-klientow/` |
+| `S05-E8-M5` | LEA-502 | Przerobić: Supabase: Row Level Security, klucze publishable i secret, Edge Functions | materiał | 6–8 h | 0 zł | https://supabase.com/docs/guides/database/postgres/row-level-security | `S05-E7-D` | `S05-E8-D` | `05-backend-i-api/e8-platnosci-i-platformy-klientow/` |
+| `S05-E8-M6` | LEA-505 | Przerobić: Firebase Security Rules | materiał, opcjonalne | 4–5 h | 0 zł | https://firebase.google.com/docs/rules | `S05-E7-D` | — | `05-backend-i-api/e8-platnosci-i-platformy-klientow/` |
+| `S05-E8-M7` | LEA-506 | Przerobić: Keygen: licencjonowanie oprogramowania (walidacja kluczy, aktywacja urządzeń, licencje offline) | materiał | 3–4 h | 0 zł | https://keygen.sh/docs/ | `S05-E7-D` | `S05-E8-D` | `05-backend-i-api/e8-platnosci-i-platformy-klientow/` |
+| `S05-E8-M8` | LEA-507 | Przerobić: Vercel (projekty, zmienne środowiskowe, funkcje) i Fly.io (aplikacje, maszyny, sekrety, regiony) | materiał | 4–5 h | 0 zł | https://vercel.com/docs, https://fly.io/docs/ | `S05-E7-D` | `S05-E8-D` | `05-backend-i-api/e8-platnosci-i-platformy-klientow/` |
+| `S05-E8-M9` | LEA-509 | Przerobić: Weryfikacja zakupów po stronie serwera: App Store Server API i powiadomienia, Google Play… | materiał, opcjonalne | 4–5 h | 0 zł | https://developer.apple.com/documentation/appstoreserverapi, https://developer.android.com/google/play/billing/rtdn-reference | `S05-E7-D` | — | `05-backend-i-api/e8-platnosci-i-platformy-klientow/` |
+| `S05-E8-D` | LEA-518 | Dowód etapu 8: płatności i platformy klientów | dowód | — | — | — | `S05-E8-M1`, `S05-E8-M2`, `S05-E8-M3`, `S05-E8-M5`, `S05-E8-M7`, `S05-E8-M8` | `S05-E11-M1`, `S05-E11-M2`, `S05-E11-P1`, `S05-E11-P2`, `S05-E11-P3`, `S05-E11-P4`, `S14-E4-M1`, `S14-E4-M2`, `S14-E4-M3`, `S14-E4-M4`, `S14-E4-M5`, `S14-E4-M6`, `S14-E4-M7`, `S18-E5-M1`, `S18-E5-M2`, `S18-E5-M3`, `S18-E5-M4`, `S18-E5-M5`, `S18-E5-M6`, `S18-E5-M7`, `S18-E5-M8`, `S18-E5-M9`, `S18-E5-M10`, `S18-E5-M11`, `S19-E5-M1`, `S19-E5-M2`, `S19-E5-M3`, `S19-E5-M4`, `S19-E5-M5`, `S19-E5-M6`, `S19-E5-M7`, `S19-E5-M8`, `S19-E5-M9`, `S19-E5-M10` | `05-backend-i-api/e8-platnosci-i-platformy-klientow/` |
 
 **`S05-E8-D` · Dowód etapu 8: płatności i platformy klientów**
 
@@ -424,18 +424,18 @@ Uwaga do gRPC w Ruście: w maju 2026 r. `tonic` przeszedł do projektu gRPC (rep
 
 **Dowód:** Usługa w Axum implementująca część kontraktu OpenAPI usługi NestJS (zasoby i rezerwacje), z warstwami Tower (timeout, limit ciała, śledzenie), spójnymi błędami RFC 9457, OpenAPI generowanym przez `utoipa`, konfiguracją z pliku i zmiennych środowiskowych, testami integracyjnymi i łagodnym zamykaniem; wdrożona jako kontener.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S05-E9-M1` | Przerobić: Tokio Tutorial | materiał | 10–15 h | 0 zł | https://tokio.rs/tokio/tutorial | `S05-E4-D`, `S12-E2-D` | `S05-E9-D` | `05-backend-i-api/e9-backend-w-ruscie-tokio-axum-tower/` |
-| `S05-E9-M2` | Przerobić: „Inventing the Service trait” | materiał | 1–2 h | 0 zł | https://tokio.rs/blog/2021-05-14-inventing-the-service-trait | `S05-E4-D`, `S12-E2-D` | `S05-E9-D` | `05-backend-i-api/e9-backend-w-ruscie-tokio-axum-tower/` |
-| `S05-E9-M3` | Przerobić: Dokumentacja Axum i katalog przykładów w repozytorium | materiał | 12–15 h | 0 zł | https://docs.rs/axum/latest/axum/ | `S05-E4-D`, `S12-E2-D` | `S05-E9-D` | `05-backend-i-api/e9-backend-w-ruscie-tokio-axum-tower/` |
-| `S05-E9-M4` | Przerobić: Dokumentacja Tower i `tower-http` (timeouty, limity, CORS, kompresja, śledzenie) | materiał | 5–6 h | 0 zł | https://docs.rs/tower/latest/tower/ | `S05-E4-D`, `S12-E2-D` | `S05-E9-D` | `05-backend-i-api/e9-backend-w-ruscie-tokio-axum-tower/` |
-| `S05-E9-M5` | Przerobić: Zero To Production in Rust | materiał, płatny | 40–60 h | płatna | https://www.zero2prod.com | `S05-E4-D`, `S12-E2-D` | `S05-E9-D` | `05-backend-i-api/e9-backend-w-ruscie-tokio-axum-tower/` |
-| `S05-E9-M6` | Przerobić: `utoipa` i `utoipa-axum`: OpenAPI generowane z kodu Rust | materiał | 4–6 h | 0 zł | https://docs.rs/utoipa/latest/utoipa/ | `S05-E4-D`, `S12-E2-D` | `S05-E9-D` | `05-backend-i-api/e9-backend-w-ruscie-tokio-axum-tower/` |
-| `S05-E9-M7` | Przerobić: `tonic`: przykłady i samouczek routeguide | materiał, opcjonalne | 5–6 h | 0 zł | https://github.com/grpc/grpc-rust | `S05-E4-D`, `S12-E2-D` | — | `05-backend-i-api/e9-backend-w-ruscie-tokio-axum-tower/` |
-| `S05-E9-M8` | Przerobić: Crate’y `oauth2`, `openidconnect`, `tower-sessions`, `axum-login` | materiał, opcjonalne | 4–5 h | 0 zł | https://docs.rs/openidconnect, https://docs.rs/tower-sessions | `S05-E4-D`, `S12-E2-D` | — | `05-backend-i-api/e9-backend-w-ruscie-tokio-axum-tower/` |
-| `S05-E9-M9` | Przerobić: Zadania w tle w Ruście: `apalis` (wersja 1.0 w fazie RC) | materiał, opcjonalne | 3–4 h | 0 zł | https://docs.rs/apalis | `S05-E4-D`, `S12-E2-D` | — | `05-backend-i-api/e9-backend-w-ruscie-tokio-axum-tower/` |
-| `S05-E9-D` | Dowód etapu 9: backend w Ruście (Tokio, Axum, Tower) | dowód | — | — | — | `S05-E9-M1`, `S05-E9-M2`, `S05-E9-M3`, `S05-E9-M4`, `S05-E9-M5`, `S05-E9-M6` | `S05-E10-M1`, `S05-E10-M2` | `05-backend-i-api/e9-backend-w-ruscie-tokio-axum-tower/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S05-E9-M1` | LEA-376 | Przerobić: Tokio Tutorial | materiał | 10–15 h | 0 zł | https://tokio.rs/tokio/tutorial | `S05-E4-D`, `S12-E2-D` | `S05-E9-D` | `05-backend-i-api/e9-backend-w-ruscie-tokio-axum-tower/` |
+| `S05-E9-M2` | LEA-377 | Przerobić: „Inventing the Service trait” | materiał | 1–2 h | 0 zł | https://tokio.rs/blog/2021-05-14-inventing-the-service-trait | `S05-E4-D`, `S12-E2-D` | `S05-E9-D` | `05-backend-i-api/e9-backend-w-ruscie-tokio-axum-tower/` |
+| `S05-E9-M3` | LEA-378 | Przerobić: Dokumentacja Axum i katalog przykładów w repozytorium | materiał | 12–15 h | 0 zł | https://docs.rs/axum/latest/axum/ | `S05-E4-D`, `S12-E2-D` | `S05-E9-D` | `05-backend-i-api/e9-backend-w-ruscie-tokio-axum-tower/` |
+| `S05-E9-M4` | LEA-380 | Przerobić: Dokumentacja Tower i `tower-http` (timeouty, limity, CORS, kompresja, śledzenie) | materiał | 5–6 h | 0 zł | https://docs.rs/tower/latest/tower/ | `S05-E4-D`, `S12-E2-D` | `S05-E9-D` | `05-backend-i-api/e9-backend-w-ruscie-tokio-axum-tower/` |
+| `S05-E9-M5` | LEA-384 | Przerobić: Zero To Production in Rust | materiał, płatny | 40–60 h | płatna | https://www.zero2prod.com | `S05-E4-D`, `S12-E2-D` | `S05-E9-D` | `05-backend-i-api/e9-backend-w-ruscie-tokio-axum-tower/` |
+| `S05-E9-M6` | LEA-386 | Przerobić: `utoipa` i `utoipa-axum`: OpenAPI generowane z kodu Rust | materiał | 4–6 h | 0 zł | https://docs.rs/utoipa/latest/utoipa/ | `S05-E4-D`, `S12-E2-D` | `S05-E9-D` | `05-backend-i-api/e9-backend-w-ruscie-tokio-axum-tower/` |
+| `S05-E9-M7` | LEA-390 | Przerobić: `tonic`: przykłady i samouczek routeguide | materiał, opcjonalne | 5–6 h | 0 zł | https://github.com/grpc/grpc-rust | `S05-E4-D`, `S12-E2-D` | — | `05-backend-i-api/e9-backend-w-ruscie-tokio-axum-tower/` |
+| `S05-E9-M8` | LEA-393 | Przerobić: Crate’y `oauth2`, `openidconnect`, `tower-sessions`, `axum-login` | materiał, opcjonalne | 4–5 h | 0 zł | https://docs.rs/openidconnect, https://docs.rs/tower-sessions | `S05-E4-D`, `S12-E2-D` | — | `05-backend-i-api/e9-backend-w-ruscie-tokio-axum-tower/` |
+| `S05-E9-M9` | LEA-396 | Przerobić: Zadania w tle w Ruście: `apalis` (wersja 1.0 w fazie RC) | materiał, opcjonalne | 3–4 h | 0 zł | https://docs.rs/apalis | `S05-E4-D`, `S12-E2-D` | — | `05-backend-i-api/e9-backend-w-ruscie-tokio-axum-tower/` |
+| `S05-E9-D` | LEA-434 | Dowód etapu 9: backend w Ruście (Tokio, Axum, Tower) | dowód | — | — | — | `S05-E9-M1`, `S05-E9-M2`, `S05-E9-M3`, `S05-E9-M4`, `S05-E9-M5`, `S05-E9-M6` | `S05-E10-M1`, `S05-E10-M2` | `05-backend-i-api/e9-backend-w-ruscie-tokio-axum-tower/` |
 
 **`S05-E9-D` · Dowód etapu 9: backend w Ruście (Tokio, Axum, Tower)**
 
@@ -457,11 +457,11 @@ Wystarczy dobrze znać jedno z dwóch narzędzi: SQLx jako domyślny wybór dla 
 
 **Dowód:** Warstwa danych usługi z etapu backendu w Ruście na SQLx: zapytania sprawdzane w kompilacji z cache trybu offline w CI, transakcja obejmująca kilka tabel, test na prawdziwym PostgreSQL w kontenerze, brak zapytań N+1 w liście z relacjami.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S05-E10-M1` | Przerobić: SQLx (wersja 0.9): zapytania sprawdzane w czasie kompilacji, tryb offline, migracje, pula połączeń | materiał | 8–10 h | 0 zł | https://docs.rs/sqlx/latest/sqlx/ | `S05-E9-D` | `S05-E10-D` | `05-backend-i-api/e10-dostep-do-danych-z-rusta/` |
-| `S05-E10-M2` | Przerobić: SeaORM 2.0: dokumentacja, tutorial, cookbook | materiał, opcjonalne | 12–15 h | 0 zł | https://www.sea-ql.org/SeaORM/docs/index/ | `S05-E9-D` | — | `05-backend-i-api/e10-dostep-do-danych-z-rusta/` |
-| `S05-E10-D` | Dowód etapu 10: dostęp do danych z Rusta | dowód | — | — | — | `S05-E10-M1` | `S05-E11-M1`, `S05-E11-M2`, `S05-E11-P1`, `S05-E11-P2`, `S05-E11-P3`, `S05-E11-P4` | `05-backend-i-api/e10-dostep-do-danych-z-rusta/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S05-E10-M1` | LEA-438 | Przerobić: SQLx (wersja 0.9): zapytania sprawdzane w czasie kompilacji, tryb offline, migracje, pula połączeń | materiał | 8–10 h | 0 zł | https://docs.rs/sqlx/latest/sqlx/ | `S05-E9-D` | `S05-E10-D` | `05-backend-i-api/e10-dostep-do-danych-z-rusta/` |
+| `S05-E10-M2` | LEA-439 | Przerobić: SeaORM 2.0: dokumentacja, tutorial, cookbook | materiał, opcjonalne | 12–15 h | 0 zł | https://www.sea-ql.org/SeaORM/docs/index/ | `S05-E9-D` | — | `05-backend-i-api/e10-dostep-do-danych-z-rusta/` |
+| `S05-E10-D` | LEA-467 | Dowód etapu 10: dostęp do danych z Rusta | dowód | — | — | — | `S05-E10-M1` | `S05-E11-M1`, `S05-E11-M2`, `S05-E11-P1`, `S05-E11-P2`, `S05-E11-P3`, `S05-E11-P4` | `05-backend-i-api/e10-dostep-do-danych-z-rusta/` |
 
 **`S05-E10-D` · Dowód etapu 10: dostęp do danych z Rusta**
 
@@ -479,15 +479,15 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód poziomu E:** Samodzielnie, bez agenta, w 1 dzień diagnozujesz i naprawiasz w nieznanej usłudze (NestJS, FastAPI albo Axum, z REST lub GraphQL) błąd autoryzacji, zdublowaną płatność, zgubione zdarzenie z webhooka albo problem N+1 w resolverze GraphQL, piszesz test, który odtwarza problem, i umiesz wyjaśnić przyczynę osobie nietechnicznej.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
-|---|---|---|---|---|---|---|---|---|
-| `S05-E11-M1` | Przerobić: OWASP API Security Top 10 (edycja 2023) | materiał | 3–4 h | 0 zł | https://owasp.org/API-Security/ | `S05-E8-D`, `S05-E10-D` | `S05-E11-D` | `05-backend-i-api/e11-ekspert/` |
-| `S05-E11-M2` | Przerobić: Komunikaty i wydania: NestJS, FastAPI, Prisma, GraphQL (specyfikacja i GraphQL.js), blog Tokio… | materiał | ok. 1 h tygodniowo | 0 zł | https://github.com/nestjs/nest/releases, https://fastapi.tiangolo.com/release-notes/, https://graphql.org/blog/, https://tokio.rs/blog, https://grpc.io/blog/, https://docs.stripe.com/changelog, https://datatracker.ietf.org/wg/oauth/documents/ | `S05-E8-D`, `S05-E10-D` | `S05-E11-D` | `05-backend-i-api/e11-ekspert/` |
-| `S05-E11-P1` | Praktyka: recenzja kodu AI | praktyka | — | — | — | `S05-E8-D`, `S05-E10-D` | `S05-E11-D` | `05-backend-i-api/e11-ekspert/` |
-| `S05-E11-P2` | Praktyka: przejęcie cudzego backendu | praktyka | — | — | — | `S05-E8-D`, `S05-E10-D` | `S05-E11-D` | `05-backend-i-api/e11-ekspert/` |
-| `S05-E11-P3` | Praktyka: projekt systemu na papierze | praktyka | — | — | — | `S05-E8-D`, `S05-E10-D` | `S05-E11-D` | `05-backend-i-api/e11-ekspert/` |
-| `S05-E11-P4` | Praktyka: śledzenie zmian | praktyka | — | — | — | `S05-E8-D`, `S05-E10-D` | `S05-E11-D` | `05-backend-i-api/e11-ekspert/` |
-| `S05-E11-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S05-E11-M1`, `S05-E11-M2`, `S05-E11-P1`, `S05-E11-P2`, `S05-E11-P3`, `S05-E11-P4` | — | `05-backend-i-api/e11-ekspert/` |
+| Klucz | Linear | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|---|
+| `S05-E11-M1` | LEA-536 | Przerobić: OWASP API Security Top 10 (edycja 2023) | materiał | 3–4 h | 0 zł | https://owasp.org/API-Security/ | `S05-E8-D`, `S05-E10-D` | `S05-E11-D` | `05-backend-i-api/e11-ekspert/` |
+| `S05-E11-M2` | LEA-538 | Przerobić: Komunikaty i wydania: NestJS, FastAPI, Prisma, GraphQL (specyfikacja i GraphQL.js), blog Tokio… | materiał | ok. 1 h tygodniowo | 0 zł | https://github.com/nestjs/nest/releases, https://fastapi.tiangolo.com/release-notes/, https://graphql.org/blog/, https://tokio.rs/blog, https://grpc.io/blog/, https://docs.stripe.com/changelog, https://datatracker.ietf.org/wg/oauth/documents/ | `S05-E8-D`, `S05-E10-D` | `S05-E11-D` | `05-backend-i-api/e11-ekspert/` |
+| `S05-E11-P1` | LEA-542 | Praktyka: recenzja kodu AI | praktyka | — | — | — | `S05-E8-D`, `S05-E10-D` | `S05-E11-D` | `05-backend-i-api/e11-ekspert/` |
+| `S05-E11-P2` | LEA-545 | Praktyka: przejęcie cudzego backendu | praktyka | — | — | — | `S05-E8-D`, `S05-E10-D` | `S05-E11-D` | `05-backend-i-api/e11-ekspert/` |
+| `S05-E11-P3` | LEA-547 | Praktyka: projekt systemu na papierze | praktyka | — | — | — | `S05-E8-D`, `S05-E10-D` | `S05-E11-D` | `05-backend-i-api/e11-ekspert/` |
+| `S05-E11-P4` | LEA-548 | Praktyka: śledzenie zmian | praktyka | — | — | — | `S05-E8-D`, `S05-E10-D` | `S05-E11-D` | `05-backend-i-api/e11-ekspert/` |
+| `S05-E11-D` | LEA-549 | Dowód poziomu E: ekspert | dowód | — | — | — | `S05-E11-M1`, `S05-E11-M2`, `S05-E11-P1`, `S05-E11-P2`, `S05-E11-P3`, `S05-E11-P4` | — | `05-backend-i-api/e11-ekspert/` |
 
 **`S05-E11-P1` · Praktyka: recenzja kodu AI**
 
