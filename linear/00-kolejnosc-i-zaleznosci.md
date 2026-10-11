@@ -275,6 +275,7 @@ Relacje częściowe w obie strony między projektami 05, 06, 08, 10 i 12 nie two
 - **Klucze robocze zadań:** `S06-E2-M3` oznacza sekcję 6, etap 2 ścieżki głównej, materiał 3. `U` zamiast `E` oznacza ścieżkę uzupełniającą, `D` dowód, `P` praktykę, `START` zadanie startowe. Po wdrożeniu zadania dostaną identyfikatory `LEA-…`; mapowanie kluczy na identyfikatory warto zachować w pliku.
 - **Tytuły zadań:** „Przerobić: …” (materiał), „Dowód etapu k: …”, „Dowód poziomu E: …”, „Praktyka: …”, „Start: …”.
 - **Opisy:** materiał ma autora, typ, czas, koszt i link; dowód ma treść dowodu, „Na co zwrócić uwagę” i kryterium ukończenia; kamień milowy ma cel, czas, poziom i treść dowodu. Gotowe teksty są w plikach sekcji.
+- **Foldery robocze:** każdy projekt ma folder w katalogu głównym repozytorium o nazwie pliku sekcji (np. `06-testowanie/`), a w nim jeden folder na kamień milowy: `ek-nazwa-etapu/` lub `uk-nazwa-sciezki/` (bez polskich znaków, np. `12-rust-jako-wspolny-fundament/u1-c-ogolnie-i-ffi-z-rustem/`). Wszystkie zadania etapu (materiały, dowód, praktyki) pracują w folderze swojego kamienia milowego, zadanie startowe w folderze projektu. Opis każdego zadania kończy się wierszem „**Folder roboczy:**”, a tabele zadań w plikach sekcji mają kolumnę „Folder”. Puste foldery zawierają plik `.gitkeep`.
 
 ## 7. Kolejność wdrożenia w Linear
 

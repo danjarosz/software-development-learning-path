@@ -110,6 +110,8 @@ Punkt startu projektu „21. Funkcje AI w aplikacjach”.
 - zaznaczyć etapy, które zaliczasz samym dowodem (zgodnie z akapitem wstępnym ścieżki), i dla nich zamknąć zadania materiałów jako niepotrzebne,
 - ustawić daty kamieni milowych zgodnie z kolejnością z pliku głównego.
 
+**Folder roboczy:** `21-funkcje-ai-w-aplikacjach/`
+
 ## 4. Przepływ zależności
 
 Linie ciągłe to zależności wewnątrz projektu, przerywane to zadania z innych projektów. Wewnątrz etapu zadania materiałów są równoległe i wszystkie blokują dowód etapu; dowód etapu blokuje materiały kolejnego etapu.
@@ -142,7 +144,7 @@ flowchart TD
 
 ## 5. Zadania według kamieni milowych
 
-Szablon opisu zadania materiału: nazwa materiału, autor lub wydawca, typ, czas, koszt i link (jak w kolumnach poniżej) oraz zdanie „Gotowe, gdy materiał jest przerobiony w zakresie potrzebnym do dowodu etapu”. Opisy dowodów i praktyk są podane pod tabelą każdego etapu.
+Szablon opisu zadania materiału: nazwa materiału, autor lub wydawca, typ, czas, koszt i link (jak w kolumnach poniżej), zdanie „Gotowe, gdy materiał jest przerobiony w zakresie potrzebnym do dowodu etapu” oraz folder roboczy z kolumny „Folder”. Opisy dowodów i praktyk są podane pod tabelą każdego etapu.
 
 ### Etap 0: funkcje AI w aplikacjach
 
@@ -154,14 +156,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Funkcja AI w aplikacji Next.js (np. streszczenie raportu z audytu dla klienta) z backendem pośredniczącym, streamingiem, wyjściem strukturalnym, śledzeniem w Langfuse lub przez OpenTelemetry bez danych osobowych w logach i bramką jakości w CI: zestaw referencyjny z progiem, który blokuje scalenie przy spadku wyników.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S21-E0-M1` | Przerobić: Claude API: tool use, prompt caching, wyjście strukturalne, przetwarzanie wsadowe | materiał, płatny | 8–10 h | 0 zł (zużycie API płatne) | https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview, https://platform.claude.com/docs/en/build-with-claude/prompt-caching | `S21-START` | `S21-E0-D` |
-| `S21-E0-M2` | Przerobić: Kurs „Building with the Claude API” | materiał | 6–8 h | 0 zł | https://anthropic.skilljar.com | `S21-START` | `S21-E0-D` |
-| `S21-E0-M3` | Przerobić: AI SDK | materiał | 5–6 h | 0 zł | https://ai-sdk.dev/docs | `S21-START` | `S21-E0-D` |
-| `S21-E0-M4` | Przerobić: Langfuse: śledzenie, ewaluacje, wersjonowanie promptów | materiał, płatny | 4–5 h | 0 zł (własny hosting) / abonament (chmura) | https://langfuse.com/docs | `S21-START` | `S21-E0-D` |
-| `S21-E0-M5` | Przerobić: Konwencje semantyczne OpenTelemetry dla GenAI | materiał | 2–3 h | 0 zł | https://github.com/open-telemetry/semantic-conventions-genai | `S21-START` | `S21-E0-D` |
-| `S21-E0-D` | Dowód etapu 0: funkcje AI w aplikacjach | dowód | — | — | — | `S21-E0-M1`, `S21-E0-M2`, `S21-E0-M3`, `S21-E0-M4`, `S21-E0-M5` | `S21-E1-M1`, `S21-E1-M2`, `S21-E1-M3`, `S21-E1-M4`, `S21-E1-M5`, `S21-E1-M6`, `S21-E1-M7`, `S21-E1-M8`, `S21-E2-M1`, `S21-E2-M2`, `S21-E2-M3`, `S21-E2-M4`, `S21-E3-M1`, `S21-E3-M2`, `S21-E3-M3`, `S21-E3-M4` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S21-E0-M1` | Przerobić: Claude API: tool use, prompt caching, wyjście strukturalne, przetwarzanie wsadowe | materiał, płatny | 8–10 h | 0 zł (zużycie API płatne) | https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview, https://platform.claude.com/docs/en/build-with-claude/prompt-caching | `S21-START` | `S21-E0-D` | `21-funkcje-ai-w-aplikacjach/e0-funkcje-ai-w-aplikacjach/` |
+| `S21-E0-M2` | Przerobić: Kurs „Building with the Claude API” | materiał | 6–8 h | 0 zł | https://anthropic.skilljar.com | `S21-START` | `S21-E0-D` | `21-funkcje-ai-w-aplikacjach/e0-funkcje-ai-w-aplikacjach/` |
+| `S21-E0-M3` | Przerobić: AI SDK | materiał | 5–6 h | 0 zł | https://ai-sdk.dev/docs | `S21-START` | `S21-E0-D` | `21-funkcje-ai-w-aplikacjach/e0-funkcje-ai-w-aplikacjach/` |
+| `S21-E0-M4` | Przerobić: Langfuse: śledzenie, ewaluacje, wersjonowanie promptów | materiał, płatny | 4–5 h | 0 zł (własny hosting) / abonament (chmura) | https://langfuse.com/docs | `S21-START` | `S21-E0-D` | `21-funkcje-ai-w-aplikacjach/e0-funkcje-ai-w-aplikacjach/` |
+| `S21-E0-M5` | Przerobić: Konwencje semantyczne OpenTelemetry dla GenAI | materiał | 2–3 h | 0 zł | https://github.com/open-telemetry/semantic-conventions-genai | `S21-START` | `S21-E0-D` | `21-funkcje-ai-w-aplikacjach/e0-funkcje-ai-w-aplikacjach/` |
+| `S21-E0-D` | Dowód etapu 0: funkcje AI w aplikacjach | dowód | — | — | — | `S21-E0-M1`, `S21-E0-M2`, `S21-E0-M3`, `S21-E0-M4`, `S21-E0-M5` | `S21-E1-M1`, `S21-E1-M2`, `S21-E1-M3`, `S21-E1-M4`, `S21-E1-M5`, `S21-E1-M6`, `S21-E1-M7`, `S21-E1-M8`, `S21-E2-M1`, `S21-E2-M2`, `S21-E2-M3`, `S21-E2-M4`, `S21-E3-M1`, `S21-E3-M2`, `S21-E3-M3`, `S21-E3-M4` | `21-funkcje-ai-w-aplikacjach/e0-funkcje-ai-w-aplikacjach/` |
 
 **`S21-E0-D` · Dowód etapu 0: funkcje AI w aplikacjach**
 
@@ -170,6 +172,8 @@ Funkcja AI w aplikacji Next.js (np. streszczenie raportu z audytu dla klienta) z
 **Na co zwrócić uwagę:** klucz API tylko na backendzie, limity per użytkownik i budżet, cache promptów a koszt na aktywnego użytkownika, walidacja wyjścia modelu schematem przed użyciem, ścieżka zastępcza przy niedostępności modelu, nazwy atrybutów `gen_ai.*` mogą się zmieniać, więc wersję konwencji trzeba przypiąć.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `21-funkcje-ai-w-aplikacjach/e0-funkcje-ai-w-aplikacjach/`
 
 ### Etap 1: AI na urządzeniu
 
@@ -181,17 +185,17 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Jedna funkcja (np. streszczenie lub klasyfikacja notatki) działająca na urządzeniu na trzech platformach: w przeglądarce (Transformers.js), na iOS (Foundation Models) i na Androidzie (ML Kit GenAI), ze ścieżką zastępczą do backendu i tabelą: dostępność, opóźnienie, rozmiar, jakość na wspólnym zestawie testowym.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S21-E1-M1` | Przerobić: Transformers.js (WebGPU i WASM) | materiał | 4–6 h | 0 zł | https://huggingface.co/docs/transformers.js | `S21-E0-D`, `S14-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E1-D` |
-| `S21-E1-M2` | Przerobić: WebLLM | materiał | 2–3 h | 0 zł | https://webllm.mlc.ai/docs/ | `S21-E0-D`, `S14-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E1-D` |
-| `S21-E1-M3` | Przerobić: ONNX Runtime: Web, Mobile, dostawcy wykonania | materiał | 8–10 h | 0 zł | https://onnxruntime.ai/docs/ | `S21-E0-D`, `S14-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E1-D` |
-| `S21-E1-M4` | Przerobić: Foundation Models framework | materiał | 4–6 h | 0 zł | https://developer.apple.com/documentation/foundationmodels | `S21-E0-D`, `S14-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E1-D` |
-| `S21-E1-M5` | Przerobić: Core ML | materiał | 4–6 h | 0 zł | https://developer.apple.com/documentation/coreml | `S21-E0-D`, `S14-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E1-D` |
-| `S21-E1-M6` | Przerobić: ML Kit GenAI APIs (Gemini Nano przez AICore, w tym Prompt API) | materiał | 4–6 h | 0 zł | https://developers.google.com/ml-kit/genai | `S21-E0-D`, `S14-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E1-D` |
-| `S21-E1-M7` | Przerobić: LiteRT (dawniej TensorFlow Lite) i LiteRT-LM | materiał | 6–8 h | 0 zł | https://developers.google.com/edge/litert | `S21-E0-D`, `S14-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E1-D` |
-| `S21-E1-M8` | Przerobić: Windows ML (oparty na ONNX Runtime, akceleracja NPU) | materiał | 4–6 h | 0 zł | https://learn.microsoft.com/windows/ai/new-windows-ml/overview | `S21-E0-D`, `S14-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E1-D` |
-| `S21-E1-D` | Dowód etapu 1: AI na urządzeniu | dowód | — | — | — | `S21-E1-M1`, `S21-E1-M2`, `S21-E1-M3`, `S21-E1-M4`, `S21-E1-M5`, `S21-E1-M6`, `S21-E1-M7`, `S21-E1-M8` | `S21-E4-M1`, `S21-E4-P1`, `S21-E4-P2`, `S21-E4-P3` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S21-E1-M1` | Przerobić: Transformers.js (WebGPU i WASM) | materiał | 4–6 h | 0 zł | https://huggingface.co/docs/transformers.js | `S21-E0-D`, `S14-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E1-D` | `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu/` |
+| `S21-E1-M2` | Przerobić: WebLLM | materiał | 2–3 h | 0 zł | https://webllm.mlc.ai/docs/ | `S21-E0-D`, `S14-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E1-D` | `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu/` |
+| `S21-E1-M3` | Przerobić: ONNX Runtime: Web, Mobile, dostawcy wykonania | materiał | 8–10 h | 0 zł | https://onnxruntime.ai/docs/ | `S21-E0-D`, `S14-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E1-D` | `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu/` |
+| `S21-E1-M4` | Przerobić: Foundation Models framework | materiał | 4–6 h | 0 zł | https://developer.apple.com/documentation/foundationmodels | `S21-E0-D`, `S14-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E1-D` | `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu/` |
+| `S21-E1-M5` | Przerobić: Core ML | materiał | 4–6 h | 0 zł | https://developer.apple.com/documentation/coreml | `S21-E0-D`, `S14-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E1-D` | `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu/` |
+| `S21-E1-M6` | Przerobić: ML Kit GenAI APIs (Gemini Nano przez AICore, w tym Prompt API) | materiał | 4–6 h | 0 zł | https://developers.google.com/ml-kit/genai | `S21-E0-D`, `S14-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E1-D` | `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu/` |
+| `S21-E1-M7` | Przerobić: LiteRT (dawniej TensorFlow Lite) i LiteRT-LM | materiał | 6–8 h | 0 zł | https://developers.google.com/edge/litert | `S21-E0-D`, `S14-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E1-D` | `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu/` |
+| `S21-E1-M8` | Przerobić: Windows ML (oparty na ONNX Runtime, akceleracja NPU) | materiał | 4–6 h | 0 zł | https://learn.microsoft.com/windows/ai/new-windows-ml/overview | `S21-E0-D`, `S14-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E1-D` | `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu/` |
+| `S21-E1-D` | Dowód etapu 1: AI na urządzeniu | dowód | — | — | — | `S21-E1-M1`, `S21-E1-M2`, `S21-E1-M3`, `S21-E1-M4`, `S21-E1-M5`, `S21-E1-M6`, `S21-E1-M7`, `S21-E1-M8` | `S21-E4-M1`, `S21-E4-P1`, `S21-E4-P2`, `S21-E4-P3` | `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu/` |
 
 **`S21-E1-D` · Dowód etapu 1: AI na urządzeniu**
 
@@ -200,6 +204,8 @@ Jedna funkcja (np. streszczenie lub klasyfikacja notatki) działająca na urząd
 **Na co zwrócić uwagę:** dostępność modeli systemowych zależy od urządzenia, wersji systemu i regionu (Apple Intelligence, lista urządzeń z Gemini Nano), więc ścieżka zastępcza jest obowiązkowa; rozmiar pobieranego modelu i jego aktualizacja poza sklepem; weryfikacja sum kontrolnych i podpisu plików modelu.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu/`
 
 ### Etap 2: TinyML na mikrokontrolerach (opcjonalnie) (opcjonalny)
 
@@ -213,19 +219,21 @@ Książka „TinyML” (Pete Warden, Daniel Situnayake, O’Reilly 2019) dobrze 
 
 **Dowód:** Model wykrywania słowa kluczowego lub gestu skwantyzowany do int8 i uruchomiony na mikrokontrolerze z sekcji 22 (np. nRF lub ESP32), z pomiarem pamięci, czasu wnioskowania i poboru energii; wersja w Ruście `no_std` z `tract` lub uzasadnienie, dlaczego zostaje C.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S21-E2-M1` | Przerobić: Tiny Machine Learning (Fundamentals, Applications, Deploying TinyML) | materiał, płatny | 30–40 h | 0 zł (audyt) / płatny (certyfikat) | https://harvardonline.harvard.edu/course/fundamentals-tinyml | `S21-E0-D`, `S22-E2-D` | `S21-E2-D` |
-| `S21-E2-M2` | Przerobić: Machine Learning Systems (podręcznik, otwarty dostęp) | materiał | wg potrzeb | 0 zł online | https://mlsysbook.ai | `S21-E0-D`, `S22-E2-D` | `S21-E2-D` |
-| `S21-E2-M3` | Przerobić: LiteRT for Microcontrollers | materiał | 4–6 h | 0 zł | https://developers.google.com/edge/litert/microcontrollers/overview | `S21-E0-D`, `S22-E2-D` | `S21-E2-D` |
-| `S21-E2-M4` | Przerobić: Edge Impulse | materiał, płatny | 6–8 h | 0 zł (plan Developer) / płatny (Enterprise) | https://docs.edgeimpulse.com | `S21-E0-D`, `S22-E2-D` | `S21-E2-D` |
-| `S21-E2-D` | Dowód etapu 2: TinyML na mikrokontrolerach (opcjonalnie) | dowód | — | — | — | `S21-E2-M1`, `S21-E2-M2`, `S21-E2-M3`, `S21-E2-M4` | — |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S21-E2-M1` | Przerobić: Tiny Machine Learning (Fundamentals, Applications, Deploying TinyML) | materiał, płatny | 30–40 h | 0 zł (audyt) / płatny (certyfikat) | https://harvardonline.harvard.edu/course/fundamentals-tinyml | `S21-E0-D`, `S22-E2-D` | `S21-E2-D` | `21-funkcje-ai-w-aplikacjach/e2-tinyml-na-mikrokontrolerach-opcjonalnie/` |
+| `S21-E2-M2` | Przerobić: Machine Learning Systems (podręcznik, otwarty dostęp) | materiał | wg potrzeb | 0 zł online | https://mlsysbook.ai | `S21-E0-D`, `S22-E2-D` | `S21-E2-D` | `21-funkcje-ai-w-aplikacjach/e2-tinyml-na-mikrokontrolerach-opcjonalnie/` |
+| `S21-E2-M3` | Przerobić: LiteRT for Microcontrollers | materiał | 4–6 h | 0 zł | https://developers.google.com/edge/litert/microcontrollers/overview | `S21-E0-D`, `S22-E2-D` | `S21-E2-D` | `21-funkcje-ai-w-aplikacjach/e2-tinyml-na-mikrokontrolerach-opcjonalnie/` |
+| `S21-E2-M4` | Przerobić: Edge Impulse | materiał, płatny | 6–8 h | 0 zł (plan Developer) / płatny (Enterprise) | https://docs.edgeimpulse.com | `S21-E0-D`, `S22-E2-D` | `S21-E2-D` | `21-funkcje-ai-w-aplikacjach/e2-tinyml-na-mikrokontrolerach-opcjonalnie/` |
+| `S21-E2-D` | Dowód etapu 2: TinyML na mikrokontrolerach (opcjonalnie) | dowód | — | — | — | `S21-E2-M1`, `S21-E2-M2`, `S21-E2-M3`, `S21-E2-M4` | — | `21-funkcje-ai-w-aplikacjach/e2-tinyml-na-mikrokontrolerach-opcjonalnie/` |
 
 **`S21-E2-D` · Dowód etapu 2: TinyML na mikrokontrolerach (opcjonalnie)**
 
 Model wykrywania słowa kluczowego lub gestu skwantyzowany do int8 i uruchomiony na mikrokontrolerze z sekcji 22 (np. nRF lub ESP32), z pomiarem pamięci, czasu wnioskowania i poboru energii; wersja w Ruście `no_std` z `tract` lub uzasadnienie, dlaczego zostaje C.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `21-funkcje-ai-w-aplikacjach/e2-tinyml-na-mikrokontrolerach-opcjonalnie/`
 
 ### Etap 3: prawo i dokumentacja modeli
 
@@ -237,19 +245,21 @@ Obowiązki przejrzystości z art. 50 stosuje się od 2 sierpnia 2026 r.; według
 
 **Dowód:** Dla funkcji AI z etapu 0: notatka kwalifikacyjna (czy to system wysokiego ryzyka, które ustępy art. 50 mają zastosowanie, kto jest dostawcą, a kto podmiotem stosującym), wdrożone informowanie użytkownika o interakcji z AI i oznaczenie treści generowanych zgodnie z kodeksem praktyk, wpis ML-BOM w SBOM wydania oraz karta modelu dla modelu dostrojonego w sekcji 20.3, etap 3.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S21-E3-M1` | Przerobić: Rozporządzenie (UE) 2024/1689 (AI Act), zwłaszcza art. 3, 6, 50 i załącznik III | materiał | 4–6 h | 0 zł | https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng | `S21-E0-D` | `S21-E3-D` |
-| `S21-E3-M2` | Przerobić: Wytyczne w sprawie obowiązków przejrzystości dostawców i podmiotów stosujących systemy AI | materiał | 3–4 h | 0 zł | https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems | `S21-E0-D` | `S21-E3-D` |
-| `S21-E3-M3` | Przerobić: Kodeks praktyk dotyczący oznaczania i etykietowania treści generowanych przez AI (10 czerwca 2026… | materiał | 3–4 h | 0 zł | https://digital-strategy.ec.europa.eu/en/news/commission-publishes-code-practice-marking-and-labelling-ai-generated-content, https://digital-strategy.ec.europa.eu/en/faqs/code-practice-transparency-ai-generated-content | `S21-E0-D` | `S21-E3-D` |
-| `S21-E3-M4` | Przerobić: CycloneDX ML-BOM i „Authoritative Guide to AI/ML-BOM” | materiał | 3–4 h | 0 zł | https://cyclonedx.org/capabilities/mlbom/, https://cyclonedx.org/guides/ | `S21-E0-D` | `S21-E3-D` |
-| `S21-E3-D` | Dowód etapu 3: prawo i dokumentacja modeli | dowód | — | — | — | `S21-E3-M1`, `S21-E3-M2`, `S21-E3-M3`, `S21-E3-M4` | `S21-E4-M1`, `S21-E4-P1`, `S21-E4-P2`, `S21-E4-P3` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S21-E3-M1` | Przerobić: Rozporządzenie (UE) 2024/1689 (AI Act), zwłaszcza art. 3, 6, 50 i załącznik III | materiał | 4–6 h | 0 zł | https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng | `S21-E0-D` | `S21-E3-D` | `21-funkcje-ai-w-aplikacjach/e3-prawo-i-dokumentacja-modeli/` |
+| `S21-E3-M2` | Przerobić: Wytyczne w sprawie obowiązków przejrzystości dostawców i podmiotów stosujących systemy AI | materiał | 3–4 h | 0 zł | https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems | `S21-E0-D` | `S21-E3-D` | `21-funkcje-ai-w-aplikacjach/e3-prawo-i-dokumentacja-modeli/` |
+| `S21-E3-M3` | Przerobić: Kodeks praktyk dotyczący oznaczania i etykietowania treści generowanych przez AI (10 czerwca 2026… | materiał | 3–4 h | 0 zł | https://digital-strategy.ec.europa.eu/en/news/commission-publishes-code-practice-marking-and-labelling-ai-generated-content, https://digital-strategy.ec.europa.eu/en/faqs/code-practice-transparency-ai-generated-content | `S21-E0-D` | `S21-E3-D` | `21-funkcje-ai-w-aplikacjach/e3-prawo-i-dokumentacja-modeli/` |
+| `S21-E3-M4` | Przerobić: CycloneDX ML-BOM i „Authoritative Guide to AI/ML-BOM” | materiał | 3–4 h | 0 zł | https://cyclonedx.org/capabilities/mlbom/, https://cyclonedx.org/guides/ | `S21-E0-D` | `S21-E3-D` | `21-funkcje-ai-w-aplikacjach/e3-prawo-i-dokumentacja-modeli/` |
+| `S21-E3-D` | Dowód etapu 3: prawo i dokumentacja modeli | dowód | — | — | — | `S21-E3-M1`, `S21-E3-M2`, `S21-E3-M3`, `S21-E3-M4` | `S21-E4-M1`, `S21-E4-P1`, `S21-E4-P2`, `S21-E4-P3` | `21-funkcje-ai-w-aplikacjach/e3-prawo-i-dokumentacja-modeli/` |
 
 **`S21-E3-D` · Dowód etapu 3: prawo i dokumentacja modeli**
 
 Dla funkcji AI z etapu 0: notatka kwalifikacyjna (czy to system wysokiego ryzyka, które ustępy art. 50 mają zastosowanie, kto jest dostawcą, a kto podmiotem stosującym), wdrożone informowanie użytkownika o interakcji z AI i oznaczenie treści generowanych zgodnie z kodeksem praktyk, wpis ML-BOM w SBOM wydania oraz karta modelu dla modelu dostrojonego w sekcji 20.3, etap 3.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `21-funkcje-ai-w-aplikacjach/e3-prawo-i-dokumentacja-modeli/`
 
 ### Etap 4: ekspert
 
@@ -259,13 +269,13 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód poziomu E:** Samodzielnie, bez agenta, w 2 dni dodajesz do istniejącej aplikacji funkcję AI z wyborem miejsca wykonania uzasadnionym w ADR (chmura, urządzenie lub model lokalny), bramką jakości w CI, obserwowalnością bez danych osobowych, oznaczeniem zgodnym z art. 50 i wpisem ML-BOM, i umiesz wyjaśnić klientowi koszt, ryzyka i ograniczenia tej funkcji.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S21-E4-M1` | Przerobić: Strony Komisji o AI Act i o kodeksach praktyk | materiał | wg potrzeb | 0 zł | https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai | `S21-E1-D`, `S21-E3-D` | `S21-E4-D` |
-| `S21-E4-P1` | Praktyka: produkt z funkcją AI | praktyka | — | — | — | `S21-E1-D`, `S21-E3-D` | `S21-E4-D` |
-| `S21-E4-P2` | Praktyka: podatności środowisk uruchomieniowych | praktyka | — | — | — | `S21-E1-D`, `S21-E3-D` | `S21-E4-D` |
-| `S21-E4-P3` | Praktyka: koszt funkcji AI | praktyka | — | — | — | `S21-E1-D`, `S21-E3-D` | `S21-E4-D` |
-| `S21-E4-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S21-E4-M1`, `S21-E4-P1`, `S21-E4-P2`, `S21-E4-P3` | — |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S21-E4-M1` | Przerobić: Strony Komisji o AI Act i o kodeksach praktyk | materiał | wg potrzeb | 0 zł | https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai | `S21-E1-D`, `S21-E3-D` | `S21-E4-D` | `21-funkcje-ai-w-aplikacjach/e4-ekspert/` |
+| `S21-E4-P1` | Praktyka: produkt z funkcją AI | praktyka | — | — | — | `S21-E1-D`, `S21-E3-D` | `S21-E4-D` | `21-funkcje-ai-w-aplikacjach/e4-ekspert/` |
+| `S21-E4-P2` | Praktyka: podatności środowisk uruchomieniowych | praktyka | — | — | — | `S21-E1-D`, `S21-E3-D` | `S21-E4-D` | `21-funkcje-ai-w-aplikacjach/e4-ekspert/` |
+| `S21-E4-P3` | Praktyka: koszt funkcji AI | praktyka | — | — | — | `S21-E1-D`, `S21-E3-D` | `S21-E4-D` | `21-funkcje-ai-w-aplikacjach/e4-ekspert/` |
+| `S21-E4-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S21-E4-M1`, `S21-E4-P1`, `S21-E4-P2`, `S21-E4-P3` | — | `21-funkcje-ai-w-aplikacjach/e4-ekspert/` |
 
 **`S21-E4-P1` · Praktyka: produkt z funkcją AI**
 
@@ -273,11 +283,15 @@ Jedna własna aplikacja z funkcją AI wydana na co najmniej dwóch platformach, 
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `21-funkcje-ai-w-aplikacjach/e4-ekspert/`
+
 **`S21-E4-P2` · Praktyka: podatności środowisk uruchomieniowych**
 
 Llama.cpp, ONNX Runtime i biblioteki tokenizerów objęte tym samym procesem obsługi podatności co reszta zależności (zob. sekcja 10.1).
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
+
+**Folder roboczy:** `21-funkcje-ai-w-aplikacjach/e4-ekspert/`
 
 **`S21-E4-P3` · Praktyka: koszt funkcji AI**
 
@@ -285,11 +299,15 @@ Co miesiąc koszt na aktywnego użytkownika względem ceny planu i decyzja o zmi
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `21-funkcje-ai-w-aplikacjach/e4-ekspert/`
+
 **`S21-E4-D` · Dowód poziomu E: ekspert**
 
 Samodzielnie, bez agenta, w 2 dni dodajesz do istniejącej aplikacji funkcję AI z wyborem miejsca wykonania uzasadnionym w ADR (chmura, urządzenie lub model lokalny), bramką jakości w CI, obserwowalnością bez danych osobowych, oznaczeniem zgodnym z art. 50 i wpisem ML-BOM, i umiesz wyjaśnić klientowi koszt, ryzyka i ograniczenia tej funkcji.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki. Bez agenta AI.
+
+**Folder roboczy:** `21-funkcje-ai-w-aplikacjach/e4-ekspert/`
 
 ## 6. Relacje z innymi projektami
 

@@ -85,6 +85,8 @@ Punkt startu projektu „22. Systemy wbudowane”.
 - zaznaczyć etapy, które zaliczasz samym dowodem (zgodnie z akapitem wstępnym ścieżki), i dla nich zamknąć zadania materiałów jako niepotrzebne,
 - ustawić daty kamieni milowych zgodnie z kolejnością z pliku głównego.
 
+**Folder roboczy:** `22-systemy-wbudowane/`
+
 ## 4. Przepływ zależności
 
 Linie ciągłe to zależności wewnątrz projektu, przerywane to zadania z innych projektów. Wewnątrz etapu zadania materiałów są równoległe i wszystkie blokują dowód etapu; dowód etapu blokuje materiały kolejnego etapu.
@@ -117,7 +119,7 @@ flowchart TD
 
 ## 5. Zadania według kamieni milowych
 
-Szablon opisu zadania materiału: nazwa materiału, autor lub wydawca, typ, czas, koszt i link (jak w kolumnach poniżej) oraz zdanie „Gotowe, gdy materiał jest przerobiony w zakresie potrzebnym do dowodu etapu”. Opisy dowodów i praktyk są podane pod tabelą każdego etapu.
+Szablon opisu zadania materiału: nazwa materiału, autor lub wydawca, typ, czas, koszt i link (jak w kolumnach poniżej), zdanie „Gotowe, gdy materiał jest przerobiony w zakresie potrzebnym do dowodu etapu” oraz folder roboczy z kolumny „Folder”. Opisy dowodów i praktyk są podane pod tabelą każdego etapu.
 
 ### Etap 0: elektronika i sprzęt
 
@@ -129,14 +131,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Na płytce stykowej układ z diodą LED sterowaną tranzystorem, przyciskiem z rezystorem podciągającym i czujnikiem I2C, podłączony do gotowej płytki z mikrokontrolerem; schemat narysowany w KiCad, napięcia i prądy zmierzone multimetrem i zgodne z obliczeniami, transmisja I2C przechwycona i zdekodowana w PulseView.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S22-E0-M1` | Przerobić: Lessons in Electric Circuits: tomy Direct Current, Semiconductors, Digital Circuits | materiał | 30–40 h | 0 zł | https://www.allaboutcircuits.com/textbook/ | `S22-START` | `S22-E0-D` |
-| `S22-E0-M2` | Przerobić: Practical Electronics for Inventors (wydanie 4) | materiał, płatny | 25–30 h (wybrane rozdziały) | płatna | https://www.mheducation.com/highered/product/practical-electronics-inventors-fourth-edition-scherz-monk/9781259587542.html | `S22-START` | `S22-E0-D` |
-| `S22-E0-M3` | Przerobić: Getting Started in KiCad (dokumentacja KiCad 10) | materiał | 6–8 h | 0 zł | https://docs.kicad.org | `S22-START` | `S22-E0-D` |
-| `S22-E0-M4` | Przerobić: PulseView (sigrok): analizator stanów logicznych z dekoderami protokołów | materiał | 3–4 h | 0 zł | https://sigrok.org/wiki/PulseView | `S22-START` | `S22-E0-D` |
-| `S22-E0-M5` | Przerobić: The Art of Electronics (wydanie 3), opcjonalnie z „Learning the Art of Electronics” | materiał, płatny | wg potrzeb | płatna | https://artofelectronics.net | `S22-START` | `S22-E0-D` |
-| `S22-E0-D` | Dowód etapu 0: elektronika i sprzęt | dowód | — | — | — | `S22-E0-M1`, `S22-E0-M2`, `S22-E0-M3`, `S22-E0-M4`, `S22-E0-M5` | `S22-E1-M1`, `S22-E1-M2` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S22-E0-M1` | Przerobić: Lessons in Electric Circuits: tomy Direct Current, Semiconductors, Digital Circuits | materiał | 30–40 h | 0 zł | https://www.allaboutcircuits.com/textbook/ | `S22-START` | `S22-E0-D` | `22-systemy-wbudowane/e0-elektronika-i-sprzet/` |
+| `S22-E0-M2` | Przerobić: Practical Electronics for Inventors (wydanie 4) | materiał, płatny | 25–30 h (wybrane rozdziały) | płatna | https://www.mheducation.com/highered/product/practical-electronics-inventors-fourth-edition-scherz-monk/9781259587542.html | `S22-START` | `S22-E0-D` | `22-systemy-wbudowane/e0-elektronika-i-sprzet/` |
+| `S22-E0-M3` | Przerobić: Getting Started in KiCad (dokumentacja KiCad 10) | materiał | 6–8 h | 0 zł | https://docs.kicad.org | `S22-START` | `S22-E0-D` | `22-systemy-wbudowane/e0-elektronika-i-sprzet/` |
+| `S22-E0-M4` | Przerobić: PulseView (sigrok): analizator stanów logicznych z dekoderami protokołów | materiał | 3–4 h | 0 zł | https://sigrok.org/wiki/PulseView | `S22-START` | `S22-E0-D` | `22-systemy-wbudowane/e0-elektronika-i-sprzet/` |
+| `S22-E0-M5` | Przerobić: The Art of Electronics (wydanie 3), opcjonalnie z „Learning the Art of Electronics” | materiał, płatny | wg potrzeb | płatna | https://artofelectronics.net | `S22-START` | `S22-E0-D` | `22-systemy-wbudowane/e0-elektronika-i-sprzet/` |
+| `S22-E0-D` | Dowód etapu 0: elektronika i sprzęt | dowód | — | — | — | `S22-E0-M1`, `S22-E0-M2`, `S22-E0-M3`, `S22-E0-M4`, `S22-E0-M5` | `S22-E1-M1`, `S22-E1-M2` | `22-systemy-wbudowane/e0-elektronika-i-sprzet/` |
 
 **`S22-E0-D` · Dowód etapu 0: elektronika i sprzęt**
 
@@ -145,6 +147,8 @@ Na płytce stykowej układ z diodą LED sterowaną tranzystorem, przyciskiem z r
 **Na co zwrócić uwagę:** prawo Ohma i dzielnik napięcia, rezystory podciągające, poziomy logiczne 3,3 V i 5 V, kondensatory odsprzęgające, tranzystor jako przełącznik, zasilanie i stabilizatory, czytanie noty katalogowej i schematu płytki rozwojowej, bezpieczna praca z zasilaczem i lutownicą.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `22-systemy-wbudowane/e0-elektronika-i-sprzet/`
 
 ### Etap 1: pierwszy firmware w Ruście
 
@@ -156,17 +160,19 @@ Podstawy samego Rusta są w sekcji 12. Starsza wersja Discovery (`docs.rust-embe
 
 **Dowód:** Gra lub instrument na micro:bit v2 (matryca LED, przyciski, akcelerometr przez I2C), zbudowany i wgrany z `probe-rs`, z logami przez RTT; umiesz wskazać na schemacie płytki każdy użyty pin.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S22-E1-M1` | Przerobić: micro:bit v2 Embedded Discovery Book | materiał | 25–30 h | 0 zł | https://docs.rust-embedded.org/discovery-mb2/ | `S22-E0-D` | `S22-E1-D` |
-| `S22-E1-M2` | Przerobić: Bare Metal Rust (część kursu Comprehensive Rust) | materiał | 8–10 h | 0 zł | https://google.github.io/comprehensive-rust/bare-metal.html | `S22-E0-D` | `S22-E1-D` |
-| `S22-E1-D` | Dowód etapu 1: pierwszy firmware w Ruście | dowód | — | — | — | `S22-E1-M1`, `S22-E1-M2` | `S22-E2-M1`, `S22-E2-M2`, `S22-E2-M3`, `S22-E2-M4` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S22-E1-M1` | Przerobić: micro:bit v2 Embedded Discovery Book | materiał | 25–30 h | 0 zł | https://docs.rust-embedded.org/discovery-mb2/ | `S22-E0-D` | `S22-E1-D` | `22-systemy-wbudowane/e1-pierwszy-firmware-w-ruscie/` |
+| `S22-E1-M2` | Przerobić: Bare Metal Rust (część kursu Comprehensive Rust) | materiał | 8–10 h | 0 zł | https://google.github.io/comprehensive-rust/bare-metal.html | `S22-E0-D` | `S22-E1-D` | `22-systemy-wbudowane/e1-pierwszy-firmware-w-ruscie/` |
+| `S22-E1-D` | Dowód etapu 1: pierwszy firmware w Ruście | dowód | — | — | — | `S22-E1-M1`, `S22-E1-M2` | `S22-E2-M1`, `S22-E2-M2`, `S22-E2-M3`, `S22-E2-M4` | `22-systemy-wbudowane/e1-pierwszy-firmware-w-ruscie/` |
 
 **`S22-E1-D` · Dowód etapu 1: pierwszy firmware w Ruście**
 
 Gra lub instrument na micro:bit v2 (matryca LED, przyciski, akcelerometr przez I2C), zbudowany i wgrany z `probe-rs`, z logami przez RTT; umiesz wskazać na schemacie płytki każdy użyty pin.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `22-systemy-wbudowane/e1-pierwszy-firmware-w-ruscie/`
 
 ### Etap 2: fundamenty
 
@@ -178,13 +184,13 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Sterownik czujnika I2C napisany wyłącznie na cechach `embedded-hal` 1.0, działający bez zmian na micro:bit i nRF52840 DK, z testami na hoście (zob. sekcja 6); notatka z mapą pamięci programu i uzasadnieniem każdego bloku `unsafe`.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S22-E2-M1` | Przerobić: The Embedded Rust Book | materiał | 12–15 h | 0 zł | https://docs.rust-embedded.org/book/ | `S22-E1-D` | `S22-E2-D` |
-| `S22-E2-M2` | Przerobić: The Embedonomicon | materiał | 10–12 h | 0 zł | https://docs.rust-embedded.org/embedonomicon/ | `S22-E1-D` | `S22-E2-D` |
-| `S22-E2-M3` | Przerobić: Making Embedded Systems (wydanie 2, 2024) | materiał, płatny | 15–20 h | płatna | https://www.oreilly.com/library/view/-/9781098151539/ | `S22-E1-D` | `S22-E2-D` |
-| `S22-E2-M4` | Przerobić: Ogłoszenie `embedded-hal` 1.0 | materiał | 1 h | 0 zł | https://blog.rust-embedded.org/embedded-hal-v1/ | `S22-E1-D` | `S22-E2-D` |
-| `S22-E2-D` | Dowód etapu 2: fundamenty | dowód | — | — | — | `S22-E2-M1`, `S22-E2-M2`, `S22-E2-M3`, `S22-E2-M4` | `S21-E2-M1`, `S21-E2-M2`, `S21-E2-M3`, `S21-E2-M4`, `S22-E3-M1`, `S22-E3-M2`, `S22-E3-M3`, `S22-E3-M4`, `S22-E3-M5` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S22-E2-M1` | Przerobić: The Embedded Rust Book | materiał | 12–15 h | 0 zł | https://docs.rust-embedded.org/book/ | `S22-E1-D` | `S22-E2-D` | `22-systemy-wbudowane/e2-fundamenty/` |
+| `S22-E2-M2` | Przerobić: The Embedonomicon | materiał | 10–12 h | 0 zł | https://docs.rust-embedded.org/embedonomicon/ | `S22-E1-D` | `S22-E2-D` | `22-systemy-wbudowane/e2-fundamenty/` |
+| `S22-E2-M3` | Przerobić: Making Embedded Systems (wydanie 2, 2024) | materiał, płatny | 15–20 h | płatna | https://www.oreilly.com/library/view/-/9781098151539/ | `S22-E1-D` | `S22-E2-D` | `22-systemy-wbudowane/e2-fundamenty/` |
+| `S22-E2-M4` | Przerobić: Ogłoszenie `embedded-hal` 1.0 | materiał | 1 h | 0 zł | https://blog.rust-embedded.org/embedded-hal-v1/ | `S22-E1-D` | `S22-E2-D` | `22-systemy-wbudowane/e2-fundamenty/` |
+| `S22-E2-D` | Dowód etapu 2: fundamenty | dowód | — | — | — | `S22-E2-M1`, `S22-E2-M2`, `S22-E2-M3`, `S22-E2-M4` | `S21-E2-M1`, `S21-E2-M2`, `S21-E2-M3`, `S21-E2-M4`, `S22-E3-M1`, `S22-E3-M2`, `S22-E3-M3`, `S22-E3-M4`, `S22-E3-M5` | `22-systemy-wbudowane/e2-fundamenty/` |
 
 **`S22-E2-D` · Dowód etapu 2: fundamenty**
 
@@ -193,6 +199,8 @@ Sterownik czujnika I2C napisany wyłącznie na cechach `embedded-hal` 1.0, dzia�
 **Na co zwrócić uwagę:** warstwy PAC, HAL i BSP, cechy `embedded-hal` 1.0 jako granica sterownika, mapa pamięci i sekcje linkera, tablica wektorów przerwań, sekcje krytyczne, `static` i współdzielenie stanu z przerwaniem, DMA i jego zasady własności bufora, budżet RAM i flash (`cargo size`, `cargo bloat`), zachowanie po panice.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `22-systemy-wbudowane/e2-fundamenty/`
 
 ### Etap 3: współbieżność i narzędzia
 
@@ -204,14 +212,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Na nRF52840 DK firmware w Embassy z co najmniej trzema zadaniami (czujnik, przycisk z eliminacją drgań, komunikacja USB lub radio), logi przez `defmt`; zmierzony pobór prądu w uśpieniu i porównany z notą katalogową; ten sam fragment przepisany w RTIC z krótkim porównaniem.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S22-E3-M1` | Przerobić: The Embassy Book | materiał | 10–12 h | 0 zł | https://embassy.dev/book/ | `S22-E2-D` | `S22-E3-D` |
-| `S22-E3-M2` | Przerobić: RTIC Book (v2) | materiał | 6–8 h | 0 zł | https://rtic.rs/2/book/en/ | `S22-E2-D` | `S22-E3-D` |
-| `S22-E3-M3` | Przerobić: probe-rs: dokumentacja | materiał | 3–4 h | 0 zł | https://probe.rs/docs/ | `S22-E2-D` | `S22-E3-D` |
-| `S22-E3-M4` | Przerobić: defmt book | materiał | 2–3 h | 0 zł | https://defmt.ferrous-systems.com | `S22-E2-D` | `S22-E3-D` |
-| `S22-E3-M5` | Przerobić: Rust Exercises: ćwiczenia nRF52 (BSP, radio, USB) | materiał | 15–20 h | 0 zł | https://rust-exercises.ferrous-systems.com/latest/book/ | `S22-E2-D` | `S22-E3-D` |
-| `S22-E3-D` | Dowód etapu 3: współbieżność i narzędzia | dowód | — | — | — | `S22-E3-M1`, `S22-E3-M2`, `S22-E3-M3`, `S22-E3-M4`, `S22-E3-M5` | `S22-E4-M1`, `S22-E4-M2`, `S22-E4-M3`, `S22-E4-M4`, `S22-E4-M5` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S22-E3-M1` | Przerobić: The Embassy Book | materiał | 10–12 h | 0 zł | https://embassy.dev/book/ | `S22-E2-D` | `S22-E3-D` | `22-systemy-wbudowane/e3-wspolbieznosc-i-narzedzia/` |
+| `S22-E3-M2` | Przerobić: RTIC Book (v2) | materiał | 6–8 h | 0 zł | https://rtic.rs/2/book/en/ | `S22-E2-D` | `S22-E3-D` | `22-systemy-wbudowane/e3-wspolbieznosc-i-narzedzia/` |
+| `S22-E3-M3` | Przerobić: probe-rs: dokumentacja | materiał | 3–4 h | 0 zł | https://probe.rs/docs/ | `S22-E2-D` | `S22-E3-D` | `22-systemy-wbudowane/e3-wspolbieznosc-i-narzedzia/` |
+| `S22-E3-M4` | Przerobić: defmt book | materiał | 2–3 h | 0 zł | https://defmt.ferrous-systems.com | `S22-E2-D` | `S22-E3-D` | `22-systemy-wbudowane/e3-wspolbieznosc-i-narzedzia/` |
+| `S22-E3-M5` | Przerobić: Rust Exercises: ćwiczenia nRF52 (BSP, radio, USB) | materiał | 15–20 h | 0 zł | https://rust-exercises.ferrous-systems.com/latest/book/ | `S22-E2-D` | `S22-E3-D` | `22-systemy-wbudowane/e3-wspolbieznosc-i-narzedzia/` |
+| `S22-E3-D` | Dowód etapu 3: współbieżność i narzędzia | dowód | — | — | — | `S22-E3-M1`, `S22-E3-M2`, `S22-E3-M3`, `S22-E3-M4`, `S22-E3-M5` | `S22-E4-M1`, `S22-E4-M2`, `S22-E4-M3`, `S22-E4-M4`, `S22-E4-M5` | `22-systemy-wbudowane/e3-wspolbieznosc-i-narzedzia/` |
 
 **`S22-E3-D` · Dowód etapu 3: współbieżność i narzędzia**
 
@@ -220,6 +228,8 @@ Na nRF52840 DK firmware w Embassy z co najmniej trzema zadaniami (czujnik, przyc
 **Na co zwrócić uwagę:** kiedy Embassy (async, wiele zadań, sterowniki async), a kiedy RTIC (twarde priorytety, analiza czasu); blokowanie executora i zagłodzenie zadań, priorytety przerwań, tryby uśpienia i pomiar poboru prądu, krokowe debugowanie i odczyt rejestrów, czytanie HardFault.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `22-systemy-wbudowane/e3-wspolbieznosc-i-narzedzia/`
 
 ### Etap 4: łączność
 
@@ -231,20 +241,22 @@ Uwaga do ESP32: esp-hal 1.0 (30 października 2025 r.) stabilizuje tylko inicjal
 
 **Dowód:** Na ESP32-C3 lub ESP32-C6 czujnik wysyłający dane przez Wi-Fi do brokera MQTT z TLS i ponawianiem po utracie sieci, plus konfiguracja przez BLE z telefonu; zapis z analizatora lub oscyloskopu pokazujący zachowanie zasilania przy nadawaniu.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S22-E4-M1` | Przerobić: The Rust on ESP Book | materiał | 8–10 h | 0 zł | https://docs.espressif.com/projects/rust/book/ | `S22-E3-D` | `S22-E4-D` |
-| `S22-E4-M2` | Przerobić: Ogłoszenie esp-hal 1.0 i dokumentacja API | materiał | 2–3 h | 0 zł | https://developer.espressif.com/blog/2025/10/esp-hal-1/, https://docs.espressif.com/projects/rust/ | `S22-E3-D` | `S22-E4-D` |
-| `S22-E4-M3` | Przerobić: Embedded Rust (no_std) on Espressif | materiał | 6–8 h | 0 zł | https://docs.espressif.com/projects/rust/no_std-training/ | `S22-E3-D` | `S22-E4-D` |
-| `S22-E4-M4` | Przerobić: Bluetooth Low Energy Fundamentals | materiał | 15–20 h | 0 zł | https://academy.nordicsemi.com | `S22-E3-D` | `S22-E4-D` |
-| `S22-E4-M5` | Przerobić: Interrupt | materiał | 5–8 h (wybrane artykuły) | 0 zł | https://interrupt.memfault.com | `S22-E3-D` | `S22-E4-D` |
-| `S22-E4-D` | Dowód etapu 4: łączność | dowód | — | — | — | `S22-E4-M1`, `S22-E4-M2`, `S22-E4-M3`, `S22-E4-M4`, `S22-E4-M5` | `S22-E5-M1`, `S22-E5-M2`, `S22-E5-M3`, `S22-E5-M4` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S22-E4-M1` | Przerobić: The Rust on ESP Book | materiał | 8–10 h | 0 zł | https://docs.espressif.com/projects/rust/book/ | `S22-E3-D` | `S22-E4-D` | `22-systemy-wbudowane/e4-lacznosc/` |
+| `S22-E4-M2` | Przerobić: Ogłoszenie esp-hal 1.0 i dokumentacja API | materiał | 2–3 h | 0 zł | https://developer.espressif.com/blog/2025/10/esp-hal-1/, https://docs.espressif.com/projects/rust/ | `S22-E3-D` | `S22-E4-D` | `22-systemy-wbudowane/e4-lacznosc/` |
+| `S22-E4-M3` | Przerobić: Embedded Rust (no_std) on Espressif | materiał | 6–8 h | 0 zł | https://docs.espressif.com/projects/rust/no_std-training/ | `S22-E3-D` | `S22-E4-D` | `22-systemy-wbudowane/e4-lacznosc/` |
+| `S22-E4-M4` | Przerobić: Bluetooth Low Energy Fundamentals | materiał | 15–20 h | 0 zł | https://academy.nordicsemi.com | `S22-E3-D` | `S22-E4-D` | `22-systemy-wbudowane/e4-lacznosc/` |
+| `S22-E4-M5` | Przerobić: Interrupt | materiał | 5–8 h (wybrane artykuły) | 0 zł | https://interrupt.memfault.com | `S22-E3-D` | `S22-E4-D` | `22-systemy-wbudowane/e4-lacznosc/` |
+| `S22-E4-D` | Dowód etapu 4: łączność | dowód | — | — | — | `S22-E4-M1`, `S22-E4-M2`, `S22-E4-M3`, `S22-E4-M4`, `S22-E4-M5` | `S22-E5-M1`, `S22-E5-M2`, `S22-E5-M3`, `S22-E5-M4` | `22-systemy-wbudowane/e4-lacznosc/` |
 
 **`S22-E4-D` · Dowód etapu 4: łączność**
 
 Na ESP32-C3 lub ESP32-C6 czujnik wysyłający dane przez Wi-Fi do brokera MQTT z TLS i ponawianiem po utracie sieci, plus konfiguracja przez BLE z telefonu; zapis z analizatora lub oscyloskopu pokazujący zachowanie zasilania przy nadawaniu.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `22-systemy-wbudowane/e4-lacznosc/`
 
 ### Etap 5: bezpieczne aktualizacje i produkcja
 
@@ -256,13 +268,13 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Urządzenie z etapu 4 z aktualizacją OTA podpisaną kluczem z bezpiecznego magazynu: niepodpisany lub zmodyfikowany obraz zostaje odrzucony, przerwanie zasilania w trakcie aktualizacji nie psuje urządzenia, nieudany rozruch nowej wersji wraca do poprzedniej, starsza wersja nie daje się wgrać; port debugowania zablokowany, SBOM w CycloneDX dołączany do każdego wydania.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S22-E5-M1` | Przerobić: Embassy Book: rozdział o bootloaderze | materiał | 3–4 h | 0 zł | https://embassy.dev/book/dev/bootloader.html | `S22-E4-D` | `S22-E5-D` |
-| `S22-E5-M2` | Przerobić: MCUboot: projekt, `imgtool` (podpis obrazów, zarządzanie kluczami) | materiał | 6–8 h | 0 zł | https://docs.mcuboot.com | `S22-E4-D` | `S22-E5-D` |
-| `S22-E5-M3` | Przerobić: Interrupt: artykuły o aktualizacjach firmware, bootloaderach i analizie awarii | materiał | 6–8 h | 0 zł | https://interrupt.memfault.com | `S22-E4-D` | `S22-E5-D` |
-| `S22-E5-M4` | Przerobić: Noty producentów o secure boot, szyfrowaniu flash i blokadzie debugowania | materiał | 6–8 h | 0 zł | dokumentacja wybranego układu | `S22-E4-D` | `S22-E5-D` |
-| `S22-E5-D` | Dowód etapu 5: bezpieczne aktualizacje i produkcja | dowód | — | — | — | `S22-E5-M1`, `S22-E5-M2`, `S22-E5-M3`, `S22-E5-M4` | `S22-E6-M1`, `S22-E6-M2`, `S22-E6-M3`, `S22-E6-M4`, `S22-E6-M5`, `S22-E6-M6`, `S22-E6-M7` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S22-E5-M1` | Przerobić: Embassy Book: rozdział o bootloaderze | materiał | 3–4 h | 0 zł | https://embassy.dev/book/dev/bootloader.html | `S22-E4-D` | `S22-E5-D` | `22-systemy-wbudowane/e5-bezpieczne-aktualizacje-i-produkcja/` |
+| `S22-E5-M2` | Przerobić: MCUboot: projekt, `imgtool` (podpis obrazów, zarządzanie kluczami) | materiał | 6–8 h | 0 zł | https://docs.mcuboot.com | `S22-E4-D` | `S22-E5-D` | `22-systemy-wbudowane/e5-bezpieczne-aktualizacje-i-produkcja/` |
+| `S22-E5-M3` | Przerobić: Interrupt: artykuły o aktualizacjach firmware, bootloaderach i analizie awarii | materiał | 6–8 h | 0 zł | https://interrupt.memfault.com | `S22-E4-D` | `S22-E5-D` | `22-systemy-wbudowane/e5-bezpieczne-aktualizacje-i-produkcja/` |
+| `S22-E5-M4` | Przerobić: Noty producentów o secure boot, szyfrowaniu flash i blokadzie debugowania | materiał | 6–8 h | 0 zł | dokumentacja wybranego układu | `S22-E4-D` | `S22-E5-D` | `22-systemy-wbudowane/e5-bezpieczne-aktualizacje-i-produkcja/` |
+| `S22-E5-D` | Dowód etapu 5: bezpieczne aktualizacje i produkcja | dowód | — | — | — | `S22-E5-M1`, `S22-E5-M2`, `S22-E5-M3`, `S22-E5-M4` | `S22-E6-M1`, `S22-E6-M2`, `S22-E6-M3`, `S22-E6-M4`, `S22-E6-M5`, `S22-E6-M6`, `S22-E6-M7` | `22-systemy-wbudowane/e5-bezpieczne-aktualizacje-i-produkcja/` |
 
 **`S22-E5-D` · Dowód etapu 5: bezpieczne aktualizacje i produkcja**
 
@@ -271,6 +283,8 @@ Urządzenie z etapu 4 z aktualizacją OTA podpisaną kluczem z bezpiecznego maga
 **Na co zwrócić uwagę:** układ partycji i odporność na zanik zasilania w trakcie aktualizacji, przechowywanie klucza prywatnego poza repozytorium i CI bez dostępu agenta, ochrona przed cofnięciem do podatnej wersji, blokada portów debugowania w produkcji, numer seryjny i identyfikacja wersji w terenie, SBOM firmware (zob. sekcja 10).
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `22-systemy-wbudowane/e5-bezpieczne-aktualizacje-i-produkcja/`
 
 ### Etap 6: regulacje
 
@@ -282,22 +296,24 @@ Kalendarz na dzień 11 października 2026 r.: wymogi cyberbezpieczeństwa RED ob
 
 **Dowód:** Teczka zgodności dla urządzenia z etapu 5: zakres (czy RED, czy CRA, czy oba), ocena ryzyka, mapowanie wymagań EN 18031-1 na rozwiązania w firmware (aktualizacje, uwierzytelnianie, ochrona danych, porty debugowania), deklarowany okres wsparcia, polityka ujawniania podatności z kontaktem i procedurą zgłoszeń w terminach CRA, SBOM i instrukcja bezpiecznej konfiguracji dla użytkownika.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S22-E6-M1` | Przerobić: Rozporządzenie (UE) 2024/2847 (Cyber Resilience Act) | materiał | 8–10 h | 0 zł | https://eur-lex.europa.eu/eli/reg/2024/2847/oj | `S22-E5-D` | `S22-E6-D` |
-| `S22-E6-M2` | Przerobić: Rozporządzenie delegowane (UE) 2022/30 do dyrektywy RED i zmieniające je rozporządzenie (UE)… | materiał | 2–3 h | 0 zł | https://eur-lex.europa.eu/eli/reg_del/2022/30/oj, https://eur-lex.europa.eu/eli/reg_del/2023/2444/oj | `S22-E5-D` | `S22-E6-D` |
-| `S22-E6-M3` | Przerobić: Decyzja wykonawcza (UE) 2025/138: normy zharmonizowane EN 18031-1, -2, -3 z ograniczeniami | materiał | 1–2 h | 0 zł | https://eur-lex.europa.eu/eli/dec_impl/2025/138/oj/eng | `S22-E5-D` | `S22-E6-D` |
-| `S22-E6-M4` | Przerobić: EN 18031-1, -2, -3 | materiał, płatny | 10–12 h | płatne | sklep PKN lub krajowej jednostki normalizacyjnej | `S22-E5-D` | `S22-E6-D` |
-| `S22-E6-M5` | Przerobić: ETSI EN 303 645 V3.1.3 (2024): cyberbezpieczeństwo IoT konsumenckiego | materiał | 4–6 h | 0 zł | https://www.etsi.org/deliver/etsi_en/303600_303699/303645/03.01.03_60/en_303645v030103p.pdf | `S22-E5-D` | `S22-E6-D` |
-| `S22-E6-M6` | Przerobić: IEC 62443-4-1 i 4-2 (opcjonalnie, urządzenia przemysłowe) | materiał, płatny | wg potrzeb | płatne | https://www.isa.org/standards-and-publications/isa-standards/isa-iec-62443-series-of-standards | `S22-E5-D` | `S22-E6-D` |
-| `S22-E6-M7` | Przerobić: Ferrocene | materiał, płatny | 2–3 h | 0 zł (wsparcie płatne) | https://ferrocene.dev, https://public-docs.ferrocene.dev/main/index.html | `S22-E5-D` | `S22-E6-D` |
-| `S22-E6-D` | Dowód etapu 6: regulacje | dowód | — | — | — | `S22-E6-M1`, `S22-E6-M2`, `S22-E6-M3`, `S22-E6-M4`, `S22-E6-M5`, `S22-E6-M6`, `S22-E6-M7` | `S22-E7-M1`, `S22-E7-M2`, `S22-E7-M3`, `S22-E7-M4`, `S22-E8-M1`, `S22-E8-M2`, `S22-E8-M3`, `S22-E8-M4`, `S22-E8-M5`, `S22-E8-P1`, `S22-E8-P2`, `S22-E8-P3`, `S22-E8-P4` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S22-E6-M1` | Przerobić: Rozporządzenie (UE) 2024/2847 (Cyber Resilience Act) | materiał | 8–10 h | 0 zł | https://eur-lex.europa.eu/eli/reg/2024/2847/oj | `S22-E5-D` | `S22-E6-D` | `22-systemy-wbudowane/e6-regulacje/` |
+| `S22-E6-M2` | Przerobić: Rozporządzenie delegowane (UE) 2022/30 do dyrektywy RED i zmieniające je rozporządzenie (UE)… | materiał | 2–3 h | 0 zł | https://eur-lex.europa.eu/eli/reg_del/2022/30/oj, https://eur-lex.europa.eu/eli/reg_del/2023/2444/oj | `S22-E5-D` | `S22-E6-D` | `22-systemy-wbudowane/e6-regulacje/` |
+| `S22-E6-M3` | Przerobić: Decyzja wykonawcza (UE) 2025/138: normy zharmonizowane EN 18031-1, -2, -3 z ograniczeniami | materiał | 1–2 h | 0 zł | https://eur-lex.europa.eu/eli/dec_impl/2025/138/oj/eng | `S22-E5-D` | `S22-E6-D` | `22-systemy-wbudowane/e6-regulacje/` |
+| `S22-E6-M4` | Przerobić: EN 18031-1, -2, -3 | materiał, płatny | 10–12 h | płatne | sklep PKN lub krajowej jednostki normalizacyjnej | `S22-E5-D` | `S22-E6-D` | `22-systemy-wbudowane/e6-regulacje/` |
+| `S22-E6-M5` | Przerobić: ETSI EN 303 645 V3.1.3 (2024): cyberbezpieczeństwo IoT konsumenckiego | materiał | 4–6 h | 0 zł | https://www.etsi.org/deliver/etsi_en/303600_303699/303645/03.01.03_60/en_303645v030103p.pdf | `S22-E5-D` | `S22-E6-D` | `22-systemy-wbudowane/e6-regulacje/` |
+| `S22-E6-M6` | Przerobić: IEC 62443-4-1 i 4-2 (opcjonalnie, urządzenia przemysłowe) | materiał, płatny | wg potrzeb | płatne | https://www.isa.org/standards-and-publications/isa-standards/isa-iec-62443-series-of-standards | `S22-E5-D` | `S22-E6-D` | `22-systemy-wbudowane/e6-regulacje/` |
+| `S22-E6-M7` | Przerobić: Ferrocene | materiał, płatny | 2–3 h | 0 zł (wsparcie płatne) | https://ferrocene.dev, https://public-docs.ferrocene.dev/main/index.html | `S22-E5-D` | `S22-E6-D` | `22-systemy-wbudowane/e6-regulacje/` |
+| `S22-E6-D` | Dowód etapu 6: regulacje | dowód | — | — | — | `S22-E6-M1`, `S22-E6-M2`, `S22-E6-M3`, `S22-E6-M4`, `S22-E6-M5`, `S22-E6-M6`, `S22-E6-M7` | `S22-E7-M1`, `S22-E7-M2`, `S22-E7-M3`, `S22-E7-M4`, `S22-E8-M1`, `S22-E8-M2`, `S22-E8-M3`, `S22-E8-M4`, `S22-E8-M5`, `S22-E8-P1`, `S22-E8-P2`, `S22-E8-P3`, `S22-E8-P4` | `22-systemy-wbudowane/e6-regulacje/` |
 
 **`S22-E6-D` · Dowód etapu 6: regulacje**
 
 Teczka zgodności dla urządzenia z etapu 5: zakres (czy RED, czy CRA, czy oba), ocena ryzyka, mapowanie wymagań EN 18031-1 na rozwiązania w firmware (aktualizacje, uwierzytelnianie, ochrona danych, porty debugowania), deklarowany okres wsparcia, polityka ujawniania podatności z kontaktem i procedurą zgłoszeń w terminach CRA, SBOM i instrukcja bezpiecznej konfiguracji dla użytkownika.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `22-systemy-wbudowane/e6-regulacje/`
 
 ### Etap 7: embedded Linux i Zephyr (opcjonalnie) (opcjonalny)
 
@@ -311,19 +327,21 @@ Etap ma sens dopiero wtedy, gdy klient lub produkt wymaga procesora aplikacyjneg
 
 **Dowód:** Obraz Yocto lub Buildroot dla płytki z materiałów Bootlin z własną aplikacją w Ruście jako usługą systemd, aktualizacją obrazu w schemacie A/B i SBOM; albo aplikacja Zephyr z MCUboot na nRF52840 DK.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S22-E7-M1` | Przerobić: Szkolenia: Embedded Linux, Yocto Project i OpenEmbedded, Buildroot | materiał | 30–40 h | 0 zł | https://bootlin.com/docs/ | `S22-E6-D` | `S22-E7-D` |
-| `S22-E7-M2` | Przerobić: Yocto Project Documentation (Quick Build, Overview and Concepts) | materiał | 10–15 h | 0 zł | https://docs.yoctoproject.org | `S22-E6-D` | `S22-E7-D` |
-| `S22-E7-M3` | Przerobić: Zephyr Project Documentation | materiał | 10–15 h | 0 zł | https://docs.zephyrproject.org/latest/ | `S22-E6-D` | `S22-E7-D` |
-| `S22-E7-M4` | Przerobić: nRF Connect SDK Fundamentals | materiał | 15–20 h | 0 zł | https://academy.nordicsemi.com | `S22-E6-D` | `S22-E7-D` |
-| `S22-E7-D` | Dowód etapu 7: embedded Linux i Zephyr (opcjonalnie) | dowód | — | — | — | `S22-E7-M1`, `S22-E7-M2`, `S22-E7-M3`, `S22-E7-M4` | — |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S22-E7-M1` | Przerobić: Szkolenia: Embedded Linux, Yocto Project i OpenEmbedded, Buildroot | materiał | 30–40 h | 0 zł | https://bootlin.com/docs/ | `S22-E6-D` | `S22-E7-D` | `22-systemy-wbudowane/e7-embedded-linux-i-zephyr-opcjonalnie/` |
+| `S22-E7-M2` | Przerobić: Yocto Project Documentation (Quick Build, Overview and Concepts) | materiał | 10–15 h | 0 zł | https://docs.yoctoproject.org | `S22-E6-D` | `S22-E7-D` | `22-systemy-wbudowane/e7-embedded-linux-i-zephyr-opcjonalnie/` |
+| `S22-E7-M3` | Przerobić: Zephyr Project Documentation | materiał | 10–15 h | 0 zł | https://docs.zephyrproject.org/latest/ | `S22-E6-D` | `S22-E7-D` | `22-systemy-wbudowane/e7-embedded-linux-i-zephyr-opcjonalnie/` |
+| `S22-E7-M4` | Przerobić: nRF Connect SDK Fundamentals | materiał | 15–20 h | 0 zł | https://academy.nordicsemi.com | `S22-E6-D` | `S22-E7-D` | `22-systemy-wbudowane/e7-embedded-linux-i-zephyr-opcjonalnie/` |
+| `S22-E7-D` | Dowód etapu 7: embedded Linux i Zephyr (opcjonalnie) | dowód | — | — | — | `S22-E7-M1`, `S22-E7-M2`, `S22-E7-M3`, `S22-E7-M4` | — | `22-systemy-wbudowane/e7-embedded-linux-i-zephyr-opcjonalnie/` |
 
 **`S22-E7-D` · Dowód etapu 7: embedded Linux i Zephyr (opcjonalnie)**
 
 Obraz Yocto lub Buildroot dla płytki z materiałów Bootlin z własną aplikacją w Ruście jako usługą systemd, aktualizacją obrazu w schemacie A/B i SBOM; albo aplikacja Zephyr z MCUboot na nRF52840 DK.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `22-systemy-wbudowane/e7-embedded-linux-i-zephyr-opcjonalnie/`
 
 ### Etap 8: ekspert
 
@@ -333,18 +351,18 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód poziomu E:** Samodzielnie, bez agenta, w 1 dzień diagnozujesz i naprawiasz błąd w nieznanym firmware (zawieszanie, HardFault, nadmierny pobór prądu albo błąd protokołu) z użyciem sondy, analizatora i not katalogowych, wydajesz poprawkę jako podpisaną aktualizację OTA i umiesz wyjaśnić klientowi, jak to wpływa na jego obowiązki z CRA.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S22-E8-M1` | Przerobić: Blog i newsletter Rust Embedded Working Group, lista awesome-embedded-rust | materiał | ok. 1 h tygodniowo | 0 zł | https://blog.rust-embedded.org, https://github.com/rust-embedded/awesome-embedded-rust | `S22-E6-D` | `S22-E8-D` |
-| `S22-E8-M2` | Przerobić: Blog Embassy i informacje o wydaniach esp-hal | materiał | wg potrzeb | 0 zł | https://embassy.dev/blog/, https://developer.espressif.com/blog/ | `S22-E6-D` | `S22-E8-D` |
-| `S22-E8-M3` | Przerobić: Interrupt (wszystkie nowe artykuły i podsumowania lektur) | materiał | ok. 1 h tygodniowo | 0 zł | https://interrupt.memfault.com | `S22-E6-D` | `S22-E8-D` |
-| `S22-E8-M4` | Przerobić: Materiały szkoleniowe Ferrous Systems (pełny zestaw ćwiczeń) | materiał | wg potrzeb | 0 zł | https://rust-exercises.ferrous-systems.com/latest/book/ | `S22-E6-D` | `S22-E8-D` |
-| `S22-E8-M5` | Przerobić: Errata i noty aplikacyjne używanych układów | materiał | wg potrzeb | 0 zł | dokumentacja wybranego układu | `S22-E6-D` | `S22-E8-D` |
-| `S22-E8-P1` | Praktyka: recenzja kodu AI | praktyka | — | — | — | `S22-E6-D` | `S22-E8-D` |
-| `S22-E8-P2` | Praktyka: testy na prawdziwym sprzęcie | praktyka | — | — | — | `S22-E6-D` | `S22-E8-D` |
-| `S22-E8-P3` | Praktyka: diagnostyka w terenie | praktyka | — | — | — | `S22-E6-D` | `S22-E8-D` |
-| `S22-E8-P4` | Praktyka: śledzenie regulacji | praktyka | — | — | — | `S22-E6-D` | `S22-E8-D` |
-| `S22-E8-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S22-E8-M1`, `S22-E8-M2`, `S22-E8-M3`, `S22-E8-M4`, `S22-E8-M5`, `S22-E8-P1`, `S22-E8-P2`, `S22-E8-P3`, `S22-E8-P4` | — |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S22-E8-M1` | Przerobić: Blog i newsletter Rust Embedded Working Group, lista awesome-embedded-rust | materiał | ok. 1 h tygodniowo | 0 zł | https://blog.rust-embedded.org, https://github.com/rust-embedded/awesome-embedded-rust | `S22-E6-D` | `S22-E8-D` | `22-systemy-wbudowane/e8-ekspert/` |
+| `S22-E8-M2` | Przerobić: Blog Embassy i informacje o wydaniach esp-hal | materiał | wg potrzeb | 0 zł | https://embassy.dev/blog/, https://developer.espressif.com/blog/ | `S22-E6-D` | `S22-E8-D` | `22-systemy-wbudowane/e8-ekspert/` |
+| `S22-E8-M3` | Przerobić: Interrupt (wszystkie nowe artykuły i podsumowania lektur) | materiał | ok. 1 h tygodniowo | 0 zł | https://interrupt.memfault.com | `S22-E6-D` | `S22-E8-D` | `22-systemy-wbudowane/e8-ekspert/` |
+| `S22-E8-M4` | Przerobić: Materiały szkoleniowe Ferrous Systems (pełny zestaw ćwiczeń) | materiał | wg potrzeb | 0 zł | https://rust-exercises.ferrous-systems.com/latest/book/ | `S22-E6-D` | `S22-E8-D` | `22-systemy-wbudowane/e8-ekspert/` |
+| `S22-E8-M5` | Przerobić: Errata i noty aplikacyjne używanych układów | materiał | wg potrzeb | 0 zł | dokumentacja wybranego układu | `S22-E6-D` | `S22-E8-D` | `22-systemy-wbudowane/e8-ekspert/` |
+| `S22-E8-P1` | Praktyka: recenzja kodu AI | praktyka | — | — | — | `S22-E6-D` | `S22-E8-D` | `22-systemy-wbudowane/e8-ekspert/` |
+| `S22-E8-P2` | Praktyka: testy na prawdziwym sprzęcie | praktyka | — | — | — | `S22-E6-D` | `S22-E8-D` | `22-systemy-wbudowane/e8-ekspert/` |
+| `S22-E8-P3` | Praktyka: diagnostyka w terenie | praktyka | — | — | — | `S22-E6-D` | `S22-E8-D` | `22-systemy-wbudowane/e8-ekspert/` |
+| `S22-E8-P4` | Praktyka: śledzenie regulacji | praktyka | — | — | — | `S22-E6-D` | `S22-E8-D` | `22-systemy-wbudowane/e8-ekspert/` |
+| `S22-E8-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S22-E8-M1`, `S22-E8-M2`, `S22-E8-M3`, `S22-E8-M4`, `S22-E8-M5`, `S22-E8-P1`, `S22-E8-P2`, `S22-E8-P3`, `S22-E8-P4` | — | `22-systemy-wbudowane/e8-ekspert/` |
 
 **`S22-E8-P1` · Praktyka: recenzja kodu AI**
 
@@ -352,11 +370,15 @@ Opis kamienia milowego (do wklejenia):
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `22-systemy-wbudowane/e8-ekspert/`
+
 **`S22-E8-P2` · Praktyka: testy na prawdziwym sprzęcie**
 
 Stanowisko hardware-in-the-loop w CI dla jednego urządzenia (zob. sekcja 6).
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
+
+**Folder roboczy:** `22-systemy-wbudowane/e8-ekspert/`
 
 **`S22-E8-P3` · Praktyka: diagnostyka w terenie**
 
@@ -364,17 +386,23 @@ Zbieranie zrzutów awarii i metryk z urządzeń oraz ćwiczenie wydania poprawki
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `22-systemy-wbudowane/e8-ekspert/`
+
 **`S22-E8-P4` · Praktyka: śledzenie regulacji**
 
 Status uchylenia rozporządzenia 2022/30, normy zharmonizowane do CRA i wytyczne Komisji.
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `22-systemy-wbudowane/e8-ekspert/`
+
 **`S22-E8-D` · Dowód poziomu E: ekspert**
 
 Samodzielnie, bez agenta, w 1 dzień diagnozujesz i naprawiasz błąd w nieznanym firmware (zawieszanie, HardFault, nadmierny pobór prądu albo błąd protokołu) z użyciem sondy, analizatora i not katalogowych, wydajesz poprawkę jako podpisaną aktualizację OTA i umiesz wyjaśnić klientowi, jak to wpływa na jego obowiązki z CRA.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki. Bez agenta AI.
+
+**Folder roboczy:** `22-systemy-wbudowane/e8-ekspert/`
 
 ## 6. Relacje z innymi projektami
 

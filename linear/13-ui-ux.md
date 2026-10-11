@@ -81,6 +81,8 @@ Punkt startu projektu „13. UI/UX”.
 - zaznaczyć etapy, które zaliczasz samym dowodem (zgodnie z akapitem wstępnym ścieżki), i dla nich zamknąć zadania materiałów jako niepotrzebne,
 - ustawić daty kamieni milowych zgodnie z kolejnością z pliku głównego.
 
+**Folder roboczy:** `13-ui-ux/`
+
 ## 4. Przepływ zależności
 
 Linie ciągłe to zależności wewnątrz projektu, przerywane to zadania z innych projektów. Wewnątrz etapu zadania materiałów są równoległe i wszystkie blokują dowód etapu; dowód etapu blokuje materiały kolejnego etapu.
@@ -111,7 +113,7 @@ flowchart TD
 
 ## 5. Zadania według kamieni milowych
 
-Szablon opisu zadania materiału: nazwa materiału, autor lub wydawca, typ, czas, koszt i link (jak w kolumnach poniżej) oraz zdanie „Gotowe, gdy materiał jest przerobiony w zakresie potrzebnym do dowodu etapu”. Opisy dowodów i praktyk są podane pod tabelą każdego etapu.
+Szablon opisu zadania materiału: nazwa materiału, autor lub wydawca, typ, czas, koszt i link (jak w kolumnach poniżej), zdanie „Gotowe, gdy materiał jest przerobiony w zakresie potrzebnym do dowodu etapu” oraz folder roboczy z kolumny „Folder”. Opisy dowodów i praktyk są podane pod tabelą każdego etapu.
 
 ### Etap 0: podstawy użyteczności
 
@@ -123,13 +125,13 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Ocena heurystyczna jednej istniejącej aplikacji (najlepiej z portfolio przejmowanych projektów): 15–20 problemów przypisanych do heurystyk Nielsena, z oceną wagi i propozycją poprawki dla każdego.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S13-E0-M1` | Przerobić: Don’t Make Me Think, Revisited (wydanie 3) | materiał, płatny | 5–6 h | płatna | https://sensible.com/dont-make-me-think/ | `S13-START` | `S13-E0-D` |
-| `S13-E0-M2` | Przerobić: The Design of Everyday Things (wydanie poprawione i rozszerzone) | materiał, płatny | 10–12 h | płatna | https://www.hachettebookgroup.com/titles/don-norman/the-design-of-everyday-things-revised-and-expanded-edition/9780465050659/ | `S13-START` | `S13-E0-D` |
-| `S13-E0-M3` | Przerobić: 10 Usability Heuristics for User Interface Design i artykuły pokrewne | materiał | 6–8 h | 0 zł | https://www.nngroup.com/articles/ten-usability-heuristics/ | `S13-START` | `S13-E0-D` |
-| `S13-E0-M4` | Przerobić: Laws of UX (strona) i książka Laws of UX (wydanie 2, 2024) | materiał, płatny | 6–8 h | 0 zł / płatna | https://lawsofux.com, https://www.oreilly.com/library/view/laws-of-ux/9781098146955/ | `S13-START` | `S13-E0-D` |
-| `S13-E0-D` | Dowód etapu 0: podstawy użyteczności | dowód | — | — | — | `S13-E0-M1`, `S13-E0-M2`, `S13-E0-M3`, `S13-E0-M4` | `S13-E1-M1`, `S13-E1-M2`, `S13-E1-M3` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S13-E0-M1` | Przerobić: Don’t Make Me Think, Revisited (wydanie 3) | materiał, płatny | 5–6 h | płatna | https://sensible.com/dont-make-me-think/ | `S13-START` | `S13-E0-D` | `13-ui-ux/e0-podstawy-uzytecznosci/` |
+| `S13-E0-M2` | Przerobić: The Design of Everyday Things (wydanie poprawione i rozszerzone) | materiał, płatny | 10–12 h | płatna | https://www.hachettebookgroup.com/titles/don-norman/the-design-of-everyday-things-revised-and-expanded-edition/9780465050659/ | `S13-START` | `S13-E0-D` | `13-ui-ux/e0-podstawy-uzytecznosci/` |
+| `S13-E0-M3` | Przerobić: 10 Usability Heuristics for User Interface Design i artykuły pokrewne | materiał | 6–8 h | 0 zł | https://www.nngroup.com/articles/ten-usability-heuristics/ | `S13-START` | `S13-E0-D` | `13-ui-ux/e0-podstawy-uzytecznosci/` |
+| `S13-E0-M4` | Przerobić: Laws of UX (strona) i książka Laws of UX (wydanie 2, 2024) | materiał, płatny | 6–8 h | 0 zł / płatna | https://lawsofux.com, https://www.oreilly.com/library/view/laws-of-ux/9781098146955/ | `S13-START` | `S13-E0-D` | `13-ui-ux/e0-podstawy-uzytecznosci/` |
+| `S13-E0-D` | Dowód etapu 0: podstawy użyteczności | dowód | — | — | — | `S13-E0-M1`, `S13-E0-M2`, `S13-E0-M3`, `S13-E0-M4` | `S13-E1-M1`, `S13-E1-M2`, `S13-E1-M3` | `13-ui-ux/e0-podstawy-uzytecznosci/` |
 
 **`S13-E0-D` · Dowód etapu 0: podstawy użyteczności**
 
@@ -138,6 +140,8 @@ Ocena heurystyczna jednej istniejącej aplikacji (najlepiej z portfolio przejmow
 **Na co zwrócić uwagę:** afordancje i sygnifikatory, informacja zwrotna, model mentalny użytkownika, zapobieganie błędom zamiast komunikatów o błędach, prawa Hicka, Fittsa i Jakoba, obciążenie poznawcze.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `13-ui-ux/e0-podstawy-uzytecznosci/`
 
 ### Etap 1: projektowanie wizualne i Figma
 
@@ -149,12 +153,12 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** W Figmie projekt 5–7 ekranów jednej własnej aplikacji (lista, szczegóły, formularz, ustawienia, ekran zakupu) w wersji mobilnej i desktopowej, z jasnym i ciemnym motywem, zbudowany z własnych komponentów z wariantami i z prototypem klikanym.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S13-E1-M1` | Przerobić: Refactoring UI | materiał, płatny | 8–10 h | płatna (2 rozdziały za darmo) | https://www.refactoringui.com | `S13-E0-D` | `S13-E1-D` |
-| `S13-E1-M2` | Przerobić: Figma Learn: Figma Design for beginners, kursy i dokumentacja | materiał, płatny | 20–25 h | 0 zł (narzędzie z planem darmowym i płatnymi) | https://help.figma.com/hc/en-us | `S13-E0-D` | `S13-E1-D` |
-| `S13-E1-M3` | Przerobić: Practical Typography | materiał | 5–6 h | 0 zł | https://practicaltypography.com | `S13-E0-D` | `S13-E1-D` |
-| `S13-E1-D` | Dowód etapu 1: projektowanie wizualne i Figma | dowód | — | — | — | `S13-E1-M1`, `S13-E1-M2`, `S13-E1-M3` | `S13-E2-M1`, `S13-E2-M2`, `S13-E2-M3`, `S13-E2-M4` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S13-E1-M1` | Przerobić: Refactoring UI | materiał, płatny | 8–10 h | płatna (2 rozdziały za darmo) | https://www.refactoringui.com | `S13-E0-D` | `S13-E1-D` | `13-ui-ux/e1-projektowanie-wizualne-i-figma/` |
+| `S13-E1-M2` | Przerobić: Figma Learn: Figma Design for beginners, kursy i dokumentacja | materiał, płatny | 20–25 h | 0 zł (narzędzie z planem darmowym i płatnymi) | https://help.figma.com/hc/en-us | `S13-E0-D` | `S13-E1-D` | `13-ui-ux/e1-projektowanie-wizualne-i-figma/` |
+| `S13-E1-M3` | Przerobić: Practical Typography | materiał | 5–6 h | 0 zł | https://practicaltypography.com | `S13-E0-D` | `S13-E1-D` | `13-ui-ux/e1-projektowanie-wizualne-i-figma/` |
+| `S13-E1-D` | Dowód etapu 1: projektowanie wizualne i Figma | dowód | — | — | — | `S13-E1-M1`, `S13-E1-M2`, `S13-E1-M3` | `S13-E2-M1`, `S13-E2-M2`, `S13-E2-M3`, `S13-E2-M4` | `13-ui-ux/e1-projektowanie-wizualne-i-figma/` |
 
 **`S13-E1-D` · Dowód etapu 1: projektowanie wizualne i Figma**
 
@@ -163,6 +167,8 @@ W Figmie projekt 5–7 ekranów jednej własnej aplikacji (lista, szczegóły, f
 **Na co zwrócić uwagę:** hierarchia wizualna, siatka i rytm odstępów, skala typograficzna, palety kolorów z kontrastem od początku, stany komponentów, tryb ciemny, komponenty i warianty w Figmie zamiast kopiowania ramek.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `13-ui-ux/e1-projektowanie-wizualne-i-figma/`
 
 ### Etap 2: badania i testy użyteczności
 
@@ -174,13 +180,13 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Dwie rundy testów użyteczności (po 5 osób) prototypu z etapu 1: scenariusz, nagrania za zgodą, lista problemów z częstością i wagą, poprawki między rundami i porównanie wyników.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S13-E2-M1` | Przerobić: Rocket Surgery Made Easy | materiał, płatny | 4–5 h | płatna | https://sensible.com/rocket-surgery-made-easy/ | `S13-E1-D` | `S13-E2-D` |
-| `S13-E2-M2` | Przerobić: Just Enough Research (wydanie 2) | materiał, płatny | 4–5 h | płatna | https://abookapart.com/blogs/press/just-enough-research-2nd-edition-is-now-available | `S13-E1-D` | `S13-E2-D` |
-| `S13-E2-M3` | Przerobić: Artykuły NN/g o badaniach | materiał | 8–10 h | 0 zł | https://www.nngroup.com/articles/ | `S13-E1-D` | `S13-E2-D` |
-| `S13-E2-M4` | Przerobić: Kursy UX Nielsen Norman Group (opcjonalnie, z certyfikacją) | materiał, płatny | wg potrzeb | płatne | https://www.nngroup.com/courses/ | `S13-E1-D` | `S13-E2-D` |
-| `S13-E2-D` | Dowód etapu 2: badania i testy użyteczności | dowód | — | — | — | `S13-E2-M1`, `S13-E2-M2`, `S13-E2-M3`, `S13-E2-M4` | `S13-E3-M1`, `S13-E3-M2`, `S13-E3-M3`, `S13-E3-M4`, `S14-START`, `S18-START`, `S19-START` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S13-E2-M1` | Przerobić: Rocket Surgery Made Easy | materiał, płatny | 4–5 h | płatna | https://sensible.com/rocket-surgery-made-easy/ | `S13-E1-D` | `S13-E2-D` | `13-ui-ux/e2-badania-i-testy-uzytecznosci/` |
+| `S13-E2-M2` | Przerobić: Just Enough Research (wydanie 2) | materiał, płatny | 4–5 h | płatna | https://abookapart.com/blogs/press/just-enough-research-2nd-edition-is-now-available | `S13-E1-D` | `S13-E2-D` | `13-ui-ux/e2-badania-i-testy-uzytecznosci/` |
+| `S13-E2-M3` | Przerobić: Artykuły NN/g o badaniach | materiał | 8–10 h | 0 zł | https://www.nngroup.com/articles/ | `S13-E1-D` | `S13-E2-D` | `13-ui-ux/e2-badania-i-testy-uzytecznosci/` |
+| `S13-E2-M4` | Przerobić: Kursy UX Nielsen Norman Group (opcjonalnie, z certyfikacją) | materiał, płatny | wg potrzeb | płatne | https://www.nngroup.com/courses/ | `S13-E1-D` | `S13-E2-D` | `13-ui-ux/e2-badania-i-testy-uzytecznosci/` |
+| `S13-E2-D` | Dowód etapu 2: badania i testy użyteczności | dowód | — | — | — | `S13-E2-M1`, `S13-E2-M2`, `S13-E2-M3`, `S13-E2-M4` | `S13-E3-M1`, `S13-E3-M2`, `S13-E3-M3`, `S13-E3-M4`, `S14-START`, `S18-START`, `S19-START` | `13-ui-ux/e2-badania-i-testy-uzytecznosci/` |
 
 **`S13-E2-D` · Dowód etapu 2: badania i testy użyteczności**
 
@@ -189,6 +195,8 @@ Dwie rundy testów użyteczności (po 5 osób) prototypu z etapu 1: scenariusz, 
 **Na co zwrócić uwagę:** pytania bez sugerowania odpowiedzi, scenariusz zadań zamiast pytania o opinię, 5 uczestników na rundę i kolejne rundy po poprawkach, analityka produktowa jako uzupełnienie, a nie zamiennik rozmów, zgody i dane osobowe uczestników (RODO).
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `13-ui-ux/e2-badania-i-testy-uzytecznosci/`
 
 ### Etap 3: wytyczne platform
 
@@ -200,13 +208,13 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Ten sam przepływ (np. zakup i ustawienia) zaprojektowany w trzech wariantach: iOS, Android i desktop, z notatką, które różnice wynikają z wytycznych platformy, a które są świadomym odstępstwem i dlaczego.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S13-E3-M1` | Przerobić: Human Interface Guidelines | materiał | 12–15 h | 0 zł | https://developer.apple.com/design/human-interface-guidelines/ | `S13-E2-D` | `S13-E3-D` |
-| `S13-E3-M2` | Przerobić: Material Design 3 | materiał | 10–12 h | 0 zł | https://m3.material.io | `S13-E2-D` | `S13-E3-D` |
-| `S13-E3-M3` | Przerobić: Fluent 2 Design System | materiał | 6–8 h | 0 zł | https://fluent2.microsoft.design | `S13-E2-D` | `S13-E3-D` |
-| `S13-E3-M4` | Przerobić: GNOME Human Interface Guidelines | materiał | 4–6 h | 0 zł | https://developer.gnome.org/hig/ | `S13-E2-D` | `S13-E3-D` |
-| `S13-E3-D` | Dowód etapu 3: wytyczne platform | dowód | — | — | — | `S13-E3-M1`, `S13-E3-M2`, `S13-E3-M3`, `S13-E3-M4` | `S13-E4-M1`, `S13-E4-M2`, `S13-E4-M3` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S13-E3-M1` | Przerobić: Human Interface Guidelines | materiał | 12–15 h | 0 zł | https://developer.apple.com/design/human-interface-guidelines/ | `S13-E2-D` | `S13-E3-D` | `13-ui-ux/e3-wytyczne-platform/` |
+| `S13-E3-M2` | Przerobić: Material Design 3 | materiał | 10–12 h | 0 zł | https://m3.material.io | `S13-E2-D` | `S13-E3-D` | `13-ui-ux/e3-wytyczne-platform/` |
+| `S13-E3-M3` | Przerobić: Fluent 2 Design System | materiał | 6–8 h | 0 zł | https://fluent2.microsoft.design | `S13-E2-D` | `S13-E3-D` | `13-ui-ux/e3-wytyczne-platform/` |
+| `S13-E3-M4` | Przerobić: GNOME Human Interface Guidelines | materiał | 4–6 h | 0 zł | https://developer.gnome.org/hig/ | `S13-E2-D` | `S13-E3-D` | `13-ui-ux/e3-wytyczne-platform/` |
+| `S13-E3-D` | Dowód etapu 3: wytyczne platform | dowód | — | — | — | `S13-E3-M1`, `S13-E3-M2`, `S13-E3-M3`, `S13-E3-M4` | `S13-E4-M1`, `S13-E4-M2`, `S13-E4-M3` | `13-ui-ux/e3-wytyczne-platform/` |
 
 **`S13-E3-D` · Dowód etapu 3: wytyczne platform**
 
@@ -215,6 +223,8 @@ Ten sam przepływ (np. zakup i ustawienia) zaprojektowany w trzech wariantach: i
 **Na co zwrócić uwagę:** nawigacja i gesty specyficzne dla platformy (wstecz w Androidzie, paski kart i arkusze w iOS, menu i skróty klawiaturowe na desktopie), dynamiczny rozmiar tekstu, obszary dotyku, okna i ich rozmiary na desktopie, kiedy Tauri z Reactem może wyglądać „tak samo wszędzie”, a kiedy użytkownik oczekuje wyglądu natywnego.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `13-ui-ux/e3-wytyczne-platform/`
 
 ### Etap 4: systemy projektowe i tokeny
 
@@ -226,18 +236,20 @@ Specyfikacja DTCG jest raportem grupy społecznościowej W3C, a nie standardem W
 
 **Dowód:** Jedno źródło tokenów w formacie DTCG (kolory z trybami jasnym i ciemnym, typografia, odstępy, promienie) generowane w CI do zmiennych CSS i motywu Tailwind, stałych Swift, zasobów Kotlin/Compose i motywu natywnego UI w Ruście (np. Slint); zmiana jednego tokenu widoczna na wszystkich platformach po jednym buildzie.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S13-E4-M1` | Przerobić: Design Tokens Format Module 2025.10 | materiał | 4–6 h | 0 zł | https://www.designtokens.org/tr/2025.10/format/ | `S13-E3-D` | `S13-E4-D` |
-| `S13-E4-M2` | Przerobić: Figma Learn: zmienne, tryby i biblioteki | materiał | 4–5 h | 0 zł | https://help.figma.com/hc/en-us | `S13-E3-D` | `S13-E4-D` |
-| `S13-E4-M3` | Przerobić: Fluent 2 i Material Design 3: rozdziały o tokenach i motywach | materiał | 4–6 h | 0 zł | https://fluent2.microsoft.design, https://m3.material.io | `S13-E3-D` | `S13-E4-D` |
-| `S13-E4-D` | Dowód etapu 4: systemy projektowe i tokeny | dowód | — | — | — | `S13-E4-M1`, `S13-E4-M2`, `S13-E4-M3` | `S13-E5-M1`, `S13-E5-M2`, `S13-E5-M3` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S13-E4-M1` | Przerobić: Design Tokens Format Module 2025.10 | materiał | 4–6 h | 0 zł | https://www.designtokens.org/tr/2025.10/format/ | `S13-E3-D` | `S13-E4-D` | `13-ui-ux/e4-systemy-projektowe-i-tokeny/` |
+| `S13-E4-M2` | Przerobić: Figma Learn: zmienne, tryby i biblioteki | materiał | 4–5 h | 0 zł | https://help.figma.com/hc/en-us | `S13-E3-D` | `S13-E4-D` | `13-ui-ux/e4-systemy-projektowe-i-tokeny/` |
+| `S13-E4-M3` | Przerobić: Fluent 2 i Material Design 3: rozdziały o tokenach i motywach | materiał | 4–6 h | 0 zł | https://fluent2.microsoft.design, https://m3.material.io | `S13-E3-D` | `S13-E4-D` | `13-ui-ux/e4-systemy-projektowe-i-tokeny/` |
+| `S13-E4-D` | Dowód etapu 4: systemy projektowe i tokeny | dowód | — | — | — | `S13-E4-M1`, `S13-E4-M2`, `S13-E4-M3` | `S13-E5-M1`, `S13-E5-M2`, `S13-E5-M3` | `13-ui-ux/e4-systemy-projektowe-i-tokeny/` |
 
 **`S13-E4-D` · Dowód etapu 4: systemy projektowe i tokeny**
 
 Jedno źródło tokenów w formacie DTCG (kolory z trybami jasnym i ciemnym, typografia, odstępy, promienie) generowane w CI do zmiennych CSS i motywu Tailwind, stałych Swift, zasobów Kotlin/Compose i motywu natywnego UI w Ruście (np. Slint); zmiana jednego tokenu widoczna na wszystkich platformach po jednym buildzie.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `13-ui-ux/e4-systemy-projektowe-i-tokeny/`
 
 ### Etap 5: UX writing
 
@@ -249,12 +261,12 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Przepisany komplet tekstów jednej aplikacji (onboarding, błędy, stany puste, paywall, potwierdzenia) z krótkim przewodnikiem stylu i słownikiem, w dwóch językach przez pliki tłumaczeń, bez tekstów wpisanych na stałe w kodzie.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S13-E5-M1` | Przerobić: Strategic Writing for UX (wydanie 2, 2025) | materiał, płatny | 6–8 h | płatna | https://www.oreilly.com/library/view/strategic-writing-for/9781098174323/ | `S13-E4-D` | `S13-E5-D` |
-| `S13-E5-M2` | Przerobić: Microcopy: The Complete Guide | materiał, płatny | 5–6 h | płatna | https://www.microcopybook.com | `S13-E4-D` | `S13-E5-D` |
-| `S13-E5-M3` | Przerobić: Wytyczne pisania w HIG, Material Design 3 i GNOME HIG | materiał | 2–3 h | 0 zł | jak w etapie 3 | `S13-E4-D` | `S13-E5-D` |
-| `S13-E5-D` | Dowód etapu 5: UX writing | dowód | — | — | — | `S13-E5-M1`, `S13-E5-M2`, `S13-E5-M3` | `S13-E6-M1`, `S13-E6-M2`, `S13-E6-M3`, `S13-E6-M4`, `S13-E6-M5`, `S13-E6-M6`, `S13-E6-M7`, `S13-E6-M8`, `S13-E6-M9`, `S13-E6-M10` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S13-E5-M1` | Przerobić: Strategic Writing for UX (wydanie 2, 2025) | materiał, płatny | 6–8 h | płatna | https://www.oreilly.com/library/view/strategic-writing-for/9781098174323/ | `S13-E4-D` | `S13-E5-D` | `13-ui-ux/e5-ux-writing/` |
+| `S13-E5-M2` | Przerobić: Microcopy: The Complete Guide | materiał, płatny | 5–6 h | płatna | https://www.microcopybook.com | `S13-E4-D` | `S13-E5-D` | `13-ui-ux/e5-ux-writing/` |
+| `S13-E5-M3` | Przerobić: Wytyczne pisania w HIG, Material Design 3 i GNOME HIG | materiał | 2–3 h | 0 zł | jak w etapie 3 | `S13-E4-D` | `S13-E5-D` | `13-ui-ux/e5-ux-writing/` |
+| `S13-E5-D` | Dowód etapu 5: UX writing | dowód | — | — | — | `S13-E5-M1`, `S13-E5-M2`, `S13-E5-M3` | `S13-E6-M1`, `S13-E6-M2`, `S13-E6-M3`, `S13-E6-M4`, `S13-E6-M5`, `S13-E6-M6`, `S13-E6-M7`, `S13-E6-M8`, `S13-E6-M9`, `S13-E6-M10` | `13-ui-ux/e5-ux-writing/` |
 
 **`S13-E5-D` · Dowód etapu 5: UX writing**
 
@@ -263,6 +275,8 @@ Przepisany komplet tekstów jednej aplikacji (onboarding, błędy, stany puste, 
 **Na co zwrócić uwagę:** komunikaty błędów mówiące, co zrobić dalej, stany puste, przyciski nazwane czynnością, spójny słownik w całym produkcie, teksty przygotowane do lokalizacji (długość, liczba mnoga, płeć gramatyczna w polskim), prosty język jako element dostępności.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `13-ui-ux/e5-ux-writing/`
 
 ### Etap 6: dostępność na wszystkich platformach i prawo
 
@@ -274,25 +288,27 @@ Stan na 11 października 2026 r.: polska ustawa wdrażająca EAA obowiązuje od 
 
 **Dowód:** Audyt dostępności własnej aplikacji na trzech platformach (web, iOS lub Android, desktop): przejście kluczowych zadań (pierwsze uruchomienie, logowanie, zakup, ustawienia) z VoiceOver lub TalkBack, Narratorem lub Orca, powiększonym tekstem i samą klawiaturą; raport według WCAG-EM z poprawkami i uczciwie wypełnione etykiety dostępności w App Store Connect.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S13-E6-M1` | Przerobić: Inclusive Components | materiał, płatny | 6–8 h | 0 zł / płatna | https://inclusive-components.design | `S13-E5-D` | `S13-E6-D` |
-| `S13-E6-M2` | Przerobić: Deque University: pakiet z kursem dostępności aplikacji natywnych | materiał, płatny | 20–30 h | abonament | https://dequeuniversity.com/online-courses/ | `S13-E5-D` | `S13-E6-D` |
-| `S13-E6-M3` | Przerobić: Accessibility (dokumentacja dla deweloperów) i Accessibility Nutrition Labels w App Store Connect | materiał | 3–4 h | 0 zł | https://developer.apple.com/accessibility/, https://developer.apple.com/help/app-store-connect/manage-app-accessibility/overview-of-accessibility-nutrition-labels | `S13-E5-D` | `S13-E6-D` |
-| `S13-E6-M4` | Przerobić: Build accessible apps, dostępność w Jetpack Compose | materiał | 3–4 h | 0 zł | https://developer.android.com/guide/topics/ui/accessibility | `S13-E5-D` | `S13-E6-D` |
-| `S13-E6-M5` | Przerobić: Accessibility overview: Windows apps (UI Automation, wysoki kontrast) i Accessibility Insights | materiał | 2–3 h | 0 zł | https://learn.microsoft.com/en-us/windows/apps/design/accessibility/accessibility, https://accessibilityinsights.io | `S13-E5-D` | `S13-E6-D` |
-| `S13-E6-M6` | Przerobić: AccessKit: dostępność UI rysowanych w Ruście (egui, Slint i inne) | materiał | 1–2 h | 0 zł | https://accesskit.dev | `S13-E5-D` | `S13-E6-D` |
-| `S13-E6-M7` | Przerobić: WCAG-EM: metodyka oceny zgodności i Easy Checks | materiał | 2–3 h | 0 zł | https://www.w3.org/WAI/test-evaluate/ | `S13-E5-D` | `S13-E6-D` |
-| `S13-E6-M8` | Przerobić: Dyrektywa (UE) 2019/882 (Europejski akt o dostępności) | materiał | 3–4 h | 0 zł | https://eur-lex.europa.eu/eli/dir/2019/882/oj | `S13-E5-D` | `S13-E6-D` |
-| `S13-E6-M9` | Przerobić: Ustawa z 26 kwietnia 2024 r. o zapewnianiu spełniania wymagań dostępności niektórych produktów i… | materiał | 3–4 h | 0 zł | https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20240000731 | `S13-E5-D` | `S13-E6-D` |
-| `S13-E6-M10` | Przerobić: EN 301 549 V4.1.1 (wrzesień 2026) | materiał | 4–6 h | 0 zł | https://www.etsi.org | `S13-E5-D` | `S13-E6-D` |
-| `S13-E6-D` | Dowód etapu 6: dostępność na wszystkich platformach i prawo | dowód | — | — | — | `S13-E6-M1`, `S13-E6-M2`, `S13-E6-M3`, `S13-E6-M4`, `S13-E6-M5`, `S13-E6-M6`, `S13-E6-M7`, `S13-E6-M8`, `S13-E6-M9`, `S13-E6-M10` | `S13-E7-M1`, `S13-E7-M2`, `S13-E7-M3`, `S13-E7-M4`, `S13-E7-M5` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S13-E6-M1` | Przerobić: Inclusive Components | materiał, płatny | 6–8 h | 0 zł / płatna | https://inclusive-components.design | `S13-E5-D` | `S13-E6-D` | `13-ui-ux/e6-dostepnosc-na-wszystkich-platformach-i-prawo/` |
+| `S13-E6-M2` | Przerobić: Deque University: pakiet z kursem dostępności aplikacji natywnych | materiał, płatny | 20–30 h | abonament | https://dequeuniversity.com/online-courses/ | `S13-E5-D` | `S13-E6-D` | `13-ui-ux/e6-dostepnosc-na-wszystkich-platformach-i-prawo/` |
+| `S13-E6-M3` | Przerobić: Accessibility (dokumentacja dla deweloperów) i Accessibility Nutrition Labels w App Store Connect | materiał | 3–4 h | 0 zł | https://developer.apple.com/accessibility/, https://developer.apple.com/help/app-store-connect/manage-app-accessibility/overview-of-accessibility-nutrition-labels | `S13-E5-D` | `S13-E6-D` | `13-ui-ux/e6-dostepnosc-na-wszystkich-platformach-i-prawo/` |
+| `S13-E6-M4` | Przerobić: Build accessible apps, dostępność w Jetpack Compose | materiał | 3–4 h | 0 zł | https://developer.android.com/guide/topics/ui/accessibility | `S13-E5-D` | `S13-E6-D` | `13-ui-ux/e6-dostepnosc-na-wszystkich-platformach-i-prawo/` |
+| `S13-E6-M5` | Przerobić: Accessibility overview: Windows apps (UI Automation, wysoki kontrast) i Accessibility Insights | materiał | 2–3 h | 0 zł | https://learn.microsoft.com/en-us/windows/apps/design/accessibility/accessibility, https://accessibilityinsights.io | `S13-E5-D` | `S13-E6-D` | `13-ui-ux/e6-dostepnosc-na-wszystkich-platformach-i-prawo/` |
+| `S13-E6-M6` | Przerobić: AccessKit: dostępność UI rysowanych w Ruście (egui, Slint i inne) | materiał | 1–2 h | 0 zł | https://accesskit.dev | `S13-E5-D` | `S13-E6-D` | `13-ui-ux/e6-dostepnosc-na-wszystkich-platformach-i-prawo/` |
+| `S13-E6-M7` | Przerobić: WCAG-EM: metodyka oceny zgodności i Easy Checks | materiał | 2–3 h | 0 zł | https://www.w3.org/WAI/test-evaluate/ | `S13-E5-D` | `S13-E6-D` | `13-ui-ux/e6-dostepnosc-na-wszystkich-platformach-i-prawo/` |
+| `S13-E6-M8` | Przerobić: Dyrektywa (UE) 2019/882 (Europejski akt o dostępności) | materiał | 3–4 h | 0 zł | https://eur-lex.europa.eu/eli/dir/2019/882/oj | `S13-E5-D` | `S13-E6-D` | `13-ui-ux/e6-dostepnosc-na-wszystkich-platformach-i-prawo/` |
+| `S13-E6-M9` | Przerobić: Ustawa z 26 kwietnia 2024 r. o zapewnianiu spełniania wymagań dostępności niektórych produktów i… | materiał | 3–4 h | 0 zł | https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20240000731 | `S13-E5-D` | `S13-E6-D` | `13-ui-ux/e6-dostepnosc-na-wszystkich-platformach-i-prawo/` |
+| `S13-E6-M10` | Przerobić: EN 301 549 V4.1.1 (wrzesień 2026) | materiał | 4–6 h | 0 zł | https://www.etsi.org | `S13-E5-D` | `S13-E6-D` | `13-ui-ux/e6-dostepnosc-na-wszystkich-platformach-i-prawo/` |
+| `S13-E6-D` | Dowód etapu 6: dostępność na wszystkich platformach i prawo | dowód | — | — | — | `S13-E6-M1`, `S13-E6-M2`, `S13-E6-M3`, `S13-E6-M4`, `S13-E6-M5`, `S13-E6-M6`, `S13-E6-M7`, `S13-E6-M8`, `S13-E6-M9`, `S13-E6-M10` | `S13-E7-M1`, `S13-E7-M2`, `S13-E7-M3`, `S13-E7-M4`, `S13-E7-M5` | `13-ui-ux/e6-dostepnosc-na-wszystkich-platformach-i-prawo/` |
 
 **`S13-E6-D` · Dowód etapu 6: dostępność na wszystkich platformach i prawo**
 
 Audyt dostępności własnej aplikacji na trzech platformach (web, iOS lub Android, desktop): przejście kluczowych zadań (pierwsze uruchomienie, logowanie, zakup, ustawienia) z VoiceOver lub TalkBack, Narratorem lub Orca, powiększonym tekstem i samą klawiaturą; raport według WCAG-EM z poprawkami i uczciwie wypełnione etykiety dostępności w App Store Connect.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `13-ui-ux/e6-dostepnosc-na-wszystkich-platformach-i-prawo/`
 
 ### Etap 7: onboarding, paywalle i etyka
 
@@ -304,14 +320,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Onboarding i paywall jednej własnej aplikacji w trzech kanałach (App Store, Google Play, web), sprawdzone punkt po punkcie z sekcją 3.1 App Review Guidelines, zasadami Google Play i przepisami o prawach konsumenta; rezygnacja z abonamentu osiągalna w nie więcej krokach niż zakup; przejście przez recenzję w obu sklepach bez odrzucenia za płatności.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S13-E7-M1` | Przerobić: App Review Guidelines, sekcja 3.1 Payments | materiał | 3–4 h | 0 zł | https://developer.apple.com/app-store/review/guidelines/ | `S13-E6-D` | `S13-E7-D` |
-| `S13-E7-M2` | Przerobić: Payments i Create and manage subscriptions (przejrzystość ofert) | materiał | 2–3 h | 0 zł | https://support.google.com/googleplay/android-developer/answer/9858738, https://support.google.com/googleplay/android-developer/answer/140504 | `S13-E6-D` | `S13-E7-D` |
-| `S13-E7-M3` | Przerobić: Deceptive Patterns | materiał, płatny | 5–6 h | płatna (katalog online 0 zł) | https://deceptive.design | `S13-E6-D` | `S13-E7-D` |
-| `S13-E7-M4` | Przerobić: Dyrektywa (UE) 2023/2673 | materiał | 2–3 h | 0 zł | https://eur-lex.europa.eu/eli/dir/2023/2673/oj | `S13-E6-D` | `S13-E7-D` |
-| `S13-E7-M5` | Przerobić: Artykuły NN/g o onboardingu, paywallach i formularzach | materiał | 3–4 h | 0 zł | https://www.nngroup.com/articles/ | `S13-E6-D` | `S13-E7-D` |
-| `S13-E7-D` | Dowód etapu 7: onboarding, paywalle i etyka | dowód | — | — | — | `S13-E7-M1`, `S13-E7-M2`, `S13-E7-M3`, `S13-E7-M4`, `S13-E7-M5` | `S13-E8-M1`, `S13-E8-M2`, `S13-E8-M3`, `S13-E8-P1`, `S13-E8-P2`, `S13-E8-P3`, `S13-E8-P4` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S13-E7-M1` | Przerobić: App Review Guidelines, sekcja 3.1 Payments | materiał | 3–4 h | 0 zł | https://developer.apple.com/app-store/review/guidelines/ | `S13-E6-D` | `S13-E7-D` | `13-ui-ux/e7-onboarding-paywalle-i-etyka/` |
+| `S13-E7-M2` | Przerobić: Payments i Create and manage subscriptions (przejrzystość ofert) | materiał | 2–3 h | 0 zł | https://support.google.com/googleplay/android-developer/answer/9858738, https://support.google.com/googleplay/android-developer/answer/140504 | `S13-E6-D` | `S13-E7-D` | `13-ui-ux/e7-onboarding-paywalle-i-etyka/` |
+| `S13-E7-M3` | Przerobić: Deceptive Patterns | materiał, płatny | 5–6 h | płatna (katalog online 0 zł) | https://deceptive.design | `S13-E6-D` | `S13-E7-D` | `13-ui-ux/e7-onboarding-paywalle-i-etyka/` |
+| `S13-E7-M4` | Przerobić: Dyrektywa (UE) 2023/2673 | materiał | 2–3 h | 0 zł | https://eur-lex.europa.eu/eli/dir/2023/2673/oj | `S13-E6-D` | `S13-E7-D` | `13-ui-ux/e7-onboarding-paywalle-i-etyka/` |
+| `S13-E7-M5` | Przerobić: Artykuły NN/g o onboardingu, paywallach i formularzach | materiał | 3–4 h | 0 zł | https://www.nngroup.com/articles/ | `S13-E6-D` | `S13-E7-D` | `13-ui-ux/e7-onboarding-paywalle-i-etyka/` |
+| `S13-E7-D` | Dowód etapu 7: onboarding, paywalle i etyka | dowód | — | — | — | `S13-E7-M1`, `S13-E7-M2`, `S13-E7-M3`, `S13-E7-M4`, `S13-E7-M5` | `S13-E8-M1`, `S13-E8-M2`, `S13-E8-M3`, `S13-E8-P1`, `S13-E8-P2`, `S13-E8-P3`, `S13-E8-P4` | `13-ui-ux/e7-onboarding-paywalle-i-etyka/` |
 
 **`S13-E7-D` · Dowód etapu 7: onboarding, paywalle i etyka**
 
@@ -321,6 +337,8 @@ Onboarding i paywall jednej własnej aplikacji w trzech kanałach (App Store, Go
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
 
+**Folder roboczy:** `13-ui-ux/e7-onboarding-paywalle-i-etyka/`
+
 ### Etap 8: ekspert
 
 Opis kamienia milowego (do wklejenia):
@@ -329,16 +347,16 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód poziomu E:** Samodzielnie, bez agenta, w 2 dni przeprowadzasz audyt UX i dostępności nieznanej aplikacji klienta na dwóch platformach, z testem z co najmniej 3 użytkownikami, raportem z priorytetami, oceną zgodności z EAA i regułami sklepów oraz poprawionym projektem najważniejszego przepływu, i umiesz obronić rekomendacje przed osobą nietechniczną.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S13-E8-M1` | Przerobić: Nowe artykuły i badania NN/g | materiał | ok. 1 h tygodniowo | 0 zł | https://www.nngroup.com/articles/ | `S13-E7-D` | `S13-E8-D` |
-| `S13-E8-M2` | Przerobić: Zmiany w HIG, Material Design i Fluent oraz sesje projektowe z konferencji WWDC i Google I/O | materiał | wg potrzeb | 0 zł | https://developer.apple.com/design/, https://m3.material.io | `S13-E7-D` | `S13-E8-D` |
-| `S13-E8-M3` | Przerobić: Zmiany w zasadach sklepów i prawie (EAA, EN 301 549, prawa konsumenta) | materiał | ok. 1 h miesięcznie | 0 zł | jak w etapach 6 i 7 | `S13-E7-D` | `S13-E8-D` |
-| `S13-E8-P1` | Praktyka: recenzja interfejsów z AI | praktyka | — | — | — | `S13-E7-D` | `S13-E8-D` |
-| `S13-E8-P2` | Praktyka: audyt UX i dostępności przejmowanej aplikacji | praktyka | — | — | — | `S13-E7-D` | `S13-E8-D` |
-| `S13-E8-P3` | Praktyka: system projektowy w praktyce | praktyka | — | — | — | `S13-E7-D` | `S13-E8-D` |
-| `S13-E8-P4` | Praktyka: pomiar | praktyka | — | — | — | `S13-E7-D` | `S13-E8-D` |
-| `S13-E8-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S13-E8-M1`, `S13-E8-M2`, `S13-E8-M3`, `S13-E8-P1`, `S13-E8-P2`, `S13-E8-P3`, `S13-E8-P4` | — |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S13-E8-M1` | Przerobić: Nowe artykuły i badania NN/g | materiał | ok. 1 h tygodniowo | 0 zł | https://www.nngroup.com/articles/ | `S13-E7-D` | `S13-E8-D` | `13-ui-ux/e8-ekspert/` |
+| `S13-E8-M2` | Przerobić: Zmiany w HIG, Material Design i Fluent oraz sesje projektowe z konferencji WWDC i Google I/O | materiał | wg potrzeb | 0 zł | https://developer.apple.com/design/, https://m3.material.io | `S13-E7-D` | `S13-E8-D` | `13-ui-ux/e8-ekspert/` |
+| `S13-E8-M3` | Przerobić: Zmiany w zasadach sklepów i prawie (EAA, EN 301 549, prawa konsumenta) | materiał | ok. 1 h miesięcznie | 0 zł | jak w etapach 6 i 7 | `S13-E7-D` | `S13-E8-D` | `13-ui-ux/e8-ekspert/` |
+| `S13-E8-P1` | Praktyka: recenzja interfejsów z AI | praktyka | — | — | — | `S13-E7-D` | `S13-E8-D` | `13-ui-ux/e8-ekspert/` |
+| `S13-E8-P2` | Praktyka: audyt UX i dostępności przejmowanej aplikacji | praktyka | — | — | — | `S13-E7-D` | `S13-E8-D` | `13-ui-ux/e8-ekspert/` |
+| `S13-E8-P3` | Praktyka: system projektowy w praktyce | praktyka | — | — | — | `S13-E7-D` | `S13-E8-D` | `13-ui-ux/e8-ekspert/` |
+| `S13-E8-P4` | Praktyka: pomiar | praktyka | — | — | — | `S13-E7-D` | `S13-E8-D` | `13-ui-ux/e8-ekspert/` |
+| `S13-E8-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S13-E8-M1`, `S13-E8-M2`, `S13-E8-M3`, `S13-E8-P1`, `S13-E8-P2`, `S13-E8-P3`, `S13-E8-P4` | — | `13-ui-ux/e8-ekspert/` |
 
 **`S13-E8-P1` · Praktyka: recenzja interfejsów z AI**
 
@@ -346,11 +364,15 @@ Opis kamienia milowego (do wklejenia):
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `13-ui-ux/e8-ekspert/`
+
 **`S13-E8-P2` · Praktyka: audyt UX i dostępności przejmowanej aplikacji**
 
 Pierwsza aplikacja klienta przeprowadzona przez ocenę heurystyczną, test z 5 użytkownikami i audyt dostępności, z planem poprawek uszeregowanym według wpływu i kosztu.
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
+
+**Folder roboczy:** `13-ui-ux/e8-ekspert/`
 
 **`S13-E8-P3` · Praktyka: system projektowy w praktyce**
 
@@ -358,17 +380,23 @@ Tokeny i komponenty używane przez wszystkie własne aplikacje, z dokumentacją,
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `13-ui-ux/e8-ekspert/`
+
 **`S13-E8-P4` · Praktyka: pomiar**
 
 Jedna zmiana UX na kwartał zweryfikowana danymi (konwersja paywalla, ukończenie onboardingu, zgłoszenia do wsparcia).
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `13-ui-ux/e8-ekspert/`
+
 **`S13-E8-D` · Dowód poziomu E: ekspert**
 
 Samodzielnie, bez agenta, w 2 dni przeprowadzasz audyt UX i dostępności nieznanej aplikacji klienta na dwóch platformach, z testem z co najmniej 3 użytkownikami, raportem z priorytetami, oceną zgodności z EAA i regułami sklepów oraz poprawionym projektem najważniejszego przepływu, i umiesz obronić rekomendacje przed osobą nietechniczną.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki. Bez agenta AI.
+
+**Folder roboczy:** `13-ui-ux/e8-ekspert/`
 
 ## 6. Relacje z innymi projektami
 

@@ -95,6 +95,8 @@ Punkt startu projektu „20. Lokalne AI i rozwój modeli”.
 - zaznaczyć etapy, które zaliczasz samym dowodem (zgodnie z akapitem wstępnym ścieżki), i dla nich zamknąć zadania materiałów jako niepotrzebne,
 - ustawić daty kamieni milowych zgodnie z kolejnością z pliku głównego.
 
+**Folder roboczy:** `20-lokalne-ai-i-rozwoj-modeli/`
+
 ## 4. Przepływ zależności
 
 Linie ciągłe to zależności wewnątrz projektu, przerywane to zadania z innych projektów. Wewnątrz etapu zadania materiałów są równoległe i wszystkie blokują dowód etapu; dowód etapu blokuje materiały kolejnego etapu.
@@ -125,7 +127,7 @@ flowchart TD
 
 ## 5. Zadania według kamieni milowych
 
-Szablon opisu zadania materiału: nazwa materiału, autor lub wydawca, typ, czas, koszt i link (jak w kolumnach poniżej) oraz zdanie „Gotowe, gdy materiał jest przerobiony w zakresie potrzebnym do dowodu etapu”. Opisy dowodów i praktyk są podane pod tabelą każdego etapu.
+Szablon opisu zadania materiału: nazwa materiału, autor lub wydawca, typ, czas, koszt i link (jak w kolumnach poniżej), zdanie „Gotowe, gdy materiał jest przerobiony w zakresie potrzebnym do dowodu etapu” oraz folder roboczy z kolumny „Folder”. Opisy dowodów i praktyk są podane pod tabelą każdego etapu.
 
 ### Etap 0: podstawy uczenia maszynowego
 
@@ -137,12 +139,12 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Samodzielnie wytrenowany mały model (np. klasyfikator tekstu z fast.ai i bigramowy model językowy z wykładów Karpathy’ego) z poprawnym podziałem danych i wykresem straty, z opisem, po czym widać przeuczenie.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S20-E0-M1` | Przerobić: Practical Deep Learning for Coders, część 1 | materiał | 25–35 h | 0 zł | https://course.fast.ai | `S20-START`, `S20-U1-D` | `S20-E0-D` |
-| `S20-E0-M2` | Przerobić: Neural Networks: Zero to Hero (od micrograd do GPT i tokenizera) | materiał | 20–30 h | 0 zł | https://karpathy.ai/zero-to-hero.html | `S20-START`, `S20-U1-D` | `S20-E0-D` |
-| `S20-E0-M3` | Przerobić: LLM Course, rozdziały 0–6 | materiał | 15–20 h | 0 zł | https://huggingface.co/learn/llm-course | `S20-START`, `S20-U1-D` | `S20-E0-D` |
-| `S20-E0-D` | Dowód etapu 0: podstawy uczenia maszynowego | dowód | — | — | — | `S20-E0-M1`, `S20-E0-M2`, `S20-E0-M3` | `S20-E1-M1`, `S20-E1-M2`, `S20-E1-M3`, `S20-E1-M4`, `S20-E1-M5`, `S20-E1-M6` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S20-E0-M1` | Przerobić: Practical Deep Learning for Coders, część 1 | materiał | 25–35 h | 0 zł | https://course.fast.ai | `S20-START`, `S20-U1-D` | `S20-E0-D` | `20-lokalne-ai-i-rozwoj-modeli/e0-podstawy-uczenia-maszynowego/` |
+| `S20-E0-M2` | Przerobić: Neural Networks: Zero to Hero (od micrograd do GPT i tokenizera) | materiał | 20–30 h | 0 zł | https://karpathy.ai/zero-to-hero.html | `S20-START`, `S20-U1-D` | `S20-E0-D` | `20-lokalne-ai-i-rozwoj-modeli/e0-podstawy-uczenia-maszynowego/` |
+| `S20-E0-M3` | Przerobić: LLM Course, rozdziały 0–6 | materiał | 15–20 h | 0 zł | https://huggingface.co/learn/llm-course | `S20-START`, `S20-U1-D` | `S20-E0-D` | `20-lokalne-ai-i-rozwoj-modeli/e0-podstawy-uczenia-maszynowego/` |
+| `S20-E0-D` | Dowód etapu 0: podstawy uczenia maszynowego | dowód | — | — | — | `S20-E0-M1`, `S20-E0-M2`, `S20-E0-M3` | `S20-E1-M1`, `S20-E1-M2`, `S20-E1-M3`, `S20-E1-M4`, `S20-E1-M5`, `S20-E1-M6` | `20-lokalne-ai-i-rozwoj-modeli/e0-podstawy-uczenia-maszynowego/` |
 
 **`S20-E0-D` · Dowód etapu 0: podstawy uczenia maszynowego**
 
@@ -151,6 +153,8 @@ Samodzielnie wytrenowany mały model (np. klasyfikator tekstu z fast.ai i bigram
 **Na co zwrócić uwagę:** zbiór treningowy, walidacyjny i testowy, przeuczenie, funkcja straty i propagacja wsteczna, tokenizacja (źródło wielu dziwnych zachowań modeli), embeddingi, mechanizm uwagi.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `20-lokalne-ai-i-rozwoj-modeli/e0-podstawy-uczenia-maszynowego/`
 
 ### Etap 1: modele lokalne na stanowisku pracy
 
@@ -164,15 +168,15 @@ Uwaga do Claude Code: dokumentacja Anthropic o bramkach LLM zaznacza, że kierow
 
 **Dowód:** Model lokalny wykonuje drugą, niezależną recenzję kodu klienta bez wysyłania danych poza maszynę: `llama-server` lub Ollama za bramką LiteLLM, sprawdzenie ruchu sieciowego (brak połączeń wychodzących), porównanie z recenzją Claude na 10 pull requestach z zapisem trafień i fałszywych alarmów oraz tabela: model, kwantyzacja, pamięć, tokeny na sekundę.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S20-E1-M1` | Przerobić: Ollama: dokumentacja, API (w tym zgodność z OpenAI i Anthropic Messages API od wersji 0.14),… | materiał | 4–6 h | 0 zł | https://docs.ollama.com, https://docs.ollama.com/integrations/claude-code | `S20-E0-D` | `S20-E1-D` |
-| `S20-E1-M2` | Przerobić: llama.cpp: budowanie, `llama-server`, kwantyzacja GGUF | materiał | 6–8 h | 0 zł | https://github.com/ggml-org/llama.cpp, https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md | `S20-E0-D` | `S20-E1-D` |
-| `S20-E1-M3` | Przerobić: LM Studio: aplikacja, CLI `lms`, API | materiał | 2–3 h | 0 zł | https://lmstudio.ai/docs | `S20-E0-D` | `S20-E1-D` |
-| `S20-E1-M4` | Przerobić: MLX i MLX LM (Apple Silicon) | materiał | 3–4 h | 0 zł | https://ml-explore.github.io/mlx/build/html/index.html, https://github.com/ml-explore/mlx-lm | `S20-E0-D` | `S20-E1-D` |
-| `S20-E1-M5` | Przerobić: vLLM | materiał | 3–4 h | 0 zł | https://docs.vllm.ai | `S20-E0-D` | `S20-E1-D` |
-| `S20-E1-M6` | Przerobić: LiteLLM: bramka (proxy) i endpoint `/v1/messages` | materiał | 3–4 h | 0 zł | https://docs.litellm.ai/docs/, https://docs.litellm.ai/docs/anthropic_unified | `S20-E0-D` | `S20-E1-D` |
-| `S20-E1-D` | Dowód etapu 1: modele lokalne na stanowisku pracy | dowód | — | — | — | `S20-E1-M1`, `S20-E1-M2`, `S20-E1-M3`, `S20-E1-M4`, `S20-E1-M5`, `S20-E1-M6` | `S20-E2-M1`, `S20-E2-M2`, `S20-E2-M3`, `S21-START` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S20-E1-M1` | Przerobić: Ollama: dokumentacja, API (w tym zgodność z OpenAI i Anthropic Messages API od wersji 0.14),… | materiał | 4–6 h | 0 zł | https://docs.ollama.com, https://docs.ollama.com/integrations/claude-code | `S20-E0-D` | `S20-E1-D` | `20-lokalne-ai-i-rozwoj-modeli/e1-modele-lokalne-na-stanowisku-pracy/` |
+| `S20-E1-M2` | Przerobić: llama.cpp: budowanie, `llama-server`, kwantyzacja GGUF | materiał | 6–8 h | 0 zł | https://github.com/ggml-org/llama.cpp, https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md | `S20-E0-D` | `S20-E1-D` | `20-lokalne-ai-i-rozwoj-modeli/e1-modele-lokalne-na-stanowisku-pracy/` |
+| `S20-E1-M3` | Przerobić: LM Studio: aplikacja, CLI `lms`, API | materiał | 2–3 h | 0 zł | https://lmstudio.ai/docs | `S20-E0-D` | `S20-E1-D` | `20-lokalne-ai-i-rozwoj-modeli/e1-modele-lokalne-na-stanowisku-pracy/` |
+| `S20-E1-M4` | Przerobić: MLX i MLX LM (Apple Silicon) | materiał | 3–4 h | 0 zł | https://ml-explore.github.io/mlx/build/html/index.html, https://github.com/ml-explore/mlx-lm | `S20-E0-D` | `S20-E1-D` | `20-lokalne-ai-i-rozwoj-modeli/e1-modele-lokalne-na-stanowisku-pracy/` |
+| `S20-E1-M5` | Przerobić: vLLM | materiał | 3–4 h | 0 zł | https://docs.vllm.ai | `S20-E0-D` | `S20-E1-D` | `20-lokalne-ai-i-rozwoj-modeli/e1-modele-lokalne-na-stanowisku-pracy/` |
+| `S20-E1-M6` | Przerobić: LiteLLM: bramka (proxy) i endpoint `/v1/messages` | materiał | 3–4 h | 0 zł | https://docs.litellm.ai/docs/, https://docs.litellm.ai/docs/anthropic_unified | `S20-E0-D` | `S20-E1-D` | `20-lokalne-ai-i-rozwoj-modeli/e1-modele-lokalne-na-stanowisku-pracy/` |
+| `S20-E1-D` | Dowód etapu 1: modele lokalne na stanowisku pracy | dowód | — | — | — | `S20-E1-M1`, `S20-E1-M2`, `S20-E1-M3`, `S20-E1-M4`, `S20-E1-M5`, `S20-E1-M6` | `S20-E2-M1`, `S20-E2-M2`, `S20-E2-M3`, `S21-START` | `20-lokalne-ai-i-rozwoj-modeli/e1-modele-lokalne-na-stanowisku-pracy/` |
 
 **`S20-E1-D` · Dowód etapu 1: modele lokalne na stanowisku pracy**
 
@@ -181,6 +185,8 @@ Model lokalny wykonuje drugą, niezależną recenzję kodu klienta bez wysyłani
 **Na co zwrócić uwagę:** szacowanie pamięci (wagi po kwantyzacji i pamięć podręczna KV dla danej długości kontekstu), wpływ poziomu kwantyzacji na jakość, serwer nasłuchujący tylko na `127.0.0.1`, odróżnianie modeli lokalnych od chmurowych w tym samym narzędziu (np. modele chmurowe Ollama), licencje wag.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `20-lokalne-ai-i-rozwoj-modeli/e1-modele-lokalne-na-stanowisku-pracy/`
 
 ### Etap 2: jak działa LLM od środka
 
@@ -192,12 +198,12 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Własna implementacja małego modelu GPT według książki Raschki, wczytanie do niej wag GPT-2 i dostrojenie do klasyfikacji tekstu, z notatką, które elementy odpowiadają parametrom widocznym w llama.cpp (kontekst, kwantyzacja, próbkowanie).
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S20-E2-M1` | Przerobić: Build a Large Language Model (From Scratch) | materiał, płatny | 30–40 h | płatna | https://www.manning.com/books/build-a-large-language-model-from-scratch | `S20-E1-D` | `S20-E2-D` |
-| `S20-E2-M2` | Przerobić: Hands-On Large Language Models | materiał, płatny | 15–20 h | płatna | https://www.llm-book.com | `S20-E1-D` | `S20-E2-D` |
-| `S20-E2-M3` | Przerobić: LLM Course, rozdziały 7–12 (dostrajanie LLM, modele rozumujące) | materiał | 10–15 h | 0 zł | https://huggingface.co/learn/llm-course | `S20-E1-D` | `S20-E2-D` |
-| `S20-E2-D` | Dowód etapu 2: jak działa LLM od środka | dowód | — | — | — | `S20-E2-M1`, `S20-E2-M2`, `S20-E2-M3` | `S20-E3-M1`, `S20-E3-M2`, `S20-E3-M3`, `S20-E3-M4` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S20-E2-M1` | Przerobić: Build a Large Language Model (From Scratch) | materiał, płatny | 30–40 h | płatna | https://www.manning.com/books/build-a-large-language-model-from-scratch | `S20-E1-D` | `S20-E2-D` | `20-lokalne-ai-i-rozwoj-modeli/e2-jak-dziala-llm-od-srodka/` |
+| `S20-E2-M2` | Przerobić: Hands-On Large Language Models | materiał, płatny | 15–20 h | płatna | https://www.llm-book.com | `S20-E1-D` | `S20-E2-D` | `20-lokalne-ai-i-rozwoj-modeli/e2-jak-dziala-llm-od-srodka/` |
+| `S20-E2-M3` | Przerobić: LLM Course, rozdziały 7–12 (dostrajanie LLM, modele rozumujące) | materiał | 10–15 h | 0 zł | https://huggingface.co/learn/llm-course | `S20-E1-D` | `S20-E2-D` | `20-lokalne-ai-i-rozwoj-modeli/e2-jak-dziala-llm-od-srodka/` |
+| `S20-E2-D` | Dowód etapu 2: jak działa LLM od środka | dowód | — | — | — | `S20-E2-M1`, `S20-E2-M2`, `S20-E2-M3` | `S20-E3-M1`, `S20-E3-M2`, `S20-E3-M3`, `S20-E3-M4` | `20-lokalne-ai-i-rozwoj-modeli/e2-jak-dziala-llm-od-srodka/` |
 
 **`S20-E2-D` · Dowód etapu 2: jak działa LLM od środka**
 
@@ -206,6 +212,8 @@ Własna implementacja małego modelu GPT według książki Raschki, wczytanie do
 **Na co zwrócić uwagę:** architektura transformera dekodującego, pretrening a dostrajanie instrukcyjne, próbkowanie (temperatura, top-p), embeddingi i ich zastosowanie w wyszukiwaniu.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `20-lokalne-ai-i-rozwoj-modeli/e2-jak-dziala-llm-od-srodka/`
 
 ### Etap 3: dostrajanie, RAG i ewaluacja modeli
 
@@ -217,13 +225,13 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Mały model dostrojony metodą LoRA lub QLoRA do zadania z niszy (np. klasyfikacja zgłoszeń bezpieczeństwa lub ocena wagi znalezisk z audytu), wyeksportowany do GGUF i uruchomiony w llama.cpp; raport ewaluacji przed i po dostrojeniu na wydzielonym zbiorze testowym oraz porównanie z wersją „prompt i RAG” bez dostrajania.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S20-E3-M1` | Przerobić: Transformers, PEFT (LoRA), TRL | materiał | 15–20 h | 0 zł | https://huggingface.co/docs/transformers, https://huggingface.co/docs/peft, https://huggingface.co/docs/trl | `S20-E2-D` | `S20-E3-D` |
-| `S20-E3-M2` | Przerobić: Unsloth: przewodnik dostrajania, eksport do GGUF | materiał | 6–8 h | 0 zł | https://unsloth.ai/docs | `S20-E2-D` | `S20-E3-D` |
-| `S20-E3-M3` | Przerobić: MLX LM: dostrajanie LoRA na Macu | materiał | 3–4 h | 0 zł | https://github.com/ml-explore/mlx-lm | `S20-E2-D` | `S20-E3-D` |
-| `S20-E3-M4` | Przerobić: AI Engineering: Building Applications with Foundation Models, rozdziały o RAG, dostrajaniu i danych | materiał, płatny | 10–12 h | płatna | https://huyenchip.com/books/ | `S20-E2-D` | `S20-E3-D` |
-| `S20-E3-D` | Dowód etapu 3: dostrajanie, RAG i ewaluacja modeli | dowód | — | — | — | `S20-E3-M1`, `S20-E3-M2`, `S20-E3-M3`, `S20-E3-M4` | `S20-E4-M1`, `S20-E4-M2`, `S20-E4-M3`, `S20-E4-M4` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S20-E3-M1` | Przerobić: Transformers, PEFT (LoRA), TRL | materiał | 15–20 h | 0 zł | https://huggingface.co/docs/transformers, https://huggingface.co/docs/peft, https://huggingface.co/docs/trl | `S20-E2-D` | `S20-E3-D` | `20-lokalne-ai-i-rozwoj-modeli/e3-dostrajanie-rag-i-ewaluacja-modeli/` |
+| `S20-E3-M2` | Przerobić: Unsloth: przewodnik dostrajania, eksport do GGUF | materiał | 6–8 h | 0 zł | https://unsloth.ai/docs | `S20-E2-D` | `S20-E3-D` | `20-lokalne-ai-i-rozwoj-modeli/e3-dostrajanie-rag-i-ewaluacja-modeli/` |
+| `S20-E3-M3` | Przerobić: MLX LM: dostrajanie LoRA na Macu | materiał | 3–4 h | 0 zł | https://github.com/ml-explore/mlx-lm | `S20-E2-D` | `S20-E3-D` | `20-lokalne-ai-i-rozwoj-modeli/e3-dostrajanie-rag-i-ewaluacja-modeli/` |
+| `S20-E3-M4` | Przerobić: AI Engineering: Building Applications with Foundation Models, rozdziały o RAG, dostrajaniu i danych | materiał, płatny | 10–12 h | płatna | https://huyenchip.com/books/ | `S20-E2-D` | `S20-E3-D` | `20-lokalne-ai-i-rozwoj-modeli/e3-dostrajanie-rag-i-ewaluacja-modeli/` |
+| `S20-E3-D` | Dowód etapu 3: dostrajanie, RAG i ewaluacja modeli | dowód | — | — | — | `S20-E3-M1`, `S20-E3-M2`, `S20-E3-M3`, `S20-E3-M4` | `S20-E4-M1`, `S20-E4-M2`, `S20-E4-M3`, `S20-E4-M4` | `20-lokalne-ai-i-rozwoj-modeli/e3-dostrajanie-rag-i-ewaluacja-modeli/` |
 
 **`S20-E3-D` · Dowód etapu 3: dostrajanie, RAG i ewaluacja modeli**
 
@@ -232,6 +240,8 @@ Mały model dostrojony metodą LoRA lub QLoRA do zadania z niszy (np. klasyfikac
 **Na co zwrócić uwagę:** najpierw prompt i RAG, dostrajanie dopiero gdy ewaluacja pokazuje, że to nie wystarcza; jakość i licencje danych treningowych; zbiór testowy rozdzielony od treningowego przed pierwszym eksperymentem; sprawdzanie regresji w zadaniach ogólnych po dostrojeniu.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `20-lokalne-ai-i-rozwoj-modeli/e3-dostrajanie-rag-i-ewaluacja-modeli/`
 
 ### Etap 4: Rust w ML
 
@@ -243,13 +253,13 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Narzędzie CLI w Ruście, które liczy embeddingi plików repozytorium (Candle lub `ort`) i odpowiada na pytania przez mistral.rs lub llama.cpp, działające offline na Linuksie i macOS, z testem porównującym wyniki z referencyjną implementacją w Pythonie.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S20-E4-M1` | Przerobić: Candle: książka i przykłady | materiał | 8–10 h | 0 zł | https://huggingface.github.io/candle/, https://github.com/huggingface/candle | `S20-E3-D` | `S20-E4-D` |
-| `S20-E4-M2` | Przerobić: The Burn Book | materiał | 8–10 h | 0 zł | https://burn.dev/books/burn/ | `S20-E3-D` | `S20-E4-D` |
-| `S20-E4-M3` | Przerobić: mistral.rs | materiał | 4–6 h | 0 zł | https://github.com/EricLBuehler/mistral.rs, https://docs.mistralrs.dev | `S20-E3-D` | `S20-E4-D` |
-| `S20-E4-M4` | Przerobić: `ort` (wiązania ONNX Runtime; wersja 2.0 w fazie RC) | materiał | 4–6 h | 0 zł | https://ort.pyke.io | `S20-E3-D` | `S20-E4-D` |
-| `S20-E4-D` | Dowód etapu 4: Rust w ML | dowód | — | — | — | `S20-E4-M1`, `S20-E4-M2`, `S20-E4-M3`, `S20-E4-M4` | `S20-E5-M1`, `S20-E5-M2`, `S20-E5-M3`, `S20-E5-P1`, `S20-E5-P2`, `S20-E5-P3` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S20-E4-M1` | Przerobić: Candle: książka i przykłady | materiał | 8–10 h | 0 zł | https://huggingface.github.io/candle/, https://github.com/huggingface/candle | `S20-E3-D` | `S20-E4-D` | `20-lokalne-ai-i-rozwoj-modeli/e4-rust-w-ml/` |
+| `S20-E4-M2` | Przerobić: The Burn Book | materiał | 8–10 h | 0 zł | https://burn.dev/books/burn/ | `S20-E3-D` | `S20-E4-D` | `20-lokalne-ai-i-rozwoj-modeli/e4-rust-w-ml/` |
+| `S20-E4-M3` | Przerobić: mistral.rs | materiał | 4–6 h | 0 zł | https://github.com/EricLBuehler/mistral.rs, https://docs.mistralrs.dev | `S20-E3-D` | `S20-E4-D` | `20-lokalne-ai-i-rozwoj-modeli/e4-rust-w-ml/` |
+| `S20-E4-M4` | Przerobić: `ort` (wiązania ONNX Runtime; wersja 2.0 w fazie RC) | materiał | 4–6 h | 0 zł | https://ort.pyke.io | `S20-E3-D` | `S20-E4-D` | `20-lokalne-ai-i-rozwoj-modeli/e4-rust-w-ml/` |
+| `S20-E4-D` | Dowód etapu 4: Rust w ML | dowód | — | — | — | `S20-E4-M1`, `S20-E4-M2`, `S20-E4-M3`, `S20-E4-M4` | `S20-E5-M1`, `S20-E5-M2`, `S20-E5-M3`, `S20-E5-P1`, `S20-E5-P2`, `S20-E5-P3` | `20-lokalne-ai-i-rozwoj-modeli/e4-rust-w-ml/` |
 
 **`S20-E4-D` · Dowód etapu 4: Rust w ML**
 
@@ -259,6 +269,8 @@ Narzędzie CLI w Ruście, które liczy embeddingi plików repozytorium (Candle l
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
 
+**Folder roboczy:** `20-lokalne-ai-i-rozwoj-modeli/e4-rust-w-ml/`
+
 ### Etap 5: ekspert
 
 Opis kamienia milowego (do wklejenia):
@@ -267,15 +279,15 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód poziomu E:** Samodzielnie, bez agenta, w 1 dzień dobierasz model lokalny do zadania i sprzętu, oceniasz go na własnym zestawie ewaluacji względem modelu w chmurze i podłączasz do przepływu recenzji tak, że kod klienta nie opuszcza maszyny, a decyzję zapisujesz w ADR.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S20-E5-M1` | Przerobić: Informacje o wydaniach llama.cpp, Ollama, ONNX Runtime, mistral.rs, MLX | materiał | ok. 0,5 h tygodniowo | 0 zł | https://github.com/ggml-org/llama.cpp/releases | `S20-E4-D` | `S20-E5-D` |
-| `S20-E5-M2` | Przerobić: Blog i dokumentacja Hugging Face | materiał | ok. 0,5 h tygodniowo | 0 zł | https://huggingface.co/blog | `S20-E4-D` | `S20-E5-D` |
-| `S20-E5-M3` | Przerobić: Practical Deep Learning for Coders, część 2 | materiał | wg potrzeb | 0 zł | https://course.fast.ai | `S20-E4-D` | `S20-E5-D` |
-| `S20-E5-P1` | Praktyka: modele lokalne w pracy z klientem | praktyka | — | — | — | `S20-E4-D` | `S20-E5-D` |
-| `S20-E5-P2` | Praktyka: przegląd co kwartał | praktyka | — | — | — | `S20-E4-D` | `S20-E5-D` |
-| `S20-E5-P3` | Praktyka: podatności środowisk uruchomieniowych | praktyka | — | — | — | `S20-E4-D` | `S20-E5-D` |
-| `S20-E5-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S20-E5-M1`, `S20-E5-M2`, `S20-E5-M3`, `S20-E5-P1`, `S20-E5-P2`, `S20-E5-P3` | — |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S20-E5-M1` | Przerobić: Informacje o wydaniach llama.cpp, Ollama, ONNX Runtime, mistral.rs, MLX | materiał | ok. 0,5 h tygodniowo | 0 zł | https://github.com/ggml-org/llama.cpp/releases | `S20-E4-D` | `S20-E5-D` | `20-lokalne-ai-i-rozwoj-modeli/e5-ekspert/` |
+| `S20-E5-M2` | Przerobić: Blog i dokumentacja Hugging Face | materiał | ok. 0,5 h tygodniowo | 0 zł | https://huggingface.co/blog | `S20-E4-D` | `S20-E5-D` | `20-lokalne-ai-i-rozwoj-modeli/e5-ekspert/` |
+| `S20-E5-M3` | Przerobić: Practical Deep Learning for Coders, część 2 | materiał | wg potrzeb | 0 zł | https://course.fast.ai | `S20-E4-D` | `S20-E5-D` | `20-lokalne-ai-i-rozwoj-modeli/e5-ekspert/` |
+| `S20-E5-P1` | Praktyka: modele lokalne w pracy z klientem | praktyka | — | — | — | `S20-E4-D` | `S20-E5-D` | `20-lokalne-ai-i-rozwoj-modeli/e5-ekspert/` |
+| `S20-E5-P2` | Praktyka: przegląd co kwartał | praktyka | — | — | — | `S20-E4-D` | `S20-E5-D` | `20-lokalne-ai-i-rozwoj-modeli/e5-ekspert/` |
+| `S20-E5-P3` | Praktyka: podatności środowisk uruchomieniowych | praktyka | — | — | — | `S20-E4-D` | `S20-E5-D` | `20-lokalne-ai-i-rozwoj-modeli/e5-ekspert/` |
+| `S20-E5-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S20-E5-M1`, `S20-E5-M2`, `S20-E5-M3`, `S20-E5-P1`, `S20-E5-P2`, `S20-E5-P3` | — | `20-lokalne-ai-i-rozwoj-modeli/e5-ekspert/` |
 
 **`S20-E5-P1` · Praktyka: modele lokalne w pracy z klientem**
 
@@ -283,11 +295,15 @@ Stały przepływ, w którym kod objęty umową poufności jest analizowany wył�
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `20-lokalne-ai-i-rozwoj-modeli/e5-ekspert/`
+
 **`S20-E5-P2` · Praktyka: przegląd co kwartał**
 
 Porównanie nowych modeli z otwartymi wagami na własnym zestawie ewaluacji (zob. sekcja 11.1) i decyzja o wymianie.
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
+
+**Folder roboczy:** `20-lokalne-ai-i-rozwoj-modeli/e5-ekspert/`
 
 **`S20-E5-P3` · Praktyka: podatności środowisk uruchomieniowych**
 
@@ -295,11 +311,15 @@ Llama.cpp, ONNX Runtime i biblioteki tokenizerów objęte tym samym procesem obs
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `20-lokalne-ai-i-rozwoj-modeli/e5-ekspert/`
+
 **`S20-E5-D` · Dowód poziomu E: ekspert**
 
 Samodzielnie, bez agenta, w 1 dzień dobierasz model lokalny do zadania i sprzętu, oceniasz go na własnym zestawie ewaluacji względem modelu w chmurze i podłączasz do przepływu recenzji tak, że kod klienta nie opuszcza maszyny, a decyzję zapisujesz w ADR.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki. Bez agenta AI.
+
+**Folder roboczy:** `20-lokalne-ai-i-rozwoj-modeli/e5-ekspert/`
 
 ### Uzupełniająca 20.4 · Python
 
@@ -315,15 +335,15 @@ Wystarczy jedna z dwóch płatnych książek: Effective Python przy pracy na cud
 
 **Dowód:** Przejęty skrypt lub mała usługa w Pythonie przeprowadzona przez stabilizację: zależności zablokowane przez `uv`, Ruff i sprawdzanie typów bez błędów, testy w pytest dla ścieżek krytycznych i SBOM wygenerowany dla środowiska.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S20-U1-M1` | Przerobić: The Python Tutorial | materiał | 10–15 h | 0 zł | https://docs.python.org/3/tutorial/ | `S20-START` | `S20-U1-D` |
-| `S20-U1-M2` | Przerobić: Effective Python (wydanie 3, do Pythona 3.13) | materiał, płatny | 15–20 h | płatna | https://effectivepython.com | `S20-START` | `S20-U1-D` |
-| `S20-U1-M3` | Przerobić: Fluent Python (wydanie 2) | materiał, płatny | 20–25 h | płatna | https://www.oreilly.com/library/view/fluent-python-2nd/9781492056348/ | `S20-START` | `S20-U1-D` |
-| `S20-U1-M4` | Przerobić: Static Typing with Python | materiał | 4–5 h | 0 zł | https://typing.python.org | `S20-START` | `S20-U1-D` |
-| `S20-U1-M5` | Przerobić: uv, Ruff, pytest | materiał | 4–6 h | 0 zł | https://docs.astral.sh/uv/, https://docs.astral.sh/ruff/, https://docs.pytest.org | `S20-START` | `S20-U1-D` |
-| `S20-U1-M6` | Przerobić: PyO3 i maturin (wywoływanie Rusta z Pythona) | materiał | 4–6 h | 0 zł | https://pyo3.rs, https://www.maturin.rs | `S20-START` | `S20-U1-D` |
-| `S20-U1-D` | Dowód (20.4): Python | dowód | — | — | — | `S20-U1-M1`, `S20-U1-M2`, `S20-U1-M3`, `S20-U1-M4`, `S20-U1-M5`, `S20-U1-M6` | `S20-E0-M1`, `S20-E0-M2`, `S20-E0-M3` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S20-U1-M1` | Przerobić: The Python Tutorial | materiał | 10–15 h | 0 zł | https://docs.python.org/3/tutorial/ | `S20-START` | `S20-U1-D` | `20-lokalne-ai-i-rozwoj-modeli/u1-python/` |
+| `S20-U1-M2` | Przerobić: Effective Python (wydanie 3, do Pythona 3.13) | materiał, płatny | 15–20 h | płatna | https://effectivepython.com | `S20-START` | `S20-U1-D` | `20-lokalne-ai-i-rozwoj-modeli/u1-python/` |
+| `S20-U1-M3` | Przerobić: Fluent Python (wydanie 2) | materiał, płatny | 20–25 h | płatna | https://www.oreilly.com/library/view/fluent-python-2nd/9781492056348/ | `S20-START` | `S20-U1-D` | `20-lokalne-ai-i-rozwoj-modeli/u1-python/` |
+| `S20-U1-M4` | Przerobić: Static Typing with Python | materiał | 4–5 h | 0 zł | https://typing.python.org | `S20-START` | `S20-U1-D` | `20-lokalne-ai-i-rozwoj-modeli/u1-python/` |
+| `S20-U1-M5` | Przerobić: uv, Ruff, pytest | materiał | 4–6 h | 0 zł | https://docs.astral.sh/uv/, https://docs.astral.sh/ruff/, https://docs.pytest.org | `S20-START` | `S20-U1-D` | `20-lokalne-ai-i-rozwoj-modeli/u1-python/` |
+| `S20-U1-M6` | Przerobić: PyO3 i maturin (wywoływanie Rusta z Pythona) | materiał | 4–6 h | 0 zł | https://pyo3.rs, https://www.maturin.rs | `S20-START` | `S20-U1-D` | `20-lokalne-ai-i-rozwoj-modeli/u1-python/` |
+| `S20-U1-D` | Dowód (20.4): Python | dowód | — | — | — | `S20-U1-M1`, `S20-U1-M2`, `S20-U1-M3`, `S20-U1-M4`, `S20-U1-M5`, `S20-U1-M6` | `S20-E0-M1`, `S20-E0-M2`, `S20-E0-M3` | `20-lokalne-ai-i-rozwoj-modeli/u1-python/` |
 
 **`S20-U1-D` · Dowód (20.4): Python**
 
@@ -332,6 +352,8 @@ Przejęty skrypt lub mała usługa w Pythonie przeprowadzona przez stabilizację
 **Na co zwrócić uwagę:** środowiska wirtualne i blokowanie zależności (`uv.lock`), adnotacje typów i sprawdzanie typów w CI, wyjątki i menedżery kontekstu, `async` w Pythonie, typowe podatności w przejmowanych projektach (`pickle`, `eval`, `subprocess` z `shell=True`, `yaml.load`).
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `20-lokalne-ai-i-rozwoj-modeli/u1-python/`
 
 ## 6. Relacje z innymi projektami
 

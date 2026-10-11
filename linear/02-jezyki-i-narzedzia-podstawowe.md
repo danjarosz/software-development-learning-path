@@ -74,6 +74,8 @@ Brak warunków wejścia: projekt można zacząć od razu.
 - zaznaczyć etapy, które zaliczasz samym dowodem (zgodnie z akapitem wstępnym ścieżki), i dla nich zamknąć zadania materiałów jako niepotrzebne,
 - ustawić daty kamieni milowych zgodnie z kolejnością z pliku głównego.
 
+**Folder roboczy:** `02-jezyki-i-narzedzia-podstawowe/`
+
 ## 4. Przepływ zależności
 
 Linie ciągłe to zależności wewnątrz projektu, przerywane to zadania z innych projektów. Wewnątrz etapu zadania materiałów są równoległe i wszystkie blokują dowód etapu; dowód etapu blokuje materiały kolejnego etapu.
@@ -93,7 +95,7 @@ flowchart TD
 
 ## 5. Zadania według kamieni milowych
 
-Szablon opisu zadania materiału: nazwa materiału, autor lub wydawca, typ, czas, koszt i link (jak w kolumnach poniżej) oraz zdanie „Gotowe, gdy materiał jest przerobiony w zakresie potrzebnym do dowodu etapu”. Opisy dowodów i praktyk są podane pod tabelą każdego etapu.
+Szablon opisu zadania materiału: nazwa materiału, autor lub wydawca, typ, czas, koszt i link (jak w kolumnach poniżej), zdanie „Gotowe, gdy materiał jest przerobiony w zakresie potrzebnym do dowodu etapu” oraz folder roboczy z kolumny „Folder”. Opisy dowodów i praktyk są podane pod tabelą każdego etapu.
 
 ### Etap 0: Linux, powłoka, Git, sieci
 
@@ -105,13 +107,13 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Serwer VPS postawiony od zera z linii poleceń: użytkownik bez roota, SSH tylko z kluczem, zapora, usługa systemd z prostą aplikacją (np. z sekcji 5), TLS, domena z poprawnymi rekordami DNS oraz SPF/DKIM/DMARC; wszystko opisane skryptem, który da się uruchomić ponownie.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S02-E0-M1` | Przerobić: The Linux Command Line (siódme wydanie internetowe) | materiał | 20–25 h | 0 zł (PDF) | https://linuxcommand.org/tlcl.php | `S02-START` | `S02-E0-D` |
-| `S02-E0-M2` | Przerobić: The Missing Semester of Your CS Education (edycja 2026) | materiał | 12–15 h | 0 zł | https://missing.csail.mit.edu | `S02-START` | `S02-E0-D` |
-| `S02-E0-M3` | Przerobić: Pro Git (wydanie 2) | materiał | 8–10 h | 0 zł | https://git-scm.com/book/en/v2 | `S02-START` | `S02-E0-D` |
-| `S02-E0-M4` | Przerobić: High Performance Browser Networking | materiał | 8–10 h | 0 zł online | https://hpbn.co | `S02-START` | `S02-E0-D` |
-| `S02-E0-D` | Dowód etapu 0: Linux, powłoka, Git, sieci | dowód | — | — | — | `S02-E0-M1`, `S02-E0-M2`, `S02-E0-M3`, `S02-E0-M4` | `S02-E1-M1`, `S02-E1-M2`, `S02-E1-M3`, `S02-E1-M4`, `S02-E1-M5` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S02-E0-M1` | Przerobić: The Linux Command Line (siódme wydanie internetowe) | materiał | 20–25 h | 0 zł (PDF) | https://linuxcommand.org/tlcl.php | `S02-START` | `S02-E0-D` | `02-jezyki-i-narzedzia-podstawowe/e0-linux-powloka-git-sieci/` |
+| `S02-E0-M2` | Przerobić: The Missing Semester of Your CS Education (edycja 2026) | materiał | 12–15 h | 0 zł | https://missing.csail.mit.edu | `S02-START` | `S02-E0-D` | `02-jezyki-i-narzedzia-podstawowe/e0-linux-powloka-git-sieci/` |
+| `S02-E0-M3` | Przerobić: Pro Git (wydanie 2) | materiał | 8–10 h | 0 zł | https://git-scm.com/book/en/v2 | `S02-START` | `S02-E0-D` | `02-jezyki-i-narzedzia-podstawowe/e0-linux-powloka-git-sieci/` |
+| `S02-E0-M4` | Przerobić: High Performance Browser Networking | materiał | 8–10 h | 0 zł online | https://hpbn.co | `S02-START` | `S02-E0-D` | `02-jezyki-i-narzedzia-podstawowe/e0-linux-powloka-git-sieci/` |
+| `S02-E0-D` | Dowód etapu 0: Linux, powłoka, Git, sieci | dowód | — | — | — | `S02-E0-M1`, `S02-E0-M2`, `S02-E0-M3`, `S02-E0-M4` | `S02-E1-M1`, `S02-E1-M2`, `S02-E1-M3`, `S02-E1-M4`, `S02-E1-M5` | `02-jezyki-i-narzedzia-podstawowe/e0-linux-powloka-git-sieci/` |
 
 **`S02-E0-D` · Dowód etapu 0: Linux, powłoka, Git, sieci**
 
@@ -120,6 +122,8 @@ Serwer VPS postawiony od zera z linii poleceń: użytkownik bez roota, SSH tylko
 **Na co zwrócić uwagę:** uprawnienia i procesy, systemd i logi (`journalctl`), skrypty Bash odporne na błędy (`set -euo pipefail`, cytowanie zmiennych), DNS, TLS i certyfikaty, Git na poziomie historii (rebase, bisect, podpisane commity).
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `02-jezyki-i-narzedzia-podstawowe/e0-linux-powloka-git-sieci/`
 
 ### Etap 1: Bash i `jq`
 
@@ -131,14 +135,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Hook vicrafter lub skrypt CI, który czyta JSON z wejścia przez `jq`, waliduje pola, zwraca właściwe kody wyjścia i przechodzi `shellcheck` bez wyjątków; zestaw testów (np. `bats`) uruchamiany na Linuksie i macOS.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S02-E1-M1` | Przerobić: BashGuide i BashPitfalls | materiał | 6–8 h | 0 zł | https://mywiki.wooledge.org/BashGuide, https://mywiki.wooledge.org/BashPitfalls | `S02-E0-D` | `S02-E1-D` |
-| `S02-E1-M2` | Przerobić: Bash Reference Manual | materiał | wg potrzeb | 0 zł | https://www.gnu.org/software/bash/manual/ | `S02-E0-D` | `S02-E1-D` |
-| `S02-E1-M3` | Przerobić: Shell Style Guide | materiał | 1–2 h | 0 zł | https://google.github.io/styleguide/shellguide.html | `S02-E0-D` | `S02-E1-D` |
-| `S02-E1-M4` | Przerobić: ShellCheck i wiki z opisem reguł | materiał | 2–3 h | 0 zł | https://www.shellcheck.net | `S02-E0-D` | `S02-E1-D` |
-| `S02-E1-M5` | Przerobić: jq: Tutorial i Manual (jq 1.8) | materiał | 5–6 h | 0 zł | https://jqlang.org/tutorial/, https://jqlang.org/manual/ | `S02-E0-D` | `S02-E1-D` |
-| `S02-E1-D` | Dowód etapu 1: Bash i `jq` | dowód | — | — | — | `S02-E1-M1`, `S02-E1-M2`, `S02-E1-M3`, `S02-E1-M4`, `S02-E1-M5` | `S02-E2-M1`, `S02-E2-M2`, `S02-E2-M3`, `S02-E2-M4`, `S02-E2-M5`, `S02-E2-M6`, `S03-START`, `S04-START`, `S09-START`, `S11-START`, `S12-START` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S02-E1-M1` | Przerobić: BashGuide i BashPitfalls | materiał | 6–8 h | 0 zł | https://mywiki.wooledge.org/BashGuide, https://mywiki.wooledge.org/BashPitfalls | `S02-E0-D` | `S02-E1-D` | `02-jezyki-i-narzedzia-podstawowe/e1-bash-i-jq/` |
+| `S02-E1-M2` | Przerobić: Bash Reference Manual | materiał | wg potrzeb | 0 zł | https://www.gnu.org/software/bash/manual/ | `S02-E0-D` | `S02-E1-D` | `02-jezyki-i-narzedzia-podstawowe/e1-bash-i-jq/` |
+| `S02-E1-M3` | Przerobić: Shell Style Guide | materiał | 1–2 h | 0 zł | https://google.github.io/styleguide/shellguide.html | `S02-E0-D` | `S02-E1-D` | `02-jezyki-i-narzedzia-podstawowe/e1-bash-i-jq/` |
+| `S02-E1-M4` | Przerobić: ShellCheck i wiki z opisem reguł | materiał | 2–3 h | 0 zł | https://www.shellcheck.net | `S02-E0-D` | `S02-E1-D` | `02-jezyki-i-narzedzia-podstawowe/e1-bash-i-jq/` |
+| `S02-E1-M5` | Przerobić: jq: Tutorial i Manual (jq 1.8) | materiał | 5–6 h | 0 zł | https://jqlang.org/tutorial/, https://jqlang.org/manual/ | `S02-E0-D` | `S02-E1-D` | `02-jezyki-i-narzedzia-podstawowe/e1-bash-i-jq/` |
+| `S02-E1-D` | Dowód etapu 1: Bash i `jq` | dowód | — | — | — | `S02-E1-M1`, `S02-E1-M2`, `S02-E1-M3`, `S02-E1-M4`, `S02-E1-M5` | `S02-E2-M1`, `S02-E2-M2`, `S02-E2-M3`, `S02-E2-M4`, `S02-E2-M5`, `S02-E2-M6`, `S03-START`, `S04-START`, `S09-START`, `S11-START`, `S12-START` | `02-jezyki-i-narzedzia-podstawowe/e1-bash-i-jq/` |
 
 **`S02-E1-D` · Dowód etapu 1: Bash i `jq`**
 
@@ -147,6 +151,8 @@ Hook vicrafter lub skrypt CI, który czyta JSON z wejścia przez `jq`, waliduje 
 **Na co zwrócić uwagę:** cytowanie zmiennych i rozdzielanie słów, `set -euo pipefail` i jego ograniczenia, kody wyjścia i potoki, `trap` do sprzątania, bezpieczne pliki tymczasowe, `jq -e` i `--arg` zamiast wklejania danych w filtr, różnice GNU i BSD (`sed -i`, `date`) przy runnerach macOS.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `02-jezyki-i-narzedzia-podstawowe/e1-bash-i-jq/`
 
 ### Etap 2: YAML, TOML, JSON Schema
 
@@ -158,15 +164,15 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Schemat JSON Schema 2020-12 dla kontraktu vicrafter z testami poprawnych i błędnych dokumentów, walidowany w CI; workflow GitHub Actions bez ostrzeżeń `actionlint` i `zizmor` (przypięte akcje, minimalne `permissions`).
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S02-E2-M1` | Przerobić: YAML 1.2.2 (rewizja z 2021 r.) | materiał | 2–3 h (wybrane rozdziały) | 0 zł | https://yaml.org/spec/1.2.2/ | `S02-E1-D` | `S02-E2-D` |
-| `S02-E2-M2` | Przerobić: TOML v1.1.0 (grudzień 2025) | materiał | 1 h | 0 zł | https://toml.io/en/v1.1.0 | `S02-E1-D` | `S02-E2-D` |
-| `S02-E2-M3` | Przerobić: Creating your first schema, Understanding JSON Schema, specyfikacja 2020-12 | materiał | 5–6 h | 0 zł | https://json-schema.org/learn/getting-started-step-by-step, https://json-schema.org/understanding-json-schema | `S02-E1-D` | `S02-E2-D` |
-| `S02-E2-M4` | Przerobić: Workflow syntax for GitHub Actions | materiał | 2–3 h | 0 zł | https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax | `S02-E1-D` | `S02-E2-D` |
-| `S02-E2-M5` | Przerobić: The Cargo Book: The Manifest Format | materiał | 1–2 h | 0 zł | https://doc.rust-lang.org/cargo/reference/manifest.html | `S02-E1-D` | `S02-E2-D` |
-| `S02-E2-M6` | Przerobić: actionlint, zizmor, Taplo | materiał | 2–3 h | 0 zł | https://github.com/rhysd/actionlint, https://docs.zizmor.sh, https://taplo.tamasfe.dev | `S02-E1-D` | `S02-E2-D` |
-| `S02-E2-D` | Dowód etapu 2: YAML, TOML, JSON Schema | dowód | — | — | — | `S02-E2-M1`, `S02-E2-M2`, `S02-E2-M3`, `S02-E2-M4`, `S02-E2-M5`, `S02-E2-M6` | `S02-E3-M1`, `S02-E3-M2`, `S02-E3-P1`, `S02-E3-P2`, `S02-E3-P3` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S02-E2-M1` | Przerobić: YAML 1.2.2 (rewizja z 2021 r.) | materiał | 2–3 h (wybrane rozdziały) | 0 zł | https://yaml.org/spec/1.2.2/ | `S02-E1-D` | `S02-E2-D` | `02-jezyki-i-narzedzia-podstawowe/e2-yaml-toml-json-schema/` |
+| `S02-E2-M2` | Przerobić: TOML v1.1.0 (grudzień 2025) | materiał | 1 h | 0 zł | https://toml.io/en/v1.1.0 | `S02-E1-D` | `S02-E2-D` | `02-jezyki-i-narzedzia-podstawowe/e2-yaml-toml-json-schema/` |
+| `S02-E2-M3` | Przerobić: Creating your first schema, Understanding JSON Schema, specyfikacja 2020-12 | materiał | 5–6 h | 0 zł | https://json-schema.org/learn/getting-started-step-by-step, https://json-schema.org/understanding-json-schema | `S02-E1-D` | `S02-E2-D` | `02-jezyki-i-narzedzia-podstawowe/e2-yaml-toml-json-schema/` |
+| `S02-E2-M4` | Przerobić: Workflow syntax for GitHub Actions | materiał | 2–3 h | 0 zł | https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax | `S02-E1-D` | `S02-E2-D` | `02-jezyki-i-narzedzia-podstawowe/e2-yaml-toml-json-schema/` |
+| `S02-E2-M5` | Przerobić: The Cargo Book: The Manifest Format | materiał | 1–2 h | 0 zł | https://doc.rust-lang.org/cargo/reference/manifest.html | `S02-E1-D` | `S02-E2-D` | `02-jezyki-i-narzedzia-podstawowe/e2-yaml-toml-json-schema/` |
+| `S02-E2-M6` | Przerobić: actionlint, zizmor, Taplo | materiał | 2–3 h | 0 zł | https://github.com/rhysd/actionlint, https://docs.zizmor.sh, https://taplo.tamasfe.dev | `S02-E1-D` | `S02-E2-D` | `02-jezyki-i-narzedzia-podstawowe/e2-yaml-toml-json-schema/` |
+| `S02-E2-D` | Dowód etapu 2: YAML, TOML, JSON Schema | dowód | — | — | — | `S02-E2-M1`, `S02-E2-M2`, `S02-E2-M3`, `S02-E2-M4`, `S02-E2-M5`, `S02-E2-M6` | `S02-E3-M1`, `S02-E3-M2`, `S02-E3-P1`, `S02-E3-P2`, `S02-E3-P3` | `02-jezyki-i-narzedzia-podstawowe/e2-yaml-toml-json-schema/` |
 
 **`S02-E2-D` · Dowód etapu 2: YAML, TOML, JSON Schema**
 
@@ -176,6 +182,8 @@ Schemat JSON Schema 2020-12 dla kontraktu vicrafter z testami poprawnych i błę
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
 
+**Folder roboczy:** `02-jezyki-i-narzedzia-podstawowe/e2-yaml-toml-json-schema/`
+
 ### Etap 3: ekspert
 
 Opis kamienia milowego (do wklejenia):
@@ -184,14 +192,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód poziomu E:** Samodzielnie, bez agenta, w 1 dzień diagnozujesz i naprawiasz awarię skryptu CI lub hooka w Bashu w nieznanym projekcie i umiesz wyjaśnić przyczynę osobie nietechnicznej.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S02-E3-M1` | Przerobić: Wiki ShellCheck (reguły SC) | materiał | wg potrzeb | 0 zł | https://www.shellcheck.net/wiki/ | `S02-E2-D` | `S02-E3-D` |
-| `S02-E3-M2` | Przerobić: Informacje o wydaniach Gita | materiał | ok. 0,5 h na wydanie | 0 zł | https://git-scm.com/docs/git/RelNotes | `S02-E2-D` | `S02-E3-D` |
-| `S02-E3-P1` | Praktyka: recenzja kodu AI | praktyka | — | — | — | `S02-E2-D` | `S02-E3-D` |
-| `S02-E3-P2` | Praktyka: automatyzacja jako kod | praktyka | — | — | — | `S02-E2-D` | `S02-E3-D` |
-| `S02-E3-P3` | Praktyka: analiza historii | praktyka | — | — | — | `S02-E2-D` | `S02-E3-D` |
-| `S02-E3-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S02-E3-M1`, `S02-E3-M2`, `S02-E3-P1`, `S02-E3-P2`, `S02-E3-P3` | — |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S02-E3-M1` | Przerobić: Wiki ShellCheck (reguły SC) | materiał | wg potrzeb | 0 zł | https://www.shellcheck.net/wiki/ | `S02-E2-D` | `S02-E3-D` | `02-jezyki-i-narzedzia-podstawowe/e3-ekspert/` |
+| `S02-E3-M2` | Przerobić: Informacje o wydaniach Gita | materiał | ok. 0,5 h na wydanie | 0 zł | https://git-scm.com/docs/git/RelNotes | `S02-E2-D` | `S02-E3-D` | `02-jezyki-i-narzedzia-podstawowe/e3-ekspert/` |
+| `S02-E3-P1` | Praktyka: recenzja kodu AI | praktyka | — | — | — | `S02-E2-D` | `S02-E3-D` | `02-jezyki-i-narzedzia-podstawowe/e3-ekspert/` |
+| `S02-E3-P2` | Praktyka: automatyzacja jako kod | praktyka | — | — | — | `S02-E2-D` | `S02-E3-D` | `02-jezyki-i-narzedzia-podstawowe/e3-ekspert/` |
+| `S02-E3-P3` | Praktyka: analiza historii | praktyka | — | — | — | `S02-E2-D` | `S02-E3-D` | `02-jezyki-i-narzedzia-podstawowe/e3-ekspert/` |
+| `S02-E3-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S02-E3-M1`, `S02-E3-M2`, `S02-E3-P1`, `S02-E3-P2`, `S02-E3-P3` | — | `02-jezyki-i-narzedzia-podstawowe/e3-ekspert/` |
 
 **`S02-E3-P1` · Praktyka: recenzja kodu AI**
 
@@ -199,11 +207,15 @@ Opis kamienia milowego (do wklejenia):
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `02-jezyki-i-narzedzia-podstawowe/e3-ekspert/`
+
 **`S02-E3-P2` · Praktyka: automatyzacja jako kod**
 
 Wszystkie skrypty i konfiguracje własnych projektów przechodzą lint i walidację schematem w CI.
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
+
+**Folder roboczy:** `02-jezyki-i-narzedzia-podstawowe/e3-ekspert/`
 
 **`S02-E3-P3` · Praktyka: analiza historii**
 
@@ -211,11 +223,15 @@ W każdym przejmowanym repozytorium `git log` i `git blame` jako źródło decyz
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `02-jezyki-i-narzedzia-podstawowe/e3-ekspert/`
+
 **`S02-E3-D` · Dowód poziomu E: ekspert**
 
 Samodzielnie, bez agenta, w 1 dzień diagnozujesz i naprawiasz awarię skryptu CI lub hooka w Bashu w nieznanym projekcie i umiesz wyjaśnić przyczynę osobie nietechnicznej.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki. Bez agenta AI.
+
+**Folder roboczy:** `02-jezyki-i-narzedzia-podstawowe/e3-ekspert/`
 
 ## 6. Relacje z innymi projektami
 

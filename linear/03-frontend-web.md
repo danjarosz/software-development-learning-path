@@ -83,6 +83,8 @@ Punkt startu projektu „03. Frontend web”.
 - zaznaczyć etapy, które zaliczasz samym dowodem (zgodnie z akapitem wstępnym ścieżki), i dla nich zamknąć zadania materiałów jako niepotrzebne,
 - ustawić daty kamieni milowych zgodnie z kolejnością z pliku głównego.
 
+**Folder roboczy:** `03-frontend-web/`
+
 ## 4. Przepływ zależności
 
 Linie ciągłe to zależności wewnątrz projektu, przerywane to zadania z innych projektów. Wewnątrz etapu zadania materiałów są równoległe i wszystkie blokują dowód etapu; dowód etapu blokuje materiały kolejnego etapu.
@@ -111,7 +113,7 @@ flowchart TD
 
 ## 5. Zadania według kamieni milowych
 
-Szablon opisu zadania materiału: nazwa materiału, autor lub wydawca, typ, czas, koszt i link (jak w kolumnach poniżej) oraz zdanie „Gotowe, gdy materiał jest przerobiony w zakresie potrzebnym do dowodu etapu”. Opisy dowodów i praktyk są podane pod tabelą każdego etapu.
+Szablon opisu zadania materiału: nazwa materiału, autor lub wydawca, typ, czas, koszt i link (jak w kolumnach poniżej), zdanie „Gotowe, gdy materiał jest przerobiony w zakresie potrzebnym do dowodu etapu” oraz folder roboczy z kolumny „Folder”. Opisy dowodów i praktyk są podane pod tabelą każdego etapu.
 
 ### Etap 0: jak działa web
 
@@ -121,18 +123,20 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Responsywna strona wielosekcyjna bez frameworka, z formularzem, poprawną semantyką i obsługą klawiatury; wynik Lighthouse powyżej 90 we wszystkich kategoriach.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S03-E0-M1` | Przerobić: Learn web development | materiał | 30–40 h | 0 zł | https://developer.mozilla.org/en-US/docs/Learn_web_development | `S03-START` | `S03-E0-D` |
-| `S03-E0-M2` | Przerobić: Learn HTML, Learn CSS, Learn Forms | materiał | 20–25 h | 0 zł | https://web.dev/learn | `S03-START` | `S03-E0-D` |
-| `S03-E0-M3` | Przerobić: CSS for JavaScript Developers | materiał, płatny | 30–40 h | płatny | https://css-for-js.dev | `S03-START` | `S03-E0-D` |
-| `S03-E0-D` | Dowód etapu 0: jak działa web | dowód | — | — | — | `S03-E0-M1`, `S03-E0-M2`, `S03-E0-M3` | `S03-E1-M1`, `S03-E1-M2`, `S03-E1-M3` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S03-E0-M1` | Przerobić: Learn web development | materiał | 30–40 h | 0 zł | https://developer.mozilla.org/en-US/docs/Learn_web_development | `S03-START` | `S03-E0-D` | `03-frontend-web/e0-jak-dziala-web/` |
+| `S03-E0-M2` | Przerobić: Learn HTML, Learn CSS, Learn Forms | materiał | 20–25 h | 0 zł | https://web.dev/learn | `S03-START` | `S03-E0-D` | `03-frontend-web/e0-jak-dziala-web/` |
+| `S03-E0-M3` | Przerobić: CSS for JavaScript Developers | materiał, płatny | 30–40 h | płatny | https://css-for-js.dev | `S03-START` | `S03-E0-D` | `03-frontend-web/e0-jak-dziala-web/` |
+| `S03-E0-D` | Dowód etapu 0: jak działa web | dowód | — | — | — | `S03-E0-M1`, `S03-E0-M2`, `S03-E0-M3` | `S03-E1-M1`, `S03-E1-M2`, `S03-E1-M3` | `03-frontend-web/e0-jak-dziala-web/` |
 
 **`S03-E0-D` · Dowód etapu 0: jak działa web**
 
 Responsywna strona wielosekcyjna bez frameworka, z formularzem, poprawną semantyką i obsługą klawiatury; wynik Lighthouse powyżej 90 we wszystkich kategoriach.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `03-frontend-web/e0-jak-dziala-web/`
 
 ### Etap 1: JavaScript
 
@@ -144,12 +148,12 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Aplikacja w czystym JavaScript pobierająca dane z publicznego API, z obsługą błędów sieci, anulowaniem żądań (`AbortController`) i stanami ładowania.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S03-E1-M1` | Przerobić: The Modern JavaScript Tutorial | materiał | 40–50 h | 0 zł | https://javascript.info | `S03-E0-D` | `S03-E1-D` |
-| `S03-E1-M2` | Przerobić: Eloquent JavaScript (wydanie 4) | materiał | 30–40 h | 0 zł online | https://eloquentjavascript.net | `S03-E0-D` | `S03-E1-D` |
-| `S03-E1-M3` | Przerobić: You Don’t Know JS Yet | materiał | 15–20 h | 0 zł | https://github.com/getify/You-Dont-Know-JS | `S03-E0-D` | `S03-E1-D` |
-| `S03-E1-D` | Dowód etapu 1: JavaScript | dowód | — | — | — | `S03-E1-M1`, `S03-E1-M2`, `S03-E1-M3` | `S03-E2-M1`, `S03-E2-M2`, `S03-E2-M3`, `S03-E2-M4` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S03-E1-M1` | Przerobić: The Modern JavaScript Tutorial | materiał | 40–50 h | 0 zł | https://javascript.info | `S03-E0-D` | `S03-E1-D` | `03-frontend-web/e1-javascript/` |
+| `S03-E1-M2` | Przerobić: Eloquent JavaScript (wydanie 4) | materiał | 30–40 h | 0 zł online | https://eloquentjavascript.net | `S03-E0-D` | `S03-E1-D` | `03-frontend-web/e1-javascript/` |
+| `S03-E1-M3` | Przerobić: You Don’t Know JS Yet | materiał | 15–20 h | 0 zł | https://github.com/getify/You-Dont-Know-JS | `S03-E0-D` | `S03-E1-D` | `03-frontend-web/e1-javascript/` |
+| `S03-E1-D` | Dowód etapu 1: JavaScript | dowód | — | — | — | `S03-E1-M1`, `S03-E1-M2`, `S03-E1-M3` | `S03-E2-M1`, `S03-E2-M2`, `S03-E2-M3`, `S03-E2-M4` | `03-frontend-web/e1-javascript/` |
 
 **`S03-E1-D` · Dowód etapu 1: JavaScript**
 
@@ -159,6 +163,8 @@ Aplikacja w czystym JavaScript pobierająca dane z publicznego API, z obsługą 
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
 
+**Folder roboczy:** `03-frontend-web/e1-javascript/`
+
 ### Etap 2: TypeScript
 
 Opis kamienia milowego (do wklejenia):
@@ -167,19 +173,21 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Klient API w trybie `strict`, bez `any`, z typami wyprowadzonymi ze schematów Zod i dyskryminowanymi uniami dla stanów odpowiedzi.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S03-E2-M1` | Przerobić: TypeScript Handbook | materiał | 10–15 h | 0 zł | https://www.typescriptlang.org/docs/handbook/ | `S03-E1-D` | `S03-E2-D` |
-| `S03-E2-M2` | Przerobić: Total TypeScript (darmowe tutoriale i płatne warsztaty) | materiał, płatny | 20–30 h | 0 zł / płatny | https://www.totaltypescript.com | `S03-E1-D` | `S03-E2-D` |
-| `S03-E2-M3` | Przerobić: Effective TypeScript (wydanie 2) | materiał, płatny | 12–15 h | płatna | https://effectivetypescript.com | `S03-E1-D` | `S03-E2-D` |
-| `S03-E2-M4` | Przerobić: type-challenges | materiał | wg potrzeb | 0 zł | https://github.com/type-challenges/type-challenges | `S03-E1-D` | `S03-E2-D` |
-| `S03-E2-D` | Dowód etapu 2: TypeScript | dowód | — | — | — | `S03-E2-M1`, `S03-E2-M2`, `S03-E2-M3`, `S03-E2-M4` | `S03-E3-M1`, `S03-E3-M2`, `S03-E3-M3`, `S03-E3-M4`, `S05-START`, `S06-START`, `S07-START`, `S10-START`, `S13-START`, `S14-START` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S03-E2-M1` | Przerobić: TypeScript Handbook | materiał | 10–15 h | 0 zł | https://www.typescriptlang.org/docs/handbook/ | `S03-E1-D` | `S03-E2-D` | `03-frontend-web/e2-typescript/` |
+| `S03-E2-M2` | Przerobić: Total TypeScript (darmowe tutoriale i płatne warsztaty) | materiał, płatny | 20–30 h | 0 zł / płatny | https://www.totaltypescript.com | `S03-E1-D` | `S03-E2-D` | `03-frontend-web/e2-typescript/` |
+| `S03-E2-M3` | Przerobić: Effective TypeScript (wydanie 2) | materiał, płatny | 12–15 h | płatna | https://effectivetypescript.com | `S03-E1-D` | `S03-E2-D` | `03-frontend-web/e2-typescript/` |
+| `S03-E2-M4` | Przerobić: type-challenges | materiał | wg potrzeb | 0 zł | https://github.com/type-challenges/type-challenges | `S03-E1-D` | `S03-E2-D` | `03-frontend-web/e2-typescript/` |
+| `S03-E2-D` | Dowód etapu 2: TypeScript | dowód | — | — | — | `S03-E2-M1`, `S03-E2-M2`, `S03-E2-M3`, `S03-E2-M4` | `S03-E3-M1`, `S03-E3-M2`, `S03-E3-M3`, `S03-E3-M4`, `S05-START`, `S06-START`, `S07-START`, `S10-START`, `S13-START`, `S14-START` | `03-frontend-web/e2-typescript/` |
 
 **`S03-E2-D` · Dowód etapu 2: TypeScript**
 
 Klient API w trybie `strict`, bez `any`, z typami wyprowadzonymi ze schematów Zod i dyskryminowanymi uniami dla stanów odpowiedzi.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `03-frontend-web/e2-typescript/`
 
 ### Etap 3: React
 
@@ -191,19 +199,21 @@ Wystarczy jeden z dwóch płatnych kursów: The Joy of React przy starcie od zer
 
 **Dowód:** Aplikacja z formularzami, listą z filtrowaniem, stanem współdzielonym i własnymi hookami, bez zbędnych `useEffect`; komponenty dostępne z klawiatury.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S03-E3-M1` | Przerobić: react.dev: Learn i Reference | materiał | 20–25 h | 0 zł | https://react.dev/learn | `S03-E2-D` | `S03-E3-D` |
-| `S03-E3-M2` | Przerobić: The Joy of React | materiał, płatny | 30–40 h | płatny | https://www.joyofreact.com | `S03-E2-D` | `S03-E3-D` |
-| `S03-E3-M3` | Przerobić: Epic React | materiał, płatny | 40–60 h | płatny | https://www.epicreact.dev | `S03-E2-D` | `S03-E3-D` |
-| `S03-E3-M4` | Przerobić: overreacted.io | materiał | 5–10 h | 0 zł | https://overreacted.io | `S03-E2-D` | `S03-E3-D` |
-| `S03-E3-D` | Dowód etapu 3: React | dowód | — | — | — | `S03-E3-M1`, `S03-E3-M2`, `S03-E3-M3`, `S03-E3-M4` | `S03-E4-M1`, `S03-E4-M2`, `S03-E4-M3`, `S03-E4-M4` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S03-E3-M1` | Przerobić: react.dev: Learn i Reference | materiał | 20–25 h | 0 zł | https://react.dev/learn | `S03-E2-D` | `S03-E3-D` | `03-frontend-web/e3-react/` |
+| `S03-E3-M2` | Przerobić: The Joy of React | materiał, płatny | 30–40 h | płatny | https://www.joyofreact.com | `S03-E2-D` | `S03-E3-D` | `03-frontend-web/e3-react/` |
+| `S03-E3-M3` | Przerobić: Epic React | materiał, płatny | 40–60 h | płatny | https://www.epicreact.dev | `S03-E2-D` | `S03-E3-D` | `03-frontend-web/e3-react/` |
+| `S03-E3-M4` | Przerobić: overreacted.io | materiał | 5–10 h | 0 zł | https://overreacted.io | `S03-E2-D` | `S03-E3-D` | `03-frontend-web/e3-react/` |
+| `S03-E3-D` | Dowód etapu 3: React | dowód | — | — | — | `S03-E3-M1`, `S03-E3-M2`, `S03-E3-M3`, `S03-E3-M4` | `S03-E4-M1`, `S03-E4-M2`, `S03-E4-M3`, `S03-E4-M4` | `03-frontend-web/e3-react/` |
 
 **`S03-E3-D` · Dowód etapu 3: React**
 
 Aplikacja z formularzami, listą z filtrowaniem, stanem współdzielonym i własnymi hookami, bez zbędnych `useEffect`; komponenty dostępne z klawiatury.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `03-frontend-web/e3-react/`
 
 ### Etap 4: Next.js (App Router)
 
@@ -215,13 +225,13 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Aplikacja z logowaniem, rolami i Server Actions, w której każda akcja sprawdza uprawnienia po stronie serwera; test, który próbuje wywołać akcję bez uprawnień i dostaje odmowę.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S03-E4-M1` | Przerobić: Next.js Learn (kurs budowy dashboardu) | materiał | 10–15 h | 0 zł | https://nextjs.org/learn | `S03-E3-D` | `S03-E4-D` |
-| `S03-E4-M2` | Przerobić: Dokumentacja Next.js: renderowanie, cache, Server Actions, middleware, przewodnik o… | materiał | 15–20 h | 0 zł | https://nextjs.org/docs | `S03-E3-D` | `S03-E4-D` |
-| `S03-E4-M3` | Przerobić: „How to Think About Security in Next.js” | materiał | 1–2 h | 0 zł | https://nextjs.org/blog/security-nextjs-server-components-actions | `S03-E3-D` | `S03-E4-D` |
-| `S03-E4-M4` | Przerobić: Komunikaty bezpieczeństwa React i Next.js, m.in. krytyczna podatność RCE w React Server Components | materiał | 2–3 h | 0 zł | https://react.dev/blog | `S03-E3-D` | `S03-E4-D` |
-| `S03-E4-D` | Dowód etapu 4: Next.js (App Router) | dowód | — | — | — | `S03-E4-M1`, `S03-E4-M2`, `S03-E4-M3`, `S03-E4-M4` | `S03-E5-M1`, `S03-E5-M2`, `S03-E5-M3`, `S03-E5-M4`, `S03-E5-M5`, `S03-E5-M6`, `S03-E5-M7` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S03-E4-M1` | Przerobić: Next.js Learn (kurs budowy dashboardu) | materiał | 10–15 h | 0 zł | https://nextjs.org/learn | `S03-E3-D` | `S03-E4-D` | `03-frontend-web/e4-next-js-app-router/` |
+| `S03-E4-M2` | Przerobić: Dokumentacja Next.js: renderowanie, cache, Server Actions, middleware, przewodnik o… | materiał | 15–20 h | 0 zł | https://nextjs.org/docs | `S03-E3-D` | `S03-E4-D` | `03-frontend-web/e4-next-js-app-router/` |
+| `S03-E4-M3` | Przerobić: „How to Think About Security in Next.js” | materiał | 1–2 h | 0 zł | https://nextjs.org/blog/security-nextjs-server-components-actions | `S03-E3-D` | `S03-E4-D` | `03-frontend-web/e4-next-js-app-router/` |
+| `S03-E4-M4` | Przerobić: Komunikaty bezpieczeństwa React i Next.js, m.in. krytyczna podatność RCE w React Server Components | materiał | 2–3 h | 0 zł | https://react.dev/blog | `S03-E3-D` | `S03-E4-D` | `03-frontend-web/e4-next-js-app-router/` |
+| `S03-E4-D` | Dowód etapu 4: Next.js (App Router) | dowód | — | — | — | `S03-E4-M1`, `S03-E4-M2`, `S03-E4-M3`, `S03-E4-M4` | `S03-E5-M1`, `S03-E5-M2`, `S03-E5-M3`, `S03-E5-M4`, `S03-E5-M5`, `S03-E5-M6`, `S03-E5-M7` | `03-frontend-web/e4-next-js-app-router/` |
 
 **`S03-E4-D` · Dowód etapu 4: Next.js (App Router)**
 
@@ -230,6 +240,8 @@ Aplikacja z logowaniem, rolami i Server Actions, w której każda akcja sprawdza
 **Na co zwrócić uwagę:** granica serwer–klient, warstwa dostępu do danych (DAL) z autoryzacją w każdej akcji, które zmienne trafiają do przeglądarki, strategie cache i ich unieważnianie, aktualizacja frameworka jako element obsługi podatności (CRA).
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `03-frontend-web/e4-next-js-app-router/`
 
 ### Etap 5: ekosystem
 
@@ -241,22 +253,24 @@ Uwaga do Rusta w przeglądarce: organizacja `rustwasm` została zarchiwizowana w
 
 **Dowód:** Aplikacja wielojęzyczna z formularzem walidowanym tym samym schematem Zod na kliencie i serwerze, cache danych z optymistycznymi aktualizacjami i własnym komponentem dostępnym zbudowanym na Radix.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S03-E5-M1` | Przerobić: TanStack Query: dokumentacja i blog „Practical React Query” | materiał | 8–10 h | 0 zł | https://tanstack.com/query, https://tkdodo.eu/blog/practical-react-query | `S03-E4-D` | `S03-E5-D` |
-| `S03-E5-M2` | Przerobić: Zod, React Hook Form, Zustand | materiał | 6–8 h | 0 zł | https://zod.dev, https://react-hook-form.com, https://zustand.docs.pmnd.rs | `S03-E4-D` | `S03-E5-D` |
-| `S03-E5-M3` | Przerobić: Tailwind CSS, Radix Primitives, shadcn/ui | materiał | 8–10 h | 0 zł | https://tailwindcss.com/docs, https://www.radix-ui.com/primitives, https://ui.shadcn.com | `S03-E4-D` | `S03-E5-D` |
-| `S03-E5-M4` | Przerobić: next-intl | materiał | 3–4 h | 0 zł | https://next-intl.dev | `S03-E4-D` | `S03-E5-D` |
-| `S03-E5-M5` | Przerobić: Vite, pnpm, typescript-eslint | materiał | 5–6 h | 0 zł | https://vite.dev, https://pnpm.io, https://typescript-eslint.io | `S03-E4-D` | `S03-E5-D` |
-| `S03-E5-M6` | Przerobić: patterns.dev | materiał | 8–10 h | 0 zł | https://www.patterns.dev | `S03-E4-D` | `S03-E5-D` |
-| `S03-E5-M7` | Przerobić: Rust i WebAssembly: `wasm-bindgen` i przewodnik MDN o WebAssembly | materiał | 8–10 h | 0 zł | https://github.com/wasm-bindgen/wasm-bindgen, https://developer.mozilla.org/en-US/docs/WebAssembly | `S03-E4-D` | `S03-E5-D` |
-| `S03-E5-D` | Dowód etapu 5: ekosystem | dowód | — | — | — | `S03-E5-M1`, `S03-E5-M2`, `S03-E5-M3`, `S03-E5-M4`, `S03-E5-M5`, `S03-E5-M6`, `S03-E5-M7` | `S03-E6-M1`, `S03-E6-M2`, `S03-E6-M3`, `S03-E6-M4`, `S03-E6-M5`, `S03-E6-M6`, `S03-E6-M7`, `S03-E6-M8` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S03-E5-M1` | Przerobić: TanStack Query: dokumentacja i blog „Practical React Query” | materiał | 8–10 h | 0 zł | https://tanstack.com/query, https://tkdodo.eu/blog/practical-react-query | `S03-E4-D` | `S03-E5-D` | `03-frontend-web/e5-ekosystem/` |
+| `S03-E5-M2` | Przerobić: Zod, React Hook Form, Zustand | materiał | 6–8 h | 0 zł | https://zod.dev, https://react-hook-form.com, https://zustand.docs.pmnd.rs | `S03-E4-D` | `S03-E5-D` | `03-frontend-web/e5-ekosystem/` |
+| `S03-E5-M3` | Przerobić: Tailwind CSS, Radix Primitives, shadcn/ui | materiał | 8–10 h | 0 zł | https://tailwindcss.com/docs, https://www.radix-ui.com/primitives, https://ui.shadcn.com | `S03-E4-D` | `S03-E5-D` | `03-frontend-web/e5-ekosystem/` |
+| `S03-E5-M4` | Przerobić: next-intl | materiał | 3–4 h | 0 zł | https://next-intl.dev | `S03-E4-D` | `S03-E5-D` | `03-frontend-web/e5-ekosystem/` |
+| `S03-E5-M5` | Przerobić: Vite, pnpm, typescript-eslint | materiał | 5–6 h | 0 zł | https://vite.dev, https://pnpm.io, https://typescript-eslint.io | `S03-E4-D` | `S03-E5-D` | `03-frontend-web/e5-ekosystem/` |
+| `S03-E5-M6` | Przerobić: patterns.dev | materiał | 8–10 h | 0 zł | https://www.patterns.dev | `S03-E4-D` | `S03-E5-D` | `03-frontend-web/e5-ekosystem/` |
+| `S03-E5-M7` | Przerobić: Rust i WebAssembly: `wasm-bindgen` i przewodnik MDN o WebAssembly | materiał | 8–10 h | 0 zł | https://github.com/wasm-bindgen/wasm-bindgen, https://developer.mozilla.org/en-US/docs/WebAssembly | `S03-E4-D` | `S03-E5-D` | `03-frontend-web/e5-ekosystem/` |
+| `S03-E5-D` | Dowód etapu 5: ekosystem | dowód | — | — | — | `S03-E5-M1`, `S03-E5-M2`, `S03-E5-M3`, `S03-E5-M4`, `S03-E5-M5`, `S03-E5-M6`, `S03-E5-M7` | `S03-E6-M1`, `S03-E6-M2`, `S03-E6-M3`, `S03-E6-M4`, `S03-E6-M5`, `S03-E6-M6`, `S03-E6-M7`, `S03-E6-M8` | `03-frontend-web/e5-ekosystem/` |
 
 **`S03-E5-D` · Dowód etapu 5: ekosystem**
 
 Aplikacja wielojęzyczna z formularzem walidowanym tym samym schematem Zod na kliencie i serwerze, cache danych z optymistycznymi aktualizacjami i własnym komponentem dostępnym zbudowanym na Radix.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `03-frontend-web/e5-ekosystem/`
 
 ### Etap 6: jakość
 
@@ -266,23 +280,25 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Do aplikacji z etapu 4 dodane: testy jednostkowe, komponentów i E2E w CI; budżet wydajności (LCP, INP, CLS) sprawdzany automatycznie; audyt WCAG 2.2 AA z poprawkami i testem czytnikiem ekranu; nagłówki bezpieczeństwa i CSP.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S03-E6-M1` | Przerobić: Testing Library, Vitest, MSW | materiał | 8–10 h | 0 zł | https://testing-library.com, https://vitest.dev, https://mswjs.io | `S03-E5-D` | `S03-E6-D` |
-| `S03-E6-M2` | Przerobić: Playwright (testy E2E, fixtures, trace viewer) | materiał | 8–10 h | 0 zł | https://playwright.dev | `S03-E5-D` | `S03-E6-D` |
-| `S03-E6-M3` | Przerobić: Testing JavaScript | materiał, płatny | 15–20 h | płatny | https://www.testingjavascript.com | `S03-E5-D` | `S03-E6-D` |
-| `S03-E6-M4` | Przerobić: Learn Performance, Core Web Vitals | materiał | 8–10 h | 0 zł | https://web.dev/learn/performance | `S03-E5-D` | `S03-E6-D` |
-| `S03-E6-M5` | Przerobić: Chrome DevTools: Performance, Memory, Network | materiał | 4–6 h | 0 zł | https://developer.chrome.com/docs/devtools | `S03-E5-D` | `S03-E6-D` |
-| `S03-E6-M6` | Przerobić: Learn Accessibility | materiał | 6–8 h | 0 zł | https://web.dev/learn/accessibility | `S03-E5-D` | `S03-E6-D` |
-| `S03-E6-M7` | Przerobić: ARIA Authoring Practices Guide, Understanding WCAG 2.2 | materiał | 8–10 h | 0 zł | https://www.w3.org/WAI/ARIA/apg/, https://www.w3.org/WAI/WCAG22/Understanding/ | `S03-E5-D` | `S03-E6-D` |
-| `S03-E6-M8` | Przerobić: OWASP Cheat Sheet Series: XSS, CSP, CSRF, uwierzytelnianie, sesje | materiał | 6–8 h | 0 zł | https://cheatsheetseries.owasp.org | `S03-E5-D` | `S03-E6-D` |
-| `S03-E6-D` | Dowód etapu 6: jakość | dowód | — | — | — | `S03-E6-M1`, `S03-E6-M2`, `S03-E6-M3`, `S03-E6-M4`, `S03-E6-M5`, `S03-E6-M6`, `S03-E6-M7`, `S03-E6-M8` | `S03-E7-M1`, `S03-E7-M2`, `S03-E7-M3`, `S03-E7-M4`, `S03-E7-P1`, `S03-E7-P2`, `S03-E7-P3` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S03-E6-M1` | Przerobić: Testing Library, Vitest, MSW | materiał | 8–10 h | 0 zł | https://testing-library.com, https://vitest.dev, https://mswjs.io | `S03-E5-D` | `S03-E6-D` | `03-frontend-web/e6-jakosc/` |
+| `S03-E6-M2` | Przerobić: Playwright (testy E2E, fixtures, trace viewer) | materiał | 8–10 h | 0 zł | https://playwright.dev | `S03-E5-D` | `S03-E6-D` | `03-frontend-web/e6-jakosc/` |
+| `S03-E6-M3` | Przerobić: Testing JavaScript | materiał, płatny | 15–20 h | płatny | https://www.testingjavascript.com | `S03-E5-D` | `S03-E6-D` | `03-frontend-web/e6-jakosc/` |
+| `S03-E6-M4` | Przerobić: Learn Performance, Core Web Vitals | materiał | 8–10 h | 0 zł | https://web.dev/learn/performance | `S03-E5-D` | `S03-E6-D` | `03-frontend-web/e6-jakosc/` |
+| `S03-E6-M5` | Przerobić: Chrome DevTools: Performance, Memory, Network | materiał | 4–6 h | 0 zł | https://developer.chrome.com/docs/devtools | `S03-E5-D` | `S03-E6-D` | `03-frontend-web/e6-jakosc/` |
+| `S03-E6-M6` | Przerobić: Learn Accessibility | materiał | 6–8 h | 0 zł | https://web.dev/learn/accessibility | `S03-E5-D` | `S03-E6-D` | `03-frontend-web/e6-jakosc/` |
+| `S03-E6-M7` | Przerobić: ARIA Authoring Practices Guide, Understanding WCAG 2.2 | materiał | 8–10 h | 0 zł | https://www.w3.org/WAI/ARIA/apg/, https://www.w3.org/WAI/WCAG22/Understanding/ | `S03-E5-D` | `S03-E6-D` | `03-frontend-web/e6-jakosc/` |
+| `S03-E6-M8` | Przerobić: OWASP Cheat Sheet Series: XSS, CSP, CSRF, uwierzytelnianie, sesje | materiał | 6–8 h | 0 zł | https://cheatsheetseries.owasp.org | `S03-E5-D` | `S03-E6-D` | `03-frontend-web/e6-jakosc/` |
+| `S03-E6-D` | Dowód etapu 6: jakość | dowód | — | — | — | `S03-E6-M1`, `S03-E6-M2`, `S03-E6-M3`, `S03-E6-M4`, `S03-E6-M5`, `S03-E6-M6`, `S03-E6-M7`, `S03-E6-M8` | `S03-E7-M1`, `S03-E7-M2`, `S03-E7-M3`, `S03-E7-M4`, `S03-E7-P1`, `S03-E7-P2`, `S03-E7-P3` | `03-frontend-web/e6-jakosc/` |
 
 **`S03-E6-D` · Dowód etapu 6: jakość**
 
 Do aplikacji z etapu 4 dodane: testy jednostkowe, komponentów i E2E w CI; budżet wydajności (LCP, INP, CLS) sprawdzany automatycznie; audyt WCAG 2.2 AA z poprawkami i testem czytnikiem ekranu; nagłówki bezpieczeństwa i CSP.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `03-frontend-web/e6-jakosc/`
 
 ### Etap 7: ekspert
 
@@ -292,16 +308,16 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód poziomu E:** Samodzielnie, bez agenta, w 1 dzień diagnozujesz i naprawiasz błąd wydajności lub bezpieczeństwa w nieznanej aplikacji Next.js i umiesz wyjaśnić przyczynę osobie nietechnicznej.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S03-E7-M1` | Przerobić: Build your own React | materiał | 4–6 h | 0 zł | https://pomb.us/build-your-own-react/ | `S03-E6-D` | `S03-E7-D` |
-| `S03-E7-M2` | Przerobić: Blog React, informacje o wydaniach Next.js, dyskusje i RFC na GitHubie | materiał | ok. 1 h tygodniowo | 0 zł | https://react.dev/blog, https://nextjs.org/blog | `S03-E6-D` | `S03-E7-D` |
-| `S03-E7-M3` | Przerobić: Kursy zaawansowane | materiał, płatny | wg potrzeb | abonament | https://frontendmasters.com | `S03-E6-D` | `S03-E7-D` |
-| `S03-E7-M4` | Przerobić: Nagrania konferencji React Conf i Next.js Conf | materiał | wg potrzeb | 0 zł | YouTube | `S03-E6-D` | `S03-E7-D` |
-| `S03-E7-P1` | Praktyka: recenzja kodu AI | praktyka | — | — | — | `S03-E6-D` | `S03-E7-D` |
-| `S03-E7-P2` | Praktyka: przejęcie cudzej aplikacji Next.js | praktyka | — | — | — | `S03-E6-D` | `S03-E7-D` |
-| `S03-E7-P3` | Praktyka: śledzenie podatności | praktyka | — | — | — | `S03-E6-D` | `S03-E7-D` |
-| `S03-E7-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S03-E7-M1`, `S03-E7-M2`, `S03-E7-M3`, `S03-E7-M4`, `S03-E7-P1`, `S03-E7-P2`, `S03-E7-P3` | — |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S03-E7-M1` | Przerobić: Build your own React | materiał | 4–6 h | 0 zł | https://pomb.us/build-your-own-react/ | `S03-E6-D` | `S03-E7-D` | `03-frontend-web/e7-ekspert/` |
+| `S03-E7-M2` | Przerobić: Blog React, informacje o wydaniach Next.js, dyskusje i RFC na GitHubie | materiał | ok. 1 h tygodniowo | 0 zł | https://react.dev/blog, https://nextjs.org/blog | `S03-E6-D` | `S03-E7-D` | `03-frontend-web/e7-ekspert/` |
+| `S03-E7-M3` | Przerobić: Kursy zaawansowane | materiał, płatny | wg potrzeb | abonament | https://frontendmasters.com | `S03-E6-D` | `S03-E7-D` | `03-frontend-web/e7-ekspert/` |
+| `S03-E7-M4` | Przerobić: Nagrania konferencji React Conf i Next.js Conf | materiał | wg potrzeb | 0 zł | YouTube | `S03-E6-D` | `S03-E7-D` | `03-frontend-web/e7-ekspert/` |
+| `S03-E7-P1` | Praktyka: recenzja kodu AI | praktyka | — | — | — | `S03-E6-D` | `S03-E7-D` | `03-frontend-web/e7-ekspert/` |
+| `S03-E7-P2` | Praktyka: przejęcie cudzej aplikacji Next.js | praktyka | — | — | — | `S03-E6-D` | `S03-E7-D` | `03-frontend-web/e7-ekspert/` |
+| `S03-E7-P3` | Praktyka: śledzenie podatności | praktyka | — | — | — | `S03-E6-D` | `S03-E7-D` | `03-frontend-web/e7-ekspert/` |
+| `S03-E7-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S03-E7-M1`, `S03-E7-M2`, `S03-E7-M3`, `S03-E7-M4`, `S03-E7-P1`, `S03-E7-P2`, `S03-E7-P3` | — | `03-frontend-web/e7-ekspert/` |
 
 **`S03-E7-P1` · Praktyka: recenzja kodu AI**
 
@@ -309,11 +325,15 @@ Opis kamienia milowego (do wklejenia):
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `03-frontend-web/e7-ekspert/`
+
 **`S03-E7-P2` · Praktyka: przejęcie cudzej aplikacji Next.js**
 
 Pierwsza aplikacja z vibe codingu (poligon B z mapy nauki) przeprowadzona przez pełny audyt i stabilizację.
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
+
+**Folder roboczy:** `03-frontend-web/e7-ekspert/`
 
 **`S03-E7-P3` · Praktyka: śledzenie podatności**
 
@@ -321,11 +341,15 @@ Subskrypcja komunikatów bezpieczeństwa React i Next.js oraz ćwiczenie aktuali
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `03-frontend-web/e7-ekspert/`
+
 **`S03-E7-D` · Dowód poziomu E: ekspert**
 
 Samodzielnie, bez agenta, w 1 dzień diagnozujesz i naprawiasz błąd wydajności lub bezpieczeństwa w nieznanej aplikacji Next.js i umiesz wyjaśnić przyczynę osobie nietechnicznej.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki. Bez agenta AI.
+
+**Folder roboczy:** `03-frontend-web/e7-ekspert/`
 
 ## 6. Relacje z innymi projektami
 

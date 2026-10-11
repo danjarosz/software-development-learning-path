@@ -80,6 +80,8 @@ Punkt startu projektu „14. Desktop: wspólne”.
 - zaznaczyć etapy, które zaliczasz samym dowodem (zgodnie z akapitem wstępnym ścieżki), i dla nich zamknąć zadania materiałów jako niepotrzebne,
 - ustawić daty kamieni milowych zgodnie z kolejnością z pliku głównego.
 
+**Folder roboczy:** `14-desktop/`
+
 ## 4. Przepływ zależności
 
 Linie ciągłe to zależności wewnątrz projektu, przerywane to zadania z innych projektów. Wewnątrz etapu zadania materiałów są równoległe i wszystkie blokują dowód etapu; dowód etapu blokuje materiały kolejnego etapu.
@@ -107,7 +109,7 @@ flowchart TD
 
 ## 5. Zadania według kamieni milowych
 
-Szablon opisu zadania materiału: nazwa materiału, autor lub wydawca, typ, czas, koszt i link (jak w kolumnach poniżej) oraz zdanie „Gotowe, gdy materiał jest przerobiony w zakresie potrzebnym do dowodu etapu”. Opisy dowodów i praktyk są podane pod tabelą każdego etapu.
+Szablon opisu zadania materiału: nazwa materiału, autor lub wydawca, typ, czas, koszt i link (jak w kolumnach poniżej), zdanie „Gotowe, gdy materiał jest przerobiony w zakresie potrzebnym do dowodu etapu” oraz folder roboczy z kolumny „Folder”. Opisy dowodów i praktyk są podane pod tabelą każdego etapu.
 
 ### Etap 0: system operacyjny pod aplikacją
 
@@ -119,10 +121,10 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Narzędzie CLI w Ruście, które rekurencyjnie przechodzi katalog repozytorium, pomija `.git` i dowiązania symboliczne prowadzące poza katalog, obsługuje brak uprawnień do pliku bez paniki i działa tak samo na Linuksie, macOS i Windows (ścieżki, wielkość liter, końce linii).
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S14-E0-M1` | Przerobić: Operating Systems: Three Easy Pieces | materiał, płatny | 30–40 h | 0 zł (PDF), druk płatny | https://pages.cs.wisc.edu/~remzi/OSTEP/ | `S14-START` | `S14-E0-D` |
-| `S14-E0-D` | Dowód etapu 0: system operacyjny pod aplikacją | dowód | — | — | — | `S14-E0-M1` | `S14-E1-M1`, `S14-E1-M2`, `S14-E1-M3`, `S14-E1-M4`, `S14-E1-M5` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S14-E0-M1` | Przerobić: Operating Systems: Three Easy Pieces | materiał, płatny | 30–40 h | 0 zł (PDF), druk płatny | https://pages.cs.wisc.edu/~remzi/OSTEP/ | `S14-START` | `S14-E0-D` | `14-desktop/e0-system-operacyjny-pod-aplikacja/` |
+| `S14-E0-D` | Dowód etapu 0: system operacyjny pod aplikacją | dowód | — | — | — | `S14-E0-M1` | `S14-E1-M1`, `S14-E1-M2`, `S14-E1-M3`, `S14-E1-M4`, `S14-E1-M5` | `14-desktop/e0-system-operacyjny-pod-aplikacja/` |
 
 **`S14-E0-D` · Dowód etapu 0: system operacyjny pod aplikacją**
 
@@ -131,6 +133,8 @@ Narzędzie CLI w Ruście, które rekurencyjnie przechodzi katalog repozytorium, 
 **Na co zwrócić uwagę:** proces a wątek, przestrzeń adresowa, deskryptory plików, uprawnienia użytkownika, sygnały i zakończenie procesu, komunikacja międzyprocesowa. To język, którym opisane są capabilities Tauri, sandboxy i instalatory.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `14-desktop/e0-system-operacyjny-pod-aplikacja/`
 
 ### Etap 1: Tauri 2
 
@@ -142,14 +146,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Aplikacja Tauri 2 z frontendem React: wybór katalogu repozytorium okienkiem systemowym, skan w Ruście uruchomiony asynchronicznie, postęp przesyłany kanałem, możliwość anulowania, wynik w tabeli; działa jedna instancja aplikacji, a stan okna jest pamiętany między uruchomieniami.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S14-E1-M1` | Przerobić: Dokumentacja Tauri 2: Quick Start, Prerequisites, Core Concepts | materiał | 10–12 h | 0 zł | https://v2.tauri.app/start/, https://v2.tauri.app/concept/ | `S14-E0-D` | `S14-E1-D` |
-| `S14-E1-M2` | Przerobić: Calling Rust from the Frontend, Calling the Frontend from Rust | materiał | 4–6 h | 0 zł | https://v2.tauri.app/develop/calling-rust/ | `S14-E0-D` | `S14-E1-D` |
-| `S14-E1-M3` | Przerobić: Plugins: przegląd oficjalnych pluginów | materiał | 6–8 h | 0 zł | https://v2.tauri.app/plugin/ | `S14-E0-D` | `S14-E1-D` |
-| `S14-E1-M4` | Przerobić: Plugin Development | materiał | 4–6 h | 0 zł | https://v2.tauri.app/develop/plugins/ | `S14-E0-D` | `S14-E1-D` |
-| `S14-E1-M5` | Przerobić: Releases (changelogi `tauri`, `tauri-cli` i pluginów) | materiał | 1–2 h | 0 zł | https://v2.tauri.app/release/ | `S14-E0-D` | `S14-E1-D` |
-| `S14-E1-D` | Dowód etapu 1: Tauri 2 | dowód | — | — | — | `S14-E1-M1`, `S14-E1-M2`, `S14-E1-M3`, `S14-E1-M4`, `S14-E1-M5` | `S14-E2-M1`, `S14-E2-M2`, `S14-E2-M3`, `S14-E2-M4`, `S14-E2-M5`, `S15-START`, `S16-START`, `S17-START`, `S18-START`, `S19-START`, `S21-E1-M1`, `S21-E1-M2`, `S21-E1-M3`, `S21-E1-M4`, `S21-E1-M5`, `S21-E1-M6`, `S21-E1-M7`, `S21-E1-M8` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S14-E1-M1` | Przerobić: Dokumentacja Tauri 2: Quick Start, Prerequisites, Core Concepts | materiał | 10–12 h | 0 zł | https://v2.tauri.app/start/, https://v2.tauri.app/concept/ | `S14-E0-D` | `S14-E1-D` | `14-desktop/e1-tauri-2/` |
+| `S14-E1-M2` | Przerobić: Calling Rust from the Frontend, Calling the Frontend from Rust | materiał | 4–6 h | 0 zł | https://v2.tauri.app/develop/calling-rust/ | `S14-E0-D` | `S14-E1-D` | `14-desktop/e1-tauri-2/` |
+| `S14-E1-M3` | Przerobić: Plugins: przegląd oficjalnych pluginów | materiał | 6–8 h | 0 zł | https://v2.tauri.app/plugin/ | `S14-E0-D` | `S14-E1-D` | `14-desktop/e1-tauri-2/` |
+| `S14-E1-M4` | Przerobić: Plugin Development | materiał | 4–6 h | 0 zł | https://v2.tauri.app/develop/plugins/ | `S14-E0-D` | `S14-E1-D` | `14-desktop/e1-tauri-2/` |
+| `S14-E1-M5` | Przerobić: Releases (changelogi `tauri`, `tauri-cli` i pluginów) | materiał | 1–2 h | 0 zł | https://v2.tauri.app/release/ | `S14-E0-D` | `S14-E1-D` | `14-desktop/e1-tauri-2/` |
+| `S14-E1-D` | Dowód etapu 1: Tauri 2 | dowód | — | — | — | `S14-E1-M1`, `S14-E1-M2`, `S14-E1-M3`, `S14-E1-M4`, `S14-E1-M5` | `S14-E2-M1`, `S14-E2-M2`, `S14-E2-M3`, `S14-E2-M4`, `S14-E2-M5`, `S15-START`, `S16-START`, `S17-START`, `S18-START`, `S19-START`, `S21-E1-M1`, `S21-E1-M2`, `S21-E1-M3`, `S21-E1-M4`, `S21-E1-M5`, `S21-E1-M6`, `S21-E1-M7`, `S21-E1-M8` | `14-desktop/e1-tauri-2/` |
 
 **`S14-E1-D` · Dowód etapu 1: Tauri 2**
 
@@ -158,6 +162,8 @@ Aplikacja Tauri 2 z frontendem React: wybór katalogu repozytorium okienkiem sys
 **Na co zwrócić uwagę:** Tauri używa webview systemu (WebView2 na Windows, WKWebView na macOS, WebKitGTK na Linuksie), więc ten sam frontend może zachowywać się różnie na trzech systemach; długie operacje nie mogą blokować wątku głównego; dane do frontendu idą kanałem lub zdarzeniami, a nie jednym ogromnym wynikiem polecenia.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `14-desktop/e1-tauri-2/`
 
 ### Etap 2: bezpieczeństwo Tauri
 
@@ -169,14 +175,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Aplikacja z etapu 1 z minimalnymi capabilities (osobne dla okna głównego i okna ustawień), zakresem systemu plików ograniczonym do wybranego repozytorium i ścisłą CSP; test, w którym kod wstrzyknięty do webview próbuje odczytać `~/.ssh` i wywołać polecenie spoza capability, i dostaje odmowę; krótki dokument z granicami zaufania.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S14-E2-M1` | Przerobić: Security: Overview, Permissions, Command Scopes, Capabilities, Runtime Authority, Asset protocol… | materiał | 8–10 h | 0 zł | https://v2.tauri.app/security/ | `S14-E1-D` | `S14-E2-D` |
-| `S14-E2-M2` | Przerobić: Isolation Pattern, Brownfield Pattern | materiał | 2–3 h | 0 zł | https://v2.tauri.app/concept/inter-process-communication/isolation/ | `S14-E1-D` | `S14-E2-D` |
-| `S14-E2-M3` | Przerobić: Application Lifecycle Threats, Tauri Ecosystem Security | materiał | 2–3 h | 0 zł | https://v2.tauri.app/security/lifecycle/ | `S14-E1-D` | `S14-E2-D` |
-| `S14-E2-M4` | Przerobić: Electron Security: lista kontrolna | materiał | 2–3 h | 0 zł | https://www.electronjs.org/docs/latest/tutorial/security | `S14-E1-D` | `S14-E2-D` |
-| `S14-E2-M5` | Przerobić: Komunikaty bezpieczeństwa Tauri (GitHub Security Advisories), m.in. obejście kontroli pochodzenia… | materiał | 2–3 h | 0 zł | https://github.com/tauri-apps/tauri/security/advisories | `S14-E1-D` | `S14-E2-D` |
-| `S14-E2-D` | Dowód etapu 2: bezpieczeństwo Tauri | dowód | — | — | — | `S14-E2-M1`, `S14-E2-M2`, `S14-E2-M3`, `S14-E2-M4`, `S14-E2-M5` | `S14-E3-M1`, `S14-E3-M2`, `S14-E3-M3`, `S14-E3-M4`, `S14-E3-M5`, `S14-E3-M6` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S14-E2-M1` | Przerobić: Security: Overview, Permissions, Command Scopes, Capabilities, Runtime Authority, Asset protocol… | materiał | 8–10 h | 0 zł | https://v2.tauri.app/security/ | `S14-E1-D` | `S14-E2-D` | `14-desktop/e2-bezpieczenstwo-tauri/` |
+| `S14-E2-M2` | Przerobić: Isolation Pattern, Brownfield Pattern | materiał | 2–3 h | 0 zł | https://v2.tauri.app/concept/inter-process-communication/isolation/ | `S14-E1-D` | `S14-E2-D` | `14-desktop/e2-bezpieczenstwo-tauri/` |
+| `S14-E2-M3` | Przerobić: Application Lifecycle Threats, Tauri Ecosystem Security | materiał | 2–3 h | 0 zł | https://v2.tauri.app/security/lifecycle/ | `S14-E1-D` | `S14-E2-D` | `14-desktop/e2-bezpieczenstwo-tauri/` |
+| `S14-E2-M4` | Przerobić: Electron Security: lista kontrolna | materiał | 2–3 h | 0 zł | https://www.electronjs.org/docs/latest/tutorial/security | `S14-E1-D` | `S14-E2-D` | `14-desktop/e2-bezpieczenstwo-tauri/` |
+| `S14-E2-M5` | Przerobić: Komunikaty bezpieczeństwa Tauri (GitHub Security Advisories), m.in. obejście kontroli pochodzenia… | materiał | 2–3 h | 0 zł | https://github.com/tauri-apps/tauri/security/advisories | `S14-E1-D` | `S14-E2-D` | `14-desktop/e2-bezpieczenstwo-tauri/` |
+| `S14-E2-D` | Dowód etapu 2: bezpieczeństwo Tauri | dowód | — | — | — | `S14-E2-M1`, `S14-E2-M2`, `S14-E2-M3`, `S14-E2-M4`, `S14-E2-M5` | `S14-E3-M1`, `S14-E3-M2`, `S14-E3-M3`, `S14-E3-M4`, `S14-E3-M5`, `S14-E3-M6` | `14-desktop/e2-bezpieczenstwo-tauri/` |
 
 **`S14-E2-D` · Dowód etapu 2: bezpieczeństwo Tauri**
 
@@ -185,6 +191,8 @@ Aplikacja z etapu 1 z minimalnymi capabilities (osobne dla okna głównego i okn
 **Na co zwrócić uwagę:** webview traktowany jako niezaufany; każde polecenie IPC waliduje wejście tak, jak endpoint API; capabilities przypisane do konkretnych okien; zakresy plików zawężone do katalogów wybranych przez użytkownika; brak `unsafe-inline` w CSP; zdalna treść nigdy nie dostaje dostępu do poleceń. Ogólne zasady bezpieczeństwa i modelowanie zagrożeń: zob. sekcja 10.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `14-desktop/e2-bezpieczenstwo-tauri/`
 
 ### Etap 3: natywny UI w Ruście
 
@@ -196,15 +204,15 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Ten sam rdzeń skanera (osobny crate bez zależności od UI) z drugim interfejsem w Slint albo egui; porównanie z wersją Tauri: rozmiar instalatora, czas startu, zużycie pamięci, test z czytnikiem ekranu na każdym systemie; ADR z decyzją dla własnej aplikacji.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S14-E3-M1` | Przerobić: Slint: dokumentacja, Quickstart, Rust API (`slint` 1.18) | materiał, płatny | 10–12 h | 0 zł; licencja royalty-free na desktop, embedded płatny lub GPLv3 | https://docs.slint.dev | `S14-E2-D` | `S14-E3-D` |
-| `S14-E3-M2` | Przerobić: egui i eframe, szablon `eframe_template` | materiał | 6–8 h | 0 zł | https://docs.rs/egui, https://github.com/emilk/eframe_template | `S14-E2-D` | `S14-E3-D` |
-| `S14-E3-M3` | Przerobić: The iced book (niedokończony) i dokumentacja `iced` 0.14 | materiał | 5–6 h | 0 zł | https://book.iced.rs, https://docs.rs/iced | `S14-E2-D` | `S14-E3-D` |
-| `S14-E3-M4` | Przerobić: Dioxus 0.7: Desktop (system WebView przez `wry`) | materiał | 3–4 h | 0 zł | https://dioxuslabs.com/learn/0.7/ | `S14-E2-D` | `S14-E3-D` |
-| `S14-E3-M5` | Przerobić: AccessKit: infrastruktura dostępności dla toolkitów rysujących własny UI | materiał | 1–2 h | 0 zł | https://accesskit.dev | `S14-E2-D` | `S14-E3-D` |
-| `S14-E3-M6` | Przerobić: „A 2025 Survey of Rust GUI Libraries” | materiał | 2–3 h | 0 zł | https://www.boringcactus.com/2025/04/13/2025-survey-of-rust-gui-libraries.html | `S14-E2-D` | `S14-E3-D` |
-| `S14-E3-D` | Dowód etapu 3: natywny UI w Ruście | dowód | — | — | — | `S14-E3-M1`, `S14-E3-M2`, `S14-E3-M3`, `S14-E3-M4`, `S14-E3-M5`, `S14-E3-M6` | `S14-E4-M1`, `S14-E4-M2`, `S14-E4-M3`, `S14-E4-M4`, `S14-E4-M5`, `S14-E4-M6`, `S14-E4-M7` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S14-E3-M1` | Przerobić: Slint: dokumentacja, Quickstart, Rust API (`slint` 1.18) | materiał, płatny | 10–12 h | 0 zł; licencja royalty-free na desktop, embedded płatny lub GPLv3 | https://docs.slint.dev | `S14-E2-D` | `S14-E3-D` | `14-desktop/e3-natywny-ui-w-ruscie/` |
+| `S14-E3-M2` | Przerobić: egui i eframe, szablon `eframe_template` | materiał | 6–8 h | 0 zł | https://docs.rs/egui, https://github.com/emilk/eframe_template | `S14-E2-D` | `S14-E3-D` | `14-desktop/e3-natywny-ui-w-ruscie/` |
+| `S14-E3-M3` | Przerobić: The iced book (niedokończony) i dokumentacja `iced` 0.14 | materiał | 5–6 h | 0 zł | https://book.iced.rs, https://docs.rs/iced | `S14-E2-D` | `S14-E3-D` | `14-desktop/e3-natywny-ui-w-ruscie/` |
+| `S14-E3-M4` | Przerobić: Dioxus 0.7: Desktop (system WebView przez `wry`) | materiał | 3–4 h | 0 zł | https://dioxuslabs.com/learn/0.7/ | `S14-E2-D` | `S14-E3-D` | `14-desktop/e3-natywny-ui-w-ruscie/` |
+| `S14-E3-M5` | Przerobić: AccessKit: infrastruktura dostępności dla toolkitów rysujących własny UI | materiał | 1–2 h | 0 zł | https://accesskit.dev | `S14-E2-D` | `S14-E3-D` | `14-desktop/e3-natywny-ui-w-ruscie/` |
+| `S14-E3-M6` | Przerobić: „A 2025 Survey of Rust GUI Libraries” | materiał | 2–3 h | 0 zł | https://www.boringcactus.com/2025/04/13/2025-survey-of-rust-gui-libraries.html | `S14-E2-D` | `S14-E3-D` | `14-desktop/e3-natywny-ui-w-ruscie/` |
+| `S14-E3-D` | Dowód etapu 3: natywny UI w Ruście | dowód | — | — | — | `S14-E3-M1`, `S14-E3-M2`, `S14-E3-M3`, `S14-E3-M4`, `S14-E3-M5`, `S14-E3-M6` | `S14-E4-M1`, `S14-E4-M2`, `S14-E4-M3`, `S14-E4-M4`, `S14-E4-M5`, `S14-E4-M6`, `S14-E4-M7` | `14-desktop/e3-natywny-ui-w-ruscie/` |
 
 **`S14-E3-D` · Dowód etapu 3: natywny UI w Ruście**
 
@@ -213,6 +221,8 @@ Ten sam rdzeń skanera (osobny crate bez zależności od UI) z drugim interfejse
 **Na co zwrócić uwagę:** kryteria wyboru zapisane w ADR, a nie gust: dostępność (AccessKit w Slint i egui), obsługa IME, wygląd natywny, rozmiar i czas startu, licencja, dojrzałość API (iced i Dioxus zmieniają API między wersjami 0.x). Dioxus na desktopie renderuje przez webview, więc nie jest „natywnym” UI w tym samym sensie co Slint czy egui.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `14-desktop/e3-natywny-ui-w-ruscie/`
 
 ### Etap 4: infrastruktura produktu
 
@@ -224,16 +234,16 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Narzędzie z etapu 2 sprzedawane „na niby”: zakup w środowisku testowym MoR wywołuje webhook, który wystawia podpisaną licencję; aplikacja weryfikuje ją offline i trzyma w magazynie systemu; aktualizacja z podpisem przechodzi ze stabilnej wersji N do N+1 na trzech systemach, a próba podsunięcia niepodpisanej lub starszej paczki kończy się odmową; wymuszona awaria procesu daje minidump z czytelnym, zsymbolizowanym stosem.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S14-E4-M1` | Przerobić: `keyring` 4 i `keyring-core` z osobnymi magazynami dla Keychain, Windows Credential Manager i… | materiał | 2–3 h | 0 zł | https://docs.rs/keyring | `S14-E3-D` | `S14-E4-D` |
-| `S14-E4-M2` | Przerobić: Keychain services, CryptProtectData (DPAPI), CredWriteW, Secret Service API | materiał | 4–5 h | 0 zł | https://developer.apple.com/documentation/security/keychain-services, https://learn.microsoft.com/en-us/windows/win32/api/dpapi/nf-dpapi-cryptprotectdata, https://specifications.freedesktop.org/secret-service/latest/ | `S14-E3-D` | `S14-E4-D` |
-| `S14-E4-M3` | Przerobić: Tauri Updater: klucze, format manifestu, serwer statyczny i dynamiczny, podpis nie do wyłączenia | materiał | 3–4 h | 0 zł | https://v2.tauri.app/plugin/updater/ | `S14-E3-D` | `S14-E4-D` |
-| `S14-E4-M4` | Przerobić: The Update Framework (TUF): specyfikacja i model zagrożeń aktualizacji | materiał | 4–6 h | 0 zł | https://theupdateframework.io | `S14-E3-D` | `S14-E4-D` |
-| `S14-E4-M5` | Przerobić: Keygen: licencjonowanie offline (podpisane pliki licencji, Ed25519), aktywacja urządzeń | materiał | 4–5 h | 0 zł | https://keygen.sh/docs/choosing-a-licensing-model/offline-licenses/ | `S14-E3-D` | `S14-E4-D` |
-| `S14-E4-M6` | Przerobić: Sentry for Native i Minidumps; crate’y `crash-handler` i `minidumper` | materiał | 4–6 h | 0 zł | https://docs.sentry.io/platforms/native/guides/minidumps/, https://docs.rs/crash-handler, https://docs.rs/minidumper | `S14-E3-D` | `S14-E4-D` |
-| `S14-E4-M7` | Przerobić: Distribute: przegląd formatów i pipeline’ów | materiał | 2–3 h | 0 zł | https://v2.tauri.app/distribute/ | `S14-E3-D` | `S14-E4-D` |
-| `S14-E4-D` | Dowód etapu 4: infrastruktura produktu | dowód | — | — | — | `S14-E4-M1`, `S14-E4-M2`, `S14-E4-M3`, `S14-E4-M4`, `S14-E4-M5`, `S14-E4-M6`, `S14-E4-M7` | `S14-E5-M1`, `S14-E5-M2`, `S14-E5-M3`, `S14-E5-P1`, `S14-E5-P2`, `S14-E5-P3` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S14-E4-M1` | Przerobić: `keyring` 4 i `keyring-core` z osobnymi magazynami dla Keychain, Windows Credential Manager i… | materiał | 2–3 h | 0 zł | https://docs.rs/keyring | `S14-E3-D` | `S14-E4-D` | `14-desktop/e4-infrastruktura-produktu/` |
+| `S14-E4-M2` | Przerobić: Keychain services, CryptProtectData (DPAPI), CredWriteW, Secret Service API | materiał | 4–5 h | 0 zł | https://developer.apple.com/documentation/security/keychain-services, https://learn.microsoft.com/en-us/windows/win32/api/dpapi/nf-dpapi-cryptprotectdata, https://specifications.freedesktop.org/secret-service/latest/ | `S14-E3-D` | `S14-E4-D` | `14-desktop/e4-infrastruktura-produktu/` |
+| `S14-E4-M3` | Przerobić: Tauri Updater: klucze, format manifestu, serwer statyczny i dynamiczny, podpis nie do wyłączenia | materiał | 3–4 h | 0 zł | https://v2.tauri.app/plugin/updater/ | `S14-E3-D` | `S14-E4-D` | `14-desktop/e4-infrastruktura-produktu/` |
+| `S14-E4-M4` | Przerobić: The Update Framework (TUF): specyfikacja i model zagrożeń aktualizacji | materiał | 4–6 h | 0 zł | https://theupdateframework.io | `S14-E3-D` | `S14-E4-D` | `14-desktop/e4-infrastruktura-produktu/` |
+| `S14-E4-M5` | Przerobić: Keygen: licencjonowanie offline (podpisane pliki licencji, Ed25519), aktywacja urządzeń | materiał | 4–5 h | 0 zł | https://keygen.sh/docs/choosing-a-licensing-model/offline-licenses/ | `S14-E3-D` | `S14-E4-D` | `14-desktop/e4-infrastruktura-produktu/` |
+| `S14-E4-M6` | Przerobić: Sentry for Native i Minidumps; crate’y `crash-handler` i `minidumper` | materiał | 4–6 h | 0 zł | https://docs.sentry.io/platforms/native/guides/minidumps/, https://docs.rs/crash-handler, https://docs.rs/minidumper | `S14-E3-D` | `S14-E4-D` | `14-desktop/e4-infrastruktura-produktu/` |
+| `S14-E4-M7` | Przerobić: Distribute: przegląd formatów i pipeline’ów | materiał | 2–3 h | 0 zł | https://v2.tauri.app/distribute/ | `S14-E3-D` | `S14-E4-D` | `14-desktop/e4-infrastruktura-produktu/` |
+| `S14-E4-D` | Dowód etapu 4: infrastruktura produktu | dowód | — | — | — | `S14-E4-M1`, `S14-E4-M2`, `S14-E4-M3`, `S14-E4-M4`, `S14-E4-M5`, `S14-E4-M6`, `S14-E4-M7` | `S14-E5-M1`, `S14-E5-M2`, `S14-E5-M3`, `S14-E5-P1`, `S14-E5-P2`, `S14-E5-P3` | `14-desktop/e4-infrastruktura-produktu/` |
 
 **`S14-E4-D` · Dowód etapu 4: infrastruktura produktu**
 
@@ -243,6 +253,8 @@ Narzędzie z etapu 2 sprzedawane „na niby”: zakup w środowisku testowym MoR
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
 
+**Folder roboczy:** `14-desktop/e4-infrastruktura-produktu/`
+
 ### Etap 5: ekspert
 
 Opis kamienia milowego (do wklejenia):
@@ -251,15 +263,15 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód poziomu E:** Samodzielnie, bez agenta, w 1 dzień diagnozujesz i naprawiasz błąd, który występuje tylko na jednym systemie (np. różnica webview, ścieżek albo uprawnień), wydajesz poprawkę przez podpisaną aktualizację i umiesz wyjaśnić przyczynę osobie nietechnicznej.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S14-E5-M1` | Przerobić: Blog i informacje o wydaniach Tauri, komunikaty bezpieczeństwa | materiał | ok. 30 min tygodniowo | 0 zł | https://v2.tauri.app/blog/, https://v2.tauri.app/release/ | `S14-E4-D` | `S14-E5-D` |
-| `S14-E5-M2` | Przerobić: Komunikaty bezpieczeństwa silników webview: WebKitGTK Security Advisories, informacje o wydaniach… | materiał | ok. 15 min tygodniowo | 0 zł | https://webkitgtk.org/security.html, https://learn.microsoft.com/en-us/microsoft-edge/webview2/ | `S14-E4-D` | `S14-E5-D` |
-| `S14-E5-M3` | Przerobić: Kod źródłowy `tauri`, `wry` i `tao` | materiał | wg potrzeb | 0 zł | https://github.com/tauri-apps | `S14-E4-D` | `S14-E5-D` |
-| `S14-E5-P1` | Praktyka: recenzja kodu AI | praktyka | — | — | — | `S14-E4-D` | `S14-E5-D` |
-| `S14-E5-P2` | Praktyka: ćwiczenie incydentu | praktyka | — | — | — | `S14-E4-D` | `S14-E5-D` |
-| `S14-E5-P3` | Praktyka: macierz testowa | praktyka | — | — | — | `S14-E4-D` | `S14-E5-D` |
-| `S14-E5-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S14-E5-M1`, `S14-E5-M2`, `S14-E5-M3`, `S14-E5-P1`, `S14-E5-P2`, `S14-E5-P3` | — |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S14-E5-M1` | Przerobić: Blog i informacje o wydaniach Tauri, komunikaty bezpieczeństwa | materiał | ok. 30 min tygodniowo | 0 zł | https://v2.tauri.app/blog/, https://v2.tauri.app/release/ | `S14-E4-D` | `S14-E5-D` | `14-desktop/e5-ekspert/` |
+| `S14-E5-M2` | Przerobić: Komunikaty bezpieczeństwa silników webview: WebKitGTK Security Advisories, informacje o wydaniach… | materiał | ok. 15 min tygodniowo | 0 zł | https://webkitgtk.org/security.html, https://learn.microsoft.com/en-us/microsoft-edge/webview2/ | `S14-E4-D` | `S14-E5-D` | `14-desktop/e5-ekspert/` |
+| `S14-E5-M3` | Przerobić: Kod źródłowy `tauri`, `wry` i `tao` | materiał | wg potrzeb | 0 zł | https://github.com/tauri-apps | `S14-E4-D` | `S14-E5-D` | `14-desktop/e5-ekspert/` |
+| `S14-E5-P1` | Praktyka: recenzja kodu AI | praktyka | — | — | — | `S14-E4-D` | `S14-E5-D` | `14-desktop/e5-ekspert/` |
+| `S14-E5-P2` | Praktyka: ćwiczenie incydentu | praktyka | — | — | — | `S14-E4-D` | `S14-E5-D` | `14-desktop/e5-ekspert/` |
+| `S14-E5-P3` | Praktyka: macierz testowa | praktyka | — | — | — | `S14-E4-D` | `S14-E5-D` | `14-desktop/e5-ekspert/` |
+| `S14-E5-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S14-E5-M1`, `S14-E5-M2`, `S14-E5-M3`, `S14-E5-P1`, `S14-E5-P2`, `S14-E5-P3` | — | `14-desktop/e5-ekspert/` |
 
 **`S14-E5-P1` · Praktyka: recenzja kodu AI**
 
@@ -267,11 +279,15 @@ Opis kamienia milowego (do wklejenia):
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `14-desktop/e5-ekspert/`
+
 **`S14-E5-P2` · Praktyka: ćwiczenie incydentu**
 
 Podatność w zależności lub w webview, od komunikatu do podpisanej aktualizacji u użytkowników w 24 h, z zapisem przebiegu do dokumentacji CRA.
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
+
+**Folder roboczy:** `14-desktop/e5-ekspert/`
 
 **`S14-E5-P3` · Praktyka: macierz testowa**
 
@@ -279,11 +295,15 @@ Najstarsze i najnowsze wspierane wersje trzech systemów na czystych maszynach w
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `14-desktop/e5-ekspert/`
+
 **`S14-E5-D` · Dowód poziomu E: ekspert**
 
 Samodzielnie, bez agenta, w 1 dzień diagnozujesz i naprawiasz błąd, który występuje tylko na jednym systemie (np. różnica webview, ścieżek albo uprawnień), wydajesz poprawkę przez podpisaną aktualizację i umiesz wyjaśnić przyczynę osobie nietechnicznej.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki. Bez agenta AI.
+
+**Folder roboczy:** `14-desktop/e5-ekspert/`
 
 ## 6. Relacje z innymi projektami
 

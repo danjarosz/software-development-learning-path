@@ -83,6 +83,8 @@ Punkt startu projektu „18. Android”.
 - zaznaczyć etapy, które zaliczasz samym dowodem (zgodnie z akapitem wstępnym ścieżki), i dla nich zamknąć zadania materiałów jako niepotrzebne,
 - ustawić daty kamieni milowych zgodnie z kolejnością z pliku głównego.
 
+**Folder roboczy:** `18-android/`
+
 ## 4. Przepływ zależności
 
 Linie ciągłe to zależności wewnątrz projektu, przerywane to zadania z innych projektów. Wewnątrz etapu zadania materiałów są równoległe i wszystkie blokują dowód etapu; dowód etapu blokuje materiały kolejnego etapu.
@@ -112,7 +114,7 @@ flowchart TD
 
 ## 5. Zadania według kamieni milowych
 
-Szablon opisu zadania materiału: nazwa materiału, autor lub wydawca, typ, czas, koszt i link (jak w kolumnach poniżej) oraz zdanie „Gotowe, gdy materiał jest przerobiony w zakresie potrzebnym do dowodu etapu”. Opisy dowodów i praktyk są podane pod tabelą każdego etapu.
+Szablon opisu zadania materiału: nazwa materiału, autor lub wydawca, typ, czas, koszt i link (jak w kolumnach poniżej), zdanie „Gotowe, gdy materiał jest przerobiony w zakresie potrzebnym do dowodu etapu” oraz folder roboczy z kolumny „Folder”. Opisy dowodów i praktyk są podane pod tabelą każdego etapu.
 
 ### Etap 0: Kotlin
 
@@ -124,13 +126,13 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Narzędzie konsolowe w Kotlinie pobierające dane z publicznego API przez korutyny, z anulowaniem po przekroczeniu czasu, wynikami jako `sealed` hierarchią i testami jednostkowymi.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S18-E0-M1` | Przerobić: Kotlin tour i dokumentacja języka | materiał | 10–15 h | 0 zł | https://kotlinlang.org/docs/kotlin-tour-welcome.html, https://kotlinlang.org/docs/home.html | `S18-START` | `S18-E0-D` |
-| `S18-E0-M2` | Przerobić: Kotlin Koans | materiał | 6–8 h | 0 zł | https://play.kotlinlang.org/koans | `S18-START` | `S18-E0-D` |
-| `S18-E0-M3` | Przerobić: Kotlin in Action (wydanie 2, 2024) | materiał, płatny | 20–25 h | płatna | https://www.manning.com/books/kotlin-in-action-second-edition | `S18-START` | `S18-E0-D` |
-| `S18-E0-M4` | Przerobić: Coroutines guide | materiał | 6–8 h | 0 zł | https://kotlinlang.org/docs/coroutines-guide.html | `S18-START` | `S18-E0-D` |
-| `S18-E0-D` | Dowód etapu 0: Kotlin | dowód | — | — | — | `S18-E0-M1`, `S18-E0-M2`, `S18-E0-M3`, `S18-E0-M4` | `S18-E1-M1`, `S18-E1-M2` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S18-E0-M1` | Przerobić: Kotlin tour i dokumentacja języka | materiał | 10–15 h | 0 zł | https://kotlinlang.org/docs/kotlin-tour-welcome.html, https://kotlinlang.org/docs/home.html | `S18-START` | `S18-E0-D` | `18-android/e0-kotlin/` |
+| `S18-E0-M2` | Przerobić: Kotlin Koans | materiał | 6–8 h | 0 zł | https://play.kotlinlang.org/koans | `S18-START` | `S18-E0-D` | `18-android/e0-kotlin/` |
+| `S18-E0-M3` | Przerobić: Kotlin in Action (wydanie 2, 2024) | materiał, płatny | 20–25 h | płatna | https://www.manning.com/books/kotlin-in-action-second-edition | `S18-START` | `S18-E0-D` | `18-android/e0-kotlin/` |
+| `S18-E0-M4` | Przerobić: Coroutines guide | materiał | 6–8 h | 0 zł | https://kotlinlang.org/docs/coroutines-guide.html | `S18-START` | `S18-E0-D` | `18-android/e0-kotlin/` |
+| `S18-E0-D` | Dowód etapu 0: Kotlin | dowód | — | — | — | `S18-E0-M1`, `S18-E0-M2`, `S18-E0-M3`, `S18-E0-M4` | `S18-E1-M1`, `S18-E1-M2` | `18-android/e0-kotlin/` |
 
 **`S18-E0-D` · Dowód etapu 0: Kotlin**
 
@@ -139,6 +141,8 @@ Narzędzie konsolowe w Kotlinie pobierające dane z publicznego API przez koruty
 **Na co zwrócić uwagę:** null safety, klasy `data` i `sealed`, funkcje rozszerzające, lambdy z odbiorcą, korutyny strukturalne, anulowanie, `Flow` i `StateFlow`, różnice wobec `async`/`await` w TypeScript i Tokio w Ruście.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `18-android/e0-kotlin/`
 
 ### Etap 1: Android i Jetpack Compose
 
@@ -150,11 +154,11 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Aplikacja offline-first z listą, edycją i wyszukiwaniem (np. notatki lub nawyki), z danymi w Room, odświeżaniem z sieci i obsługą obrotu ekranu bez utraty stanu.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S18-E1-M1` | Przerobić: Android Basics with Compose | materiał | 80–100 h | 0 zł | https://developer.android.com/courses/android-basics-compose/course | `S18-E0-D` | `S18-E1-D` |
-| `S18-E1-M2` | Przerobić: Dokumentacja Jetpack Compose: „Thinking in Compose”, stan, efekty uboczne, Material 3 | materiał | 6–8 h | 0 zł | https://developer.android.com/develop/ui/compose/documentation | `S18-E0-D` | `S18-E1-D` |
-| `S18-E1-D` | Dowód etapu 1: Android i Jetpack Compose | dowód | — | — | — | `S18-E1-M1`, `S18-E1-M2` | `S18-E2-M1`, `S18-E2-M2`, `S18-E2-M3`, `S18-E2-M4`, `S18-E2-M5`, `S18-E2-M6` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S18-E1-M1` | Przerobić: Android Basics with Compose | materiał | 80–100 h | 0 zł | https://developer.android.com/courses/android-basics-compose/course | `S18-E0-D` | `S18-E1-D` | `18-android/e1-android-i-jetpack-compose/` |
+| `S18-E1-M2` | Przerobić: Dokumentacja Jetpack Compose: „Thinking in Compose”, stan, efekty uboczne, Material 3 | materiał | 6–8 h | 0 zł | https://developer.android.com/develop/ui/compose/documentation | `S18-E0-D` | `S18-E1-D` | `18-android/e1-android-i-jetpack-compose/` |
+| `S18-E1-D` | Dowód etapu 1: Android i Jetpack Compose | dowód | — | — | — | `S18-E1-M1`, `S18-E1-M2` | `S18-E2-M1`, `S18-E2-M2`, `S18-E2-M3`, `S18-E2-M4`, `S18-E2-M5`, `S18-E2-M6` | `18-android/e1-android-i-jetpack-compose/` |
 
 **`S18-E1-D` · Dowód etapu 1: Android i Jetpack Compose**
 
@@ -163,6 +167,8 @@ Aplikacja offline-first z listą, edycją i wyszukiwaniem (np. notatki lub nawyk
 **Na co zwrócić uwagę:** rekompozycja i `remember`, wynoszenie stanu (state hoisting), `ViewModel`, nawigacja, różnice między efektami w Compose a `useEffect` w React.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `18-android/e1-android-i-jetpack-compose/`
 
 ### Etap 2: Compose w głębi i architektura
 
@@ -174,15 +180,15 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Aplikacja z etapu 1 przebudowana na warstwy (UI, dane, opcjonalnie domena) i moduły Gradle, z `StateFlow` jako jedynym źródłem stanu ekranu, układem list–szczegóły na tablecie i testami `ViewModel` z `runTest` (zob. sekcja 6).
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S18-E2-M1` | Przerobić: Guide to app architecture: warstwy UI i danych, jedno źródło prawdy, przepływ jednokierunkowy | materiał | 6–8 h | 0 zł | https://developer.android.com/topic/architecture | `S18-E1-D` | `S18-E2-D` |
-| `S18-E2-M2` | Przerobić: Now in Android | materiał | 10–15 h | 0 zł | https://github.com/android/nowinandroid | `S18-E1-D` | `S18-E2-D` |
-| `S18-E2-M3` | Przerobić: Best practices for coroutines in Android | materiał | 2–3 h | 0 zł | https://developer.android.com/kotlin/coroutines/coroutines-best-practices | `S18-E1-D` | `S18-E2-D` |
-| `S18-E2-M4` | Przerobić: Jetpack Compose for Android Developers | materiał | 15–20 h | 0 zł | https://developer.android.com/courses/jetpack-compose/course | `S18-E1-D` | `S18-E2-D` |
-| `S18-E2-M5` | Przerobić: Kotlin Coroutines: Deep Dive | materiał, płatny | 12–15 h | płatna | https://leanpub.com/coroutines | `S18-E1-D` | `S18-E2-D` |
-| `S18-E2-M6` | Przerobić: Effective Kotlin | materiał, płatny | 10–12 h | płatna | https://kt.academy/book/effectivekotlin | `S18-E1-D` | `S18-E2-D` |
-| `S18-E2-D` | Dowód etapu 2: Compose w głębi i architektura | dowód | — | — | — | `S18-E2-M1`, `S18-E2-M2`, `S18-E2-M3`, `S18-E2-M4`, `S18-E2-M5`, `S18-E2-M6` | `S18-E3-M1`, `S18-E3-M2`, `S18-E3-M3`, `S18-E3-M4`, `S18-E3-M5`, `S21-E1-M1`, `S21-E1-M2`, `S21-E1-M3`, `S21-E1-M4`, `S21-E1-M5`, `S21-E1-M6`, `S21-E1-M7`, `S21-E1-M8` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S18-E2-M1` | Przerobić: Guide to app architecture: warstwy UI i danych, jedno źródło prawdy, przepływ jednokierunkowy | materiał | 6–8 h | 0 zł | https://developer.android.com/topic/architecture | `S18-E1-D` | `S18-E2-D` | `18-android/e2-compose-w-glebi-i-architektura/` |
+| `S18-E2-M2` | Przerobić: Now in Android | materiał | 10–15 h | 0 zł | https://github.com/android/nowinandroid | `S18-E1-D` | `S18-E2-D` | `18-android/e2-compose-w-glebi-i-architektura/` |
+| `S18-E2-M3` | Przerobić: Best practices for coroutines in Android | materiał | 2–3 h | 0 zł | https://developer.android.com/kotlin/coroutines/coroutines-best-practices | `S18-E1-D` | `S18-E2-D` | `18-android/e2-compose-w-glebi-i-architektura/` |
+| `S18-E2-M4` | Przerobić: Jetpack Compose for Android Developers | materiał | 15–20 h | 0 zł | https://developer.android.com/courses/jetpack-compose/course | `S18-E1-D` | `S18-E2-D` | `18-android/e2-compose-w-glebi-i-architektura/` |
+| `S18-E2-M5` | Przerobić: Kotlin Coroutines: Deep Dive | materiał, płatny | 12–15 h | płatna | https://leanpub.com/coroutines | `S18-E1-D` | `S18-E2-D` | `18-android/e2-compose-w-glebi-i-architektura/` |
+| `S18-E2-M6` | Przerobić: Effective Kotlin | materiał, płatny | 10–12 h | płatna | https://kt.academy/book/effectivekotlin | `S18-E1-D` | `S18-E2-D` | `18-android/e2-compose-w-glebi-i-architektura/` |
+| `S18-E2-D` | Dowód etapu 2: Compose w głębi i architektura | dowód | — | — | — | `S18-E2-M1`, `S18-E2-M2`, `S18-E2-M3`, `S18-E2-M4`, `S18-E2-M5`, `S18-E2-M6` | `S18-E3-M1`, `S18-E3-M2`, `S18-E3-M3`, `S18-E3-M4`, `S18-E3-M5`, `S21-E1-M1`, `S21-E1-M2`, `S21-E1-M3`, `S21-E1-M4`, `S21-E1-M5`, `S21-E1-M6`, `S21-E1-M7`, `S21-E1-M8` | `18-android/e2-compose-w-glebi-i-architektura/` |
 
 **`S18-E2-D` · Dowód etapu 2: Compose w głębi i architektura**
 
@@ -191,6 +197,8 @@ Aplikacja z etapu 1 przebudowana na warstwy (UI, dane, opcjonalnie domena) i mod
 **Na co zwrócić uwagę:** wstrzykiwanie dispatcherów i zakresów, niemutowalny stan UI, układy adaptacyjne (telefon, tablet, składane), modularyzacja Gradle, katalog wersji i Compose BOM.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `18-android/e2-compose-w-glebi-i-architektura/`
 
 ### Etap 3: platforma Android
 
@@ -202,14 +210,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Synchronizacja danych aplikacji przez `CoroutineWorker` z ograniczeniami sieci i baterii, przeżywająca ubicie procesu i restart urządzenia; token sesji zaszyfrowany kluczem z Android Keystore; funkcja wymagająca uprawnienia działa w trybie ograniczonym po odmowie.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S18-E3-M1` | Przerobić: Processes and app lifecycle | materiał | 2–3 h | 0 zł | https://developer.android.com/guide/components/activities/process-lifecycle | `S18-E2-D` | `S18-E3-D` |
-| `S18-E3-M2` | Przerobić: WorkManager: trwała praca w tle | materiał | 4–6 h | 0 zł | https://developer.android.com/develop/background-work/background-tasks/persistent | `S18-E2-D` | `S18-E3-D` |
-| `S18-E3-M3` | Przerobić: Request runtime permissions | materiał | 2–3 h | 0 zł | https://developer.android.com/training/permissions/requesting | `S18-E2-D` | `S18-E3-D` |
-| `S18-E3-M4` | Przerobić: Room (od wersji 3.0 pakiet `androidx.room3`, wymaga KSP) | materiał | 4–6 h | 0 zł | https://developer.android.com/training/data-storage/room | `S18-E2-D` | `S18-E3-D` |
-| `S18-E3-M5` | Przerobić: Android Keystore system | materiał | 3–4 h | 0 zł | https://developer.android.com/privacy-and-security/keystore | `S18-E2-D` | `S18-E3-D` |
-| `S18-E3-D` | Dowód etapu 3: platforma Android | dowód | — | — | — | `S18-E3-M1`, `S18-E3-M2`, `S18-E3-M3`, `S18-E3-M4`, `S18-E3-M5` | `S18-E4-M1`, `S18-E4-M2`, `S18-E4-M3`, `S18-E4-M4`, `S18-E4-M5`, `S18-E4-M6`, `S18-E4-M7` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S18-E3-M1` | Przerobić: Processes and app lifecycle | materiał | 2–3 h | 0 zł | https://developer.android.com/guide/components/activities/process-lifecycle | `S18-E2-D` | `S18-E3-D` | `18-android/e3-platforma-android/` |
+| `S18-E3-M2` | Przerobić: WorkManager: trwała praca w tle | materiał | 4–6 h | 0 zł | https://developer.android.com/develop/background-work/background-tasks/persistent | `S18-E2-D` | `S18-E3-D` | `18-android/e3-platforma-android/` |
+| `S18-E3-M3` | Przerobić: Request runtime permissions | materiał | 2–3 h | 0 zł | https://developer.android.com/training/permissions/requesting | `S18-E2-D` | `S18-E3-D` | `18-android/e3-platforma-android/` |
+| `S18-E3-M4` | Przerobić: Room (od wersji 3.0 pakiet `androidx.room3`, wymaga KSP) | materiał | 4–6 h | 0 zł | https://developer.android.com/training/data-storage/room | `S18-E2-D` | `S18-E3-D` | `18-android/e3-platforma-android/` |
+| `S18-E3-M5` | Przerobić: Android Keystore system | materiał | 3–4 h | 0 zł | https://developer.android.com/privacy-and-security/keystore | `S18-E2-D` | `S18-E3-D` | `18-android/e3-platforma-android/` |
+| `S18-E3-D` | Dowód etapu 3: platforma Android | dowód | — | — | — | `S18-E3-M1`, `S18-E3-M2`, `S18-E3-M3`, `S18-E3-M4`, `S18-E3-M5` | `S18-E4-M1`, `S18-E4-M2`, `S18-E4-M3`, `S18-E4-M4`, `S18-E4-M5`, `S18-E4-M6`, `S18-E4-M7` | `18-android/e3-platforma-android/` |
 
 **`S18-E3-D` · Dowód etapu 3: platforma Android**
 
@@ -218,6 +226,8 @@ Synchronizacja danych aplikacji przez `CoroutineWorker` z ograniczeniami sieci i
 **Na co zwrócić uwagę:** system może zabić proces w każdej chwili, `onDestroy()` nie jest gwarantowane, ograniczenia pracy w tle i trybu Doze, jednorazowe i automatycznie cofane uprawnienia, klucze sprzętowe (TEE, StrongBox) i uwierzytelnianie biometryczne. Testy bezpieczeństwa według MASVS: zob. sekcja 10.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `18-android/e3-platforma-android/`
 
 ### Etap 4: rdzeń Rust na Androidzie
 
@@ -229,16 +239,16 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Ten sam crate z rdzeniem (model danych, walidacja, logika licencji i synchronizacji) używany przez aplikację z etapu 3 przez wiązania UniFFI, budowany w Gradle dla `arm64-v8a` i `x86_64`; błąd z Rusta obsłużony w UI jako wyjątek Kotlina; biblioteka `.so` zweryfikowana pod kątem wyrównania 16 KB. Rdzeń wchodzi do SBOM aplikacji (zob. sekcja 10).
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S18-E4-M1` | Przerobić: The UniFFI user guide: model typów, proc-macros, async, interfejsy zwrotne, rozdziały Kotlin i… | materiał | 8–10 h | 0 zł | https://mozilla.github.io/uniffi-rs/latest/ | `S18-E3-D` | `S18-E4-D` |
-| `S18-E4-M2` | Przerobić: `cargo-ndk` | materiał | 1–2 h | 0 zł | https://github.com/bbqsrc/cargo-ndk | `S18-E3-D` | `S18-E4-D` |
-| `S18-E4-M3` | Przerobić: JNI tips | materiał | 2–3 h | 0 zł | https://developer.android.com/ndk/guides/jni-tips | `S18-E3-D` | `S18-E4-D` |
-| `S18-E4-M4` | Przerobić: Support 16 KB page sizes | materiał | 1–2 h | 0 zł | https://developer.android.com/guide/practices/page-sizes | `S18-E3-D` | `S18-E4-D` |
-| `S18-E4-M5` | Przerobić: uniffi-starter (rdzeń Rust, Gradle z `cargo-ndk`, Swift Package) | materiał | 3–4 h | 0 zł | https://github.com/ianthetechie/uniffi-starter | `S18-E3-D` | `S18-E4-D` |
-| `S18-E4-M6` | Przerobić: application-services | materiał | 3–5 h | 0 zł | https://github.com/mozilla/application-services | `S18-E3-D` | `S18-E4-D` |
-| `S18-E4-M7` | Przerobić: Tauri 2 na Androidzie: wymagania (SDK, NDK, targety `rustup`) i pluginy mobilne w Kotlinie | materiał | 6–8 h | 0 zł | https://v2.tauri.app/start/prerequisites/, https://v2.tauri.app/develop/plugins/develop-mobile/ | `S18-E3-D` | `S18-E4-D` |
-| `S18-E4-D` | Dowód etapu 4: rdzeń Rust na Androidzie | dowód | — | — | — | `S18-E4-M1`, `S18-E4-M2`, `S18-E4-M3`, `S18-E4-M4`, `S18-E4-M5`, `S18-E4-M6`, `S18-E4-M7` | `S18-E5-M1`, `S18-E5-M2`, `S18-E5-M3`, `S18-E5-M4`, `S18-E5-M5`, `S18-E5-M6`, `S18-E5-M7`, `S18-E5-M8`, `S18-E5-M9` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S18-E4-M1` | Przerobić: The UniFFI user guide: model typów, proc-macros, async, interfejsy zwrotne, rozdziały Kotlin i… | materiał | 8–10 h | 0 zł | https://mozilla.github.io/uniffi-rs/latest/ | `S18-E3-D` | `S18-E4-D` | `18-android/e4-rdzen-rust-na-androidzie/` |
+| `S18-E4-M2` | Przerobić: `cargo-ndk` | materiał | 1–2 h | 0 zł | https://github.com/bbqsrc/cargo-ndk | `S18-E3-D` | `S18-E4-D` | `18-android/e4-rdzen-rust-na-androidzie/` |
+| `S18-E4-M3` | Przerobić: JNI tips | materiał | 2–3 h | 0 zł | https://developer.android.com/ndk/guides/jni-tips | `S18-E3-D` | `S18-E4-D` | `18-android/e4-rdzen-rust-na-androidzie/` |
+| `S18-E4-M4` | Przerobić: Support 16 KB page sizes | materiał | 1–2 h | 0 zł | https://developer.android.com/guide/practices/page-sizes | `S18-E3-D` | `S18-E4-D` | `18-android/e4-rdzen-rust-na-androidzie/` |
+| `S18-E4-M5` | Przerobić: uniffi-starter (rdzeń Rust, Gradle z `cargo-ndk`, Swift Package) | materiał | 3–4 h | 0 zł | https://github.com/ianthetechie/uniffi-starter | `S18-E3-D` | `S18-E4-D` | `18-android/e4-rdzen-rust-na-androidzie/` |
+| `S18-E4-M6` | Przerobić: application-services | materiał | 3–5 h | 0 zł | https://github.com/mozilla/application-services | `S18-E3-D` | `S18-E4-D` | `18-android/e4-rdzen-rust-na-androidzie/` |
+| `S18-E4-M7` | Przerobić: Tauri 2 na Androidzie: wymagania (SDK, NDK, targety `rustup`) i pluginy mobilne w Kotlinie | materiał | 6–8 h | 0 zł | https://v2.tauri.app/start/prerequisites/, https://v2.tauri.app/develop/plugins/develop-mobile/ | `S18-E3-D` | `S18-E4-D` | `18-android/e4-rdzen-rust-na-androidzie/` |
+| `S18-E4-D` | Dowód etapu 4: rdzeń Rust na Androidzie | dowód | — | — | — | `S18-E4-M1`, `S18-E4-M2`, `S18-E4-M3`, `S18-E4-M4`, `S18-E4-M5`, `S18-E4-M6`, `S18-E4-M7` | `S18-E5-M1`, `S18-E5-M2`, `S18-E5-M3`, `S18-E5-M4`, `S18-E5-M5`, `S18-E5-M6`, `S18-E5-M7`, `S18-E5-M8`, `S18-E5-M9` | `18-android/e4-rdzen-rust-na-androidzie/` |
 
 **`S18-E4-D` · Dowód etapu 4: rdzeń Rust na Androidzie**
 
@@ -247,6 +257,8 @@ Ten sam crate z rdzeniem (model danych, walidacja, logika licencji i synchroniza
 **Na co zwrócić uwagę:** granica FFI jako kontrakt (błędy Rust zamienione na wyjątki Kotlina, brak paniki przez granicę), wątki Rust wywołujące Kotlina, async po obu stronach, rozmiar `.so` na każde ABI, wyrównanie bibliotek do stron 16 KB (blokada aktualizacji w Google Play bez tego wsparcia od 1 lutego 2027 r.), wersjonowanie rdzenia wspólnego z iOS i desktopem. Opcjonalnie Gobley (https://gobley.dev) przy projekcie Kotlin Multiplatform.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `18-android/e4-rdzen-rust-na-androidzie/`
 
 ### Etap 5: publikacja i monetyzacja w Google Play
 
@@ -258,18 +270,18 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Aplikacja z rdzeniem Rust opublikowana w Google Play po teście zamkniętym, z abonamentem i zakupem jednorazowym; backend w Rust (Axum) weryfikuje tokeny, odbiera RTDN przez Pub/Sub i jest jedynym źródłem uprawnień; sekcja bezpieczeństwa danych zgodna z faktycznym przetwarzaniem; proces zgłaszania podatności zgodny z CRA opisany na stronie produktu.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S18-E5-M1` | Przerobić: Play Console Help: konto dewelopera, ścieżki testów, wymóg testu zamkniętego | materiał | 4–6 h | 0 zł | https://support.google.com/googleplay/android-developer/answer/14151465 | `S18-E4-D` | `S18-E5-D` |
-| `S18-E5-M2` | Przerobić: Android App Bundle, Play App Signing | materiał | 2–3 h | 0 zł | https://developer.android.com/guide/app-bundle, https://developer.android.com/studio/publish/app-signing | `S18-E4-D` | `S18-E5-D` |
-| `S18-E5-M3` | Przerobić: Wymagania docelowego API | materiał | 1 h | 0 zł | https://developer.android.com/google/play/requirements/target-sdk | `S18-E4-D` | `S18-E5-D` |
-| `S18-E5-M4` | Przerobić: Google Play Billing: integracja, abonamenty, produkty jednorazowe, migracja do Billing Library 9 | materiał | 8–10 h | 0 zł | https://developer.android.com/google/play/billing | `S18-E4-D` | `S18-E5-D` |
-| `S18-E5-M5` | Przerobić: Real-time developer notifications (RTDN) i weryfikacja zakupów na serwerze | materiał | 3–4 h | 0 zł | https://developer.android.com/google/play/billing/rtdn-reference | `S18-E4-D` | `S18-E5-D` |
-| `S18-E5-M6` | Przerobić: Play Integrity API | materiał | 2–3 h | 0 zł | https://developer.android.com/google/play/integrity | `S18-E4-D` | `S18-E5-D` |
-| `S18-E5-M7` | Przerobić: Polityki programu dla deweloperów, sekcja bezpieczeństwa danych, weryfikacja deweloperów Androida | materiał | 4–6 h | 0 zł | https://play.google/developer-content-policy/, https://support.google.com/googleplay/android-developer/answer/10787469, https://developer.android.com/developer-verification | `S18-E4-D` | `S18-E5-D` |
-| `S18-E5-M8` | Przerobić: Google Play Academy | materiał | wg potrzeb | 0 zł | https://playacademy.withgoogle.com | `S18-E4-D` | `S18-E5-D` |
-| `S18-E5-M9` | Przerobić: Tauri 2: publikacja w Google Play (AAB, architektury) | materiał | 1–2 h | 0 zł | https://v2.tauri.app/distribute/google-play/ | `S18-E4-D` | `S18-E5-D` |
-| `S18-E5-D` | Dowód etapu 5: publikacja i monetyzacja w Google Play | dowód | — | — | — | `S18-E5-M1`, `S18-E5-M2`, `S18-E5-M3`, `S18-E5-M4`, `S18-E5-M5`, `S18-E5-M6`, `S18-E5-M7`, `S18-E5-M8`, `S18-E5-M9` | `S18-E6-M1`, `S18-E6-M2`, `S18-E6-M3`, `S18-E6-M4`, `S18-E6-M5`, `S18-E6-P1`, `S18-E6-P2`, `S18-E6-P3` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S18-E5-M1` | Przerobić: Play Console Help: konto dewelopera, ścieżki testów, wymóg testu zamkniętego | materiał | 4–6 h | 0 zł | https://support.google.com/googleplay/android-developer/answer/14151465 | `S18-E4-D` | `S18-E5-D` | `18-android/e5-publikacja-i-monetyzacja-w-google-play/` |
+| `S18-E5-M2` | Przerobić: Android App Bundle, Play App Signing | materiał | 2–3 h | 0 zł | https://developer.android.com/guide/app-bundle, https://developer.android.com/studio/publish/app-signing | `S18-E4-D` | `S18-E5-D` | `18-android/e5-publikacja-i-monetyzacja-w-google-play/` |
+| `S18-E5-M3` | Przerobić: Wymagania docelowego API | materiał | 1 h | 0 zł | https://developer.android.com/google/play/requirements/target-sdk | `S18-E4-D` | `S18-E5-D` | `18-android/e5-publikacja-i-monetyzacja-w-google-play/` |
+| `S18-E5-M4` | Przerobić: Google Play Billing: integracja, abonamenty, produkty jednorazowe, migracja do Billing Library 9 | materiał | 8–10 h | 0 zł | https://developer.android.com/google/play/billing | `S18-E4-D` | `S18-E5-D` | `18-android/e5-publikacja-i-monetyzacja-w-google-play/` |
+| `S18-E5-M5` | Przerobić: Real-time developer notifications (RTDN) i weryfikacja zakupów na serwerze | materiał | 3–4 h | 0 zł | https://developer.android.com/google/play/billing/rtdn-reference | `S18-E4-D` | `S18-E5-D` | `18-android/e5-publikacja-i-monetyzacja-w-google-play/` |
+| `S18-E5-M6` | Przerobić: Play Integrity API | materiał | 2–3 h | 0 zł | https://developer.android.com/google/play/integrity | `S18-E4-D` | `S18-E5-D` | `18-android/e5-publikacja-i-monetyzacja-w-google-play/` |
+| `S18-E5-M7` | Przerobić: Polityki programu dla deweloperów, sekcja bezpieczeństwa danych, weryfikacja deweloperów Androida | materiał | 4–6 h | 0 zł | https://play.google/developer-content-policy/, https://support.google.com/googleplay/android-developer/answer/10787469, https://developer.android.com/developer-verification | `S18-E4-D` | `S18-E5-D` | `18-android/e5-publikacja-i-monetyzacja-w-google-play/` |
+| `S18-E5-M8` | Przerobić: Google Play Academy | materiał | wg potrzeb | 0 zł | https://playacademy.withgoogle.com | `S18-E4-D` | `S18-E5-D` | `18-android/e5-publikacja-i-monetyzacja-w-google-play/` |
+| `S18-E5-M9` | Przerobić: Tauri 2: publikacja w Google Play (AAB, architektury) | materiał | 1–2 h | 0 zł | https://v2.tauri.app/distribute/google-play/ | `S18-E4-D` | `S18-E5-D` | `18-android/e5-publikacja-i-monetyzacja-w-google-play/` |
+| `S18-E5-D` | Dowód etapu 5: publikacja i monetyzacja w Google Play | dowód | — | — | — | `S18-E5-M1`, `S18-E5-M2`, `S18-E5-M3`, `S18-E5-M4`, `S18-E5-M5`, `S18-E5-M6`, `S18-E5-M7`, `S18-E5-M8`, `S18-E5-M9` | `S18-E6-M1`, `S18-E6-M2`, `S18-E6-M3`, `S18-E6-M4`, `S18-E6-M5`, `S18-E6-P1`, `S18-E6-P2`, `S18-E6-P3` | `18-android/e5-publikacja-i-monetyzacja-w-google-play/` |
 
 **`S18-E5-D` · Dowód etapu 5: publikacja i monetyzacja w Google Play**
 
@@ -279,6 +291,8 @@ Aplikacja z rdzeniem Rust opublikowana w Google Play po teście zamkniętym, z a
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
 
+**Folder roboczy:** `18-android/e5-publikacja-i-monetyzacja-w-google-play/`
+
 ### Etap 6: ekspert
 
 Opis kamienia milowego (do wklejenia):
@@ -287,17 +301,17 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód poziomu E:** Samodzielnie, bez agenta, w 1 dzień diagnozujesz i naprawiasz ANR, wyciek pamięci albo błąd zakupów w aplikacji z rdzeniem Rust, korzystając z Perfetto, profilera Android Studio i logów RTDN, i umiesz wyjaśnić przyczynę osobie nietechnicznej.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S18-E6-M1` | Przerobić: Jetpack Compose Performance, fazy Compose, stabilność | materiał | 4–6 h | 0 zł | https://developer.android.com/develop/ui/compose/performance | `S18-E5-D` | `S18-E6-D` |
-| `S18-E6-M2` | Przerobić: Baseline Profiles i Macrobenchmark | materiał | 6–8 h | 0 zł | https://developer.android.com/topic/performance/baselineprofiles/overview, https://developer.android.com/topic/performance/benchmarking/macrobenchmark-overview | `S18-E5-D` | `S18-E6-D` |
-| `S18-E6-M3` | Przerobić: Android vitals (progi złego zachowania: awarie, ANR, pamięć) | materiał | 2–3 h | 0 zł | https://developer.android.com/topic/performance/vitals | `S18-E5-D` | `S18-E6-D` |
-| `S18-E6-M4` | Przerobić: Jetpack Compose Internals (wydanie z 2022 r.) | materiał, płatny | 10–12 h | płatna | https://leanpub.com/composeinternals | `S18-E5-D` | `S18-E6-D` |
-| `S18-E6-M5` | Przerobić: Android Developers Blog, Android Code Search | materiał | ok. 1 h tygodniowo | 0 zł | https://android-developers.googleblog.com, https://cs.android.com | `S18-E5-D` | `S18-E6-D` |
-| `S18-E6-P1` | Praktyka: recenzja kodu AI | praktyka | — | — | — | `S18-E5-D` | `S18-E6-D` |
-| `S18-E6-P2` | Praktyka: wydajność | praktyka | — | — | — | `S18-E5-D` | `S18-E6-D` |
-| `S18-E6-P3` | Praktyka: śledzenie zmian platformy | praktyka | — | — | — | `S18-E5-D` | `S18-E6-D` |
-| `S18-E6-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S18-E6-M1`, `S18-E6-M2`, `S18-E6-M3`, `S18-E6-M4`, `S18-E6-M5`, `S18-E6-P1`, `S18-E6-P2`, `S18-E6-P3` | — |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S18-E6-M1` | Przerobić: Jetpack Compose Performance, fazy Compose, stabilność | materiał | 4–6 h | 0 zł | https://developer.android.com/develop/ui/compose/performance | `S18-E5-D` | `S18-E6-D` | `18-android/e6-ekspert/` |
+| `S18-E6-M2` | Przerobić: Baseline Profiles i Macrobenchmark | materiał | 6–8 h | 0 zł | https://developer.android.com/topic/performance/baselineprofiles/overview, https://developer.android.com/topic/performance/benchmarking/macrobenchmark-overview | `S18-E5-D` | `S18-E6-D` | `18-android/e6-ekspert/` |
+| `S18-E6-M3` | Przerobić: Android vitals (progi złego zachowania: awarie, ANR, pamięć) | materiał | 2–3 h | 0 zł | https://developer.android.com/topic/performance/vitals | `S18-E5-D` | `S18-E6-D` | `18-android/e6-ekspert/` |
+| `S18-E6-M4` | Przerobić: Jetpack Compose Internals (wydanie z 2022 r.) | materiał, płatny | 10–12 h | płatna | https://leanpub.com/composeinternals | `S18-E5-D` | `S18-E6-D` | `18-android/e6-ekspert/` |
+| `S18-E6-M5` | Przerobić: Android Developers Blog, Android Code Search | materiał | ok. 1 h tygodniowo | 0 zł | https://android-developers.googleblog.com, https://cs.android.com | `S18-E5-D` | `S18-E6-D` | `18-android/e6-ekspert/` |
+| `S18-E6-P1` | Praktyka: recenzja kodu AI | praktyka | — | — | — | `S18-E5-D` | `S18-E6-D` | `18-android/e6-ekspert/` |
+| `S18-E6-P2` | Praktyka: wydajność | praktyka | — | — | — | `S18-E5-D` | `S18-E6-D` | `18-android/e6-ekspert/` |
+| `S18-E6-P3` | Praktyka: śledzenie zmian platformy | praktyka | — | — | — | `S18-E5-D` | `S18-E6-D` | `18-android/e6-ekspert/` |
+| `S18-E6-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S18-E6-M1`, `S18-E6-M2`, `S18-E6-M3`, `S18-E6-M4`, `S18-E6-M5`, `S18-E6-P1`, `S18-E6-P2`, `S18-E6-P3` | — | `18-android/e6-ekspert/` |
 
 **`S18-E6-P1` · Praktyka: recenzja kodu AI**
 
@@ -305,11 +319,15 @@ Opis kamienia milowego (do wklejenia):
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `18-android/e6-ekspert/`
+
 **`S18-E6-P2` · Praktyka: wydajność**
 
 Baseline Profile i Macrobenchmark w CI dla uruchomienia i przewijania; awarie i ANR poniżej progów Android vitals.
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
+
+**Folder roboczy:** `18-android/e6-ekspert/`
 
 **`S18-E6-P3` · Praktyka: śledzenie zmian platformy**
 
@@ -317,11 +335,15 @@ Coroczna aktualizacja docelowego API, wersji Billing Library i wymogów weryfika
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `18-android/e6-ekspert/`
+
 **`S18-E6-D` · Dowód poziomu E: ekspert**
 
 Samodzielnie, bez agenta, w 1 dzień diagnozujesz i naprawiasz ANR, wyciek pamięci albo błąd zakupów w aplikacji z rdzeniem Rust, korzystając z Perfetto, profilera Android Studio i logów RTDN, i umiesz wyjaśnić przyczynę osobie nietechnicznej.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki. Bez agenta AI.
+
+**Folder roboczy:** `18-android/e6-ekspert/`
 
 ## 6. Relacje z innymi projektami
 

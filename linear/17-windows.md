@@ -80,6 +80,8 @@ Punkt startu projektu „17. Windows”.
 - zaznaczyć etapy, które zaliczasz samym dowodem (zgodnie z akapitem wstępnym ścieżki), i dla nich zamknąć zadania materiałów jako niepotrzebne,
 - ustawić daty kamieni milowych zgodnie z kolejnością z pliku głównego.
 
+**Folder roboczy:** `17-windows/`
+
 ## 4. Przepływ zależności
 
 Linie ciągłe to zależności wewnątrz projektu, przerywane to zadania z innych projektów. Wewnątrz etapu zadania materiałów są równoległe i wszystkie blokują dowód etapu; dowód etapu blokuje materiały kolejnego etapu.
@@ -104,7 +106,7 @@ flowchart TD
 
 ## 5. Zadania według kamieni milowych
 
-Szablon opisu zadania materiału: nazwa materiału, autor lub wydawca, typ, czas, koszt i link (jak w kolumnach poniżej) oraz zdanie „Gotowe, gdy materiał jest przerobiony w zakresie potrzebnym do dowodu etapu”. Opisy dowodów i praktyk są podane pod tabelą każdego etapu.
+Szablon opisu zadania materiału: nazwa materiału, autor lub wydawca, typ, czas, koszt i link (jak w kolumnach poniżej), zdanie „Gotowe, gdy materiał jest przerobiony w zakresie potrzebnym do dowodu etapu” oraz folder roboczy z kolumny „Folder”. Opisy dowodów i praktyk są podane pod tabelą każdego etapu.
 
 ### Etap 0: Windows od strony aplikacji
 
@@ -116,14 +118,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Narzędzie z sekcji 14.1 zbudowane na Windows x64 i ARM64, z tokenami w Credential Manager, danymi w `%LOCALAPPDATA%`, wykrywaniem braku WebView2 z czytelnym komunikatem i jednym wywołaniem API systemu przez `windows-rs` (np. powiadomienie systemowe albo odczyt ustawienia rejestru) z obsługą błędów zamiast `unwrap()`.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S17-E0-M1` | Przerobić: Overview of developing on Windows with Rust, Set up your Rust development environment, Rust for… | materiał | 3–4 h | 0 zł | https://learn.microsoft.com/en-us/windows/dev-environment/rust/ | `S17-START` | `S17-E0-D` |
-| `S17-E0-M2` | Przerobić: Crate’y `windows` i `windows-sys` | materiał | 3–4 h | 0 zł | https://docs.rs/windows, https://github.com/microsoft/windows-rs | `S17-START` | `S17-E0-D` |
-| `S17-E0-M3` | Przerobić: Introduction to Microsoft Edge WebView2, Distribute your app and the WebView2 Runtime | materiał | 3–4 h | 0 zł | https://learn.microsoft.com/en-us/microsoft-edge/webview2/, https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution | `S17-START` | `S17-E0-D` |
-| `S17-E0-M4` | Przerobić: Windows 10 System Programming, Part 1 | materiał, płatny | 12–15 h | płatna | https://leanpub.com/windows10systemprogramming | `S17-START` | `S17-E0-D` |
-| `S17-E0-M5` | Przerobić: CryptProtectData (DPAPI), CredWriteW (Credential Manager) | materiał | 1–2 h | 0 zł | https://learn.microsoft.com/en-us/windows/win32/api/dpapi/nf-dpapi-cryptprotectdata | `S17-START` | `S17-E0-D` |
-| `S17-E0-D` | Dowód etapu 0: Windows od strony aplikacji | dowód | — | — | — | `S17-E0-M1`, `S17-E0-M2`, `S17-E0-M3`, `S17-E0-M4`, `S17-E0-M5` | `S17-E1-M1`, `S17-E1-M2`, `S17-E1-M3`, `S17-E1-M4`, `S17-E1-M5`, `S17-E1-M6` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S17-E0-M1` | Przerobić: Overview of developing on Windows with Rust, Set up your Rust development environment, Rust for… | materiał | 3–4 h | 0 zł | https://learn.microsoft.com/en-us/windows/dev-environment/rust/ | `S17-START` | `S17-E0-D` | `17-windows/e0-windows-od-strony-aplikacji/` |
+| `S17-E0-M2` | Przerobić: Crate’y `windows` i `windows-sys` | materiał | 3–4 h | 0 zł | https://docs.rs/windows, https://github.com/microsoft/windows-rs | `S17-START` | `S17-E0-D` | `17-windows/e0-windows-od-strony-aplikacji/` |
+| `S17-E0-M3` | Przerobić: Introduction to Microsoft Edge WebView2, Distribute your app and the WebView2 Runtime | materiał | 3–4 h | 0 zł | https://learn.microsoft.com/en-us/microsoft-edge/webview2/, https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution | `S17-START` | `S17-E0-D` | `17-windows/e0-windows-od-strony-aplikacji/` |
+| `S17-E0-M4` | Przerobić: Windows 10 System Programming, Part 1 | materiał, płatny | 12–15 h | płatna | https://leanpub.com/windows10systemprogramming | `S17-START` | `S17-E0-D` | `17-windows/e0-windows-od-strony-aplikacji/` |
+| `S17-E0-M5` | Przerobić: CryptProtectData (DPAPI), CredWriteW (Credential Manager) | materiał | 1–2 h | 0 zł | https://learn.microsoft.com/en-us/windows/win32/api/dpapi/nf-dpapi-cryptprotectdata | `S17-START` | `S17-E0-D` | `17-windows/e0-windows-od-strony-aplikacji/` |
+| `S17-E0-D` | Dowód etapu 0: Windows od strony aplikacji | dowód | — | — | — | `S17-E0-M1`, `S17-E0-M2`, `S17-E0-M3`, `S17-E0-M4`, `S17-E0-M5` | `S17-E1-M1`, `S17-E1-M2`, `S17-E1-M3`, `S17-E1-M4`, `S17-E1-M5`, `S17-E1-M6` | `17-windows/e0-windows-od-strony-aplikacji/` |
 
 **`S17-E0-D` · Dowód etapu 0: Windows od strony aplikacji**
 
@@ -132,6 +134,8 @@ Narzędzie z sekcji 14.1 zbudowane na Windows x64 i ARM64, z tokenami w Credenti
 **Na co zwrócić uwagę:** target `x86_64-pc-windows-msvc` i `aarch64-pc-windows-msvc` (Windows na ARM), Visual Studio Build Tools; Smart App Control w trybie wymuszania potrafi zablokować niepodpisane narzędzia, także toolchain Rusta; WebView2 w trybie Evergreen aktualizuje się sam, ale aplikacja musi sprawdzić, czy runtime jest zainstalowany; ścieżki z ukośnikiem wstecznym, limit długości ścieżki, wielkość liter, `%APPDATA%` i `%LOCALAPPDATA%` zamiast katalogu programu. Wytyczne Fluent: zob. sekcja 13.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `17-windows/e0-windows-od-strony-aplikacji/`
 
 ### Etap 1: instalatory
 
@@ -143,15 +147,15 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Narzędzie wydane jako instalator NSIS (na użytkownika) i MSI (na maszynę, do wdrożeń firmowych), oba z cichą instalacją (`/S`, `/quiet`), wpisem w „Aplikacje i funkcje” z poprawnym wydawcą i wersją, czystym odinstalowaniem bez pozostałości oraz aktualizacją z N do N+1 przez updater z sekcji 14.1; test na czystej maszynie wirtualnej Windows 10 i 11.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S17-E1-M1` | Przerobić: Windows Installer | materiał | 4–5 h | 0 zł | https://learn.microsoft.com/en-us/windows/win32/msi/windows-installer-portal | `S17-E0-D` | `S17-E1-D` |
-| `S17-E1-M2` | Przerobić: WiX Toolset: dokumentacja | materiał | 4–6 h | 0 zł; firmy z przychodem od 10 tys. USD rocznie objęte opłatą Open Source Maintenance Fee | https://docs.firegiant.com/wix/ | `S17-E0-D` | `S17-E1-D` |
-| `S17-E1-M3` | Przerobić: NSIS: dokumentacja | materiał | 2–3 h | 0 zł | https://nsis.sourceforge.io/Docs/ | `S17-E0-D` | `S17-E1-D` |
-| `S17-E1-M4` | Przerobić: MSIX: dokumentacja | materiał | 4–5 h | 0 zł | https://learn.microsoft.com/en-us/windows/msix/ | `S17-E0-D` | `S17-E1-D` |
-| `S17-E1-M5` | Przerobić: Package and deploy Windows apps | materiał | 1–2 h | 0 zł | https://learn.microsoft.com/en-us/windows/apps/package-and-deploy/ | `S17-E0-D` | `S17-E1-D` |
-| `S17-E1-M6` | Przerobić: Tauri: Windows Installer | materiał | 2 h | 0 zł | https://v2.tauri.app/distribute/windows-installer/ | `S17-E0-D` | `S17-E1-D` |
-| `S17-E1-D` | Dowód etapu 1: instalatory | dowód | — | — | — | `S17-E1-M1`, `S17-E1-M2`, `S17-E1-M3`, `S17-E1-M4`, `S17-E1-M5`, `S17-E1-M6` | `S17-E2-M1`, `S17-E2-M2`, `S17-E2-M3`, `S17-E2-M4`, `S17-E2-M5`, `S17-E2-M6`, `S17-E2-M7`, `S17-E2-M8`, `S17-U1-M1`, `S17-U1-M2`, `S17-U1-M3`, `S17-U1-M4` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S17-E1-M1` | Przerobić: Windows Installer | materiał | 4–5 h | 0 zł | https://learn.microsoft.com/en-us/windows/win32/msi/windows-installer-portal | `S17-E0-D` | `S17-E1-D` | `17-windows/e1-instalatory/` |
+| `S17-E1-M2` | Przerobić: WiX Toolset: dokumentacja | materiał | 4–6 h | 0 zł; firmy z przychodem od 10 tys. USD rocznie objęte opłatą Open Source Maintenance Fee | https://docs.firegiant.com/wix/ | `S17-E0-D` | `S17-E1-D` | `17-windows/e1-instalatory/` |
+| `S17-E1-M3` | Przerobić: NSIS: dokumentacja | materiał | 2–3 h | 0 zł | https://nsis.sourceforge.io/Docs/ | `S17-E0-D` | `S17-E1-D` | `17-windows/e1-instalatory/` |
+| `S17-E1-M4` | Przerobić: MSIX: dokumentacja | materiał | 4–5 h | 0 zł | https://learn.microsoft.com/en-us/windows/msix/ | `S17-E0-D` | `S17-E1-D` | `17-windows/e1-instalatory/` |
+| `S17-E1-M5` | Przerobić: Package and deploy Windows apps | materiał | 1–2 h | 0 zł | https://learn.microsoft.com/en-us/windows/apps/package-and-deploy/ | `S17-E0-D` | `S17-E1-D` | `17-windows/e1-instalatory/` |
+| `S17-E1-M6` | Przerobić: Tauri: Windows Installer | materiał | 2 h | 0 zł | https://v2.tauri.app/distribute/windows-installer/ | `S17-E0-D` | `S17-E1-D` | `17-windows/e1-instalatory/` |
+| `S17-E1-D` | Dowód etapu 1: instalatory | dowód | — | — | — | `S17-E1-M1`, `S17-E1-M2`, `S17-E1-M3`, `S17-E1-M4`, `S17-E1-M5`, `S17-E1-M6` | `S17-E2-M1`, `S17-E2-M2`, `S17-E2-M3`, `S17-E2-M4`, `S17-E2-M5`, `S17-E2-M6`, `S17-E2-M7`, `S17-E2-M8`, `S17-U1-M1`, `S17-U1-M2`, `S17-U1-M3`, `S17-U1-M4` | `17-windows/e1-instalatory/` |
 
 **`S17-E1-D` · Dowód etapu 1: instalatory**
 
@@ -160,6 +164,8 @@ Narzędzie wydane jako instalator NSIS (na użytkownika) i MSI (na maszynę, do 
 **Na co zwrócić uwagę:** Tauri buduje MSI na WiX v3, który FireGiant oznacza jako przestarzały, a MSI powstaje tylko na Windows, więc w CI potrzebny jest runner Windows; Tauri nie generuje MSIX; wybór trybu WebView2 (`downloadBootstrapper`, `offlineInstaller`, `fixedVersion`) to kompromis rozmiaru, pracy offline i odpowiedzialności za łatki silnika; instalacja na użytkownika bez uprawnień administratora jest zwykle lepsza dla narzędzia deweloperskiego; poprawne odinstalowanie i stały `UpgradeCode` w MSI.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `17-windows/e1-instalatory/`
 
 ### Etap 2: podpis, reputacja i Microsoft Store
 
@@ -171,17 +177,17 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Instalatory z etapu 1 podpisane (Artifact Signing albo certyfikat OV) ze znacznikiem czasu, sprawdzone przez `signtool verify /pa /all`; na czystej maszynie z włączonym SmartScreen i Defenderem instalacja przebiega bez blokady albo z udokumentowanym ostrzeżeniem i planem budowy reputacji; zgłoszenie aplikacji do Microsoft Store przechodzi certyfikację; procedura zgłaszania fałszywego alarmu antywirusa opisana w dokumentacji wydania.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S17-E2-M1` | Przerobić: Code signing options for Windows app developers | materiał | 1–2 h | 0 zł | https://learn.microsoft.com/en-us/windows/apps/package-and-deploy/code-signing-options | `S17-E1-D` | `S17-E2-D` |
-| `S17-E2-M2` | Przerobić: SmartScreen reputation for Windows app developers | materiał | 1 h | 0 zł | https://learn.microsoft.com/en-us/windows/apps/package-and-deploy/smartscreen-reputation | `S17-E1-D` | `S17-E2-D` |
-| `S17-E2-M3` | Przerobić: Artifact Signing (dawniej Trusted Signing): przegląd, quickstart, FAQ, modele zaufania | materiał, płatny | 3–4 h | usługa płatna (abonament) | https://learn.microsoft.com/en-us/azure/artifact-signing/ | `S17-E1-D` | `S17-E2-D` |
-| `S17-E2-M4` | Przerobić: Smart App Control overview | materiał | 1 h | 0 zł | https://learn.microsoft.com/en-us/windows/apps/develop/smart-app-control/overview | `S17-E1-D` | `S17-E2-D` |
-| `S17-E2-M5` | Przerobić: Tauri: Windows Code Signing | materiał | 1–2 h | 0 zł | https://v2.tauri.app/distribute/sign/windows/ | `S17-E1-D` | `S17-E2-D` |
-| `S17-E2-M6` | Przerobić: Publish apps and games to Microsoft Store, proces certyfikacji aplikacji MSI/EXE, Microsoft Store… | materiał, płatny | 4–5 h | 0 zł; konto indywidualne bezpłatne | https://learn.microsoft.com/en-us/windows/apps/publish/, https://learn.microsoft.com/en-us/windows/apps/publish/store-policies | `S17-E1-D` | `S17-E2-D` |
-| `S17-E2-M7` | Przerobić: Tauri: Microsoft Store | materiał | 1 h | 0 zł | https://v2.tauri.app/distribute/microsoft-store/ | `S17-E1-D` | `S17-E2-D` |
-| `S17-E2-M8` | Przerobić: Submit a file for malware analysis | materiał | 0,5 h | 0 zł | https://www.microsoft.com/en-us/wdsi/filesubmission | `S17-E1-D` | `S17-E2-D` |
-| `S17-E2-D` | Dowód etapu 2: podpis, reputacja i Microsoft Store | dowód | — | — | — | `S17-E2-M1`, `S17-E2-M2`, `S17-E2-M3`, `S17-E2-M4`, `S17-E2-M5`, `S17-E2-M6`, `S17-E2-M7`, `S17-E2-M8` | `S17-E3-M1`, `S17-E3-M2`, `S17-E3-M3`, `S17-E3-M4`, `S17-E3-M5`, `S17-E3-P1`, `S17-E3-P2`, `S17-E3-P3` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S17-E2-M1` | Przerobić: Code signing options for Windows app developers | materiał | 1–2 h | 0 zł | https://learn.microsoft.com/en-us/windows/apps/package-and-deploy/code-signing-options | `S17-E1-D` | `S17-E2-D` | `17-windows/e2-podpis-reputacja-i-microsoft-store/` |
+| `S17-E2-M2` | Przerobić: SmartScreen reputation for Windows app developers | materiał | 1 h | 0 zł | https://learn.microsoft.com/en-us/windows/apps/package-and-deploy/smartscreen-reputation | `S17-E1-D` | `S17-E2-D` | `17-windows/e2-podpis-reputacja-i-microsoft-store/` |
+| `S17-E2-M3` | Przerobić: Artifact Signing (dawniej Trusted Signing): przegląd, quickstart, FAQ, modele zaufania | materiał, płatny | 3–4 h | usługa płatna (abonament) | https://learn.microsoft.com/en-us/azure/artifact-signing/ | `S17-E1-D` | `S17-E2-D` | `17-windows/e2-podpis-reputacja-i-microsoft-store/` |
+| `S17-E2-M4` | Przerobić: Smart App Control overview | materiał | 1 h | 0 zł | https://learn.microsoft.com/en-us/windows/apps/develop/smart-app-control/overview | `S17-E1-D` | `S17-E2-D` | `17-windows/e2-podpis-reputacja-i-microsoft-store/` |
+| `S17-E2-M5` | Przerobić: Tauri: Windows Code Signing | materiał | 1–2 h | 0 zł | https://v2.tauri.app/distribute/sign/windows/ | `S17-E1-D` | `S17-E2-D` | `17-windows/e2-podpis-reputacja-i-microsoft-store/` |
+| `S17-E2-M6` | Przerobić: Publish apps and games to Microsoft Store, proces certyfikacji aplikacji MSI/EXE, Microsoft Store… | materiał, płatny | 4–5 h | 0 zł; konto indywidualne bezpłatne | https://learn.microsoft.com/en-us/windows/apps/publish/, https://learn.microsoft.com/en-us/windows/apps/publish/store-policies | `S17-E1-D` | `S17-E2-D` | `17-windows/e2-podpis-reputacja-i-microsoft-store/` |
+| `S17-E2-M7` | Przerobić: Tauri: Microsoft Store | materiał | 1 h | 0 zł | https://v2.tauri.app/distribute/microsoft-store/ | `S17-E1-D` | `S17-E2-D` | `17-windows/e2-podpis-reputacja-i-microsoft-store/` |
+| `S17-E2-M8` | Przerobić: Submit a file for malware analysis | materiał | 0,5 h | 0 zł | https://www.microsoft.com/en-us/wdsi/filesubmission | `S17-E1-D` | `S17-E2-D` | `17-windows/e2-podpis-reputacja-i-microsoft-store/` |
+| `S17-E2-D` | Dowód etapu 2: podpis, reputacja i Microsoft Store | dowód | — | — | — | `S17-E2-M1`, `S17-E2-M2`, `S17-E2-M3`, `S17-E2-M4`, `S17-E2-M5`, `S17-E2-M6`, `S17-E2-M7`, `S17-E2-M8` | `S17-E3-M1`, `S17-E3-M2`, `S17-E3-M3`, `S17-E3-M4`, `S17-E3-M5`, `S17-E3-P1`, `S17-E3-P2`, `S17-E3-P3` | `17-windows/e2-podpis-reputacja-i-microsoft-store/` |
 
 **`S17-E2-D` · Dowód etapu 2: podpis, reputacja i Microsoft Store**
 
@@ -191,6 +197,8 @@ Instalatory z etapu 1 podpisane (Artifact Signing albo certyfikat OV) ze znaczni
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
 
+**Folder roboczy:** `17-windows/e2-podpis-reputacja-i-microsoft-store/`
+
 ### Etap 3: ekspert
 
 Opis kamienia milowego (do wklejenia):
@@ -199,17 +207,17 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód poziomu E:** Samodzielnie, bez agenta, w 1 dzień diagnozujesz i naprawiasz problem zgłoszony przez użytkownika Windows (np. blokada SmartScreen lub Defendera, nieudana aktualizacja przez MSI, brak WebView2, błąd uprawnień), wydajesz podpisaną poprawkę i umiesz wyjaśnić przyczynę osobie nietechnicznej.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S17-E3-M1` | Przerobić: Windows Internals, 7th Edition, Part 1 i Part 2 | materiał, płatny | 20–30 h (wybrane rozdziały) | płatna | https://learn.microsoft.com/en-us/sysinternals/resources/windows-internals | `S17-E2-D`, `S17-U1-D` | `S17-E3-D` |
-| `S17-E3-M2` | Przerobić: Sysinternals: Process Monitor, Process Explorer, Autoruns, Sigcheck | materiał | 4–6 h | 0 zł | https://learn.microsoft.com/en-us/sysinternals/ | `S17-E2-D`, `S17-U1-D` | `S17-E3-D` |
-| `S17-E3-M3` | Przerobić: Dynamic-Link Library Security | materiał | 1–2 h | 0 zł | https://learn.microsoft.com/en-us/windows/win32/dlls/dynamic-link-library-security | `S17-E2-D`, `S17-U1-D` | `S17-E3-D` |
-| `S17-E3-M4` | Przerobić: User Account Control | materiał | 1 h | 0 zł | https://learn.microsoft.com/en-us/windows/security/application-security/application-control/user-account-control/ | `S17-E2-D`, `S17-U1-D` | `S17-E3-D` |
-| `S17-E3-M5` | Przerobić: The Old New Thing | materiał | ok. 30 min tygodniowo | 0 zł | https://devblogs.microsoft.com/oldnewthing/ | `S17-E2-D`, `S17-U1-D` | `S17-E3-D` |
-| `S17-E3-P1` | Praktyka: recenzja kodu AI | praktyka | — | — | — | `S17-E2-D`, `S17-U1-D` | `S17-E3-D` |
-| `S17-E3-P2` | Praktyka: diagnoza Process Monitorem | praktyka | — | — | — | `S17-E2-D`, `S17-U1-D` | `S17-E3-D` |
-| `S17-E3-P3` | Praktyka: macierz wersji | praktyka | — | — | — | `S17-E2-D`, `S17-U1-D` | `S17-E3-D` |
-| `S17-E3-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S17-E3-M1`, `S17-E3-M2`, `S17-E3-M3`, `S17-E3-M4`, `S17-E3-M5`, `S17-E3-P1`, `S17-E3-P2`, `S17-E3-P3` | — |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S17-E3-M1` | Przerobić: Windows Internals, 7th Edition, Part 1 i Part 2 | materiał, płatny | 20–30 h (wybrane rozdziały) | płatna | https://learn.microsoft.com/en-us/sysinternals/resources/windows-internals | `S17-E2-D`, `S17-U1-D` | `S17-E3-D` | `17-windows/e3-ekspert/` |
+| `S17-E3-M2` | Przerobić: Sysinternals: Process Monitor, Process Explorer, Autoruns, Sigcheck | materiał | 4–6 h | 0 zł | https://learn.microsoft.com/en-us/sysinternals/ | `S17-E2-D`, `S17-U1-D` | `S17-E3-D` | `17-windows/e3-ekspert/` |
+| `S17-E3-M3` | Przerobić: Dynamic-Link Library Security | materiał | 1–2 h | 0 zł | https://learn.microsoft.com/en-us/windows/win32/dlls/dynamic-link-library-security | `S17-E2-D`, `S17-U1-D` | `S17-E3-D` | `17-windows/e3-ekspert/` |
+| `S17-E3-M4` | Przerobić: User Account Control | materiał | 1 h | 0 zł | https://learn.microsoft.com/en-us/windows/security/application-security/application-control/user-account-control/ | `S17-E2-D`, `S17-U1-D` | `S17-E3-D` | `17-windows/e3-ekspert/` |
+| `S17-E3-M5` | Przerobić: The Old New Thing | materiał | ok. 30 min tygodniowo | 0 zł | https://devblogs.microsoft.com/oldnewthing/ | `S17-E2-D`, `S17-U1-D` | `S17-E3-D` | `17-windows/e3-ekspert/` |
+| `S17-E3-P1` | Praktyka: recenzja kodu AI | praktyka | — | — | — | `S17-E2-D`, `S17-U1-D` | `S17-E3-D` | `17-windows/e3-ekspert/` |
+| `S17-E3-P2` | Praktyka: diagnoza Process Monitorem | praktyka | — | — | — | `S17-E2-D`, `S17-U1-D` | `S17-E3-D` | `17-windows/e3-ekspert/` |
+| `S17-E3-P3` | Praktyka: macierz wersji | praktyka | — | — | — | `S17-E2-D`, `S17-U1-D` | `S17-E3-D` | `17-windows/e3-ekspert/` |
+| `S17-E3-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S17-E3-M1`, `S17-E3-M2`, `S17-E3-M3`, `S17-E3-M4`, `S17-E3-M5`, `S17-E3-P1`, `S17-E3-P2`, `S17-E3-P3` | — | `17-windows/e3-ekspert/` |
 
 **`S17-E3-P1` · Praktyka: recenzja kodu AI**
 
@@ -217,11 +225,15 @@ Opis kamienia milowego (do wklejenia):
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `17-windows/e3-ekspert/`
+
 **`S17-E3-P2` · Praktyka: diagnoza Process Monitorem**
 
 Sprawdzenie, czy aplikacja i instalator nie ładują DLL z katalogu bieżącego lub katalogu pobierania.
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
+
+**Folder roboczy:** `17-windows/e3-ekspert/`
 
 **`S17-E3-P3` · Praktyka: macierz wersji**
 
@@ -229,11 +241,15 @@ Windows 10 i 11, x64 i ARM64, konto standardowe i administrator, z WebView2 i be
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `17-windows/e3-ekspert/`
+
 **`S17-E3-D` · Dowód poziomu E: ekspert**
 
 Samodzielnie, bez agenta, w 1 dzień diagnozujesz i naprawiasz problem zgłoszony przez użytkownika Windows (np. blokada SmartScreen lub Defendera, nieudana aktualizacja przez MSI, brak WebView2, błąd uprawnień), wydajesz podpisaną poprawkę i umiesz wyjaśnić przyczynę osobie nietechnicznej.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki. Bez agenta AI.
+
+**Folder roboczy:** `17-windows/e3-ekspert/`
 
 ### Uzupełniająca 17.2 · PowerShell
 
@@ -247,19 +263,21 @@ Książka Manninga jest opcjonalna; do poziomu W zwykle wystarcza PowerShell 101
 
 **Dowód:** Skrypt PowerShell 7 na runnerze Windows w GitHub Actions, który buduje instalator, podpisuje go i weryfikuje podpis, kończy się błędem przy każdym niepowodzeniu kroku i przechodzi PSScriptAnalyzer oraz testy w Pester.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S17-U1-M1` | Przerobić: PowerShell 101 | materiał | 5–6 h | 0 zł | https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/00-introduction | `S17-E1-D` | `S17-U1-D` |
-| `S17-U1-M2` | Przerobić: Learn PowerShell in a Month of Lunches (wydanie 4) | materiał, płatny | 10–15 h | płatna | https://www.manning.com/books/learn-powershell-in-a-month-of-lunches | `S17-E1-D` | `S17-U1-D` |
-| `S17-U1-M3` | Przerobić: PSScriptAnalyzer | materiał | 1–2 h | 0 zł | https://learn.microsoft.com/en-us/powershell/utility-modules/psscriptanalyzer/overview | `S17-E1-D` | `S17-U1-D` |
-| `S17-U1-M4` | Przerobić: Pester | materiał | 2–3 h | 0 zł | https://pester.dev | `S17-E1-D` | `S17-U1-D` |
-| `S17-U1-D` | Dowód (17.2): PowerShell | dowód | — | — | — | `S17-U1-M1`, `S17-U1-M2`, `S17-U1-M3`, `S17-U1-M4` | `S17-E3-M1`, `S17-E3-M2`, `S17-E3-M3`, `S17-E3-M4`, `S17-E3-M5`, `S17-E3-P1`, `S17-E3-P2`, `S17-E3-P3` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S17-U1-M1` | Przerobić: PowerShell 101 | materiał | 5–6 h | 0 zł | https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/00-introduction | `S17-E1-D` | `S17-U1-D` | `17-windows/u1-powershell/` |
+| `S17-U1-M2` | Przerobić: Learn PowerShell in a Month of Lunches (wydanie 4) | materiał, płatny | 10–15 h | płatna | https://www.manning.com/books/learn-powershell-in-a-month-of-lunches | `S17-E1-D` | `S17-U1-D` | `17-windows/u1-powershell/` |
+| `S17-U1-M3` | Przerobić: PSScriptAnalyzer | materiał | 1–2 h | 0 zł | https://learn.microsoft.com/en-us/powershell/utility-modules/psscriptanalyzer/overview | `S17-E1-D` | `S17-U1-D` | `17-windows/u1-powershell/` |
+| `S17-U1-M4` | Przerobić: Pester | materiał | 2–3 h | 0 zł | https://pester.dev | `S17-E1-D` | `S17-U1-D` | `17-windows/u1-powershell/` |
+| `S17-U1-D` | Dowód (17.2): PowerShell | dowód | — | — | — | `S17-U1-M1`, `S17-U1-M2`, `S17-U1-M3`, `S17-U1-M4` | `S17-E3-M1`, `S17-E3-M2`, `S17-E3-M3`, `S17-E3-M4`, `S17-E3-M5`, `S17-E3-P1`, `S17-E3-P2`, `S17-E3-P3` | `17-windows/u1-powershell/` |
 
 **`S17-U1-D` · Dowód (17.2): PowerShell**
 
 Skrypt PowerShell 7 na runnerze Windows w GitHub Actions, który buduje instalator, podpisuje go i weryfikuje podpis, kończy się błędem przy każdym niepowodzeniu kroku i przechodzi PSScriptAnalyzer oraz testy w Pester.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `17-windows/u1-powershell/`
 
 ## 6. Relacje z innymi projektami
 

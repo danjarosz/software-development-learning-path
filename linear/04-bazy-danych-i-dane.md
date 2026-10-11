@@ -78,6 +78,8 @@ Punkt startu projektu „04. Bazy danych i dane”.
 - zaznaczyć etapy, które zaliczasz samym dowodem (zgodnie z akapitem wstępnym ścieżki), i dla nich zamknąć zadania materiałów jako niepotrzebne,
 - ustawić daty kamieni milowych zgodnie z kolejnością z pliku głównego.
 
+**Folder roboczy:** `04-bazy-danych-i-dane/`
+
 ## 4. Przepływ zależności
 
 Linie ciągłe to zależności wewnątrz projektu, przerywane to zadania z innych projektów. Wewnątrz etapu zadania materiałów są równoległe i wszystkie blokują dowód etapu; dowód etapu blokuje materiały kolejnego etapu.
@@ -106,7 +108,7 @@ flowchart TD
 
 ## 5. Zadania według kamieni milowych
 
-Szablon opisu zadania materiału: nazwa materiału, autor lub wydawca, typ, czas, koszt i link (jak w kolumnach poniżej) oraz zdanie „Gotowe, gdy materiał jest przerobiony w zakresie potrzebnym do dowodu etapu”. Opisy dowodów i praktyk są podane pod tabelą każdego etapu.
+Szablon opisu zadania materiału: nazwa materiału, autor lub wydawca, typ, czas, koszt i link (jak w kolumnach poniżej), zdanie „Gotowe, gdy materiał jest przerobiony w zakresie potrzebnym do dowodu etapu” oraz folder roboczy z kolumny „Folder”. Opisy dowodów i praktyk są podane pod tabelą każdego etapu.
 
 ### Etap 0: SQL i modelowanie
 
@@ -118,14 +120,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Model danych dla aplikacji abonamentowej z wielodostępnością (najemcy, użytkownicy, role, abonamenty, faktury, zdarzenia płatności) z kluczami obcymi i ograniczeniami; 15 zapytań raportowych, w tym z funkcjami okna; krótka notatka, które antywzorce świadomie ominięto.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S04-E0-M1` | Przerobić: Dokumentacja PostgreSQL: część I „Tutorial” i rozdziały o zapytaniach, typach i DDL | materiał | 15–20 h | 0 zł | https://www.postgresql.org/docs/current/ | `S04-START` | `S04-E0-D` |
-| `S04-E0-M2` | Przerobić: PostgreSQL Exercises | materiał | 10–15 h | 0 zł | https://pgexercises.com | `S04-START` | `S04-E0-D` |
-| `S04-E0-M3` | Przerobić: Modern SQL | materiał | 5–8 h | 0 zł | https://modern-sql.com | `S04-START` | `S04-E0-D` |
-| `S04-E0-M4` | Przerobić: SQL Antipatterns, Volume 1 | materiał, płatny | 12–15 h | płatna | https://pragprog.com/titles/bksap1/sql-antipatterns-volume-1/ | `S04-START` | `S04-E0-D` |
-| `S04-E0-M5` | Przerobić: Intro to Database Systems (CMU 15-445/645) | materiał | 20–30 h wybranych wykładów | 0 zł | https://15445.courses.cs.cmu.edu | `S04-START` | `S04-E0-D` |
-| `S04-E0-D` | Dowód etapu 0: SQL i modelowanie | dowód | — | — | — | `S04-E0-M1`, `S04-E0-M2`, `S04-E0-M3`, `S04-E0-M4`, `S04-E0-M5` | `S04-E1-M1`, `S04-E1-M2`, `S04-E1-M3`, `S04-E1-M4`, `S04-E1-M5` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S04-E0-M1` | Przerobić: Dokumentacja PostgreSQL: część I „Tutorial” i rozdziały o zapytaniach, typach i DDL | materiał | 15–20 h | 0 zł | https://www.postgresql.org/docs/current/ | `S04-START` | `S04-E0-D` | `04-bazy-danych-i-dane/e0-sql-i-modelowanie/` |
+| `S04-E0-M2` | Przerobić: PostgreSQL Exercises | materiał | 10–15 h | 0 zł | https://pgexercises.com | `S04-START` | `S04-E0-D` | `04-bazy-danych-i-dane/e0-sql-i-modelowanie/` |
+| `S04-E0-M3` | Przerobić: Modern SQL | materiał | 5–8 h | 0 zł | https://modern-sql.com | `S04-START` | `S04-E0-D` | `04-bazy-danych-i-dane/e0-sql-i-modelowanie/` |
+| `S04-E0-M4` | Przerobić: SQL Antipatterns, Volume 1 | materiał, płatny | 12–15 h | płatna | https://pragprog.com/titles/bksap1/sql-antipatterns-volume-1/ | `S04-START` | `S04-E0-D` | `04-bazy-danych-i-dane/e0-sql-i-modelowanie/` |
+| `S04-E0-M5` | Przerobić: Intro to Database Systems (CMU 15-445/645) | materiał | 20–30 h wybranych wykładów | 0 zł | https://15445.courses.cs.cmu.edu | `S04-START` | `S04-E0-D` | `04-bazy-danych-i-dane/e0-sql-i-modelowanie/` |
+| `S04-E0-D` | Dowód etapu 0: SQL i modelowanie | dowód | — | — | — | `S04-E0-M1`, `S04-E0-M2`, `S04-E0-M3`, `S04-E0-M4`, `S04-E0-M5` | `S04-E1-M1`, `S04-E1-M2`, `S04-E1-M3`, `S04-E1-M4`, `S04-E1-M5` | `04-bazy-danych-i-dane/e0-sql-i-modelowanie/` |
 
 **`S04-E0-D` · Dowód etapu 0: SQL i modelowanie**
 
@@ -134,6 +136,8 @@ Model danych dla aplikacji abonamentowej z wielodostępnością (najemcy, użytk
 **Na co zwrócić uwagę:** normalizacja i świadoma denormalizacja, klucze naturalne i sztuczne, `NULL` i logika trójwartościowa, złączenia, agregacje, funkcje okna, CTE, antywzorce z książki Karwina (EAV, listy w kolumnie, polimorficzne klucze obce).
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `04-bazy-danych-i-dane/e0-sql-i-modelowanie/`
 
 ### Etap 1: PostgreSQL w praktyce
 
@@ -145,14 +149,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Baza z etapu 0 wypełniona milionem wierszy danych syntetycznych; pięć wolnych zapytań przyspieszonych co najmniej dziesięciokrotnie, każde z planem przed i po oraz wyjaśnieniem, dlaczego indeks lub przepisanie zapytania zadziałało.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S04-E1-M1` | Przerobić: The Art of PostgreSQL | materiał, płatny | 20–25 h | płatna | https://theartofpostgresql.com | `S04-E0-D` | `S04-E1-D` |
-| `S04-E1-M2` | Przerobić: Use The Index, Luke | materiał | 10–12 h | 0 zł | https://use-the-index-luke.com | `S04-E0-D` | `S04-E1-D` |
-| `S04-E1-M3` | Przerobić: Dokumentacja PostgreSQL: rozdziały „Indexes” i „Performance Tips” | materiał | 8–10 h | 0 zł | https://www.postgresql.org/docs/current/using-explain.html | `S04-E0-D` | `S04-E1-D` |
-| `S04-E1-M4` | Przerobić: explain.depesz.com, explain.dalibo.com | materiał | wg potrzeb | 0 zł | https://explain.depesz.com, https://explain.dalibo.com | `S04-E0-D` | `S04-E1-D` |
-| `S04-E1-M5` | Przerobić: Postgres Playground: samouczki w przeglądarce | materiał | 5–8 h | 0 zł | https://www.crunchydata.com/developers/tutorials | `S04-E0-D` | `S04-E1-D` |
-| `S04-E1-D` | Dowód etapu 1: PostgreSQL w praktyce | dowód | — | — | — | `S04-E1-M1`, `S04-E1-M2`, `S04-E1-M3`, `S04-E1-M4`, `S04-E1-M5` | `S04-E2-M1`, `S04-E2-M2`, `S04-E2-M3`, `S04-E2-M4`, `S04-E2-M5`, `S05-START`, `S06-START`, `S08-START`, `S10-START` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S04-E1-M1` | Przerobić: The Art of PostgreSQL | materiał, płatny | 20–25 h | płatna | https://theartofpostgresql.com | `S04-E0-D` | `S04-E1-D` | `04-bazy-danych-i-dane/e1-postgresql-w-praktyce/` |
+| `S04-E1-M2` | Przerobić: Use The Index, Luke | materiał | 10–12 h | 0 zł | https://use-the-index-luke.com | `S04-E0-D` | `S04-E1-D` | `04-bazy-danych-i-dane/e1-postgresql-w-praktyce/` |
+| `S04-E1-M3` | Przerobić: Dokumentacja PostgreSQL: rozdziały „Indexes” i „Performance Tips” | materiał | 8–10 h | 0 zł | https://www.postgresql.org/docs/current/using-explain.html | `S04-E0-D` | `S04-E1-D` | `04-bazy-danych-i-dane/e1-postgresql-w-praktyce/` |
+| `S04-E1-M4` | Przerobić: explain.depesz.com, explain.dalibo.com | materiał | wg potrzeb | 0 zł | https://explain.depesz.com, https://explain.dalibo.com | `S04-E0-D` | `S04-E1-D` | `04-bazy-danych-i-dane/e1-postgresql-w-praktyce/` |
+| `S04-E1-M5` | Przerobić: Postgres Playground: samouczki w przeglądarce | materiał | 5–8 h | 0 zł | https://www.crunchydata.com/developers/tutorials | `S04-E0-D` | `S04-E1-D` | `04-bazy-danych-i-dane/e1-postgresql-w-praktyce/` |
+| `S04-E1-D` | Dowód etapu 1: PostgreSQL w praktyce | dowód | — | — | — | `S04-E1-M1`, `S04-E1-M2`, `S04-E1-M3`, `S04-E1-M4`, `S04-E1-M5` | `S04-E2-M1`, `S04-E2-M2`, `S04-E2-M3`, `S04-E2-M4`, `S04-E2-M5`, `S05-START`, `S06-START`, `S08-START`, `S10-START` | `04-bazy-danych-i-dane/e1-postgresql-w-praktyce/` |
 
 **`S04-E1-D` · Dowód etapu 1: PostgreSQL w praktyce**
 
@@ -161,6 +165,8 @@ Baza z etapu 0 wypełniona milionem wierszy danych syntetycznych; pięć wolnych
 **Na co zwrócić uwagę:** czytanie `EXPLAIN (ANALYZE, BUFFERS)`, indeksy wielokolumnowe i kolejność kolumn, indeksy częściowe i wyrażeniowe, GIN dla `jsonb`, `CHECK` i ograniczenia wykluczające, kiedy `jsonb` zamiast tabeli, a kiedy nie. Plany zapytań z danymi klienta wklejaj do narzędzi online tylko po anonimizacji albo używaj lokalnej wersji explain.dalibo.com.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `04-bazy-danych-i-dane/e1-postgresql-w-praktyce/`
 
 ### Etap 2: transakcje, izolacja i RLS
 
@@ -172,14 +178,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Test współbieżności, który dwiema równoległymi transakcjami odtwarza utraconą aktualizację salda lub podwójną rezerwację, a następnie pokazuje dwie poprawki (blokada wiersza oraz `SERIALIZABLE` z ponawianiem); izolacja najemców przez RLS z testem, który jako użytkownik jednego najemcy próbuje czytać i zapisywać dane innego.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S04-E2-M1` | Przerobić: Dokumentacja PostgreSQL: „Concurrency Control” | materiał | 6–8 h | 0 zł | https://www.postgresql.org/docs/current/mvcc.html | `S04-E1-D` | `S04-E2-D` |
-| `S04-E2-M2` | Przerobić: Dokumentacja PostgreSQL: „Row Security Policies” | materiał | 2–3 h | 0 zł | https://www.postgresql.org/docs/current/ddl-rowsecurity.html | `S04-E1-D` | `S04-E2-D` |
-| `S04-E2-M3` | Przerobić: Hermitage: testy anomalii izolacji w różnych bazach | materiał | 3–4 h | 0 zł | https://github.com/ept/hermitage | `S04-E1-D` | `S04-E2-D` |
-| `S04-E2-M4` | Przerobić: Modele spójności (mapa i opisy anomalii) | materiał | 3–4 h | 0 zł | https://jepsen.io/consistency | `S04-E1-D` | `S04-E2-D` |
-| `S04-E2-M5` | Przerobić: Rozdział o transakcjach w „Designing Data-Intensive Applications” | materiał, płatny | 4–6 h | płatna | zob. sekcja 5 | `S04-E1-D` | `S04-E2-D` |
-| `S04-E2-D` | Dowód etapu 2: transakcje, izolacja i RLS | dowód | — | — | — | `S04-E2-M1`, `S04-E2-M2`, `S04-E2-M3`, `S04-E2-M4`, `S04-E2-M5` | `S04-E3-M1`, `S04-E3-M2`, `S04-E3-M3`, `S04-E3-M4`, `S04-E3-M5`, `S04-E3-M6`, `S04-E3-M7` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S04-E2-M1` | Przerobić: Dokumentacja PostgreSQL: „Concurrency Control” | materiał | 6–8 h | 0 zł | https://www.postgresql.org/docs/current/mvcc.html | `S04-E1-D` | `S04-E2-D` | `04-bazy-danych-i-dane/e2-transakcje-izolacja-i-rls/` |
+| `S04-E2-M2` | Przerobić: Dokumentacja PostgreSQL: „Row Security Policies” | materiał | 2–3 h | 0 zł | https://www.postgresql.org/docs/current/ddl-rowsecurity.html | `S04-E1-D` | `S04-E2-D` | `04-bazy-danych-i-dane/e2-transakcje-izolacja-i-rls/` |
+| `S04-E2-M3` | Przerobić: Hermitage: testy anomalii izolacji w różnych bazach | materiał | 3–4 h | 0 zł | https://github.com/ept/hermitage | `S04-E1-D` | `S04-E2-D` | `04-bazy-danych-i-dane/e2-transakcje-izolacja-i-rls/` |
+| `S04-E2-M4` | Przerobić: Modele spójności (mapa i opisy anomalii) | materiał | 3–4 h | 0 zł | https://jepsen.io/consistency | `S04-E1-D` | `S04-E2-D` | `04-bazy-danych-i-dane/e2-transakcje-izolacja-i-rls/` |
+| `S04-E2-M5` | Przerobić: Rozdział o transakcjach w „Designing Data-Intensive Applications” | materiał, płatny | 4–6 h | płatna | zob. sekcja 5 | `S04-E1-D` | `S04-E2-D` | `04-bazy-danych-i-dane/e2-transakcje-izolacja-i-rls/` |
+| `S04-E2-D` | Dowód etapu 2: transakcje, izolacja i RLS | dowód | — | — | — | `S04-E2-M1`, `S04-E2-M2`, `S04-E2-M3`, `S04-E2-M4`, `S04-E2-M5` | `S04-E3-M1`, `S04-E3-M2`, `S04-E3-M3`, `S04-E3-M4`, `S04-E3-M5`, `S04-E3-M6`, `S04-E3-M7` | `04-bazy-danych-i-dane/e2-transakcje-izolacja-i-rls/` |
 
 **`S04-E2-D` · Dowód etapu 2: transakcje, izolacja i RLS**
 
@@ -188,6 +194,8 @@ Test współbieżności, który dwiema równoległymi transakcjami odtwarza utra
 **Na co zwrócić uwagę:** domyślny `READ COMMITTED` i utracone aktualizacje, `SELECT … FOR UPDATE` i `SKIP LOCKED`, `SERIALIZABLE` z ponawianiem transakcji, zakleszczenia i stała kolejność blokad, długie transakcje blokujące `VACUUM`; w RLS polityki `USING` i `WITH CHECK`, `FORCE ROW LEVEL SECURITY`, role omijające RLS (`BYPASSRLS`, właściciel tabeli), wydajność funkcji w politykach.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `04-bazy-danych-i-dane/e2-transakcje-izolacja-i-rls/`
 
 ### Etap 3: SQLite, local-first i synchronizacja
 
@@ -201,16 +209,16 @@ Uwaga do CRDT w SQLite: `cr-sqlite` (vlcn) nie wydał nowej wersji od stycznia 2
 
 **Dowód:** Prosta aplikacja notatek w Tauri z rdzeniem w Ruście: SQLite lokalnie, praca offline, synchronizacja między dwoma urządzeniami przez Automerge lub `yrs`; test, w którym oba urządzenia edytują ten sam dokument offline, a po połączeniu stan jest identyczny i nic nie ginie; zapisana w ADR decyzja o strategii konfliktów.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S04-E3-M1` | Przerobić: Dokumentacja SQLite: „Isolation In SQLite”, „Write-Ahead Logging”, „STRICT Tables”, „How SQLite… | materiał | 6–8 h | 0 zł | https://www.sqlite.org/docs.html | `S04-E2-D` | `S04-E3-D` |
-| `S04-E3-M2` | Przerobić: `rusqlite` (albo SQLx z SQLite, zob. sekcja 5) | materiał | 3–4 h | 0 zł | https://docs.rs/rusqlite | `S04-E2-D` | `S04-E3-D` |
-| `S04-E3-M3` | Przerobić: „Local-first software: You own your data, in spite of the cloud” | materiał | 2–3 h | 0 zł | https://www.inkandswitch.com/essay/local-first/ | `S04-E2-D` | `S04-E3-D` |
-| `S04-E3-M4` | Przerobić: Automerge 3 (rdzeń w Ruście, wiązania JavaScript przez WebAssembly) | materiał | 6–8 h | 0 zł | https://automerge.org | `S04-E2-D` | `S04-E3-D` |
-| `S04-E3-M5` | Przerobić: Yjs i jego port do Rusta `yrs` | materiał | 4–6 h | 0 zł | https://docs.yjs.dev, https://github.com/y-crdt/y-crdt | `S04-E2-D` | `S04-E3-D` |
-| `S04-E3-M6` | Przerobić: Loro (CRDT w Ruście z wiązaniami JS, Swift, Python) | materiał | 3–4 h | 0 zł | https://loro.dev | `S04-E2-D` | `S04-E3-D` |
-| `S04-E3-M7` | Przerobić: Silniki synchronizacji PostgreSQL–SQLite: PowerSync (SDK w Ruście w wersji beta), Electric | materiał | 4–6 h | 0 zł | https://docs.powersync.com, https://electric.ax/docs/intro | `S04-E2-D` | `S04-E3-D` |
-| `S04-E3-D` | Dowód etapu 3: SQLite, local-first i synchronizacja | dowód | — | — | — | `S04-E3-M1`, `S04-E3-M2`, `S04-E3-M3`, `S04-E3-M4`, `S04-E3-M5`, `S04-E3-M6`, `S04-E3-M7` | `S04-E4-M1`, `S04-E4-M2`, `S04-E4-M3` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S04-E3-M1` | Przerobić: Dokumentacja SQLite: „Isolation In SQLite”, „Write-Ahead Logging”, „STRICT Tables”, „How SQLite… | materiał | 6–8 h | 0 zł | https://www.sqlite.org/docs.html | `S04-E2-D` | `S04-E3-D` | `04-bazy-danych-i-dane/e3-sqlite-local-first-i-synchronizacja/` |
+| `S04-E3-M2` | Przerobić: `rusqlite` (albo SQLx z SQLite, zob. sekcja 5) | materiał | 3–4 h | 0 zł | https://docs.rs/rusqlite | `S04-E2-D` | `S04-E3-D` | `04-bazy-danych-i-dane/e3-sqlite-local-first-i-synchronizacja/` |
+| `S04-E3-M3` | Przerobić: „Local-first software: You own your data, in spite of the cloud” | materiał | 2–3 h | 0 zł | https://www.inkandswitch.com/essay/local-first/ | `S04-E2-D` | `S04-E3-D` | `04-bazy-danych-i-dane/e3-sqlite-local-first-i-synchronizacja/` |
+| `S04-E3-M4` | Przerobić: Automerge 3 (rdzeń w Ruście, wiązania JavaScript przez WebAssembly) | materiał | 6–8 h | 0 zł | https://automerge.org | `S04-E2-D` | `S04-E3-D` | `04-bazy-danych-i-dane/e3-sqlite-local-first-i-synchronizacja/` |
+| `S04-E3-M5` | Przerobić: Yjs i jego port do Rusta `yrs` | materiał | 4–6 h | 0 zł | https://docs.yjs.dev, https://github.com/y-crdt/y-crdt | `S04-E2-D` | `S04-E3-D` | `04-bazy-danych-i-dane/e3-sqlite-local-first-i-synchronizacja/` |
+| `S04-E3-M6` | Przerobić: Loro (CRDT w Ruście z wiązaniami JS, Swift, Python) | materiał | 3–4 h | 0 zł | https://loro.dev | `S04-E2-D` | `S04-E3-D` | `04-bazy-danych-i-dane/e3-sqlite-local-first-i-synchronizacja/` |
+| `S04-E3-M7` | Przerobić: Silniki synchronizacji PostgreSQL–SQLite: PowerSync (SDK w Ruście w wersji beta), Electric | materiał | 4–6 h | 0 zł | https://docs.powersync.com, https://electric.ax/docs/intro | `S04-E2-D` | `S04-E3-D` | `04-bazy-danych-i-dane/e3-sqlite-local-first-i-synchronizacja/` |
+| `S04-E3-D` | Dowód etapu 3: SQLite, local-first i synchronizacja | dowód | — | — | — | `S04-E3-M1`, `S04-E3-M2`, `S04-E3-M3`, `S04-E3-M4`, `S04-E3-M5`, `S04-E3-M6`, `S04-E3-M7` | `S04-E4-M1`, `S04-E4-M2`, `S04-E4-M3` | `04-bazy-danych-i-dane/e3-sqlite-local-first-i-synchronizacja/` |
 
 **`S04-E3-D` · Dowód etapu 3: SQLite, local-first i synchronizacja**
 
@@ -219,6 +227,8 @@ Prosta aplikacja notatek w Tauri z rdzeniem w Ruście: SQLite lokalnie, praca of
 **Na co zwrócić uwagę:** SQLite w trybie WAL, `BEGIN IMMEDIATE` przy zapisie, typy w tabelach `STRICT`, migracje schematu na urządzeniu użytkownika, wybór strategii konfliktów (ostatni zapis wygrywa, scalanie CRDT, rozstrzyganie przez serwer), uprawnienia do danych synchronizowanych na urządzenie, usuwanie danych także z kopii lokalnych.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `04-bazy-danych-i-dane/e3-sqlite-local-first-i-synchronizacja/`
 
 ### Etap 4: Redis i cache
 
@@ -232,12 +242,12 @@ Uwaga do licencji: Redis od wersji 8 (maj 2025 r.) jest ponownie dostępny na li
 
 **Dowód:** Cache odczytów i limiter żądań w usłudze z sekcji 5 na Redis lub Valkey; test, który pokazuje poprawne unieważnienie po zapisie, ochronę przed lawiną odświeżeń i działanie usługi przy niedostępnym Redisie.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S04-E4-M1` | Przerobić: Dokumentacja Redis: typy danych, wygasanie kluczy, Streams, trwałość, Pub/Sub | materiał | 8–10 h | 0 zł | https://redis.io/docs/latest/develop/ | `S04-E3-D` | `S04-E4-D` |
-| `S04-E4-M2` | Przerobić: Valkey (otwarty fork Redis na licencji BSD pod Linux Foundation) | materiał | 2–3 h | 0 zł | https://valkey.io | `S04-E3-D` | `S04-E4-D` |
-| `S04-E4-M3` | Przerobić: Crate `redis` (lub `fred`) | materiał | 2–3 h | 0 zł | https://docs.rs/redis | `S04-E3-D` | `S04-E4-D` |
-| `S04-E4-D` | Dowód etapu 4: Redis i cache | dowód | — | — | — | `S04-E4-M1`, `S04-E4-M2`, `S04-E4-M3` | `S04-E5-M1`, `S04-E5-M2`, `S04-E5-M3`, `S04-E5-M4` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S04-E4-M1` | Przerobić: Dokumentacja Redis: typy danych, wygasanie kluczy, Streams, trwałość, Pub/Sub | materiał | 8–10 h | 0 zł | https://redis.io/docs/latest/develop/ | `S04-E3-D` | `S04-E4-D` | `04-bazy-danych-i-dane/e4-redis-i-cache/` |
+| `S04-E4-M2` | Przerobić: Valkey (otwarty fork Redis na licencji BSD pod Linux Foundation) | materiał | 2–3 h | 0 zł | https://valkey.io | `S04-E3-D` | `S04-E4-D` | `04-bazy-danych-i-dane/e4-redis-i-cache/` |
+| `S04-E4-M3` | Przerobić: Crate `redis` (lub `fred`) | materiał | 2–3 h | 0 zł | https://docs.rs/redis | `S04-E3-D` | `S04-E4-D` | `04-bazy-danych-i-dane/e4-redis-i-cache/` |
+| `S04-E4-D` | Dowód etapu 4: Redis i cache | dowód | — | — | — | `S04-E4-M1`, `S04-E4-M2`, `S04-E4-M3` | `S04-E5-M1`, `S04-E5-M2`, `S04-E5-M3`, `S04-E5-M4` | `04-bazy-danych-i-dane/e4-redis-i-cache/` |
 
 **`S04-E4-D` · Dowód etapu 4: Redis i cache**
 
@@ -246,6 +256,8 @@ Cache odczytów i limiter żądań w usłudze z sekcji 5 na Redis lub Valkey; te
 **Na co zwrócić uwagę:** cache-aside i unieważnianie, czas życia kluczy, lawina odświeżeń (stampede), ograniczanie liczby żądań, Redis jako pośrednik kolejki a ryzyko utraty danych, kiedy wystarczy PostgreSQL (kolejka z `SKIP LOCKED`, zob. sekcja 5), dane osobowe w cache i ich wygasanie.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `04-bazy-danych-i-dane/e4-redis-i-cache/`
 
 ### Etap 5: migracje bez przestojów
 
@@ -257,13 +269,13 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Zmiana nazwy i typu kolumny w tabeli z milionem wierszy przeprowadzona metodą expand–contract w trzech wydaniach, podczas ciągłego obciążenia testowego, bez błędów po stronie klientów; wycofanie środkowego wydania bez utraty danych.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S04-E5-M1` | Przerobić: „Parallel Change” (expand–contract) | materiał | 1 h | 0 zł | https://martinfowler.com/bliki/ParallelChange.html | `S04-E4-D` | `S04-E5-D` |
-| `S04-E5-M2` | Przerobić: Dokumentacja PostgreSQL: „Explicit Locking” i poziomy blokad poleceń `ALTER TABLE`, `CREATE INDEX… | materiał | 4–5 h | 0 zł | https://www.postgresql.org/docs/current/explicit-locking.html | `S04-E4-D` | `S04-E5-D` |
-| `S04-E5-M3` | Przerobić: pgroll: migracje odwracalne z wieloma wersjami schematu naraz | materiał | 3–4 h | 0 zł | https://github.com/xataio/pgroll | `S04-E4-D` | `S04-E5-D` |
-| `S04-E5-M4` | Przerobić: Migracje w SQLx (`sqlx migrate`) lub w SeaORM (zob. sekcja 5) | materiał | 2 h | 0 zł | https://docs.rs/sqlx/latest/sqlx/macro.migrate.html | `S04-E4-D` | `S04-E5-D` |
-| `S04-E5-D` | Dowód etapu 5: migracje bez przestojów | dowód | — | — | — | `S04-E5-M1`, `S04-E5-M2`, `S04-E5-M3`, `S04-E5-M4` | `S04-E6-M1`, `S04-E6-M2`, `S04-E6-M3`, `S04-E6-M4`, `S04-E6-M5`, `S04-E6-M6` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S04-E5-M1` | Przerobić: „Parallel Change” (expand–contract) | materiał | 1 h | 0 zł | https://martinfowler.com/bliki/ParallelChange.html | `S04-E4-D` | `S04-E5-D` | `04-bazy-danych-i-dane/e5-migracje-bez-przestojow/` |
+| `S04-E5-M2` | Przerobić: Dokumentacja PostgreSQL: „Explicit Locking” i poziomy blokad poleceń `ALTER TABLE`, `CREATE INDEX… | materiał | 4–5 h | 0 zł | https://www.postgresql.org/docs/current/explicit-locking.html | `S04-E4-D` | `S04-E5-D` | `04-bazy-danych-i-dane/e5-migracje-bez-przestojow/` |
+| `S04-E5-M3` | Przerobić: pgroll: migracje odwracalne z wieloma wersjami schematu naraz | materiał | 3–4 h | 0 zł | https://github.com/xataio/pgroll | `S04-E4-D` | `S04-E5-D` | `04-bazy-danych-i-dane/e5-migracje-bez-przestojow/` |
+| `S04-E5-M4` | Przerobić: Migracje w SQLx (`sqlx migrate`) lub w SeaORM (zob. sekcja 5) | materiał | 2 h | 0 zł | https://docs.rs/sqlx/latest/sqlx/macro.migrate.html | `S04-E4-D` | `S04-E5-D` | `04-bazy-danych-i-dane/e5-migracje-bez-przestojow/` |
+| `S04-E5-D` | Dowód etapu 5: migracje bez przestojów | dowód | — | — | — | `S04-E5-M1`, `S04-E5-M2`, `S04-E5-M3`, `S04-E5-M4` | `S04-E6-M1`, `S04-E6-M2`, `S04-E6-M3`, `S04-E6-M4`, `S04-E6-M5`, `S04-E6-M6` | `04-bazy-danych-i-dane/e5-migracje-bez-przestojow/` |
 
 **`S04-E5-D` · Dowód etapu 5: migracje bez przestojów**
 
@@ -272,6 +284,8 @@ Zmiana nazwy i typu kolumny w tabeli z milionem wierszy przeprowadzona metodą e
 **Na co zwrócić uwagę:** każda zmiana w trzech krokach (dodanie, przeniesienie danych i podwójny zapis, usunięcie starego) rozłożonych na osobne wydania, `lock_timeout` przy migracjach, indeksy tworzone `CONCURRENTLY`, wypełnianie danych partiami, ograniczenia dodawane jako `NOT VALID` i walidowane osobno, migracja zgodna wstecz z poprzednią wersją aplikacji, na wypadek wycofania wydania.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `04-bazy-danych-i-dane/e5-migracje-bez-przestojow/`
 
 ### Etap 6: kopie, PITR, retencja i RODO
 
@@ -285,15 +299,15 @@ Uwaga do pgBackRest: w kwietniu 2026 r. dotychczasowy opiekun ogłosił koniec u
 
 **Dowód:** PITR skonfigurowany dla bazy z poprzednich etapów, comiesięczny automatyczny test odtworzenia do wskazanej chwili z pomiarem czasu (RTO) i utraty danych (RPO), zapisany jako runbook; mapa danych osobowych jednej aplikacji (tabele, kopie, logi, cache, urządzenia) z okresami retencji i procedurą usunięcia na żądanie, przetestowaną od początku do końca.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S04-E6-M1` | Przerobić: Dokumentacja PostgreSQL: „Backup and Restore”, w tym „Continuous Archiving and Point-in-Time… | materiał | 6–8 h | 0 zł | https://www.postgresql.org/docs/current/continuous-archiving.html | `S04-E5-D` | `S04-E6-D` |
-| `S04-E6-M2` | Przerobić: pgBackRest User Guide | materiał | 6–8 h | 0 zł | https://pgbackrest.org/user-guide.html | `S04-E5-D` | `S04-E6-D` |
-| `S04-E6-M3` | Przerobić: WAL-G | materiał | 3–4 h | 0 zł | https://github.com/wal-g/wal-g | `S04-E5-D` | `S04-E6-D` |
-| `S04-E6-M4` | Przerobić: RODO, tekst rozporządzenia 2016/679 | materiał | 4–6 h | 0 zł | https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:32016R0679 | `S04-E5-D` | `S04-E6-D` |
-| `S04-E6-M5` | Przerobić: GDPR developer’s guide | materiał | 4–5 h | 0 zł | https://www.cnil.fr/en/gdpr-developers-guide | `S04-E5-D` | `S04-E6-D` |
-| `S04-E6-M6` | Przerobić: Wytyczne 4/2019 w sprawie art. 25: uwzględnianie ochrony danych w fazie projektowania i domyślna… | materiał | 2–3 h | 0 zł | https://www.edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-42019-article-25-data-protection-design-and_en | `S04-E5-D` | `S04-E6-D` |
-| `S04-E6-D` | Dowód etapu 6: kopie, PITR, retencja i RODO | dowód | — | — | — | `S04-E6-M1`, `S04-E6-M2`, `S04-E6-M3`, `S04-E6-M4`, `S04-E6-M5`, `S04-E6-M6` | `S04-E7-M1`, `S04-E7-M2`, `S04-E7-M3`, `S04-E7-P1`, `S04-E7-P2`, `S04-E7-P3`, `S04-E7-P4` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S04-E6-M1` | Przerobić: Dokumentacja PostgreSQL: „Backup and Restore”, w tym „Continuous Archiving and Point-in-Time… | materiał | 6–8 h | 0 zł | https://www.postgresql.org/docs/current/continuous-archiving.html | `S04-E5-D` | `S04-E6-D` | `04-bazy-danych-i-dane/e6-kopie-pitr-retencja-i-rodo/` |
+| `S04-E6-M2` | Przerobić: pgBackRest User Guide | materiał | 6–8 h | 0 zł | https://pgbackrest.org/user-guide.html | `S04-E5-D` | `S04-E6-D` | `04-bazy-danych-i-dane/e6-kopie-pitr-retencja-i-rodo/` |
+| `S04-E6-M3` | Przerobić: WAL-G | materiał | 3–4 h | 0 zł | https://github.com/wal-g/wal-g | `S04-E5-D` | `S04-E6-D` | `04-bazy-danych-i-dane/e6-kopie-pitr-retencja-i-rodo/` |
+| `S04-E6-M4` | Przerobić: RODO, tekst rozporządzenia 2016/679 | materiał | 4–6 h | 0 zł | https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:32016R0679 | `S04-E5-D` | `S04-E6-D` | `04-bazy-danych-i-dane/e6-kopie-pitr-retencja-i-rodo/` |
+| `S04-E6-M5` | Przerobić: GDPR developer’s guide | materiał | 4–5 h | 0 zł | https://www.cnil.fr/en/gdpr-developers-guide | `S04-E5-D` | `S04-E6-D` | `04-bazy-danych-i-dane/e6-kopie-pitr-retencja-i-rodo/` |
+| `S04-E6-M6` | Przerobić: Wytyczne 4/2019 w sprawie art. 25: uwzględnianie ochrony danych w fazie projektowania i domyślna… | materiał | 2–3 h | 0 zł | https://www.edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-42019-article-25-data-protection-design-and_en | `S04-E5-D` | `S04-E6-D` | `04-bazy-danych-i-dane/e6-kopie-pitr-retencja-i-rodo/` |
+| `S04-E6-D` | Dowód etapu 6: kopie, PITR, retencja i RODO | dowód | — | — | — | `S04-E6-M1`, `S04-E6-M2`, `S04-E6-M3`, `S04-E6-M4`, `S04-E6-M5`, `S04-E6-M6` | `S04-E7-M1`, `S04-E7-M2`, `S04-E7-M3`, `S04-E7-P1`, `S04-E7-P2`, `S04-E7-P3`, `S04-E7-P4` | `04-bazy-danych-i-dane/e6-kopie-pitr-retencja-i-rodo/` |
 
 **`S04-E6-D` · Dowód etapu 6: kopie, PITR, retencja i RODO**
 
@@ -303,6 +317,8 @@ PITR skonfigurowany dla bazy z poprzednich etapów, comiesięczny automatyczny t
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
 
+**Folder roboczy:** `04-bazy-danych-i-dane/e6-kopie-pitr-retencja-i-rodo/`
+
 ### Etap 7: ekspert
 
 Opis kamienia milowego (do wklejenia):
@@ -311,16 +327,16 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód poziomu E:** Samodzielnie, bez agenta, w 1 dzień diagnozujesz i naprawiasz w nieznanej bazie PostgreSQL problem wydajności, blokad albo wycieku danych między najemcami, przygotowujesz bezpieczną migrację naprawczą i umiesz wyjaśnić przyczynę osobie nietechnicznej.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S04-E7-M1` | Przerobić: PostgreSQL 14 Internals | materiał | 25–30 h | 0 zł (PDF) | https://postgrespro.com/community/books/internals | `S04-E6-D` | `S04-E7-D` |
-| `S04-E7-M2` | Przerobić: Dokumentacja PostgreSQL: informacje o wydaniach i rozdział o `VACUUM` i autovacuum | materiał | ok. 1 h tygodniowo | 0 zł | https://www.postgresql.org/docs/release/ | `S04-E6-D` | `S04-E7-D` |
-| `S04-E7-M3` | Przerobić: Designing Data-Intensive Applications | materiał, płatny | 10–15 h | płatna | zob. sekcja 5 | `S04-E6-D` | `S04-E7-D` |
-| `S04-E7-P1` | Praktyka: recenzja kodu AI | praktyka | — | — | — | `S04-E6-D` | `S04-E7-D` |
-| `S04-E7-P2` | Praktyka: przejęcie cudzej bazy | praktyka | — | — | — | `S04-E6-D` | `S04-E7-D` |
-| `S04-E7-P3` | Praktyka: ćwiczenie awarii | praktyka | — | — | — | `S04-E6-D` | `S04-E7-D` |
-| `S04-E7-P4` | Praktyka: monitorowanie | praktyka | — | — | — | `S04-E6-D` | `S04-E7-D` |
-| `S04-E7-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S04-E7-M1`, `S04-E7-M2`, `S04-E7-M3`, `S04-E7-P1`, `S04-E7-P2`, `S04-E7-P3`, `S04-E7-P4` | — |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S04-E7-M1` | Przerobić: PostgreSQL 14 Internals | materiał | 25–30 h | 0 zł (PDF) | https://postgrespro.com/community/books/internals | `S04-E6-D` | `S04-E7-D` | `04-bazy-danych-i-dane/e7-ekspert/` |
+| `S04-E7-M2` | Przerobić: Dokumentacja PostgreSQL: informacje o wydaniach i rozdział o `VACUUM` i autovacuum | materiał | ok. 1 h tygodniowo | 0 zł | https://www.postgresql.org/docs/release/ | `S04-E6-D` | `S04-E7-D` | `04-bazy-danych-i-dane/e7-ekspert/` |
+| `S04-E7-M3` | Przerobić: Designing Data-Intensive Applications | materiał, płatny | 10–15 h | płatna | zob. sekcja 5 | `S04-E6-D` | `S04-E7-D` | `04-bazy-danych-i-dane/e7-ekspert/` |
+| `S04-E7-P1` | Praktyka: recenzja kodu AI | praktyka | — | — | — | `S04-E6-D` | `S04-E7-D` | `04-bazy-danych-i-dane/e7-ekspert/` |
+| `S04-E7-P2` | Praktyka: przejęcie cudzej bazy | praktyka | — | — | — | `S04-E6-D` | `S04-E7-D` | `04-bazy-danych-i-dane/e7-ekspert/` |
+| `S04-E7-P3` | Praktyka: ćwiczenie awarii | praktyka | — | — | — | `S04-E6-D` | `S04-E7-D` | `04-bazy-danych-i-dane/e7-ekspert/` |
+| `S04-E7-P4` | Praktyka: monitorowanie | praktyka | — | — | — | `S04-E6-D` | `S04-E7-D` | `04-bazy-danych-i-dane/e7-ekspert/` |
+| `S04-E7-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S04-E7-M1`, `S04-E7-M2`, `S04-E7-M3`, `S04-E7-P1`, `S04-E7-P2`, `S04-E7-P3`, `S04-E7-P4` | — | `04-bazy-danych-i-dane/e7-ekspert/` |
 
 **`S04-E7-P1` · Praktyka: recenzja kodu AI**
 
@@ -328,11 +344,15 @@ Opis kamienia milowego (do wklejenia):
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `04-bazy-danych-i-dane/e7-ekspert/`
+
 **`S04-E7-P2` · Praktyka: przejęcie cudzej bazy**
 
 Audyt bazy jednej aplikacji z vibe codingu (zwykle Supabase): tabele bez RLS, brakujące indeksy i ograniczenia, brak kopii z testem odtworzenia; raport z priorytetami i poprawki jako migracje.
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
+
+**Folder roboczy:** `04-bazy-danych-i-dane/e7-ekspert/`
 
 **`S04-E7-P3` · Praktyka: ćwiczenie awarii**
 
@@ -340,17 +360,23 @@ Odtworzenie bazy po symulowanym usunięciu tabeli i po utracie serwera, z pomiar
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `04-bazy-danych-i-dane/e7-ekspert/`
+
 **`S04-E7-P4` · Praktyka: monitorowanie**
 
 `pg_stat_statements`, rozrost tabel i indeksów, opóźnienie autovacuum, długie transakcje; alerty w obserwowalności (zob. sekcja 9).
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `04-bazy-danych-i-dane/e7-ekspert/`
+
 **`S04-E7-D` · Dowód poziomu E: ekspert**
 
 Samodzielnie, bez agenta, w 1 dzień diagnozujesz i naprawiasz w nieznanej bazie PostgreSQL problem wydajności, blokad albo wycieku danych między najemcami, przygotowujesz bezpieczną migrację naprawczą i umiesz wyjaśnić przyczynę osobie nietechnicznej.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki. Bez agenta AI.
+
+**Folder roboczy:** `04-bazy-danych-i-dane/e7-ekspert/`
 
 ## 6. Relacje z innymi projektami
 

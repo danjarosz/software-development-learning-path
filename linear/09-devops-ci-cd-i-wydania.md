@@ -82,6 +82,8 @@ Punkt startu projektu „09. DevOps, CI/CD i wydania”.
 - zaznaczyć etapy, które zaliczasz samym dowodem (zgodnie z akapitem wstępnym ścieżki), i dla nich zamknąć zadania materiałów jako niepotrzebne,
 - ustawić daty kamieni milowych zgodnie z kolejnością z pliku głównego.
 
+**Folder roboczy:** `09-devops-ci-cd-i-wydania/`
+
 ## 4. Przepływ zależności
 
 Linie ciągłe to zależności wewnątrz projektu, przerywane to zadania z innych projektów. Wewnątrz etapu zadania materiałów są równoległe i wszystkie blokują dowód etapu; dowód etapu blokuje materiały kolejnego etapu.
@@ -109,7 +111,7 @@ flowchart TD
 
 ## 5. Zadania według kamieni milowych
 
-Szablon opisu zadania materiału: nazwa materiału, autor lub wydawca, typ, czas, koszt i link (jak w kolumnach poniżej) oraz zdanie „Gotowe, gdy materiał jest przerobiony w zakresie potrzebnym do dowodu etapu”. Opisy dowodów i praktyk są podane pod tabelą każdego etapu.
+Szablon opisu zadania materiału: nazwa materiału, autor lub wydawca, typ, czas, koszt i link (jak w kolumnach poniżej), zdanie „Gotowe, gdy materiał jest przerobiony w zakresie potrzebnym do dowodu etapu” oraz folder roboczy z kolumny „Folder”. Opisy dowodów i praktyk są podane pod tabelą każdego etapu.
 
 ### Etap 1: kontenery i infrastruktura jako kod
 
@@ -121,12 +123,12 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Usługa z sekcji 2.1, etap 0, w obrazie poniżej 30 MB uruchamianym bez roota; infrastruktura (serwer, DNS, bucket na kopie zapasowe) opisana w Terraform, z przejrzanym i skomentowanym planem zmian.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S09-E1-M1` | Przerobić: Docker: Get started (pojęcia, budowa obrazów, wieloetapowe buildy) | materiał | 8–10 h | 0 zł | https://docs.docker.com/get-started/ | `S09-START` | `S09-E1-D` |
-| `S09-E1-M2` | Przerobić: Terraform Tutorials | materiał | 10–12 h | 0 zł | https://developer.hashicorp.com/terraform/tutorials | `S09-START` | `S09-E1-D` |
-| `S09-E1-M3` | Przerobić: Kubernetes: Concepts | materiał | 8–10 h | 0 zł | https://kubernetes.io/docs/concepts/ | `S09-START` | `S09-E1-D` |
-| `S09-E1-D` | Dowód etapu 1: kontenery i infrastruktura jako kod | dowód | — | — | — | `S09-E1-M1`, `S09-E1-M2`, `S09-E1-M3` | `S09-E2-M1`, `S09-E2-M2`, `S09-E2-M3`, `S09-E2-M4` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S09-E1-M1` | Przerobić: Docker: Get started (pojęcia, budowa obrazów, wieloetapowe buildy) | materiał | 8–10 h | 0 zł | https://docs.docker.com/get-started/ | `S09-START` | `S09-E1-D` | `09-devops-ci-cd-i-wydania/e1-kontenery-i-infrastruktura-jako-kod/` |
+| `S09-E1-M2` | Przerobić: Terraform Tutorials | materiał | 10–12 h | 0 zł | https://developer.hashicorp.com/terraform/tutorials | `S09-START` | `S09-E1-D` | `09-devops-ci-cd-i-wydania/e1-kontenery-i-infrastruktura-jako-kod/` |
+| `S09-E1-M3` | Przerobić: Kubernetes: Concepts | materiał | 8–10 h | 0 zł | https://kubernetes.io/docs/concepts/ | `S09-START` | `S09-E1-D` | `09-devops-ci-cd-i-wydania/e1-kontenery-i-infrastruktura-jako-kod/` |
+| `S09-E1-D` | Dowód etapu 1: kontenery i infrastruktura jako kod | dowód | — | — | — | `S09-E1-M1`, `S09-E1-M2`, `S09-E1-M3` | `S09-E2-M1`, `S09-E2-M2`, `S09-E2-M3`, `S09-E2-M4` | `09-devops-ci-cd-i-wydania/e1-kontenery-i-infrastruktura-jako-kod/` |
 
 **`S09-E1-D` · Dowód etapu 1: kontenery i infrastruktura jako kod**
 
@@ -135,6 +137,8 @@ Usługa z sekcji 2.1, etap 0, w obrazie poniżej 30 MB uruchamianym bez roota; i
 **Na co zwrócić uwagę:** małe obrazy dla binarek Rusta (wieloetapowy build, obraz bazowy distroless lub `scratch`), użytkownik bez roota w kontenerze, czytanie `terraform plan` przed zatwierdzeniem zmian proponowanych przez agenta, stan Terraform i sekrety.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `09-devops-ci-cd-i-wydania/e1-kontenery-i-infrastruktura-jako-kod/`
 
 ### Etap 2: GitHub Actions i bezpieczeństwo pipeline’u
 
@@ -146,13 +150,13 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Workflow budujący rdzeń w Ruście w macierzy Linux, macOS i Windows z cache; wszystkie akcje przypięte do SHA, uprawnienia ustawione per job, wdrożenie do chmury przez OIDC bez zapisanych kluczy; lista kontrolna bezpieczeństwa workflow zastosowana do jednego publicznego repozytorium.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S09-E2-M1` | Przerobić: GitHub Actions: dokumentacja, w tym macierze jobów | materiał | 10–12 h | 0 zł | https://docs.github.com/en/actions | `S09-E1-D` | `S09-E2-D` |
-| `S09-E2-M2` | Przerobić: Secure use reference (dawniej „Security hardening for GitHub Actions”) | materiał | 3–4 h | 0 zł | https://docs.github.com/en/actions/reference/security/secure-use | `S09-E1-D` | `S09-E2-D` |
-| `S09-E2-M3` | Przerobić: OpenID Connect w GitHub Actions | materiał | 2–3 h | 0 zł | https://docs.github.com/en/actions/concepts/security/openid-connect | `S09-E1-D` | `S09-E2-D` |
-| `S09-E2-M4` | Przerobić: `Swatinem/rust-cache`, `sccache` | materiał | 2–3 h | 0 zł | https://github.com/Swatinem/rust-cache, https://github.com/mozilla/sccache | `S09-E1-D` | `S09-E2-D` |
-| `S09-E2-D` | Dowód etapu 2: GitHub Actions i bezpieczeństwo pipeline’u | dowód | — | — | — | `S09-E2-M1`, `S09-E2-M2`, `S09-E2-M3`, `S09-E2-M4` | `S09-E3-M1`, `S09-E3-M2`, `S09-E3-M3`, `S10-START`, `S12-START`, `S15-START`, `S16-START`, `S17-START`, `S18-START`, `S19-START` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S09-E2-M1` | Przerobić: GitHub Actions: dokumentacja, w tym macierze jobów | materiał | 10–12 h | 0 zł | https://docs.github.com/en/actions | `S09-E1-D` | `S09-E2-D` | `09-devops-ci-cd-i-wydania/e2-github-actions-i-bezpieczenstwo-pipelineu/` |
+| `S09-E2-M2` | Przerobić: Secure use reference (dawniej „Security hardening for GitHub Actions”) | materiał | 3–4 h | 0 zł | https://docs.github.com/en/actions/reference/security/secure-use | `S09-E1-D` | `S09-E2-D` | `09-devops-ci-cd-i-wydania/e2-github-actions-i-bezpieczenstwo-pipelineu/` |
+| `S09-E2-M3` | Przerobić: OpenID Connect w GitHub Actions | materiał | 2–3 h | 0 zł | https://docs.github.com/en/actions/concepts/security/openid-connect | `S09-E1-D` | `S09-E2-D` | `09-devops-ci-cd-i-wydania/e2-github-actions-i-bezpieczenstwo-pipelineu/` |
+| `S09-E2-M4` | Przerobić: `Swatinem/rust-cache`, `sccache` | materiał | 2–3 h | 0 zł | https://github.com/Swatinem/rust-cache, https://github.com/mozilla/sccache | `S09-E1-D` | `S09-E2-D` | `09-devops-ci-cd-i-wydania/e2-github-actions-i-bezpieczenstwo-pipelineu/` |
+| `S09-E2-D` | Dowód etapu 2: GitHub Actions i bezpieczeństwo pipeline’u | dowód | — | — | — | `S09-E2-M1`, `S09-E2-M2`, `S09-E2-M3`, `S09-E2-M4` | `S09-E3-M1`, `S09-E3-M2`, `S09-E3-M3`, `S10-START`, `S12-START`, `S15-START`, `S16-START`, `S17-START`, `S18-START`, `S19-START` | `09-devops-ci-cd-i-wydania/e2-github-actions-i-bezpieczenstwo-pipelineu/` |
 
 **`S09-E2-D` · Dowód etapu 2: GitHub Actions i bezpieczeństwo pipeline’u**
 
@@ -161,6 +165,8 @@ Workflow budujący rdzeń w Ruście w macierzy Linux, macOS i Windows z cache; w
 **Na co zwrócić uwagę:** akcje przypięte do pełnego SHA, minimalne uprawnienia `GITHUB_TOKEN` (domyślnie tylko odczyt), ryzyko `pull_request_target` i `workflow_run`, wstrzykiwanie poleceń przez dane z `github.event`, OIDC zamiast długotrwałych kluczy do chmury, środowiska z wymaganym zatwierdzeniem dla sekretów do podpisów.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `09-devops-ci-cd-i-wydania/e2-github-actions-i-bezpieczenstwo-pipelineu/`
 
 ### Etap 3: ciągłe dostarczanie i bramki jakości
 
@@ -172,12 +178,12 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Szablon pipeline’u gotowy do wdrożenia u klienta: bramki jakości jako wymagane sprawdzenia w ochronie gałęzi, SBOM w CycloneDX dołączany do każdego buildu, raport bramek w opisie pull requesta, krótka instrukcja wdrożenia szablonu w repozytorium klienta.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S09-E3-M1` | Przerobić: Continuous Delivery | materiał, płatny | 15–20 h | płatna | https://www.informit.com/store/continuous-delivery-reliable-software-releases-through-build-9780321601919 | `S09-E2-D` | `S09-E3-D` |
-| `S09-E3-M2` | Przerobić: Accelerate | materiał, płatny | 6–8 h | płatna | https://itrevolution.com/product/accelerate/ | `S09-E2-D` | `S09-E3-D` |
-| `S09-E3-M3` | Przerobić: DORA: metryki dostarczania i raporty badawcze | materiał | 4–6 h | 0 zł | https://dora.dev | `S09-E2-D` | `S09-E3-D` |
-| `S09-E3-D` | Dowód etapu 3: ciągłe dostarczanie i bramki jakości | dowód | — | — | — | `S09-E3-M1`, `S09-E3-M2`, `S09-E3-M3` | `S09-E4-M1`, `S09-E4-M2`, `S09-E4-M3`, `S09-E4-M4`, `S09-E4-M5` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S09-E3-M1` | Przerobić: Continuous Delivery | materiał, płatny | 15–20 h | płatna | https://www.informit.com/store/continuous-delivery-reliable-software-releases-through-build-9780321601919 | `S09-E2-D` | `S09-E3-D` | `09-devops-ci-cd-i-wydania/e3-ciagle-dostarczanie-i-bramki-jakosci/` |
+| `S09-E3-M2` | Przerobić: Accelerate | materiał, płatny | 6–8 h | płatna | https://itrevolution.com/product/accelerate/ | `S09-E2-D` | `S09-E3-D` | `09-devops-ci-cd-i-wydania/e3-ciagle-dostarczanie-i-bramki-jakosci/` |
+| `S09-E3-M3` | Przerobić: DORA: metryki dostarczania i raporty badawcze | materiał | 4–6 h | 0 zł | https://dora.dev | `S09-E2-D` | `S09-E3-D` | `09-devops-ci-cd-i-wydania/e3-ciagle-dostarczanie-i-bramki-jakosci/` |
+| `S09-E3-D` | Dowód etapu 3: ciągłe dostarczanie i bramki jakości | dowód | — | — | — | `S09-E3-M1`, `S09-E3-M2`, `S09-E3-M3` | `S09-E4-M1`, `S09-E4-M2`, `S09-E4-M3`, `S09-E4-M4`, `S09-E4-M5` | `09-devops-ci-cd-i-wydania/e3-ciagle-dostarczanie-i-bramki-jakosci/` |
 
 **`S09-E3-D` · Dowód etapu 3: ciągłe dostarczanie i bramki jakości**
 
@@ -186,6 +192,8 @@ Szablon pipeline’u gotowy do wdrożenia u klienta: bramki jakości jako wymaga
 **Na co zwrócić uwagę:** jeden pipeline jako jedyna droga do produkcji, artefakt budowany raz i promowany między środowiskami, bramki jako warunek scalenia (testy, lint, `clippy`, typecheck, SAST, SCA, SBOM; narzędzia w sekcji 10), cztery metryki DORA mierzone także dla pracy agentów.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `09-devops-ci-cd-i-wydania/e3-ciagle-dostarczanie-i-bramki-jakosci/`
 
 ### Etap 4: wydania na wiele platform
 
@@ -197,14 +205,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Wydanie aplikacji Tauri na Linux, macOS i Windows z jednego tagu: podpisane instalatory, plik aktualizacji dla Updatera, changelog z Conventional Commits; zainstalowana starsza wersja aktualizuje się automatycznie, a zmodyfikowana paczka aktualizacji jest odrzucana; build mobilny wysłany przez fastlane do TestFlight i ścieżki testów wewnętrznych Google Play.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S09-E4-M1` | Przerobić: Semantic Versioning 2.0.0, Conventional Commits 1.0.0 | materiał | 2 h | 0 zł | https://semver.org, https://www.conventionalcommits.org/en/v1.0.0/ | `S09-E3-D` | `S09-E4-D` |
-| `S09-E4-M2` | Przerobić: release-plz (wydania crate’ów przez PR z changelogiem) i `cargo-semver-checks` | materiał | 3–4 h | 0 zł | https://release-plz.dev, https://github.com/obi1kenobi/cargo-semver-checks | `S09-E3-D` | `S09-E4-D` |
-| `S09-E4-M3` | Przerobić: dist (dawniej cargo-dist): instalatory i wydania narzędzi CLI | materiał | 3–4 h | 0 zł | https://axodotdev.github.io/cargo-dist/book/ | `S09-E3-D` | `S09-E4-D` |
-| `S09-E4-M4` | Przerobić: Tauri: GitHub pipeline (`tauri-action`) i plugin Updater | materiał | 5–6 h | 0 zł | https://v2.tauri.app/distribute/pipelines/github/, https://v2.tauri.app/plugin/updater/ | `S09-E3-D` | `S09-E4-D` |
-| `S09-E4-M5` | Przerobić: fastlane (w tym `match` do certyfikatów Apple) | materiał | 6–8 h | 0 zł | https://docs.fastlane.tools | `S09-E3-D` | `S09-E4-D` |
-| `S09-E4-D` | Dowód etapu 4: wydania na wiele platform | dowód | — | — | — | `S09-E4-M1`, `S09-E4-M2`, `S09-E4-M3`, `S09-E4-M4`, `S09-E4-M5` | `S09-E5-M1`, `S09-E5-M2`, `S09-E5-M3`, `S09-E5-M4` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S09-E4-M1` | Przerobić: Semantic Versioning 2.0.0, Conventional Commits 1.0.0 | materiał | 2 h | 0 zł | https://semver.org, https://www.conventionalcommits.org/en/v1.0.0/ | `S09-E3-D` | `S09-E4-D` | `09-devops-ci-cd-i-wydania/e4-wydania-na-wiele-platform/` |
+| `S09-E4-M2` | Przerobić: release-plz (wydania crate’ów przez PR z changelogiem) i `cargo-semver-checks` | materiał | 3–4 h | 0 zł | https://release-plz.dev, https://github.com/obi1kenobi/cargo-semver-checks | `S09-E3-D` | `S09-E4-D` | `09-devops-ci-cd-i-wydania/e4-wydania-na-wiele-platform/` |
+| `S09-E4-M3` | Przerobić: dist (dawniej cargo-dist): instalatory i wydania narzędzi CLI | materiał | 3–4 h | 0 zł | https://axodotdev.github.io/cargo-dist/book/ | `S09-E3-D` | `S09-E4-D` | `09-devops-ci-cd-i-wydania/e4-wydania-na-wiele-platform/` |
+| `S09-E4-M4` | Przerobić: Tauri: GitHub pipeline (`tauri-action`) i plugin Updater | materiał | 5–6 h | 0 zł | https://v2.tauri.app/distribute/pipelines/github/, https://v2.tauri.app/plugin/updater/ | `S09-E3-D` | `S09-E4-D` | `09-devops-ci-cd-i-wydania/e4-wydania-na-wiele-platform/` |
+| `S09-E4-M5` | Przerobić: fastlane (w tym `match` do certyfikatów Apple) | materiał | 6–8 h | 0 zł | https://docs.fastlane.tools | `S09-E3-D` | `S09-E4-D` | `09-devops-ci-cd-i-wydania/e4-wydania-na-wiele-platform/` |
+| `S09-E4-D` | Dowód etapu 4: wydania na wiele platform | dowód | — | — | — | `S09-E4-M1`, `S09-E4-M2`, `S09-E4-M3`, `S09-E4-M4`, `S09-E4-M5` | `S09-E5-M1`, `S09-E5-M2`, `S09-E5-M3`, `S09-E5-M4` | `09-devops-ci-cd-i-wydania/e4-wydania-na-wiele-platform/` |
 
 **`S09-E4-D` · Dowód etapu 4: wydania na wiele platform**
 
@@ -213,6 +221,8 @@ Wydanie aplikacji Tauri na Linux, macOS i Windows z jednego tagu: podpisane inst
 **Na co zwrócić uwagę:** wersja wynikająca z historii commitów, a nie z ręcznej decyzji agenta; klucz podpisu aktualizacji Tauri (utrata oznacza brak aktualizacji dla zainstalowanych kopii, więc kopia zapasowa poza CI); podpisy i notaryzacja wykonywane w CI z sekretami w środowisku chronionym (szczegóły platform w sekcjach 19, 15–17); ścieżki testowe sklepów przed produkcją.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `09-devops-ci-cd-i-wydania/e4-wydania-na-wiele-platform/`
 
 ### Etap 5: pochodzenie i integralność artefaktów
 
@@ -224,13 +234,13 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Artefakty wydania z etapu 4 z atestacją pochodzenia i podpisem Sigstore, SBOM dołączonym do wydania i instrukcją weryfikacji dla klienta (`gh attestation verify` lub `cosign verify-blob`); binarka CLI w Ruście zbudowana dwa razy w różnych środowiskach z identyczną sumą kontrolną.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S09-E5-M1` | Przerobić: SLSA Specification v1.2 | materiał | 4–6 h | 0 zł | https://slsa.dev/spec/v1.2/ | `S09-E4-D` | `S09-E5-D` |
-| `S09-E5-M2` | Przerobić: Sigstore (cosign, Fulcio, Rekor) | materiał | 4–6 h | 0 zł | https://docs.sigstore.dev | `S09-E4-D` | `S09-E5-D` |
-| `S09-E5-M3` | Przerobić: GitHub Artifact attestations | materiał | 2 h | 0 zł | https://docs.github.com/en/actions/concepts/security/artifact-attestations | `S09-E4-D` | `S09-E5-D` |
-| `S09-E5-M4` | Przerobić: Reproducible Builds: dokumentacja | materiał | 4–6 h | 0 zł | https://reproducible-builds.org/docs/ | `S09-E4-D` | `S09-E5-D` |
-| `S09-E5-D` | Dowód etapu 5: pochodzenie i integralność artefaktów | dowód | — | — | — | `S09-E5-M1`, `S09-E5-M2`, `S09-E5-M3`, `S09-E5-M4` | `S09-E6-M1`, `S09-E6-M2`, `S09-E6-M3`, `S09-E6-M4`, `S09-E6-M5` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S09-E5-M1` | Przerobić: SLSA Specification v1.2 | materiał | 4–6 h | 0 zł | https://slsa.dev/spec/v1.2/ | `S09-E4-D` | `S09-E5-D` | `09-devops-ci-cd-i-wydania/e5-pochodzenie-i-integralnosc-artefaktow/` |
+| `S09-E5-M2` | Przerobić: Sigstore (cosign, Fulcio, Rekor) | materiał | 4–6 h | 0 zł | https://docs.sigstore.dev | `S09-E4-D` | `S09-E5-D` | `09-devops-ci-cd-i-wydania/e5-pochodzenie-i-integralnosc-artefaktow/` |
+| `S09-E5-M3` | Przerobić: GitHub Artifact attestations | materiał | 2 h | 0 zł | https://docs.github.com/en/actions/concepts/security/artifact-attestations | `S09-E4-D` | `S09-E5-D` | `09-devops-ci-cd-i-wydania/e5-pochodzenie-i-integralnosc-artefaktow/` |
+| `S09-E5-M4` | Przerobić: Reproducible Builds: dokumentacja | materiał | 4–6 h | 0 zł | https://reproducible-builds.org/docs/ | `S09-E4-D` | `S09-E5-D` | `09-devops-ci-cd-i-wydania/e5-pochodzenie-i-integralnosc-artefaktow/` |
+| `S09-E5-D` | Dowód etapu 5: pochodzenie i integralność artefaktów | dowód | — | — | — | `S09-E5-M1`, `S09-E5-M2`, `S09-E5-M3`, `S09-E5-M4` | `S09-E6-M1`, `S09-E6-M2`, `S09-E6-M3`, `S09-E6-M4`, `S09-E6-M5` | `09-devops-ci-cd-i-wydania/e5-pochodzenie-i-integralnosc-artefaktow/` |
 
 **`S09-E5-D` · Dowód etapu 5: pochodzenie i integralność artefaktów**
 
@@ -239,6 +249,8 @@ Artefakty wydania z etapu 4 z atestacją pochodzenia i podpisem Sigstore, SBOM d
 **Na co zwrócić uwagę:** poziomy SLSA Build (atestacje GitHub dają poziom 2, poziom 3 wymaga wielokrotnego workflow izolującego build), weryfikacja atestacji i podpisów po stronie odbiorcy, a nie tylko ich wystawienie; powtarzalność jako dowód, że binarka odpowiada kodowi źródłowemu, co wspiera dokumentację techniczną wymaganą przez CRA.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `09-devops-ci-cd-i-wydania/e5-pochodzenie-i-integralnosc-artefaktow/`
 
 ### Etap 6: obserwowalność, SLO i incydenty
 
@@ -250,14 +262,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Usługa produkcyjna z SLO dostępności i opóźnienia, alertem burn rate wysyłanym na telefon, śladami OpenTelemetry i raportami awarii z symbolami z aplikacji desktopowej; ćwiczenie awarii zakończone postmortemem według szablonu z SRE Book, z czasem wykrycia i przywrócenia.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S09-E6-M1` | Przerobić: Site Reliability Engineering, m.in. rozdziały 4 (SLO), 6 (monitorowanie), 14 („Managing… | materiał | 12–15 h | 0 zł online | https://sre.google/sre-book/table-of-contents/ | `S09-E5-D` | `S09-E6-D` |
-| `S09-E6-M2` | Przerobić: The Site Reliability Workbook, rozdziały 2 („Implementing SLOs”) i 5 | materiał | 6–8 h | 0 zł online | https://sre.google/workbook/table-of-contents/ | `S09-E5-D` | `S09-E6-D` |
-| `S09-E6-M3` | Przerobić: Observability Engineering (wydanie 2, czerwiec 2026) | materiał, płatny | 12–15 h | płatna (darmowy egzemplarz oferuje Honeycomb) | https://www.oreilly.com/library/view/-/9781098179915/ | `S09-E5-D` | `S09-E6-D` |
-| `S09-E6-M4` | Przerobić: OpenTelemetry: pojęcia, Collector, Rust | materiał | 6–8 h | 0 zł | https://opentelemetry.io/docs/ | `S09-E5-D` | `S09-E6-D` |
-| `S09-E6-M5` | Przerobić: Sentry: SDK dla Rusta i plików debugowania | materiał, płatny | 4–5 h | 0 zł (usługa: plan darmowy i płatne) | https://docs.sentry.io/platforms/rust/, https://docs.sentry.io/cli/dif/ | `S09-E5-D` | `S09-E6-D` |
-| `S09-E6-D` | Dowód etapu 6: obserwowalność, SLO i incydenty | dowód | — | — | — | `S09-E6-M1`, `S09-E6-M2`, `S09-E6-M3`, `S09-E6-M4`, `S09-E6-M5` | `S09-E7-M1`, `S09-E7-M2`, `S09-E7-M3`, `S09-E7-M4`, `S09-E7-P1`, `S09-E7-P2`, `S09-E7-P3` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S09-E6-M1` | Przerobić: Site Reliability Engineering, m.in. rozdziały 4 (SLO), 6 (monitorowanie), 14 („Managing… | materiał | 12–15 h | 0 zł online | https://sre.google/sre-book/table-of-contents/ | `S09-E5-D` | `S09-E6-D` | `09-devops-ci-cd-i-wydania/e6-obserwowalnosc-slo-i-incydenty/` |
+| `S09-E6-M2` | Przerobić: The Site Reliability Workbook, rozdziały 2 („Implementing SLOs”) i 5 | materiał | 6–8 h | 0 zł online | https://sre.google/workbook/table-of-contents/ | `S09-E5-D` | `S09-E6-D` | `09-devops-ci-cd-i-wydania/e6-obserwowalnosc-slo-i-incydenty/` |
+| `S09-E6-M3` | Przerobić: Observability Engineering (wydanie 2, czerwiec 2026) | materiał, płatny | 12–15 h | płatna (darmowy egzemplarz oferuje Honeycomb) | https://www.oreilly.com/library/view/-/9781098179915/ | `S09-E5-D` | `S09-E6-D` | `09-devops-ci-cd-i-wydania/e6-obserwowalnosc-slo-i-incydenty/` |
+| `S09-E6-M4` | Przerobić: OpenTelemetry: pojęcia, Collector, Rust | materiał | 6–8 h | 0 zł | https://opentelemetry.io/docs/ | `S09-E5-D` | `S09-E6-D` | `09-devops-ci-cd-i-wydania/e6-obserwowalnosc-slo-i-incydenty/` |
+| `S09-E6-M5` | Przerobić: Sentry: SDK dla Rusta i plików debugowania | materiał, płatny | 4–5 h | 0 zł (usługa: plan darmowy i płatne) | https://docs.sentry.io/platforms/rust/, https://docs.sentry.io/cli/dif/ | `S09-E5-D` | `S09-E6-D` | `09-devops-ci-cd-i-wydania/e6-obserwowalnosc-slo-i-incydenty/` |
+| `S09-E6-D` | Dowód etapu 6: obserwowalność, SLO i incydenty | dowód | — | — | — | `S09-E6-M1`, `S09-E6-M2`, `S09-E6-M3`, `S09-E6-M4`, `S09-E6-M5` | `S09-E7-M1`, `S09-E7-M2`, `S09-E7-M3`, `S09-E7-M4`, `S09-E7-P1`, `S09-E7-P2`, `S09-E7-P3` | `09-devops-ci-cd-i-wydania/e6-obserwowalnosc-slo-i-incydenty/` |
 
 **`S09-E6-D` · Dowód etapu 6: obserwowalność, SLO i incydenty**
 
@@ -267,6 +279,8 @@ Usługa produkcyjna z SLO dostępności i opóźnienia, alertem burn rate wysył
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
 
+**Folder roboczy:** `09-devops-ci-cd-i-wydania/e6-obserwowalnosc-slo-i-incydenty/`
+
 ### Etap 7: ekspert
 
 Opis kamienia milowego (do wklejenia):
@@ -275,16 +289,16 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód poziomu E:** Samodzielnie, bez agenta, w 1 dzień wdrażasz szablon pipeline’u u klienta (bramki, SBOM, podpisane wydanie, monitoring z alertem SLO), diagnozujesz nieudane wydanie lub fałszywy alarm na podstawie logów i śladów, i umiesz wyjaśnić osobie nietechnicznej, co pipeline gwarantuje, a czego nie.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S09-E7-M1` | Przerobić: GitHub Changelog i komunikaty bezpieczeństwa GitHub Actions | materiał | ok. 30 min tygodniowo | 0 zł | https://github.blog/changelog/ | `S09-E6-D` | `S09-E7-D` |
-| `S09-E7-M2` | Przerobić: Release It! (wydanie 2) | materiał, płatny | 12–15 h | płatna | https://pragprog.com/titles/mnee2/release-it-second-edition/ | `S09-E6-D` | `S09-E7-D` |
-| `S09-E7-M3` | Przerobić: Implementing Service Level Objectives | materiał, płatny | 12–15 h | płatna | https://www.oreilly.com/library/view/implementing-service-level/9781492076803/ | `S09-E6-D` | `S09-E7-D` |
-| `S09-E7-M4` | Przerobić: Building Secure and Reliable Systems | materiał | wg potrzeb | 0 zł online | https://google.github.io/building-secure-and-reliable-systems/raw/toc.html | `S09-E6-D` | `S09-E7-D` |
-| `S09-E7-P1` | Praktyka: recenzja pipeline’ów z AI | praktyka | — | — | — | `S09-E6-D` | `S09-E7-D` |
-| `S09-E7-P2` | Praktyka: ćwiczenie wydania awaryjnego | praktyka | — | — | — | `S09-E6-D` | `S09-E7-D` |
-| `S09-E7-P3` | Praktyka: ćwiczenie odtworzenia | praktyka | — | — | — | `S09-E6-D` | `S09-E7-D` |
-| `S09-E7-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S09-E7-M1`, `S09-E7-M2`, `S09-E7-M3`, `S09-E7-M4`, `S09-E7-P1`, `S09-E7-P2`, `S09-E7-P3` | — |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S09-E7-M1` | Przerobić: GitHub Changelog i komunikaty bezpieczeństwa GitHub Actions | materiał | ok. 30 min tygodniowo | 0 zł | https://github.blog/changelog/ | `S09-E6-D` | `S09-E7-D` | `09-devops-ci-cd-i-wydania/e7-ekspert/` |
+| `S09-E7-M2` | Przerobić: Release It! (wydanie 2) | materiał, płatny | 12–15 h | płatna | https://pragprog.com/titles/mnee2/release-it-second-edition/ | `S09-E6-D` | `S09-E7-D` | `09-devops-ci-cd-i-wydania/e7-ekspert/` |
+| `S09-E7-M3` | Przerobić: Implementing Service Level Objectives | materiał, płatny | 12–15 h | płatna | https://www.oreilly.com/library/view/implementing-service-level/9781492076803/ | `S09-E6-D` | `S09-E7-D` | `09-devops-ci-cd-i-wydania/e7-ekspert/` |
+| `S09-E7-M4` | Przerobić: Building Secure and Reliable Systems | materiał | wg potrzeb | 0 zł online | https://google.github.io/building-secure-and-reliable-systems/raw/toc.html | `S09-E6-D` | `S09-E7-D` | `09-devops-ci-cd-i-wydania/e7-ekspert/` |
+| `S09-E7-P1` | Praktyka: recenzja pipeline’ów z AI | praktyka | — | — | — | `S09-E6-D` | `S09-E7-D` | `09-devops-ci-cd-i-wydania/e7-ekspert/` |
+| `S09-E7-P2` | Praktyka: ćwiczenie wydania awaryjnego | praktyka | — | — | — | `S09-E6-D` | `S09-E7-D` | `09-devops-ci-cd-i-wydania/e7-ekspert/` |
+| `S09-E7-P3` | Praktyka: ćwiczenie odtworzenia | praktyka | — | — | — | `S09-E6-D` | `S09-E7-D` | `09-devops-ci-cd-i-wydania/e7-ekspert/` |
+| `S09-E7-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S09-E7-M1`, `S09-E7-M2`, `S09-E7-M3`, `S09-E7-M4`, `S09-E7-P1`, `S09-E7-P2`, `S09-E7-P3` | — | `09-devops-ci-cd-i-wydania/e7-ekspert/` |
 
 **`S09-E7-P1` · Praktyka: recenzja pipeline’ów z AI**
 
@@ -292,11 +306,15 @@ Opis kamienia milowego (do wklejenia):
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `09-devops-ci-cd-i-wydania/e7-ekspert/`
+
 **`S09-E7-P2` · Praktyka: ćwiczenie wydania awaryjnego**
 
 Poprawka podatności od zgłoszenia do podpisanego wydania na wszystkich platformach w 24 h, z zaktualizowanym SBOM i komunikatem dla użytkowników.
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
+
+**Folder roboczy:** `09-devops-ci-cd-i-wydania/e7-ekspert/`
 
 **`S09-E7-P3` · Praktyka: ćwiczenie odtworzenia**
 
@@ -304,11 +322,15 @@ Odtworzenie infrastruktury i kluczy podpisu z kopii zapasowych na czystym koncie
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `09-devops-ci-cd-i-wydania/e7-ekspert/`
+
 **`S09-E7-D` · Dowód poziomu E: ekspert**
 
 Samodzielnie, bez agenta, w 1 dzień wdrażasz szablon pipeline’u u klienta (bramki, SBOM, podpisane wydanie, monitoring z alertem SLO), diagnozujesz nieudane wydanie lub fałszywy alarm na podstawie logów i śladów, i umiesz wyjaśnić osobie nietechnicznej, co pipeline gwarantuje, a czego nie.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki. Bez agenta AI.
+
+**Folder roboczy:** `09-devops-ci-cd-i-wydania/e7-ekspert/`
 
 ## 6. Relacje z innymi projektami
 

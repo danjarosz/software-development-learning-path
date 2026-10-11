@@ -85,6 +85,8 @@ Punkt startu projektu „06. Testowanie”.
 - zaznaczyć etapy, które zaliczasz samym dowodem (zgodnie z akapitem wstępnym ścieżki), i dla nich zamknąć zadania materiałów jako niepotrzebne,
 - ustawić daty kamieni milowych zgodnie z kolejnością z pliku głównego.
 
+**Folder roboczy:** `06-testowanie/`
+
 ## 4. Przepływ zależności
 
 Linie ciągłe to zależności wewnątrz projektu, przerywane to zadania z innych projektów. Wewnątrz etapu zadania materiałów są równoległe i wszystkie blokują dowód etapu; dowód etapu blokuje materiały kolejnego etapu.
@@ -117,7 +119,7 @@ flowchart TD
 
 ## 5. Zadania według kamieni milowych
 
-Szablon opisu zadania materiału: nazwa materiału, autor lub wydawca, typ, czas, koszt i link (jak w kolumnach poniżej) oraz zdanie „Gotowe, gdy materiał jest przerobiony w zakresie potrzebnym do dowodu etapu”. Opisy dowodów i praktyk są podane pod tabelą każdego etapu.
+Szablon opisu zadania materiału: nazwa materiału, autor lub wydawca, typ, czas, koszt i link (jak w kolumnach poniżej), zdanie „Gotowe, gdy materiał jest przerobiony w zakresie potrzebnym do dowodu etapu” oraz folder roboczy z kolumny „Folder”. Opisy dowodów i praktyk są podane pod tabelą każdego etapu.
 
 ### Etap 0: podstawy testowania
 
@@ -129,11 +131,11 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Dla jednej funkcji z wymaganiami (np. naliczanie ceny abonamentu z rabatem i okresem próbnym) rozpisany zestaw przypadków testowych z uzasadnieniem techniką: klasy, granice, tablica decyzyjna.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S06-E0-M1` | Przerobić: Certified Tester Foundation Level, sylabus v4.0 (aktualizacja 4.0.1) | materiał, płatny | 15–20 h | 0 zł (egzamin płatny, opcjonalny) | https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/ | `S06-START` | `S06-E0-D` |
-| `S06-E0-M2` | Przerobić: Effective Software Testing | materiał, płatny | 15–20 h | płatna | https://www.manning.com/books/effective-software-testing | `S06-START` | `S06-E0-D` |
-| `S06-E0-D` | Dowód etapu 0: podstawy testowania | dowód | — | — | — | `S06-E0-M1`, `S06-E0-M2` | `S06-E1-M1`, `S06-E1-M2`, `S06-E1-M3`, `S06-E1-M4`, `S06-E1-M5`, `S06-E2-M1`, `S06-E2-M2`, `S06-E2-M3`, `S06-E2-M4`, `S06-E2-M5`, `S06-E2-M6` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S06-E0-M1` | Przerobić: Certified Tester Foundation Level, sylabus v4.0 (aktualizacja 4.0.1) | materiał, płatny | 15–20 h | 0 zł (egzamin płatny, opcjonalny) | https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/ | `S06-START` | `S06-E0-D` | `06-testowanie/e0-podstawy-testowania/` |
+| `S06-E0-M2` | Przerobić: Effective Software Testing | materiał, płatny | 15–20 h | płatna | https://www.manning.com/books/effective-software-testing | `S06-START` | `S06-E0-D` | `06-testowanie/e0-podstawy-testowania/` |
+| `S06-E0-D` | Dowód etapu 0: podstawy testowania | dowód | — | — | — | `S06-E0-M1`, `S06-E0-M2` | `S06-E1-M1`, `S06-E1-M2`, `S06-E1-M3`, `S06-E1-M4`, `S06-E1-M5`, `S06-E2-M1`, `S06-E2-M2`, `S06-E2-M3`, `S06-E2-M4`, `S06-E2-M5`, `S06-E2-M6` | `06-testowanie/e0-podstawy-testowania/` |
 
 **`S06-E0-D` · Dowód etapu 0: podstawy testowania**
 
@@ -142,6 +144,8 @@ Dla jednej funkcji z wymaganiami (np. naliczanie ceny abonamentu z rabatem i okr
 **Na co zwrócić uwagę:** klasy równoważności, wartości brzegowe, tablice decyzyjne, przejścia stanów, testowanie oparte na ryzyku, różnica między weryfikacją a walidacją. Certyfikat nie jest potrzebny; sylabus służy jako wspólny słownik z klientami i zespołami QA.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `06-testowanie/e0-podstawy-testowania/`
 
 ### Etap 1: testy jednostkowe w Ruście i TDD
 
@@ -153,14 +157,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Biblioteka w Ruście (np. walidacja i aktywacja klucza licencyjnego) napisana metodą TDD, z historią commitów pokazującą cykl test–implementacja, uruchamiana przez `cargo nextest` z raportem pokrycia z `cargo llvm-cov`.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S06-E1-M1` | Przerobić: The Rust Programming Language, rozdział 11 „Writing Automated Tests” | materiał | 4–6 h | 0 zł | https://doc.rust-lang.org/book/ch11-00-testing.html | `S06-E0-D`, `S12-E2-D` | `S06-E1-D` |
-| `S06-E1-M2` | Przerobić: Test Driven Development: By Example | materiał, płatny | 12–15 h | płatna | https://www.informit.com/store/test-driven-development-by-example-9780321146533 | `S06-E0-D`, `S12-E2-D` | `S06-E1-D` |
-| `S06-E1-M3` | Przerobić: „Canon TDD” | materiał | 1 h | 0 zł | https://tidyfirst.substack.com/p/canon-tdd | `S06-E0-D`, `S12-E2-D` | `S06-E1-D` |
-| `S06-E1-M4` | Przerobić: cargo-nextest | materiał | 3–4 h | 0 zł | https://nexte.st | `S06-E0-D`, `S12-E2-D` | `S06-E1-D` |
-| `S06-E1-M5` | Przerobić: cargo-llvm-cov | materiał | 2 h | 0 zł | https://github.com/taiki-e/cargo-llvm-cov | `S06-E0-D`, `S12-E2-D` | `S06-E1-D` |
-| `S06-E1-D` | Dowód etapu 1: testy jednostkowe w Ruście i TDD | dowód | — | — | — | `S06-E1-M1`, `S06-E1-M2`, `S06-E1-M3`, `S06-E1-M4`, `S06-E1-M5` | — |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S06-E1-M1` | Przerobić: The Rust Programming Language, rozdział 11 „Writing Automated Tests” | materiał | 4–6 h | 0 zł | https://doc.rust-lang.org/book/ch11-00-testing.html | `S06-E0-D`, `S12-E2-D` | `S06-E1-D` | `06-testowanie/e1-testy-jednostkowe-w-ruscie-i-tdd/` |
+| `S06-E1-M2` | Przerobić: Test Driven Development: By Example | materiał, płatny | 12–15 h | płatna | https://www.informit.com/store/test-driven-development-by-example-9780321146533 | `S06-E0-D`, `S12-E2-D` | `S06-E1-D` | `06-testowanie/e1-testy-jednostkowe-w-ruscie-i-tdd/` |
+| `S06-E1-M3` | Przerobić: „Canon TDD” | materiał | 1 h | 0 zł | https://tidyfirst.substack.com/p/canon-tdd | `S06-E0-D`, `S12-E2-D` | `S06-E1-D` | `06-testowanie/e1-testy-jednostkowe-w-ruscie-i-tdd/` |
+| `S06-E1-M4` | Przerobić: cargo-nextest | materiał | 3–4 h | 0 zł | https://nexte.st | `S06-E0-D`, `S12-E2-D` | `S06-E1-D` | `06-testowanie/e1-testy-jednostkowe-w-ruscie-i-tdd/` |
+| `S06-E1-M5` | Przerobić: cargo-llvm-cov | materiał | 2 h | 0 zł | https://github.com/taiki-e/cargo-llvm-cov | `S06-E0-D`, `S12-E2-D` | `S06-E1-D` | `06-testowanie/e1-testy-jednostkowe-w-ruscie-i-tdd/` |
+| `S06-E1-D` | Dowód etapu 1: testy jednostkowe w Ruście i TDD | dowód | — | — | — | `S06-E1-M1`, `S06-E1-M2`, `S06-E1-M3`, `S06-E1-M4`, `S06-E1-M5` | — | `06-testowanie/e1-testy-jednostkowe-w-ruscie-i-tdd/` |
 
 **`S06-E1-D` · Dowód etapu 1: testy jednostkowe w Ruście i TDD**
 
@@ -169,6 +173,8 @@ Biblioteka w Ruście (np. walidacja i aktywacja klucza licencyjnego) napisana me
 **Na co zwrócić uwagę:** cykl czerwony–zielony–refaktoryzacja, lista testów jako plan (zgodna ze specyfikacją w procesie spec-driven), testy w module i testy integracyjne w `tests/`, `cargo nextest` (nie uruchamia doctestów, więc w CI osobno `cargo test --doc`), pokrycie jako sygnał, a nie cel.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `06-testowanie/e1-testy-jednostkowe-w-ruscie-i-tdd/`
 
 ### Etap 2: projektowanie testów
 
@@ -180,15 +186,15 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Refaktoryzacja zestawu testów z etapu 1 tak, by zmiana wewnętrznej struktury kodu nie psuła żadnego testu, a celowo wprowadzony błąd zachowania był wykrywany; krótka notatka, które mocki usunięto i dlaczego.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S06-E2-M1` | Przerobić: Unit Testing Principles, Practices, and Patterns | materiał, płatny | 15–20 h | płatna | https://www.manning.com/books/unit-testing | `S06-E0-D` | `S06-E2-D` |
-| `S06-E2-M2` | Przerobić: Growing Object-Oriented Software, Guided by Tests | materiał, płatny | 15–20 h | płatna | https://www.informit.com/store/growing-object-oriented-software-guided-by-tests-9780321503626 | `S06-E0-D` | `S06-E2-D` |
-| `S06-E2-M3` | Przerobić: „Mocks Aren’t Stubs” | materiał | 1–2 h | 0 zł | https://martinfowler.com/articles/mocksArentStubs.html | `S06-E0-D` | `S06-E2-D` |
-| `S06-E2-M4` | Przerobić: „The Practical Test Pyramid” | materiał | 2 h | 0 zł | https://martinfowler.com/articles/practical-test-pyramid.html | `S06-E0-D` | `S06-E2-D` |
-| `S06-E2-M5` | Przerobić: „The Testing Trophy and Testing Classifications” | materiał | 1 h | 0 zł | https://kentcdodds.com/blog/the-testing-trophy-and-testing-classifications | `S06-E0-D` | `S06-E2-D` |
-| `S06-E2-M6` | Przerobić: Software Engineering at Google, rozdziały 11–14 (testowanie) | materiał | 6–8 h | 0 zł online | https://abseil.io/resources/swe-book | `S06-E0-D` | `S06-E2-D` |
-| `S06-E2-D` | Dowód etapu 2: projektowanie testów | dowód | — | — | — | `S06-E2-M1`, `S06-E2-M2`, `S06-E2-M3`, `S06-E2-M4`, `S06-E2-M5`, `S06-E2-M6` | `S06-E3-M1`, `S06-E3-M2`, `S06-E3-M3`, `S06-E3-M4`, `S06-E3-M5`, `S06-E4-M1`, `S06-E4-M2`, `S06-E4-M3`, `S06-E4-M4`, `S07-START`, `S08-START`, `S09-START`, `S11-START`, `S12-START`, `S20-START`, `S21-START` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S06-E2-M1` | Przerobić: Unit Testing Principles, Practices, and Patterns | materiał, płatny | 15–20 h | płatna | https://www.manning.com/books/unit-testing | `S06-E0-D` | `S06-E2-D` | `06-testowanie/e2-projektowanie-testow/` |
+| `S06-E2-M2` | Przerobić: Growing Object-Oriented Software, Guided by Tests | materiał, płatny | 15–20 h | płatna | https://www.informit.com/store/growing-object-oriented-software-guided-by-tests-9780321503626 | `S06-E0-D` | `S06-E2-D` | `06-testowanie/e2-projektowanie-testow/` |
+| `S06-E2-M3` | Przerobić: „Mocks Aren’t Stubs” | materiał | 1–2 h | 0 zł | https://martinfowler.com/articles/mocksArentStubs.html | `S06-E0-D` | `S06-E2-D` | `06-testowanie/e2-projektowanie-testow/` |
+| `S06-E2-M4` | Przerobić: „The Practical Test Pyramid” | materiał | 2 h | 0 zł | https://martinfowler.com/articles/practical-test-pyramid.html | `S06-E0-D` | `S06-E2-D` | `06-testowanie/e2-projektowanie-testow/` |
+| `S06-E2-M5` | Przerobić: „The Testing Trophy and Testing Classifications” | materiał | 1 h | 0 zł | https://kentcdodds.com/blog/the-testing-trophy-and-testing-classifications | `S06-E0-D` | `S06-E2-D` | `06-testowanie/e2-projektowanie-testow/` |
+| `S06-E2-M6` | Przerobić: Software Engineering at Google, rozdziały 11–14 (testowanie) | materiał | 6–8 h | 0 zł online | https://abseil.io/resources/swe-book | `S06-E0-D` | `S06-E2-D` | `06-testowanie/e2-projektowanie-testow/` |
+| `S06-E2-D` | Dowód etapu 2: projektowanie testów | dowód | — | — | — | `S06-E2-M1`, `S06-E2-M2`, `S06-E2-M3`, `S06-E2-M4`, `S06-E2-M5`, `S06-E2-M6` | `S06-E3-M1`, `S06-E3-M2`, `S06-E3-M3`, `S06-E3-M4`, `S06-E3-M5`, `S06-E4-M1`, `S06-E4-M2`, `S06-E4-M3`, `S06-E4-M4`, `S07-START`, `S08-START`, `S09-START`, `S11-START`, `S12-START`, `S20-START`, `S21-START` | `06-testowanie/e2-projektowanie-testow/` |
 
 **`S06-E2-D` · Dowód etapu 2: projektowanie testów**
 
@@ -197,6 +203,8 @@ Refaktoryzacja zestawu testów z etapu 1 tak, by zmiana wewnętrznej struktury k
 **Na co zwrócić uwagę:** testowanie zachowania, a nie implementacji; kiedy dubler (mock, stub, fake) pomaga, a kiedy ukrywa błąd; odporność testu na refaktoryzację; proporcje testów jednostkowych, integracyjnych i E2E. To jest podstawa listy kontrolnej do recenzji testów pisanych przez agentów.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `06-testowanie/e2-projektowanie-testow/`
 
 ### Etap 3: zaawansowane techniki w Ruście
 
@@ -208,14 +216,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Do rdzenia z etapu 1 dodane: testy właściwości dla serializacji i synchronizacji, snapshot formatu wyjściowego, cel fuzzingu dla parsera wejścia uruchamiany w CI przez ograniczony czas, raport `cargo mutants` z omówieniem każdego przeżywającego mutanta.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S06-E3-M1` | Przerobić: Proptest book | materiał | 5–6 h | 0 zł | https://proptest-rs.github.io/proptest/ | `S06-E2-D` | `S06-E3-D` |
-| `S06-E3-M2` | Przerobić: insta | materiał | 2–3 h | 0 zł | https://insta.rs/docs/ | `S06-E2-D` | `S06-E3-D` |
-| `S06-E3-M3` | Przerobić: Rust Fuzz Book (`cargo-fuzz`, `afl.rs`) | materiał | 6–8 h | 0 zł | https://rust-fuzz.github.io/book/ | `S06-E2-D` | `S06-E3-D` |
-| `S06-E3-M4` | Przerobić: cargo-mutants | materiał | 4–5 h | 0 zł | https://mutants.rs | `S06-E2-D` | `S06-E3-D` |
-| `S06-E3-M5` | Przerobić: Criterion.rs | materiał | 3–4 h | 0 zł | https://bheisler.github.io/criterion.rs/book/ | `S06-E2-D` | `S06-E3-D` |
-| `S06-E3-D` | Dowód etapu 3: zaawansowane techniki w Ruście | dowód | — | — | — | `S06-E3-M1`, `S06-E3-M2`, `S06-E3-M3`, `S06-E3-M4`, `S06-E3-M5` | `S06-E6-M1`, `S06-E6-M2`, `S06-E6-M3`, `S06-E6-M4`, `S06-E6-M5`, `S06-E6-M6` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S06-E3-M1` | Przerobić: Proptest book | materiał | 5–6 h | 0 zł | https://proptest-rs.github.io/proptest/ | `S06-E2-D` | `S06-E3-D` | `06-testowanie/e3-zaawansowane-techniki-w-ruscie/` |
+| `S06-E3-M2` | Przerobić: insta | materiał | 2–3 h | 0 zł | https://insta.rs/docs/ | `S06-E2-D` | `S06-E3-D` | `06-testowanie/e3-zaawansowane-techniki-w-ruscie/` |
+| `S06-E3-M3` | Przerobić: Rust Fuzz Book (`cargo-fuzz`, `afl.rs`) | materiał | 6–8 h | 0 zł | https://rust-fuzz.github.io/book/ | `S06-E2-D` | `S06-E3-D` | `06-testowanie/e3-zaawansowane-techniki-w-ruscie/` |
+| `S06-E3-M4` | Przerobić: cargo-mutants | materiał | 4–5 h | 0 zł | https://mutants.rs | `S06-E2-D` | `S06-E3-D` | `06-testowanie/e3-zaawansowane-techniki-w-ruscie/` |
+| `S06-E3-M5` | Przerobić: Criterion.rs | materiał | 3–4 h | 0 zł | https://bheisler.github.io/criterion.rs/book/ | `S06-E2-D` | `S06-E3-D` | `06-testowanie/e3-zaawansowane-techniki-w-ruscie/` |
+| `S06-E3-D` | Dowód etapu 3: zaawansowane techniki w Ruście | dowód | — | — | — | `S06-E3-M1`, `S06-E3-M2`, `S06-E3-M3`, `S06-E3-M4`, `S06-E3-M5` | `S06-E6-M1`, `S06-E6-M2`, `S06-E6-M3`, `S06-E6-M4`, `S06-E6-M5`, `S06-E6-M6` | `06-testowanie/e3-zaawansowane-techniki-w-ruscie/` |
 
 **`S06-E3-D` · Dowód etapu 3: zaawansowane techniki w Ruście**
 
@@ -224,6 +232,8 @@ Do rdzenia z etapu 1 dodane: testy właściwości dla serializacji i synchroniza
 **Na co zwrócić uwagę:** własności zamiast przykładów (odwracalność serializacji, niezmienniki), minimalizacja kontrprzykładów, recenzja zmian w snapshotach (`cargo insta review`) zamiast ślepej akceptacji, fuzzing parserów i wszystkiego, co przyjmuje dane z zewnątrz, odsetek przeżywających mutantów jako miara jakości testów.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `06-testowanie/e3-zaawansowane-techniki-w-ruscie/`
 
 ### Etap 4: kod zastany i specyfikacja przykładami
 
@@ -235,13 +245,13 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Przejmowana aplikacja (poligon B z mapy nauki) objęta testami charakteryzującymi krytycznych ścieżek (logowanie, płatność, zapis danych) przed pierwszą zmianą; notatki z dwóch sesji eksploracyjnych z listą znalezionych problemów; trzy kryteria akceptacji kolejnej poprawki zapisane w Gherkinie.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S06-E4-M1` | Przerobić: Working Effectively with Legacy Code | materiał, płatny | 15–20 h | płatna | https://www.informit.com/store/working-effectively-with-legacy-code-9780131177055 | `S06-E2-D` | `S06-E4-D` |
-| `S06-E4-M2` | Przerobić: Specification by Example | materiał, płatny | 10–12 h | płatna | https://www.manning.com/books/specification-by-example | `S06-E2-D` | `S06-E4-D` |
-| `S06-E4-M3` | Przerobić: Gherkin Reference | materiał | 1–2 h | 0 zł | https://cucumber.io/docs/gherkin/reference/ | `S06-E2-D` | `S06-E4-D` |
-| `S06-E4-M4` | Przerobić: Explore It! | materiał, płatny | 8–10 h | płatna | https://pragprog.com/titles/ehxta/explore-it/ | `S06-E2-D` | `S06-E4-D` |
-| `S06-E4-D` | Dowód etapu 4: kod zastany i specyfikacja przykładami | dowód | — | — | — | `S06-E4-M1`, `S06-E4-M2`, `S06-E4-M3`, `S06-E4-M4` | `S06-E5-M1`, `S06-E5-M2` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S06-E4-M1` | Przerobić: Working Effectively with Legacy Code | materiał, płatny | 15–20 h | płatna | https://www.informit.com/store/working-effectively-with-legacy-code-9780131177055 | `S06-E2-D` | `S06-E4-D` | `06-testowanie/e4-kod-zastany-i-specyfikacja-przykladami/` |
+| `S06-E4-M2` | Przerobić: Specification by Example | materiał, płatny | 10–12 h | płatna | https://www.manning.com/books/specification-by-example | `S06-E2-D` | `S06-E4-D` | `06-testowanie/e4-kod-zastany-i-specyfikacja-przykladami/` |
+| `S06-E4-M3` | Przerobić: Gherkin Reference | materiał | 1–2 h | 0 zł | https://cucumber.io/docs/gherkin/reference/ | `S06-E2-D` | `S06-E4-D` | `06-testowanie/e4-kod-zastany-i-specyfikacja-przykladami/` |
+| `S06-E4-M4` | Przerobić: Explore It! | materiał, płatny | 8–10 h | płatna | https://pragprog.com/titles/ehxta/explore-it/ | `S06-E2-D` | `S06-E4-D` | `06-testowanie/e4-kod-zastany-i-specyfikacja-przykladami/` |
+| `S06-E4-D` | Dowód etapu 4: kod zastany i specyfikacja przykładami | dowód | — | — | — | `S06-E4-M1`, `S06-E4-M2`, `S06-E4-M3`, `S06-E4-M4` | `S06-E5-M1`, `S06-E5-M2` | `06-testowanie/e4-kod-zastany-i-specyfikacja-przykladami/` |
 
 **`S06-E4-D` · Dowód etapu 4: kod zastany i specyfikacja przykładami**
 
@@ -250,6 +260,8 @@ Przejmowana aplikacja (poligon B z mapy nauki) objęta testami charakteryzujący
 **Na co zwrócić uwagę:** testy charakteryzujące (utrwalenie obecnego zachowania przed zmianą), szwy i łamanie zależności, kryteria akceptacji jako przykłady w specyfikacji, testowanie eksploracyjne w sesjach z kartą (charter) przy przejmowaniu aplikacji z vibe codingu.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `06-testowanie/e4-kod-zastany-i-specyfikacja-przykladami/`
 
 ### Etap 5: testy integracyjne, kontraktowe i obciążeniowe
 
@@ -261,11 +273,11 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** API w Axum z testem kontraktowym konsumenta (aplikacja kliencka) i weryfikacją po stronie dostawcy w CI; scenariusz k6 z progami opóźnienia i błędów, który zatrzymuje pipeline po ich przekroczeniu.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S06-E5-M1` | Przerobić: Pact: wprowadzenie i przewodnik dla Rusta | materiał | 8–10 h | 0 zł | https://docs.pact.io, https://docs.pact.io/implementation_guides/rust | `S06-E4-D` | `S06-E5-D` |
-| `S06-E5-M2` | Przerobić: Grafana k6 | materiał | 8–10 h | 0 zł | https://grafana.com/docs/k6/latest/ | `S06-E4-D` | `S06-E5-D` |
-| `S06-E5-D` | Dowód etapu 5: testy integracyjne, kontraktowe i obciążeniowe | dowód | — | — | — | `S06-E5-M1`, `S06-E5-M2` | `S06-E6-M1`, `S06-E6-M2`, `S06-E6-M3`, `S06-E6-M4`, `S06-E6-M5`, `S06-E6-M6` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S06-E5-M1` | Przerobić: Pact: wprowadzenie i przewodnik dla Rusta | materiał | 8–10 h | 0 zł | https://docs.pact.io, https://docs.pact.io/implementation_guides/rust | `S06-E4-D` | `S06-E5-D` | `06-testowanie/e5-testy-integracyjne-kontraktowe-i-obciazeniowe/` |
+| `S06-E5-M2` | Przerobić: Grafana k6 | materiał | 8–10 h | 0 zł | https://grafana.com/docs/k6/latest/ | `S06-E4-D` | `S06-E5-D` | `06-testowanie/e5-testy-integracyjne-kontraktowe-i-obciazeniowe/` |
+| `S06-E5-D` | Dowód etapu 5: testy integracyjne, kontraktowe i obciążeniowe | dowód | — | — | — | `S06-E5-M1`, `S06-E5-M2` | `S06-E6-M1`, `S06-E6-M2`, `S06-E6-M3`, `S06-E6-M4`, `S06-E6-M5`, `S06-E6-M6` | `06-testowanie/e5-testy-integracyjne-kontraktowe-i-obciazeniowe/` |
 
 **`S06-E5-D` · Dowód etapu 5: testy integracyjne, kontraktowe i obciążeniowe**
 
@@ -274,6 +286,8 @@ API w Axum z testem kontraktowym konsumenta (aplikacja kliencka) i weryfikacją 
 **Na co zwrócić uwagę:** testy integracyjne z prawdziwą bazą w kontenerze zamiast mocków warstwy danych, kontrakt między aplikacją mobilną lub desktopową a API, progi (thresholds) w k6 jako bramka w CI, dane testowe bez danych osobowych.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+
+**Folder roboczy:** `06-testowanie/e5-testy-integracyjne-kontraktowe-i-obciazeniowe/`
 
 ### Etap 6: testy na platformach
 
@@ -285,15 +299,15 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód:** Jeden rdzeń w Ruście z testami na hoście oraz po jednym teście integracyjnym na każdej platformie: XCUITest na symulatorze iOS, test Compose na emulatorze Androida, przepływ Maestro przez onboarding, test WebDriver aplikacji Tauri na Linuksie i Windows w CI, test na płytce (np. nRF lub RP2040) uruchamiany przez `probe-rs`.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S06-E6-M1` | Przerobić: XCTest (testy jednostkowe, wydajności i UI) i Swift Testing | materiał | 8–10 h | 0 zł | https://developer.apple.com/documentation/xctest, https://developer.apple.com/xcode/swift-testing/ | `S06-E5-D`, `S06-E3-D` | `S06-E6-D` |
-| `S06-E6-M2` | Przerobić: Test apps on Android, Test your Compose layout, Espresso | materiał | 8–10 h | 0 zł | https://developer.android.com/training/testing, https://developer.android.com/develop/ui/compose/testing | `S06-E5-D`, `S06-E3-D` | `S06-E6-D` |
-| `S06-E6-M3` | Przerobić: Maestro | materiał, płatny | 4–6 h | 0 zł (chmura płatna) | https://docs.maestro.dev | `S06-E5-D`, `S06-E3-D` | `S06-E6-D` |
-| `S06-E6-M4` | Przerobić: Tauri: WebDriver (`tauri-driver`, usługa WebdriverIO) | materiał | 4–6 h | 0 zł | https://v2.tauri.app/develop/tests/webdriver/ | `S06-E5-D`, `S06-E3-D` | `S06-E6-D` |
-| `S06-E6-M5` | Przerobić: embedded-test | materiał | 4–6 h | 0 zł | https://github.com/probe-rs/embedded-test | `S06-E5-D`, `S06-E3-D` | `S06-E6-D` |
-| `S06-E6-M6` | Przerobić: QEMU: emulacja systemów Arm | materiał | 3–4 h | 0 zł | https://www.qemu.org/docs/master/system/target-arm.html | `S06-E5-D`, `S06-E3-D` | `S06-E6-D` |
-| `S06-E6-D` | Dowód etapu 6: testy na platformach | dowód | — | — | — | `S06-E6-M1`, `S06-E6-M2`, `S06-E6-M3`, `S06-E6-M4`, `S06-E6-M5`, `S06-E6-M6` | `S06-E7-M1`, `S06-E7-M2`, `S06-E7-P1`, `S06-E7-P2`, `S06-E7-P3` |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S06-E6-M1` | Przerobić: XCTest (testy jednostkowe, wydajności i UI) i Swift Testing | materiał | 8–10 h | 0 zł | https://developer.apple.com/documentation/xctest, https://developer.apple.com/xcode/swift-testing/ | `S06-E5-D`, `S06-E3-D` | `S06-E6-D` | `06-testowanie/e6-testy-na-platformach/` |
+| `S06-E6-M2` | Przerobić: Test apps on Android, Test your Compose layout, Espresso | materiał | 8–10 h | 0 zł | https://developer.android.com/training/testing, https://developer.android.com/develop/ui/compose/testing | `S06-E5-D`, `S06-E3-D` | `S06-E6-D` | `06-testowanie/e6-testy-na-platformach/` |
+| `S06-E6-M3` | Przerobić: Maestro | materiał, płatny | 4–6 h | 0 zł (chmura płatna) | https://docs.maestro.dev | `S06-E5-D`, `S06-E3-D` | `S06-E6-D` | `06-testowanie/e6-testy-na-platformach/` |
+| `S06-E6-M4` | Przerobić: Tauri: WebDriver (`tauri-driver`, usługa WebdriverIO) | materiał | 4–6 h | 0 zł | https://v2.tauri.app/develop/tests/webdriver/ | `S06-E5-D`, `S06-E3-D` | `S06-E6-D` | `06-testowanie/e6-testy-na-platformach/` |
+| `S06-E6-M5` | Przerobić: embedded-test | materiał | 4–6 h | 0 zł | https://github.com/probe-rs/embedded-test | `S06-E5-D`, `S06-E3-D` | `S06-E6-D` | `06-testowanie/e6-testy-na-platformach/` |
+| `S06-E6-M6` | Przerobić: QEMU: emulacja systemów Arm | materiał | 3–4 h | 0 zł | https://www.qemu.org/docs/master/system/target-arm.html | `S06-E5-D`, `S06-E3-D` | `S06-E6-D` | `06-testowanie/e6-testy-na-platformach/` |
+| `S06-E6-D` | Dowód etapu 6: testy na platformach | dowód | — | — | — | `S06-E6-M1`, `S06-E6-M2`, `S06-E6-M3`, `S06-E6-M4`, `S06-E6-M5`, `S06-E6-M6` | `S06-E7-M1`, `S06-E7-M2`, `S06-E7-P1`, `S06-E7-P2`, `S06-E7-P3` | `06-testowanie/e6-testy-na-platformach/` |
 
 **`S06-E6-D` · Dowód etapu 6: testy na platformach**
 
@@ -303,6 +317,8 @@ Jeden rdzeń w Ruście z testami na hoście oraz po jednym teście integracyjnym
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
 
+**Folder roboczy:** `06-testowanie/e6-testy-na-platformach/`
+
 ### Etap 7: ekspert
 
 Opis kamienia milowego (do wklejenia):
@@ -311,14 +327,14 @@ Opis kamienia milowego (do wklejenia):
 
 **Dowód poziomu E:** Samodzielnie, bez agenta, w 1 dzień obejmujesz nieznany moduł przejmowanej aplikacji testami charakteryzującymi, wskazujesz w zestawie testów wygenerowanym przez AI testy, które nic nie sprawdzają (potwierdzone testami mutacyjnymi), i umiesz wyjaśnić osobie nietechnicznej, jakie ryzyko pokrywają testy, a jakiego nie.
 
-| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje |
-|---|---|---|---|---|---|---|---|
-| `S06-E7-M1` | Przerobić: Wydania i changelogi narzędzi testowych | materiał | ok. 30 min tygodniowo | 0 zł | strony z etapów 1–6 | `S06-E6-D` | `S06-E7-D` |
-| `S06-E7-M2` | Przerobić: Aktualizacje sylabusów ISTQB | materiał | wg potrzeb | 0 zł | https://istqb.org | `S06-E6-D` | `S06-E7-D` |
-| `S06-E7-P1` | Praktyka: recenzja testów z AI | praktyka | — | — | — | `S06-E6-D` | `S06-E7-D` |
-| `S06-E7-P2` | Praktyka: TDD z agentem | praktyka | — | — | — | `S06-E6-D` | `S06-E7-D` |
-| `S06-E7-P3` | Praktyka: strategia testów u klienta | praktyka | — | — | — | `S06-E6-D` | `S06-E7-D` |
-| `S06-E7-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S06-E7-M1`, `S06-E7-M2`, `S06-E7-P1`, `S06-E7-P2`, `S06-E7-P3` | — |
+| Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
+|---|---|---|---|---|---|---|---|---|
+| `S06-E7-M1` | Przerobić: Wydania i changelogi narzędzi testowych | materiał | ok. 30 min tygodniowo | 0 zł | strony z etapów 1–6 | `S06-E6-D` | `S06-E7-D` | `06-testowanie/e7-ekspert/` |
+| `S06-E7-M2` | Przerobić: Aktualizacje sylabusów ISTQB | materiał | wg potrzeb | 0 zł | https://istqb.org | `S06-E6-D` | `S06-E7-D` | `06-testowanie/e7-ekspert/` |
+| `S06-E7-P1` | Praktyka: recenzja testów z AI | praktyka | — | — | — | `S06-E6-D` | `S06-E7-D` | `06-testowanie/e7-ekspert/` |
+| `S06-E7-P2` | Praktyka: TDD z agentem | praktyka | — | — | — | `S06-E6-D` | `S06-E7-D` | `06-testowanie/e7-ekspert/` |
+| `S06-E7-P3` | Praktyka: strategia testów u klienta | praktyka | — | — | — | `S06-E6-D` | `S06-E7-D` | `06-testowanie/e7-ekspert/` |
+| `S06-E7-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S06-E7-M1`, `S06-E7-M2`, `S06-E7-P1`, `S06-E7-P2`, `S06-E7-P3` | — | `06-testowanie/e7-ekspert/` |
 
 **`S06-E7-P1` · Praktyka: recenzja testów z AI**
 
@@ -326,11 +342,15 @@ Opis kamienia milowego (do wklejenia):
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `06-testowanie/e7-ekspert/`
+
 **`S06-E7-P2` · Praktyka: TDD z agentem**
 
 Człowiek pisze lub zatwierdza listę testów ze specyfikacji, agent implementuje; pomiar, ile błędów wyłapały testy przed recenzją.
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
+
+**Folder roboczy:** `06-testowanie/e7-ekspert/`
 
 **`S06-E7-P3` · Praktyka: strategia testów u klienta**
 
@@ -338,11 +358,15 @@ Jednostronicowa strategia (ryzyka, warstwy testów, bramki w CI, dane testowe) d
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
+**Folder roboczy:** `06-testowanie/e7-ekspert/`
+
 **`S06-E7-D` · Dowód poziomu E: ekspert**
 
 Samodzielnie, bez agenta, w 1 dzień obejmujesz nieznany moduł przejmowanej aplikacji testami charakteryzującymi, wskazujesz w zestawie testów wygenerowanym przez AI testy, które nic nie sprawdzają (potwierdzone testami mutacyjnymi), i umiesz wyjaśnić osobie nietechnicznej, jakie ryzyko pokrywają testy, a jakiego nie.
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki. Bez agenta AI.
+
+**Folder roboczy:** `06-testowanie/e7-ekspert/`
 
 ## 6. Relacje z innymi projektami
 
