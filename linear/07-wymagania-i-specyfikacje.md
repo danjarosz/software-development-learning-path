@@ -2,7 +2,7 @@
 
 Team **LEA** (https://linear.app/daankh/team/LEA/overview). Plan do przeglądu przed wdrożeniem: nic nie zostało jeszcze utworzone w Linear. Klucze zadań (np. `S07-E0-M1`) są robocze; po wdrożeniu dostaną identyfikatory `LEA-…`.
 
-**W skrócie:** 7 kamieni milowych, 43 zadania (1 start, 31 materiałów, 7 dowodów, 4 praktyki). Plik główny z kolejnością projektów: `00-kolejnosc-i-zaleznosci.md`.
+**W skrócie:** 7 kamieni milowych, 47 zadań (1 start, 35 materiałów, 7 dowodów, 4 praktyki). Plik główny z kolejnością projektów: `00-kolejnosc-i-zaleznosci.md`.
 
 ## 1. Projekt
 
@@ -10,25 +10,22 @@ Team **LEA** (https://linear.app/daankh/team/LEA/overview). Plan do przeglądu p
 |---|---|
 | Nazwa | 07. Wymagania i specyfikacje |
 | Team | LEA |
-| Podsumowanie (pole „Summary”) | Warstwa 2: jakość i projektowanie. Opiera się na: 3, 5 i 6. Jest podstawą: 8, 10, 11 i każdego projektu klienta. |
-| Proponowany start | 2026-11-02 |
-| Proponowany termin | 2027-03-31 |
+| Podsumowanie (pole „Summary”) | Warstwa 2: jakość i projektowanie. Opiera się na: 3, 5 i 6; etap specyfikacji dla agentów także na 1. Jest podstawą: 8 i 11. |
 | Etykiety projektu | `warstwa-2` |
 | Blokowany przez (projekty) | 03. Frontend web, 05. Backend i API, 06. Testowanie |
 | Blokuje (projekty) | 08. Architektura i projektowanie systemów, 11. Weryfikacja pracy AI i budowa procesu |
 | Zależności częściowe (wchodzące) | etap 4 czeka na 01. Praca z AI w chmurze: Claude i Claude Code (etap 1) |
-| Czas od zera | 145–200 h |
 
 ### Opis projektu (do wklejenia w Linear)
 
-*Warstwa 2: jakość i projektowanie. Opiera się na: 3, 5 i 6. Jest podstawą: 8, 10, 11 i każdego projektu klienta.*
+*Warstwa 2: jakość i projektowanie. Opiera się na: 3, 5 i 6; etap specyfikacji dla agentów także na 1. Jest podstawą: 8 i 11.*
 
 **Zakres umiejętności**
 
-- Wydobywanie wymagań od klienta: wywiad o przeszłych zachowaniach zamiast pytań o opinie, warsztat zdalny z klientem, Jobs-to-be-Done (jaką pracę klient „zatrudnia” aplikację do wykonania), mapa wpływu (cel biznesowy, aktorzy, wpływ, rezultaty), story mapping (szkielet przepływu użytkownika i cięcie na wydania), example mapping (reguły, przykłady, pytania otwarte) jako krótka sesja przed każdą funkcją; notatki z rozmów jako materiał źródłowy dla agenta, a nie gotowa specyfikacja.
+- Wydobywanie wymagań od klienta: wywiad o przeszłych zachowaniach zamiast pytań o opinie, warsztat zdalny z klientem, Jobs-to-be-Done (jaką pracę klient „zatrudnia” aplikację do wykonania), mapa wpływu (cel biznesowy, aktorzy, wpływ, rezultaty), story mapping (szkielet przepływu użytkownika i cięcie na wydania), example mapping (reguły, przykłady, pytania otwarte) jako krótka sesja przed każdą funkcją; priorytetyzacja (MoSCoW, model Kano, Cost of Delay i WSJF); klikalny prototyp generowany przez agenta jako technika wydobywania wymagań; notatki z rozmów jako materiał źródłowy dla agenta, a nie gotowa specyfikacja.
 - Pisanie wymagań w EARS: pięć wzorców podstawowych (stałe, zdarzeniowe „GDY”, stanowe „DOPÓKI”, niepożądane „JEŚLI … TO”, opcjonalne „GDZIE”) i wzorzec złożony, jedno wymaganie na zdanie, identyfikator R-n, aktor i reakcja systemu nazwane wprost, bez słów nieweryfikowalnych („szybko”, „intuicyjnie”, „odpowiednio”, „itp.”).
 - Kryteria akceptacji: dla każdego R-n co najmniej jedno AC-n, przypadki pozytywne, negatywne (niepożądane zachowanie, brak uprawnień, błędne dane) i brzegowe (granice, wartości puste, równoczesność, strefy czasowe); konkretne przykłady z danymi zamiast ogólników; zapis jako scenariusze Zakładając/Gdy/Wtedy (format i automatyzacja: sekcja 6).
-- Wymagania niefunkcjonalne według ISO/IEC 25010:2023 (dziewięć charakterystyk, m.in. bezpieczeństwo, niezawodność, wydajność, zdolność interakcji, elastyczność, safety): każde z miarą, progiem, warunkami pomiaru i sposobem weryfikacji (np. „p95 czasu odpowiedzi poniżej 300 ms przy 50 żądaniach na sekundę, mierzone testem k6 w CI”); bazowe NFR projektu w `nfr.md`, NFR funkcji w jej specyfikacji; wymagania bezpieczeństwa z OWASP ASVS (zob. sekcja 10), dostępności z WCAG 2.2 (zob. sekcja 13).
+- Wymagania niefunkcjonalne według ISO/IEC 25010:2023 (dziewięć charakterystyk, m.in. bezpieczeństwo, niezawodność, wydajność, zdolność interakcji, elastyczność, safety): każde z miarą, progiem, warunkami pomiaru i sposobem weryfikacji (np. „p95 czasu odpowiedzi poniżej 300 ms przy 50 żądaniach na sekundę, mierzone testem k6 w CI”); bazowe NFR projektu w `nfr.md`, NFR funkcji w jej specyfikacji; wymagania bezpieczeństwa z OWASP ASVS (zob. sekcja 10), dostępności z WCAG 2.2 (zob. sekcja 13); wymagania prawne dla funkcji AI: klasyfikacja ryzyka w AI Act i ocena skutków dla ochrony danych (DPIA).
 - Wykrywanie niejednoznaczności według kategorii: zakres, dane i ich źródła, błędy i przypadki brzegowe, uprawnienia i role, NFR, zależności od systemów zewnętrznych; „zapachy wymagań” (słowa niejednoznaczne, strona bierna bez aktora, zaimki bez odniesienia, porównania bez punktu odniesienia, „wszystkie”, „zawsze”); znaczniki `[DO WYJAŚNIENIA: …]` zamiast zgadywania i pytania do klienta z propozycją odpowiedzi.
 - Rozdział „co i dlaczego” od „jak”: w `spec.md` cel, użytkownicy, wymagania, kryteria akceptacji, NFR i sekcja „Poza zakresem”, bez nazw technologii, tabel, endpointów i klas; „jak” należy do `plan.md` (zob. sekcja 8); test: czy specyfikacja przetrwałaby zmianę frameworka bez edycji.
 - Specyfikacja jako zakres umowy i podstawa wyceny: zatwierdzona wersja specyfikacji z sumą kontrolną jako załącznik do zlecenia w pakiecie „Rozwój według specyfikacji”, wycena na podstawie liczby i złożoności wymagań oraz ryzyk z pytań otwartych, jawne założenia i wykluczenia, kryteria odbioru znane przed rozpoczęciem pracy.
@@ -41,35 +38,33 @@ Team **LEA** (https://linear.app/daankh/team/LEA/overview). Plan do przeglądu p
 
 **Ścieżka nauki**
 
-Ścieżka ma 7 etapów. Każdy kończy się **dowodem**, czyli małym projektem, który pokazuje, że etap jest opanowany. Przy doświadczeniu seniorskim etap 0 można zaliczyć samym dowodem; nowe będą najpewniej formalne pisanie wymagań w EARS i wykrywanie niejednoznaczności (etap 2), mierzalne NFR (etap 3) oraz specyfikacja jako zakres umowy, zmiana i odbiór (etap 5), bo w pracy etatowej tę część zwykle wykonują analityk i product owner. Etapy 1–2 i 4 warto przejść przed pierwszym projektem w pakiecie „Rozwój według specyfikacji”, a etap 5 przed podpisaniem pierwszej umowy. „Specification by Example”, Gherkin Reference i „Working Effectively with Legacy Code” są w ścieżce testowania (zob. sekcja 6.1, etap 4) i nie są tu powtarzane. Czas podany dla osoby startującej od zera; ceny materiałów płatnych zmieniają się, więc warto je sprawdzić przed zakupem. Narzędzia spec-driven zmieniają się co kilka tygodni, więc ich dokumentację trzeba czytać w wersji bieżącej.
-
-Razem od zera do poziomu E: ok. 145–200 h, czyli 3–5 miesięcy przy 10–12 h tygodniowo.
+Ścieżka ma 7 etapów. Każdy kończy się **dowodem**, czyli małym projektem, który pokazuje, że etap jest opanowany. Przy doświadczeniu seniorskim etap 0 można zaliczyć samym dowodem; nowe będą najpewniej formalne pisanie wymagań w EARS i wykrywanie niejednoznaczności (etap 2), mierzalne NFR (etap 3) oraz specyfikacja jako zakres umowy, zmiana i odbiór (etap 5), bo w pracy etatowej tę część zwykle wykonują analityk i product owner. Etapy 1–2 i 4 warto przejść przed pierwszym projektem w pakiecie „Rozwój według specyfikacji”, a etap 5 przed podpisaniem pierwszej umowy. „Specification by Example”, Gherkin Reference i „Working Effectively with Legacy Code” są w ścieżce testowania (zob. sekcja 6, etap „kod zastany i specyfikacja przykładami”) i nie są tu powtarzane. Ceny materiałów płatnych zmieniają się, więc warto je sprawdzić przed zakupem. Materiały referencyjne i normy „wg potrzeb” są oznaczone jako opcjonalne i nie blokują dowodów. Narzędzia spec-driven zmieniają się co kilka tygodni, więc ich dokumentację trzeba czytać w wersji bieżącej.
 
 **Definicja ukończenia projektu (dowód poziomu E)**
 
-Samodzielnie, bez agenta, w 1 dzień po jednym warsztacie z klientem przygotowujesz specyfikację funkcji średniej wielkości (EARS, kryteria akceptacji pozytywne, negatywne i brzegowe, NFR z progami, „Poza zakresem”, lista pytań otwartych), wycenę i propozycję harmonogramu, a klient zatwierdza ją bez dodatkowej rundy wyjaśnień; przy odbiorze nie pojawia się uwaga sklasyfikowana jako luka w specyfikacji, a każdą prośbę zgłoszoną po zatwierdzeniu umiesz w 15 minut zaklasyfikować i wyjaśnić klientowi, czy mieści się w umowie, czy wymaga płatnej propozycji zmiany.
+Samodzielnie, bez agenta, w 1 dzień na podstawie przygotowanego briefu funkcji średniej wielkości z ukrytymi niejednoznacznościami (brief i wzorcowa lista ukrytych pozycji przygotowane wcześniej przez inną osobę albo przez agenta w osobnej sesji, lista zamknięta do czasu oddania pracy) przygotowujesz specyfikację (EARS, kryteria akceptacji pozytywne, negatywne i brzegowe, NFR z progami, „Poza zakresem”, lista pytań otwartych z propozycjami odpowiedzi) i wycenę przedziałem z jawnymi założeniami; następnie klasyfikujesz 10 przygotowanych próśb zgłoszonych „po zatwierdzeniu” jako błąd, luka w specyfikacji albo nowe życzenie i dla każdej piszesz wyjaśnienie dla klienta.
 
 **Źródło:** dokument „Umiejętności techniczne” w projekcie „JDG: Rozwój oprogramowania”, sekcja 7.
 
 ## 2. Kamienie milowe
 
-Jeden kamień milowy na etap ścieżki. Kamień milowy jest zamknięty, gdy zamknięte jest zadanie dowodu tego etapu. Daty kamieni milowych ustawiasz przy wdrożeniu według kolejności z pliku głównego.
+Jeden kamień milowy na etap ścieżki. Kamień milowy jest zamknięty, gdy zamknięte jest zadanie dowodu tego etapu.
 
-| # | Kamień milowy | Cel | Czas od zera | Poziom po etapie | Zadania |
-|---|---|---|---|---|---|
-| 1 | Etap 0: podstawy inżynierii wymagań | podstawy inżynierii wymagań i wspólny słownik | 20–30 h | podstawy | 4 |
-| 2 | Etap 1: wydobywanie wymagań od klienta | wydobywanie wymagań od klienta | 30–40 h | W | 7 |
-| 3 | Etap 2: EARS, kryteria akceptacji i niejednoznaczność | EARS, kryteria akceptacji i niejednoznaczność | 30–40 h | W | 7 |
-| 4 | Etap 3: wymagania niefunkcjonalne | wymagania niefunkcjonalne z mierzalnymi progami | 15–20 h | W | 4 |
-| 5 | Etap 4: specyfikacje dla agentów | specyfikacje dla agentów: spec-driven w praktyce | 20–30 h | W | 7 |
-| 6 | Etap 5: umowa, zmiana, przejęcie i odbiór | umowa, zmiana, przejęcie i odbiór | 30–40 h | E | 5 |
-| 7 | Etap 6: ekspert | ekspert: pomiar jakości specyfikacji, recenzja specyfikacji z AI, aktualność | stale, ok. 1 h tygodniowo | E | 8 |
+| # | Kamień milowy | Cel | Poziom po etapie | Zadania |
+|---|---|---|---|---|
+| 1 | Etap 0: podstawy inżynierii wymagań | podstawy inżynierii wymagań i wspólny słownik | podstawy | 4 |
+| 2 | Etap 1: wydobywanie wymagań od klienta | wydobywanie wymagań od klienta | W | 9 |
+| 3 | Etap 2: EARS, kryteria akceptacji i niejednoznaczność | EARS, kryteria akceptacji i niejednoznaczność | W | 7 |
+| 4 | Etap 3: wymagania niefunkcjonalne | wymagania niefunkcjonalne z mierzalnymi progami | W | 6 |
+| 5 | Etap 4: specyfikacje dla agentów | specyfikacje dla agentów: spec-driven w praktyce | W | 7 |
+| 6 | Etap 5: umowa, zmiana, przejęcie i odbiór | umowa, zmiana, przejęcie i odbiór | E | 5 |
+| 7 | Etap 6: ekspert | ekspert: pomiar jakości specyfikacji, recenzja specyfikacji z AI, aktualność | E | 8 |
 
 ## 3. Punkt startu
 
 Zadanie **`S07-START` · Start: 7. Wymagania i specyfikacje** to jedyne wejście do projektu: wszystkie zadania pierwszego etapu są przez nie blokowane.
 
-- **Blokowane przez:** `S03-E2-D`, `S05-E1-D`, `S06-E2-D`
+- **Blokowane przez:** `S03-E2-D`, `S05-E1-D`, `S06-E1-D`
 - **Odblokowuje:** `S07-E0-M1`, `S07-E0-M2`, `S07-E0-M3`
 - **Status początkowy:** Backlog do czasu zamknięcia zadań blokujących, potem Todo
 
@@ -81,13 +76,12 @@ Punkt startu projektu „07. Wymagania i specyfikacje”.
 
 - `S03-E2-D` · Dowód etapu 2: TypeScript — sekcja 3 na poziomie podstawowym do pracy (etap 2)
 - `S05-E1-D` · Dowód etapu 1: Node.js po stronie serwera — sekcja 5 na poziomie podstawowym do pracy (etap 1)
-- `S06-E2-D` · Dowód etapu 2: projektowanie testów — sekcja 6 na poziomie podstawowym do pracy (etap 2)
+- `S06-E1-D` · Dowód etapu 1: projektowanie testów i TDD — sekcja 6 na poziomie podstawowym do pracy (etap 1: projektowanie testów i TDD)
 
 **Do zrobienia:**
 
 - przeczytać sekcję 7 dokumentu „Umiejętności techniczne”,
-- zaznaczyć etapy, które zaliczasz samym dowodem (zgodnie z akapitem wstępnym ścieżki), i dla nich zamknąć zadania materiałów jako niepotrzebne,
-- ustawić daty kamieni milowych zgodnie z kolejnością z pliku głównego.
+- zaznaczyć etapy, które zaliczasz samym dowodem (zgodnie z akapitem wstępnym ścieżki), i dla nich zamknąć zadania materiałów jako niepotrzebne.
 
 **Folder roboczy:** `07-wymagania-i-specyfikacje/`
 
@@ -115,7 +109,7 @@ flowchart TD
   E5 --> E6
   XS03E2D(["S03-E2-D"]) -.-> START
   XS05E1D(["S05-E1-D"]) -.-> START
-  XS06E2D(["S06-E2-D"]) -.-> START
+  XS06E1D(["S06-E1-D"]) -.-> START
 ```
 
 ## 5. Zadania według kamieni milowych
@@ -126,7 +120,7 @@ Szablon opisu zadania materiału: nazwa materiału, autor lub wydawca, typ, czas
 
 Opis kamienia milowego (do wklejenia):
 
-**Cel:** podstawy inżynierii wymagań i wspólny słownik · **Czas od zera:** 20–30 h · **Poziom po etapie:** podstawy
+**Cel:** podstawy inżynierii wymagań i wspólny słownik · **Poziom po etapie:** podstawy
 
 **Szczególnie ważne:** rodzaje wymagań (biznesowe, użytkownika, funkcjonalne, jakościowe, ograniczenia), cechy dobrego wymagania (jednoznaczne, weryfikowalne, wykonalne, niezależne od rozwiązania, śledzalne), interesariusze i źródła wymagań, różnica między walidacją (czy to właściwy system) a weryfikacją (czy system spełnia specyfikację). Certyfikat nie jest potrzebny; sylabus i słownik dają wspólny język z klientami, którzy mają własnych analityków. Normę 29148 wystarczy znać z nazwy i struktury; przed zakupem sprawdzić, czy ukazało się nowe wydanie.
 
@@ -134,10 +128,10 @@ Opis kamienia milowego (do wklejenia):
 
 | Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
 |---|---|---|---|---|---|---|---|---|
-| `S07-E0-M1` | Przerobić: CPRE Foundation Level, sylabus 3.3.0, słownik CPRE 2.2.0 i podręcznik | materiał, płatny | 12–15 h | 0 zł (podręcznik po założeniu darmowego konta; egzamin płatny, opcjonalny) | https://cpre.ireb.org/en/downloads-and-resources/downloads | `S07-START` | `S07-E0-D` | `07-wymagania-i-specyfikacje/e0-podstawy-inzynierii-wymagan/` |
-| `S07-E0-M2` | Przerobić: Software Requirements Essentials: Core Practices for Successful Business Analysis | materiał, płatny | 8–10 h | płatna | https://www.informit.com/store/software-requirements-essentials-core-practices-for-9780138190286 | `S07-START` | `S07-E0-D` | `07-wymagania-i-specyfikacje/e0-podstawy-inzynierii-wymagan/` |
-| `S07-E0-M3` | Przerobić: ISO/IEC/IEEE 29148:2018 | materiał, płatny | wg potrzeb | płatna | https://www.iso.org/standard/72089.html | `S07-START` | `S07-E0-D` | `07-wymagania-i-specyfikacje/e0-podstawy-inzynierii-wymagan/` |
-| `S07-E0-D` | Dowód etapu 0: podstawy inżynierii wymagań | dowód | — | — | — | `S07-E0-M1`, `S07-E0-M2`, `S07-E0-M3` | `S07-E1-M1`, `S07-E1-M2`, `S07-E1-M3`, `S07-E1-M4`, `S07-E1-M5`, `S07-E1-M6` | `07-wymagania-i-specyfikacje/e0-podstawy-inzynierii-wymagan/` |
+| `S07-E0-M1` | Przerobić: CPRE Foundation Level, sylabus 3.3.0, słownik CPRE 2.2.0 i podręcznik (Handbook) | materiał | 12–15 h | 0 zł (podręcznik po założeniu darmowego konta; egzamin płatny, opcjonalny) | https://cpre.ireb.org/en/downloads-and-resources/downloads | `S07-START` | `S07-E0-D` | `07-wymagania-i-specyfikacje/e0-podstawy-inzynierii-wymagan/` |
+| `S07-E0-M2` | Przerobić: Software Requirements Essentials: Core Practices for Successful Business Analysis (2023) | materiał, płatny | 8–10 h | płatna | https://www.informit.com/store/software-requirements-essentials-core-practices-for-9780138190286 | `S07-START` | `S07-E0-D` | `07-wymagania-i-specyfikacje/e0-podstawy-inzynierii-wymagan/` |
+| `S07-E0-M3` | Przerobić: ISO/IEC/IEEE 29148:2018 (procesy i cechy dobrych wymagań; w rewizji, nowe wydanie w fazie DIS) | materiał, płatny, opcjonalne | wg potrzeb | płatna | https://www.iso.org/standard/72089.html | `S07-START` | — | `07-wymagania-i-specyfikacje/e0-podstawy-inzynierii-wymagan/` |
+| `S07-E0-D` | Dowód etapu 0: podstawy inżynierii wymagań | dowód | — | — | — | `S07-E0-M1`, `S07-E0-M2` | `S07-E1-M1`, `S07-E1-M2`, `S07-E1-M3`, `S07-E1-M4`, `S07-E1-M5`, `S07-E1-M6`, `S07-E1-M7`, `S07-E1-M8` | `07-wymagania-i-specyfikacje/e0-podstawy-inzynierii-wymagan/` |
 
 **`S07-E0-D` · Dowód etapu 0: podstawy inżynierii wymagań**
 
@@ -145,7 +139,7 @@ Jednostronicowy słownik pojęć do oferty i umowy (wymaganie, kryterium akcepta
 
 **Na co zwrócić uwagę:** rodzaje wymagań (biznesowe, użytkownika, funkcjonalne, jakościowe, ograniczenia), cechy dobrego wymagania (jednoznaczne, weryfikowalne, wykonalne, niezależne od rozwiązania, śledzalne), interesariusze i źródła wymagań, różnica między walidacją (czy to właściwy system) a weryfikacją (czy system spełnia specyfikację). Certyfikat nie jest potrzebny; sylabus i słownik dają wspólny język z klientami, którzy mają własnych analityków. Normę 29148 wystarczy znać z nazwy i struktury; przed zakupem sprawdzić, czy ukazało się nowe wydanie.
 
-**Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+**Kryterium ukończenia:** słownik zawiera co najmniej 7 pojęć z definicją w jednym zdaniu; w rozbiorze każde zdanie specyfikacji ma rodzaj wymagania i ocenę według 5 cech dobrego wymagania, a co najmniej 5 zdań jest przepisanych; w komentarzu link do notatki.
 
 **Folder roboczy:** `07-wymagania-i-specyfikacje/e0-podstawy-inzynierii-wymagan/`
 
@@ -153,11 +147,11 @@ Jednostronicowy słownik pojęć do oferty i umowy (wymaganie, kryterium akcepta
 
 Opis kamienia milowego (do wklejenia):
 
-**Cel:** wydobywanie wymagań od klienta · **Czas od zera:** 30–40 h · **Poziom po etapie:** W
+**Cel:** wydobywanie wymagań od klienta · **Poziom po etapie:** W
 
-**Szczególnie ważne:** pytania o to, co klient faktycznie robił i ile go to kosztowało, a nie o to, co by chciał; praca, którą aplikacja ma wykonać za użytkownika, jako filtr dla funkcji; mapa wpływu na start projektu, żeby każda funkcja miała cel biznesowy; story map do cięcia zakresu na wydania i do rozmowy o budżecie; example mapping jako 25-minutowa sesja przed każdą funkcją (czerwone karty, czyli pytania otwarte, to gotowe znaczniki `[DO WYJAŚNIENIA]`); jeśli sesja trwa dłużej, funkcja jest za duża i trzeba ją podzielić.
+**Szczególnie ważne:** pytania o to, co klient faktycznie robił i ile go to kosztowało, a nie o to, co by chciał; praca, którą aplikacja ma wykonać za użytkownika, jako filtr dla funkcji; mapa wpływu na start projektu, żeby każda funkcja miała cel biznesowy; story map do cięcia zakresu na wydania i do rozmowy o budżecie; priorytety jako rozmowa o wartości i koszcie opóźnienia (MoSCoW do zakresu wydania, Kano do oczekiwań użytkowników, Cost of Delay i CD3 do kolejności), a nie lista życzeń; prototyp wygenerowany przez agenta pokazuje klientowi konsekwencje wymagań w kilka minut, ale jest jednorazowy i nie staje się kodem produkcyjnym; example mapping jako 25-minutowa sesja przed każdą funkcją (czerwone karty, czyli pytania otwarte, to gotowe znaczniki `[DO WYJAŚNIENIA]`); jeśli sesja trwa dłużej, funkcja jest za duża i trzeba ją podzielić.
 
-**Dowód:** Dla jednego klienta (lub poligonu z mapy nauki) notatki z dwóch wywiadów, mapa wpływu, story map z zaznaczonym pierwszym wydaniem i example map dla dwóch funkcji; z tego wpisy wejściowe do `/vicrafter:specify` (intencja w kilku zdaniach, reguły, przykłady, pytania otwarte) i lista decyzji, które klient podjął na warsztacie.
+**Dowód:** Dla jednego klienta lub poligonu z mapy nauki (rolę klienta może odegrać osoba spoza IT): notatki z dwóch wywiadów, mapa wpływu, story map z zaznaczonym pierwszym wydaniem, priorytety funkcji według MoSCoW z kategorią Kano i Cost of Delay (CD3) dla najważniejszych, klikalny prototyp jednej funkcji wygenerowany przez agenta i pokazany na sesji oraz example map dla dwóch funkcji; z tego wpisy wejściowe do `/vicrafter:specify` (vicrafter to własny plugin Claude Code do pracy z agentami, rozwijany w sekcji 11: intencja w kilku zdaniach, reguły, przykłady, pytania otwarte) i lista decyzji podjętych na warsztacie.
 
 | Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
 |---|---|---|---|---|---|---|---|---|
@@ -167,15 +161,17 @@ Opis kamienia milowego (do wklejenia):
 | `S07-E1-M4` | Przerobić: Impact Mapping (2012) i materiały warsztatowe na stronie projektu | materiał, płatny | 3–4 h | książka płatna, strona 0 zł | https://www.impactmapping.org | `S07-E0-D` | `S07-E1-D` | `07-wymagania-i-specyfikacje/e1-wydobywanie-wymagan-od-klienta/` |
 | `S07-E1-M5` | Przerobić: „Introducing Example Mapping” (2015) | materiał | 1 h | 0 zł | https://cucumber.io/blog/bdd/example-mapping-introduction/ | `S07-E0-D` | `S07-E1-D` | `07-wymagania-i-specyfikacje/e1-wydobywanie-wymagan-od-klienta/` |
 | `S07-E1-M6` | Przerobić: CPRE Requirements Elicitation, sylabus 3.2.0 | materiał | 6–8 h | 0 zł | https://cpre.ireb.org/en/downloads-and-resources/downloads | `S07-E0-D` | `S07-E1-D` | `07-wymagania-i-specyfikacje/e1-wydobywanie-wymagan-od-klienta/` |
-| `S07-E1-D` | Dowód etapu 1: wydobywanie wymagań od klienta | dowód | — | — | — | `S07-E1-M1`, `S07-E1-M2`, `S07-E1-M3`, `S07-E1-M4`, `S07-E1-M5`, `S07-E1-M6` | `S07-E2-M1`, `S07-E2-M2`, `S07-E2-M3`, `S07-E2-M4`, `S07-E2-M5`, `S07-E2-M6`, `S08-START`, `S11-START` | `07-wymagania-i-specyfikacje/e1-wydobywanie-wymagan-od-klienta/` |
+| `S07-E1-M7` | Przerobić: Priorytetyzacja: MoSCoW, model Kano, Cost of Delay i CD3 (podstawa WSJF) | materiał | 3–4 h | 0 zł | https://www.productplan.com/glossary/moscow-prioritization/, https://foldingburritos.com/blog/kano-model/, https://blackswanfarming.com/cost-of-delay/ | `S07-E0-D` | `S07-E1-D` | `07-wymagania-i-specyfikacje/e1-wydobywanie-wymagan-od-klienta/` |
+| `S07-E1-M8` | Przerobić: Prototyp jako technika wydobywania wymagań: „UX Prototypes: Low Fidelity vs. High Fidelity” i… | materiał | 1–2 h | 0 zł | https://www.nngroup.com/articles/ux-prototype-hi-lo-fidelity/, https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them | `S07-E0-D` | `S07-E1-D` | `07-wymagania-i-specyfikacje/e1-wydobywanie-wymagan-od-klienta/` |
+| `S07-E1-D` | Dowód etapu 1: wydobywanie wymagań od klienta | dowód | — | — | — | `S07-E1-M1`, `S07-E1-M2`, `S07-E1-M3`, `S07-E1-M4`, `S07-E1-M5`, `S07-E1-M6`, `S07-E1-M7`, `S07-E1-M8` | `S07-E2-M1`, `S07-E2-M2`, `S07-E2-M3`, `S07-E2-M4`, `S07-E2-M5`, `S07-E2-M6`, `S08-START`, `S11-START` | `07-wymagania-i-specyfikacje/e1-wydobywanie-wymagan-od-klienta/` |
 
 **`S07-E1-D` · Dowód etapu 1: wydobywanie wymagań od klienta**
 
-Dla jednego klienta (lub poligonu z mapy nauki) notatki z dwóch wywiadów, mapa wpływu, story map z zaznaczonym pierwszym wydaniem i example map dla dwóch funkcji; z tego wpisy wejściowe do `/vicrafter:specify` (intencja w kilku zdaniach, reguły, przykłady, pytania otwarte) i lista decyzji, które klient podjął na warsztacie.
+Dla jednego klienta lub poligonu z mapy nauki (rolę klienta może odegrać osoba spoza IT): notatki z dwóch wywiadów, mapa wpływu, story map z zaznaczonym pierwszym wydaniem, priorytety funkcji według MoSCoW z kategorią Kano i Cost of Delay (CD3) dla najważniejszych, klikalny prototyp jednej funkcji wygenerowany przez agenta i pokazany na sesji oraz example map dla dwóch funkcji; z tego wpisy wejściowe do `/vicrafter:specify` (vicrafter to własny plugin Claude Code do pracy z agentami, rozwijany w sekcji 11: intencja w kilku zdaniach, reguły, przykłady, pytania otwarte) i lista decyzji podjętych na warsztacie.
 
-**Na co zwrócić uwagę:** pytania o to, co klient faktycznie robił i ile go to kosztowało, a nie o to, co by chciał; praca, którą aplikacja ma wykonać za użytkownika, jako filtr dla funkcji; mapa wpływu na start projektu, żeby każda funkcja miała cel biznesowy; story map do cięcia zakresu na wydania i do rozmowy o budżecie; example mapping jako 25-minutowa sesja przed każdą funkcją (czerwone karty, czyli pytania otwarte, to gotowe znaczniki `[DO WYJAŚNIENIA]`); jeśli sesja trwa dłużej, funkcja jest za duża i trzeba ją podzielić.
+**Na co zwrócić uwagę:** pytania o to, co klient faktycznie robił i ile go to kosztowało, a nie o to, co by chciał; praca, którą aplikacja ma wykonać za użytkownika, jako filtr dla funkcji; mapa wpływu na start projektu, żeby każda funkcja miała cel biznesowy; story map do cięcia zakresu na wydania i do rozmowy o budżecie; priorytety jako rozmowa o wartości i koszcie opóźnienia (MoSCoW do zakresu wydania, Kano do oczekiwań użytkowników, Cost of Delay i CD3 do kolejności), a nie lista życzeń; prototyp wygenerowany przez agenta pokazuje klientowi konsekwencje wymagań w kilka minut, ale jest jednorazowy i nie staje się kodem produkcyjnym; example mapping jako 25-minutowa sesja przed każdą funkcją (czerwone karty, czyli pytania otwarte, to gotowe znaczniki `[DO WYJAŚNIENIA]`); jeśli sesja trwa dłużej, funkcja jest za duża i trzeba ją podzielić.
 
-**Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+**Kryterium ukończenia:** w notatkach z wywiadów co najmniej 10 pytań o przeszłe zachowania i żadnego pytania hipotetycznego („czy chciałbyś…”); co najmniej 8 funkcji z kategorią MoSCoW, a 5 najważniejszych z oszacowaniem CD3; lista co najmniej 3 wymagań, które sesja z prototypem ujawniła lub zmieniła; każda example map z regułami, przykładami i pytaniami otwartymi; w komentarzu link do notatek.
 
 **Folder roboczy:** `07-wymagania-i-specyfikacje/e1-wydobywanie-wymagan-od-klienta/`
 
@@ -183,7 +179,7 @@ Dla jednego klienta (lub poligonu z mapy nauki) notatki z dwóch wywiadów, mapa
 
 Opis kamienia milowego (do wklejenia):
 
-**Cel:** EARS, kryteria akceptacji i niejednoznaczność · **Czas od zera:** 30–40 h · **Poziom po etapie:** W
+**Cel:** EARS, kryteria akceptacji i niejednoznaczność · **Poziom po etapie:** W
 
 **Szczególnie ważne:** w EARS warunek i wyzwalacz przed reakcją systemu, a wzorzec niepożądany („JEŚLI … TO”) jako miejsce na wszystkie przypadki negatywne; kryterium akceptacji jako konkretny przykład z danymi, a nie przepisane wymaganie; trzy pytania kontrolne dla każdego R-n: co przy błędnych danych, co na granicy, co bez uprawnień; lista zapachów wymagań jako lista kontrolna do recenzji specyfikacji pisanych przez agenta. „Writing Great Specifications” uzupełnia „Specification by Example” z sekcji 6 o pisanie i utrzymanie samej dokumentacji.
 
@@ -197,7 +193,7 @@ Opis kamienia milowego (do wklejenia):
 | `S07-E2-M4` | Przerobić: Fifty Quick Ideas to Improve Your User Stories | materiał, płatny | 4–5 h | płatna | https://leanpub.com/50quickideas | `S07-E1-D` | `S07-E2-D` | `07-wymagania-i-specyfikacje/e2-ears-kryteria-akceptacji-i-niejednoznacznosc/` |
 | `S07-E2-M5` | Przerobić: „Rapid quality assurance with Requirements Smells” (2016) | materiał | 1–2 h | 0 zł (arXiv) | https://arxiv.org/abs/1611.08847 | `S07-E1-D` | `S07-E2-D` | `07-wymagania-i-specyfikacje/e2-ears-kryteria-akceptacji-i-niejednoznacznosc/` |
 | `S07-E2-M6` | Przerobić: Guide to Writing Requirements: arkusz podsumowujący (summary sheet) | materiał | 1–2 h | 0 zł | https://www.incose.org/communities/working-groups-initiatives/requirements | `S07-E1-D` | `S07-E2-D` | `07-wymagania-i-specyfikacje/e2-ears-kryteria-akceptacji-i-niejednoznacznosc/` |
-| `S07-E2-D` | Dowód etapu 2: EARS, kryteria akceptacji i niejednoznaczność | dowód | — | — | — | `S07-E2-M1`, `S07-E2-M2`, `S07-E2-M3`, `S07-E2-M4`, `S07-E2-M5`, `S07-E2-M6` | `S07-E3-M1`, `S07-E3-M2`, `S07-E3-M3` | `07-wymagania-i-specyfikacje/e2-ears-kryteria-akceptacji-i-niejednoznacznosc/` |
+| `S07-E2-D` | Dowód etapu 2: EARS, kryteria akceptacji i niejednoznaczność | dowód | — | — | — | `S07-E2-M1`, `S07-E2-M2`, `S07-E2-M3`, `S07-E2-M4`, `S07-E2-M5`, `S07-E2-M6` | `S07-E3-M1`, `S07-E3-M2`, `S07-E3-M3`, `S07-E3-M4`, `S07-E3-M5` | `07-wymagania-i-specyfikacje/e2-ears-kryteria-akceptacji-i-niejednoznacznosc/` |
 
 **`S07-E2-D` · Dowód etapu 2: EARS, kryteria akceptacji i niejednoznaczność**
 
@@ -205,7 +201,7 @@ Specyfikacja jednej funkcji klienta (rozmiar M, np. rezerwacja z limitem i wygas
 
 **Na co zwrócić uwagę:** w EARS warunek i wyzwalacz przed reakcją systemu, a wzorzec niepożądany („JEŚLI … TO”) jako miejsce na wszystkie przypadki negatywne; kryterium akceptacji jako konkretny przykład z danymi, a nie przepisane wymaganie; trzy pytania kontrolne dla każdego R-n: co przy błędnych danych, co na granicy, co bez uprawnień; lista zapachów wymagań jako lista kontrolna do recenzji specyfikacji pisanych przez agenta. „Writing Great Specifications” uzupełnia „Specification by Example” z sekcji 6 o pisanie i utrzymanie samej dokumentacji.
 
-**Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+**Kryterium ukończenia:** 5–8 wymagań w EARS z identyfikatorami R-n; każde R-n ma co najmniej 3 kryteria akceptacji (pozytywne, negatywne, brzegowe) z danymi; w wersji własnej zero słów nieweryfikowalnych; w wersji agenta znalezione co najmniej 5 zapachów wymagań, każdy z kategorią i poprawką; w komentarzu link do obu wersji.
 
 **Folder roboczy:** `07-wymagania-i-specyfikacje/e2-ears-kryteria-akceptacji-i-niejednoznacznosc/`
 
@@ -213,26 +209,28 @@ Specyfikacja jednej funkcji klienta (rozmiar M, np. rezerwacja z limitem i wygas
 
 Opis kamienia milowego (do wklejenia):
 
-**Cel:** wymagania niefunkcjonalne z mierzalnymi progami · **Czas od zera:** 15–20 h · **Poziom po etapie:** W
+**Cel:** wymagania niefunkcjonalne z mierzalnymi progami · **Poziom po etapie:** W
 
-**Szczególnie ważne:** zmiany w wersji 2023 (dziewięć charakterystyk, nowa „safety”, „zdolność interakcji” zamiast użyteczności, „elastyczność” zamiast przenośności), kryterium dopasowania (fit criterion) jako miara i próg, które pozwalają rozstrzygnąć, czy wymaganie jest spełnione, rozróżnienie wymagań bazowych projektu i wymagań funkcji, NFR, które wynikają z prawa i umowy (RODO, CRA, dostępność), a nie z życzeń. Atrybuty jakości jako drivery decyzji architektonicznych są w sekcji 8, a SLO i ich pomiar w sekcji 9.
+**Szczególnie ważne:** zmiany w wersji 2023 (dziewięć charakterystyk, nowa „safety”, „zdolność interakcji” zamiast użyteczności, „elastyczność” zamiast przenośności), kryterium dopasowania (fit criterion) jako miara i próg, które pozwalają rozstrzygnąć, czy wymaganie jest spełnione, rozróżnienie wymagań bazowych projektu i wymagań funkcji, NFR, które wynikają z prawa i umowy (RODO, CRA, dostępność, AI Act), a nie z życzeń; dla funkcji AI klasyfikacja ryzyka w AI Act i decyzja o DPIA, gdy model przetwarza dane osobowe (wdrożenie funkcji AI jest w sekcji 21). Atrybuty jakości jako drivery decyzji architektonicznych są w sekcji 8, a SLO i ich pomiar w sekcji 9.
 
-**Dowód:** `nfr.md` dla przejmowanej aplikacji klienta: dla każdej istotnej charakterystyki ISO 25010 wymaganie z miarą, progiem, warunkami pomiaru i sposobem weryfikacji (test, narzędzie, przegląd), z oznaczeniem, które progi system dziś spełnia, a których nie (wynik pomiaru), i które z nich trafiają do oferty jako płatne prace stabilizacyjne.
+**Dowód:** `nfr.md` dla przejmowanej aplikacji klienta lub poligonu: dla każdej istotnej charakterystyki ISO 25010 wymaganie z miarą, progiem, warunkami pomiaru i sposobem weryfikacji (test, narzędzie, przegląd), z oznaczeniem, które progi system dziś spełnia, a których nie (wynik pomiaru), i które z nich trafiają do oferty jako płatne prace stabilizacyjne; do tego dla jednej funkcji AI (np. podsumowanie zgłoszeń modelem językowym) klasyfikacja według AI Act, decyzja o DPIA i wynikające z nich wymagania (np. oznaczenie treści generowanych, nadzór człowieka, rejestrowanie) zapisane jako mierzalne NFR.
 
 | Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
 |---|---|---|---|---|---|---|---|---|
 | `S07-E3-M1` | Przerobić: ISO/IEC 25010:2023, model jakości produktu | materiał, płatny | 2–3 h (struktura i definicje) | płatna | https://www.iso.org/standard/78176.html | `S07-E2-D` | `S07-E3-D` | `07-wymagania-i-specyfikacje/e3-wymagania-niefunkcjonalne/` |
 | `S07-E3-M2` | Przerobić: arc42 Quality Model: charakterystyki jakości, przykładowe wymagania jakościowe, opis ISO 25010 | materiał | 4–6 h | 0 zł | https://quality.arc42.org, https://quality.arc42.org/standards/iso-25010 | `S07-E2-D` | `S07-E3-D` | `07-wymagania-i-specyfikacje/e3-wymagania-niefunkcjonalne/` |
 | `S07-E3-M3` | Przerobić: Mastering the Requirements Process, wydanie 3 (2012) | materiał, płatny | 6–8 h (rozdziały o wymaganiach niefunkcjonalnych i kryteriach dopasowania) | płatna | https://www.informit.com/store/mastering-the-requirements-process-getting-requirements-9780321815743 | `S07-E2-D` | `S07-E3-D` | `07-wymagania-i-specyfikacje/e3-wymagania-niefunkcjonalne/` |
-| `S07-E3-D` | Dowód etapu 3: wymagania niefunkcjonalne | dowód | — | — | — | `S07-E3-M1`, `S07-E3-M2`, `S07-E3-M3` | `S07-E4-M1`, `S07-E4-M2`, `S07-E4-M3`, `S07-E4-M4`, `S07-E4-M5`, `S07-E4-M6` | `07-wymagania-i-specyfikacje/e3-wymagania-niefunkcjonalne/` |
+| `S07-E3-M4` | Przerobić: AI Act Explorer i EU AI Act Compliance Checker… | materiał | 2–3 h | 0 zł | https://artificialintelligenceact.eu/ai-act-explorer/, https://artificialintelligenceact.eu/assessment/eu-ai-act-compliance-checker/ | `S07-E2-D` | `S07-E3-D` | `07-wymagania-i-specyfikacje/e3-wymagania-niefunkcjonalne/` |
+| `S07-E3-M5` | Przerobić: Wytyczne dotyczące oceny skutków dla ochrony danych (DPIA), WP248 rev.01 | materiał | 2–3 h | 0 zł | https://ec.europa.eu/newsroom/article29/items/611236 | `S07-E2-D` | `S07-E3-D` | `07-wymagania-i-specyfikacje/e3-wymagania-niefunkcjonalne/` |
+| `S07-E3-D` | Dowód etapu 3: wymagania niefunkcjonalne | dowód | — | — | — | `S07-E3-M1`, `S07-E3-M2`, `S07-E3-M3`, `S07-E3-M4`, `S07-E3-M5` | `S07-E4-M1`, `S07-E4-M2`, `S07-E4-M3`, `S07-E4-M4`, `S07-E4-M5`, `S07-E4-M6` | `07-wymagania-i-specyfikacje/e3-wymagania-niefunkcjonalne/` |
 
 **`S07-E3-D` · Dowód etapu 3: wymagania niefunkcjonalne**
 
-`nfr.md` dla przejmowanej aplikacji klienta: dla każdej istotnej charakterystyki ISO 25010 wymaganie z miarą, progiem, warunkami pomiaru i sposobem weryfikacji (test, narzędzie, przegląd), z oznaczeniem, które progi system dziś spełnia, a których nie (wynik pomiaru), i które z nich trafiają do oferty jako płatne prace stabilizacyjne.
+`nfr.md` dla przejmowanej aplikacji klienta lub poligonu: dla każdej istotnej charakterystyki ISO 25010 wymaganie z miarą, progiem, warunkami pomiaru i sposobem weryfikacji (test, narzędzie, przegląd), z oznaczeniem, które progi system dziś spełnia, a których nie (wynik pomiaru), i które z nich trafiają do oferty jako płatne prace stabilizacyjne; do tego dla jednej funkcji AI (np. podsumowanie zgłoszeń modelem językowym) klasyfikacja według AI Act, decyzja o DPIA i wynikające z nich wymagania (np. oznaczenie treści generowanych, nadzór człowieka, rejestrowanie) zapisane jako mierzalne NFR.
 
-**Na co zwrócić uwagę:** zmiany w wersji 2023 (dziewięć charakterystyk, nowa „safety”, „zdolność interakcji” zamiast użyteczności, „elastyczność” zamiast przenośności), kryterium dopasowania (fit criterion) jako miara i próg, które pozwalają rozstrzygnąć, czy wymaganie jest spełnione, rozróżnienie wymagań bazowych projektu i wymagań funkcji, NFR, które wynikają z prawa i umowy (RODO, CRA, dostępność), a nie z życzeń. Atrybuty jakości jako drivery decyzji architektonicznych są w sekcji 8, a SLO i ich pomiar w sekcji 9.
+**Na co zwrócić uwagę:** zmiany w wersji 2023 (dziewięć charakterystyk, nowa „safety”, „zdolność interakcji” zamiast użyteczności, „elastyczność” zamiast przenośności), kryterium dopasowania (fit criterion) jako miara i próg, które pozwalają rozstrzygnąć, czy wymaganie jest spełnione, rozróżnienie wymagań bazowych projektu i wymagań funkcji, NFR, które wynikają z prawa i umowy (RODO, CRA, dostępność, AI Act), a nie z życzeń; dla funkcji AI klasyfikacja ryzyka w AI Act i decyzja o DPIA, gdy model przetwarza dane osobowe (wdrożenie funkcji AI jest w sekcji 21). Atrybuty jakości jako drivery decyzji architektonicznych są w sekcji 8, a SLO i ich pomiar w sekcji 9.
 
-**Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+**Kryterium ukończenia:** co najmniej 6 charakterystyk ISO 25010 z wymaganiem zawierającym miarę, próg, warunki pomiaru i sposób weryfikacji; dla co najmniej 3 progów wynik bieżącego pomiaru; zero słów nieweryfikowalnych; klasyfikacja AI Act i decyzja o DPIA uzasadnione odwołaniem do konkretnych artykułów lub kryteriów z wytycznych; co najmniej 2 NFR wynikające z prawa; w komentarzu link do `nfr.md`.
 
 **Folder roboczy:** `07-wymagania-i-specyfikacje/e3-wymagania-niefunkcjonalne/`
 
@@ -240,29 +238,29 @@ Opis kamienia milowego (do wklejenia):
 
 Opis kamienia milowego (do wklejenia):
 
-**Cel:** specyfikacje dla agentów: spec-driven w praktyce · **Czas od zera:** 20–30 h · **Poziom po etapie:** W
+**Cel:** specyfikacje dla agentów: spec-driven w praktyce · **Poziom po etapie:** W
 
 **Szczególnie ważne:** w Spec Kit szablon specyfikacji wymusza „co i dlaczego” bez „jak” oraz znaczniki `[NEEDS CLARIFICATION: …]`, a kroki `/speckit-clarify`, `/speckit-checklist` i `/speckit-analyze` (w Claude Code jako skille) to wzorzec dla `clarify` i `analyze` w vicrafter; w Kiro wymagania w `requirements.md` są w notacji EARS, a specyfikacja błędu rozdziela zachowanie obecne, oczekiwane i niezmienione, co dobrze pasuje do przejęć; w OpenSpec zmiana to delta (dodane, zmienione, usunięte wymagania) scalana do specyfikacji głównej, czyli ten sam pomysł co spec-delta. Böckeler i Thoughtworks pokazują ryzyka: rozwlekłe specyfikacje trudne do przeglądu, przerost ceremonii przy małych zmianach, złudne poczucie kontroli; w praktyce trzy poziomy rygoru: spec-first, spec-anchored (vicrafter) i spec-as-source. Wywiad prowadzony przez agenta skraca drogę od intencji do specyfikacji, ale odpowiedzi daje człowiek po rozmowie z klientem, a nie agent.
 
-**Dowód:** Ta sama funkcja z etapu 2 przeprowadzona przez Spec Kit w Claude Code (od `/speckit-specify` do `/speckit-analyze`) i przez przepływ vicrafter (`specify`, `clarify`, `approve`), z porównaniem: czas człowieka, liczba pytań wyjaśniających, problemy wykryte w analizie spójności, długość specyfikacji, ocena klienta, czy rozumie dokument bez tłumaczenia; wnioski przeniesione do szablonu `spec.md` (zmiany w skillach vicrafter: sekcja 11).
+**Dowód:** Ta sama funkcja z etapu 2 przeprowadzona przez Spec Kit w Claude Code (od `/speckit-specify` do `/speckit-analyze`) i przez przepływ vicrafter (`specify`, `clarify`, `approve`), z porównaniem: czas człowieka, liczba pytań wyjaśniających, problemy wykryte w analizie spójności, długość specyfikacji, liczba pytań osoby nietechnicznej (klienta lub kogoś spoza IT), która czyta dokument bez tłumaczenia; wnioski przeniesione do szablonu `spec.md` (zmiany w skillach vicrafter: sekcja 11).
 
 | Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
 |---|---|---|---|---|---|---|---|---|
 | `S07-E4-M1` | Przerobić: GitHub Spec Kit: „Specification-Driven Development”, Quickstart, „Existing Projects” | materiał | 6–8 h | 0 zł | https://github.com/github/spec-kit/blob/main/spec-driven.md, https://github.github.io/spec-kit/quickstart.html, https://github.github.io/spec-kit/guides/existing-projects.html | `S07-E3-D`, `S01-E1-D` | `S07-E4-D` | `07-wymagania-i-specyfikacje/e4-specyfikacje-dla-agentow/` |
 | `S07-E4-M2` | Przerobić: Kiro: specyfikacje funkcji i błędów | materiał | 2–3 h | 0 zł | https://kiro.dev/docs/specs/, https://kiro.dev/docs/specs/bugfix-specs/ | `S07-E3-D`, `S01-E1-D` | `S07-E4-D` | `07-wymagania-i-specyfikacje/e4-specyfikacje-dla-agentow/` |
 | `S07-E4-M3` | Przerobić: OpenSpec: koncepcje (delta specs) | materiał | 2–3 h | 0 zł | https://github.com/Fission-AI/OpenSpec/blob/main/docs/concepts.md | `S07-E3-D`, `S01-E1-D` | `S07-E4-D` | `07-wymagania-i-specyfikacje/e4-specyfikacje-dla-agentow/` |
-| `S07-E4-M4` | Przerobić: „Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl” | materiał | 1 h | 0 zł | https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html | `S07-E3-D`, `S01-E1-D` | `S07-E4-D` | `07-wymagania-i-specyfikacje/e4-specyfikacje-dla-agentow/` |
-| `S07-E4-M5` | Przerobić: Spec-driven development w Technology Radar | materiał | 0,5 h | 0 zł | https://www.thoughtworks.com/radar/techniques/spec-driven-development | `S07-E3-D`, `S01-E1-D` | `S07-E4-D` | `07-wymagania-i-specyfikacje/e4-specyfikacje-dla-agentow/` |
+| `S07-E4-M4` | Przerobić: „Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl” (październik 2025) | materiał | 1 h | 0 zł | https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html | `S07-E3-D`, `S01-E1-D` | `S07-E4-D` | `07-wymagania-i-specyfikacje/e4-specyfikacje-dla-agentow/` |
+| `S07-E4-M5` | Przerobić: Spec-driven development w Technology Radar (listopad 2025, pierścień „Assess”) | materiał | 0,5 h | 0 zł | https://www.thoughtworks.com/radar/techniques/spec-driven-development | `S07-E3-D`, `S01-E1-D` | `S07-E4-D` | `07-wymagania-i-specyfikacje/e4-specyfikacje-dla-agentow/` |
 | `S07-E4-M6` | Przerobić: Dokumentacja Claude Code: „Let Claude interview you” (Best practices) | materiał | 0,5 h | 0 zł | https://code.claude.com/docs/en/best-practices | `S07-E3-D`, `S01-E1-D` | `S07-E4-D` | `07-wymagania-i-specyfikacje/e4-specyfikacje-dla-agentow/` |
 | `S07-E4-D` | Dowód etapu 4: specyfikacje dla agentów | dowód | — | — | — | `S07-E4-M1`, `S07-E4-M2`, `S07-E4-M3`, `S07-E4-M4`, `S07-E4-M5`, `S07-E4-M6` | `S07-E5-M1`, `S07-E5-M2`, `S07-E5-M3`, `S07-E5-M4` | `07-wymagania-i-specyfikacje/e4-specyfikacje-dla-agentow/` |
 
 **`S07-E4-D` · Dowód etapu 4: specyfikacje dla agentów**
 
-Ta sama funkcja z etapu 2 przeprowadzona przez Spec Kit w Claude Code (od `/speckit-specify` do `/speckit-analyze`) i przez przepływ vicrafter (`specify`, `clarify`, `approve`), z porównaniem: czas człowieka, liczba pytań wyjaśniających, problemy wykryte w analizie spójności, długość specyfikacji, ocena klienta, czy rozumie dokument bez tłumaczenia; wnioski przeniesione do szablonu `spec.md` (zmiany w skillach vicrafter: sekcja 11).
+Ta sama funkcja z etapu 2 przeprowadzona przez Spec Kit w Claude Code (od `/speckit-specify` do `/speckit-analyze`) i przez przepływ vicrafter (`specify`, `clarify`, `approve`), z porównaniem: czas człowieka, liczba pytań wyjaśniających, problemy wykryte w analizie spójności, długość specyfikacji, liczba pytań osoby nietechnicznej (klienta lub kogoś spoza IT), która czyta dokument bez tłumaczenia; wnioski przeniesione do szablonu `spec.md` (zmiany w skillach vicrafter: sekcja 11).
 
 **Na co zwrócić uwagę:** w Spec Kit szablon specyfikacji wymusza „co i dlaczego” bez „jak” oraz znaczniki `[NEEDS CLARIFICATION: …]`, a kroki `/speckit-clarify`, `/speckit-checklist` i `/speckit-analyze` (w Claude Code jako skille) to wzorzec dla `clarify` i `analyze` w vicrafter; w Kiro wymagania w `requirements.md` są w notacji EARS, a specyfikacja błędu rozdziela zachowanie obecne, oczekiwane i niezmienione, co dobrze pasuje do przejęć; w OpenSpec zmiana to delta (dodane, zmienione, usunięte wymagania) scalana do specyfikacji głównej, czyli ten sam pomysł co spec-delta. Böckeler i Thoughtworks pokazują ryzyka: rozwlekłe specyfikacje trudne do przeglądu, przerost ceremonii przy małych zmianach, złudne poczucie kontroli; w praktyce trzy poziomy rygoru: spec-first, spec-anchored (vicrafter) i spec-as-source. Wywiad prowadzony przez agenta skraca drogę od intencji do specyfikacji, ale odpowiedzi daje człowiek po rozmowie z klientem, a nie agent.
 
-**Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+**Kryterium ukończenia:** obie specyfikacje w repozytorium; tabela porównania z 5 miarami wypełniona liczbami; co najmniej 2 zmiany w szablonie `spec.md` wynikające z porównania; w komentarzu link do repozytorium.
 
 **Folder roboczy:** `07-wymagania-i-specyfikacje/e4-specyfikacje-dla-agentow/`
 
@@ -270,27 +268,27 @@ Ta sama funkcja z etapu 2 przeprowadzona przez Spec Kit w Claude Code (od `/spec
 
 Opis kamienia milowego (do wklejenia):
 
-**Cel:** umowa, zmiana, przejęcie i odbiór · **Czas od zera:** 30–40 h · **Poziom po etapie:** E
+**Cel:** umowa, zmiana, przejęcie i odbiór · **Poziom po etapie:** E
 
 **Szczególnie ważne:** zatwierdzona wersja specyfikacji jako załącznik do zlecenia i punkt odniesienia dla odbioru; każda prośba klienta po zatwierdzeniu klasyfikowana jako błąd (w cenie), luka w specyfikacji lub nowe życzenie (płatna spec-delta z wyceną i wpływem na termin); wycena przedziałem z jawnymi założeniami, a pytania otwarte jako ryzyko w cenie lub warunek; przy przejęciu „wywiad podczas demonstracji” (klient pokazuje, jak używa aplikacji, a odtwarzana specyfikacja powstaje na bieżąco) i odtworzenie tylko obszarów, które będą zmieniane; UAT jako weryfikacja z perspektywy użytkownika według scenariuszy z AC, a nie swobodne „klikanie”, z decyzją i podpisem. Zapisy umowne (odpowiedzialność, odbiór milczący, terminy na uwagi) do weryfikacji z prawnikiem.
 
-**Dowód:** Komplet dokumentów z jednego projektu klienta lub poligonu: odtworzona specyfikacja w statusie `reconstructed` dla jednego obszaru przejmowanej aplikacji (z oznaczeniami `[DO WERYFIKACJI Z KLIENTEM]` i powiązaniem z testami charakteryzującymi z sekcji 6), specyfikacja nowej funkcji zatwierdzona przez klienta z wyceną, jedna propozycja zmiany (`proposal.md` i `spec-delta.md`) z wyceną i wpływem na termin, macierz śledzenia R → AC → T → test oraz protokół odbioru (`uat-protocol.md`) z sesji z klientem, z uwagami sklasyfikowanymi jako błąd, luka albo nowe życzenie.
+**Dowód:** Komplet dokumentów z jednego projektu klienta lub poligonu (rolę klienta może odegrać osoba spoza IT): odtworzona specyfikacja w statusie `reconstructed` dla jednego obszaru przejmowanej aplikacji (z oznaczeniami `[DO WERYFIKACJI Z KLIENTEM]` i powiązaniem każdego opisanego zachowania z testem, który je utrwala), specyfikacja nowej funkcji z wyceną przedziałem i jawnymi założeniami, jedna propozycja zmiany (`proposal.md` i `spec-delta.md`) z wyceną i wpływem na termin, macierz śledzenia R → AC → T → test oraz protokół odbioru (`uat-protocol.md`) z sesji odbiorczej, z uwagami sklasyfikowanymi jako błąd, luka albo nowe życzenie.
 
 | Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
 |---|---|---|---|---|---|---|---|---|
 | `S07-E5-M1` | Przerobić: Software Requirements, wydanie 3 (2013) | materiał, płatny | 12–15 h (rozdziały o priorytetyzacji, walidacji, zarządzaniu zmianą, śledzeniu powiązań i projektach przejmowanych) | płatna | https://www.pearson.com/en-us/subject-catalog/p/software-requirements/P200000000686/9780735679665 | `S07-E4-D` | `S07-E5-D` | `07-wymagania-i-specyfikacje/e5-umowa-zmiana-przejecie-i-odbior/` |
 | `S07-E5-M2` | Przerobić: Object-Oriented Reengineering Patterns | materiał | 6–8 h (rozdziały o pierwszym kontakcie z systemem i wstępnym zrozumieniu) | 0 zł (PDF) | https://www.oscar.nierstrasz.org/oorp/ | `S07-E4-D` | `S07-E5-D` | `07-wymagania-i-specyfikacje/e5-umowa-zmiana-przejecie-i-odbior/` |
-| `S07-E5-M3` | Przerobić: Certified Tester Acceptance Testing, sylabus v1.0 (2019) | materiał, płatny | 6–8 h | 0 zł (egzamin płatny, opcjonalny) | https://istqb.org/certifications/certified-tester-acceptance-testing-ct-act/ | `S07-E4-D` | `S07-E5-D` | `07-wymagania-i-specyfikacje/e5-umowa-zmiana-przejecie-i-odbior/` |
+| `S07-E5-M3` | Przerobić: Certified Tester Acceptance Testing, sylabus v1.0 (2019) | materiał | 6–8 h | 0 zł (egzamin płatny, opcjonalny) | https://istqb.org/certifications/certified-tester-acceptance-testing-ct-act/ | `S07-E4-D` | `S07-E5-D` | `07-wymagania-i-specyfikacje/e5-umowa-zmiana-przejecie-i-odbior/` |
 | `S07-E5-M4` | Przerobić: Software Estimation: Demystifying the Black Art (2006) | materiał, płatny | 6–8 h (wybrane rozdziały) | płatna | https://www.microsoftpressstore.com/store/software-estimation-demystifying-the-black-art-9780735605350 | `S07-E4-D` | `S07-E5-D` | `07-wymagania-i-specyfikacje/e5-umowa-zmiana-przejecie-i-odbior/` |
 | `S07-E5-D` | Dowód etapu 5: umowa, zmiana, przejęcie i odbiór | dowód | — | — | — | `S07-E5-M1`, `S07-E5-M2`, `S07-E5-M3`, `S07-E5-M4` | `S07-E6-M1`, `S07-E6-M2`, `S07-E6-M3`, `S07-E6-P1`, `S07-E6-P2`, `S07-E6-P3`, `S07-E6-P4` | `07-wymagania-i-specyfikacje/e5-umowa-zmiana-przejecie-i-odbior/` |
 
 **`S07-E5-D` · Dowód etapu 5: umowa, zmiana, przejęcie i odbiór**
 
-Komplet dokumentów z jednego projektu klienta lub poligonu: odtworzona specyfikacja w statusie `reconstructed` dla jednego obszaru przejmowanej aplikacji (z oznaczeniami `[DO WERYFIKACJI Z KLIENTEM]` i powiązaniem z testami charakteryzującymi z sekcji 6), specyfikacja nowej funkcji zatwierdzona przez klienta z wyceną, jedna propozycja zmiany (`proposal.md` i `spec-delta.md`) z wyceną i wpływem na termin, macierz śledzenia R → AC → T → test oraz protokół odbioru (`uat-protocol.md`) z sesji z klientem, z uwagami sklasyfikowanymi jako błąd, luka albo nowe życzenie.
+Komplet dokumentów z jednego projektu klienta lub poligonu (rolę klienta może odegrać osoba spoza IT): odtworzona specyfikacja w statusie `reconstructed` dla jednego obszaru przejmowanej aplikacji (z oznaczeniami `[DO WERYFIKACJI Z KLIENTEM]` i powiązaniem każdego opisanego zachowania z testem, który je utrwala), specyfikacja nowej funkcji z wyceną przedziałem i jawnymi założeniami, jedna propozycja zmiany (`proposal.md` i `spec-delta.md`) z wyceną i wpływem na termin, macierz śledzenia R → AC → T → test oraz protokół odbioru (`uat-protocol.md`) z sesji odbiorczej, z uwagami sklasyfikowanymi jako błąd, luka albo nowe życzenie.
 
 **Na co zwrócić uwagę:** zatwierdzona wersja specyfikacji jako załącznik do zlecenia i punkt odniesienia dla odbioru; każda prośba klienta po zatwierdzeniu klasyfikowana jako błąd (w cenie), luka w specyfikacji lub nowe życzenie (płatna spec-delta z wyceną i wpływem na termin); wycena przedziałem z jawnymi założeniami, a pytania otwarte jako ryzyko w cenie lub warunek; przy przejęciu „wywiad podczas demonstracji” (klient pokazuje, jak używa aplikacji, a odtwarzana specyfikacja powstaje na bieżąco) i odtworzenie tylko obszarów, które będą zmieniane; UAT jako weryfikacja z perspektywy użytkownika według scenariuszy z AC, a nie swobodne „klikanie”, z decyzją i podpisem. Zapisy umowne (odpowiedzialność, odbiór milczący, terminy na uwagi) do weryfikacji z prawnikiem.
 
-**Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+**Kryterium ukończenia:** macierz śledzenia bez luk: każde R-n ma AC, każde AC ma test, brak kodu bez wymagania (sprawdzone skryptem albo listą); odtworzona specyfikacja z co najmniej 5 zachowaniami powiązanymi z testami; wycena z co najmniej 3 jawnymi założeniami i wykluczeniami; protokół z co najmniej 5 scenariuszami odbioru, wynikiem każdego i decyzją; w komentarzu link do repozytorium.
 
 **Folder roboczy:** `07-wymagania-i-specyfikacje/e5-umowa-zmiana-przejecie-i-odbior/`
 
@@ -298,20 +296,20 @@ Komplet dokumentów z jednego projektu klienta lub poligonu: odtworzona specyfik
 
 Opis kamienia milowego (do wklejenia):
 
-**Cel:** ekspert: pomiar jakości specyfikacji, recenzja specyfikacji z AI, aktualność · **Czas od zera:** stale, ok. 1 h tygodniowo · **Poziom po etapie:** E
+**Cel:** ekspert: pomiar jakości specyfikacji, recenzja specyfikacji z AI, aktualność · **Poziom po etapie:** E
 
-**Dowód poziomu E:** Samodzielnie, bez agenta, w 1 dzień po jednym warsztacie z klientem przygotowujesz specyfikację funkcji średniej wielkości (EARS, kryteria akceptacji pozytywne, negatywne i brzegowe, NFR z progami, „Poza zakresem”, lista pytań otwartych), wycenę i propozycję harmonogramu, a klient zatwierdza ją bez dodatkowej rundy wyjaśnień; przy odbiorze nie pojawia się uwaga sklasyfikowana jako luka w specyfikacji, a każdą prośbę zgłoszoną po zatwierdzeniu umiesz w 15 minut zaklasyfikować i wyjaśnić klientowi, czy mieści się w umowie, czy wymaga płatnej propozycji zmiany.
+**Dowód poziomu E:** Samodzielnie, bez agenta, w 1 dzień na podstawie przygotowanego briefu funkcji średniej wielkości z ukrytymi niejednoznacznościami (brief i wzorcowa lista ukrytych pozycji przygotowane wcześniej przez inną osobę albo przez agenta w osobnej sesji, lista zamknięta do czasu oddania pracy) przygotowujesz specyfikację (EARS, kryteria akceptacji pozytywne, negatywne i brzegowe, NFR z progami, „Poza zakresem”, lista pytań otwartych z propozycjami odpowiedzi) i wycenę przedziałem z jawnymi założeniami; następnie klasyfikujesz 10 przygotowanych próśb zgłoszonych „po zatwierdzeniu” jako błąd, luka w specyfikacji albo nowe życzenie i dla każdej piszesz wyjaśnienie dla klienta.
 
 | Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
 |---|---|---|---|---|---|---|---|---|
 | `S07-E6-M1` | Przerobić: Wydania i dokumentacja Spec Kit, Kiro i OpenSpec | materiał | ok. 0,5 h tygodniowo | 0 zł | https://github.com/github/spec-kit/releases, https://kiro.dev/docs/, https://openspec.dev | `S07-E5-D` | `S07-E6-D` | `07-wymagania-i-specyfikacje/e6-ekspert/` |
-| `S07-E6-M2` | Przerobić: AI4RE (micro-credential, sylabus i przewodnik 1.0.0), RE@Agile, Requirements Modeling | materiał, płatny | wg potrzeb | 0 zł (egzaminy płatne) | https://cpre.ireb.org/en/downloads-and-resources/downloads | `S07-E5-D` | `S07-E6-D` | `07-wymagania-i-specyfikacje/e6-ekspert/` |
-| `S07-E6-M3` | Przerobić: Kolejne wydanie ISO/IEC/IEEE 29148 (po publikacji) | materiał, płatny | wg potrzeb | płatna | https://www.iso.org/standard/72089.html | `S07-E5-D` | `S07-E6-D` | `07-wymagania-i-specyfikacje/e6-ekspert/` |
+| `S07-E6-M2` | Przerobić: AI4RE (micro-credential, sylabus i przewodnik 1.0.0), RE@Agile, Requirements Modeling | materiał, opcjonalne | wg potrzeb | 0 zł (egzaminy płatne) | https://cpre.ireb.org/en/downloads-and-resources/downloads | `S07-E5-D` | — | `07-wymagania-i-specyfikacje/e6-ekspert/` |
+| `S07-E6-M3` | Przerobić: Kolejne wydanie ISO/IEC/IEEE 29148 (po publikacji) | materiał, płatny, opcjonalne | wg potrzeb | płatna | https://www.iso.org/standard/72089.html | `S07-E5-D` | — | `07-wymagania-i-specyfikacje/e6-ekspert/` |
 | `S07-E6-P1` | Praktyka: recenzja specyfikacji z AI | praktyka | — | — | — | `S07-E5-D` | `S07-E6-D` | `07-wymagania-i-specyfikacje/e6-ekspert/` |
 | `S07-E6-P2` | Praktyka: pomiar jakości specyfikacji | praktyka | — | — | — | `S07-E5-D` | `S07-E6-D` | `07-wymagania-i-specyfikacje/e6-ekspert/` |
 | `S07-E6-P3` | Praktyka: warsztat z klientem jako usługa | praktyka | — | — | — | `S07-E5-D` | `S07-E6-D` | `07-wymagania-i-specyfikacje/e6-ekspert/` |
 | `S07-E6-P4` | Praktyka: biblioteka wzorców | praktyka | — | — | — | `S07-E5-D` | `S07-E6-D` | `07-wymagania-i-specyfikacje/e6-ekspert/` |
-| `S07-E6-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S07-E6-M1`, `S07-E6-M2`, `S07-E6-M3`, `S07-E6-P1`, `S07-E6-P2`, `S07-E6-P3`, `S07-E6-P4` | — | `07-wymagania-i-specyfikacje/e6-ekspert/` |
+| `S07-E6-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S07-E6-M1`, `S07-E6-P1`, `S07-E6-P2`, `S07-E6-P3`, `S07-E6-P4` | — | `07-wymagania-i-specyfikacje/e6-ekspert/` |
 
 **`S07-E6-P1` · Praktyka: recenzja specyfikacji z AI**
 
@@ -347,9 +345,9 @@ Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako sta�
 
 **`S07-E6-D` · Dowód poziomu E: ekspert**
 
-Samodzielnie, bez agenta, w 1 dzień po jednym warsztacie z klientem przygotowujesz specyfikację funkcji średniej wielkości (EARS, kryteria akceptacji pozytywne, negatywne i brzegowe, NFR z progami, „Poza zakresem”, lista pytań otwartych), wycenę i propozycję harmonogramu, a klient zatwierdza ją bez dodatkowej rundy wyjaśnień; przy odbiorze nie pojawia się uwaga sklasyfikowana jako luka w specyfikacji, a każdą prośbę zgłoszoną po zatwierdzeniu umiesz w 15 minut zaklasyfikować i wyjaśnić klientowi, czy mieści się w umowie, czy wymaga płatnej propozycji zmiany.
+Samodzielnie, bez agenta, w 1 dzień na podstawie przygotowanego briefu funkcji średniej wielkości z ukrytymi niejednoznacznościami (brief i wzorcowa lista ukrytych pozycji przygotowane wcześniej przez inną osobę albo przez agenta w osobnej sesji, lista zamknięta do czasu oddania pracy) przygotowujesz specyfikację (EARS, kryteria akceptacji pozytywne, negatywne i brzegowe, NFR z progami, „Poza zakresem”, lista pytań otwartych z propozycjami odpowiedzi) i wycenę przedziałem z jawnymi założeniami; następnie klasyfikujesz 10 przygotowanych próśb zgłoszonych „po zatwierdzeniu” jako błąd, luka w specyfikacji albo nowe życzenie i dla każdej piszesz wyjaśnienie dla klienta.
 
-**Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki. Bez agenta AI.
+**Kryterium ukończenia:** wykryte co najmniej 80% pozycji z wzorcowej listy niejednoznaczności (każda jako pytanie otwarte albo znacznik `[DO WYJAŚNIENIA: …]`); każde R-n ma co najmniej 3 kryteria akceptacji (pozytywne, negatywne, brzegowe); zero słów nieweryfikowalnych i NFR bez progu; recenzja drugą osobą lub drugim modelem znajduje najwyżej 2 zapachy wymagań na 10 R-n; co najmniej 9 z 10 próśb sklasyfikowanych zgodnie z kluczem, każda w 15 minut; w komentarzu link do specyfikacji, wyceny i porównania z wzorcową listą. Bez agenta AI.
 
 **Folder roboczy:** `07-wymagania-i-specyfikacje/e6-ekspert/`
 
@@ -359,7 +357,7 @@ Samodzielnie, bez agenta, w 1 dzień po jednym warsztacie z klientem przygotowuj
 
 - `S03-E2-D` (Dowód etapu 2: TypeScript) → `S07-START`
 - `S05-E1-D` (Dowód etapu 1: Node.js po stronie serwera) → `S07-START`
-- `S06-E2-D` (Dowód etapu 2: projektowanie testów) → `S07-START`
+- `S06-E1-D` (Dowód etapu 1: projektowanie testów i TDD) → `S07-START`
 - `S01-E1-D` (Dowód etapu 1: codzienna praca z Claude Code) → `S07-E4-M1`
 - `S01-E1-D` (Dowód etapu 1: codzienna praca z Claude Code) → `S07-E4-M2`
 - `S01-E1-D` (Dowód etapu 1: codzienna praca z Claude Code) → `S07-E4-M3`

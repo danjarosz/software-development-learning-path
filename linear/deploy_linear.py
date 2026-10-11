@@ -91,6 +91,57 @@ class Linear:
         raise SystemExit("Zbyt wiele nieudanych prób. Uruchom skrypt ponownie później; postęp jest zapisany.")
 
 
+def check_plan(plan):
+    """Zwraca listę błędów, przez które wdrożenie zakończyłoby się w połowie albo utworzyło złe relacje."""
+    problems = []
+    projects = {p["key"]: p for p in plan["projects"]}
+    milestones = {m["key"]: p["key"] for p in plan["projects"] for m in p["milestones"]}
+    issues = {}
+    for it in plan["issues"]:
+        if it["key"] in issues:
+            problems.append(f"zduplikowany klucz zadania {it['key']}")
+        issues[it["key"]] = it
+    if len(milestones) != sum(len(p["milestones"]) for p in plan["projects"]):
+        problems.append("zduplikowane klucze kamieni milowych")
+    for p in plan["projects"]:
+        if not p.get("label"):
+            problems.append(f"{p['key']}: brak etykiety projektu")
+    for it in plan["issues"]:
+        k = it["key"]
+        if it["project"] not in projects:
+            problems.append(f"{k}: nieznany projekt {it['project']}")
+        if it.get("milestone") and milestones.get(it["milestone"]) != it["project"]:
+            problems.append(f"{k}: kamień milowy {it['milestone']} nie należy do projektu {it['project']}")
+        for l in it["labels"]:
+            if l not in ISSUE_LABELS:
+                problems.append(f"{k}: etykieta „{l}” spoza ISSUE_LABELS")
+        if it["status"] not in ("Todo", "Backlog"):
+            problems.append(f"{k}: nieznany status {it['status']}")
+        for b in it["blockedBy"]:
+            if b not in issues:
+                problems.append(f"{k}: blokada {b} nie istnieje")
+    # cykle (algorytm Kahna)
+    indeg = {k: 0 for k in issues}
+    out = {k: [] for k in issues}
+    for it in plan["issues"]:
+        for b in it["blockedBy"]:
+            if b in issues:
+                out[b].append(it["key"])
+                indeg[it["key"]] += 1
+    queue = [k for k, n in indeg.items() if n == 0]
+    seen = 0
+    while queue:
+        k = queue.pop()
+        seen += 1
+        for t in out[k]:
+            indeg[t] -= 1
+            if indeg[t] == 0:
+                queue.append(t)
+    if seen != len(issues):
+        problems.append(f"graf blokad ma cykl ({len(issues) - seen} zadań)")
+    return problems
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--plan", default=os.path.join(HERE, "linear-plan.json"))
@@ -107,6 +158,12 @@ def main():
     n_rel = sum(len(i["blockedBy"]) for i in issues)
     print(f"Plan: {len(projects)} projektów, {n_ms} kamieni milowych, {len(issues)} zadań, {n_rel} relacji „blocks”.")
     print("Uwaga: plan Free w Linear ma limit 250 zgłoszeń; ten plan wymaga planu płatnego.")
+    problems = check_plan(plan)
+    if problems:
+        for msg in problems:
+            print(f"  błąd planu: {msg}")
+        raise SystemExit(f"Plan ma {len(problems)} błędów; popraw linear-plan.json przed wdrożeniem.")
+    print("Kontrola planu: klucze, blokady, etykiety i kamienie milowe są spójne, graf nie ma cykli.")
     if args.dry_run:
         state = load_state()
         print(f"Stan wznowienia: {len(state['projects'])} projektów, {len(state['milestones'])} kamieni milowych, "
@@ -172,8 +229,9 @@ def main():
     for p in projects:
         if p["key"] not in state["projects"]:
             inp = {"name": p["name"], "teamIds": [team["id"]], "description": p["summary"][:255],
-                   "content": p["description"], "startDate": p["start"],
-                   "labelIds": [state["projectLabels"][p["label"]]]}
+                   "content": p["description"], "labelIds": [state["projectLabels"][p["label"]]]}
+            if p.get("start"):
+                inp["startDate"] = p["start"]
             if p.get("target"):
                 inp["targetDate"] = p["target"]
             r = lin.gql("""mutation($input: ProjectCreateInput!) { projectCreate(input: $input) { project { id url } } }""",

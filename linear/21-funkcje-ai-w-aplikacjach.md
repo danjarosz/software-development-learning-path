@@ -10,18 +10,16 @@ Team **LEA** (https://linear.app/daankh/team/LEA/overview). Plan do przeglądu p
 |---|---|
 | Nazwa | 21. Funkcje AI w aplikacjach |
 | Team | LEA |
-| Podsumowanie (pole „Summary”) | Warstwa 7: AI w produktach. Opiera się na: 1, 5, 6, 8, 10, 20 i platformach 14–19; etap 2 (TinyML) także na sekcji 22. |
-| Proponowany start | 2028-01-03 |
-| Proponowany termin | 2028-12-15 |
+| Podsumowanie (pole „Summary”) | Warstwa 7: AI w produktach. Opiera się na: 1, 5, 6, 8, 10, 11 i 20; etapy AI na urządzeniu także na 14, 18 i 19. Jest podstawą: opcjonalnego etapu TinyML w 22. |
 | Etykiety projektu | `warstwa-7` |
-| Blokowany przez (projekty) | 01. Praca z AI w chmurze: Claude i Claude Code, 05. Backend i API, 06. Testowanie, 08. Architektura i projektowanie systemów, 10. Bezpieczeństwo, 20. Lokalne AI i rozwój modeli |
+| Blokowany przez (projekty) | 01. Praca z AI w chmurze: Claude i Claude Code, 05. Backend i API, 06. Testowanie, 08. Architektura i projektowanie systemów, 10. Bezpieczeństwo, 11. Weryfikacja pracy AI i budowa procesu, 20. Lokalne AI i rozwój modeli |
 | Blokuje (projekty) | — |
-| Zależności częściowe (wchodzące) | etap 1 czeka na 14. Desktop: wspólne (etap 1); etap 1 czeka na 18. Android (etap 2); etap 1 czeka na 19. iOS (etap 2); etap 2 czeka na 22. Systemy wbudowane (etap 2) |
-| Czas od zera | 135–190 h |
+| Zależności częściowe (wchodzące) | etap 1 czeka na 14. Desktop: wspólne (etap 1); etap 2 czeka na 18. Android (etap 2); etap 2 czeka na 19. iOS (etap 2); etap 3 czeka na 20. Lokalne AI i rozwój modeli (etap 3) |
+| Zależności częściowe (wychodzące) | 22. Systemy wbudowane, etap 9 |
 
 ### Opis projektu (do wklejenia w Linear)
 
-*Warstwa 7: AI w produktach. Opiera się na: 1, 5, 6, 8, 10, 20 i platformach 14–19; etap 2 (TinyML) także na sekcji 22.*
+*Warstwa 7: AI w produktach. Opiera się na: 1, 5, 6, 8, 10, 11 i 20; etapy AI na urządzeniu także na 14, 18 i 19. Jest podstawą: opcjonalnego etapu TinyML w 22.*
 
 **Zakres umiejętności**
 
@@ -36,7 +34,7 @@ Team **LEA** (https://linear.app/daankh/team/LEA/overview). Plan do przeglądu p
 - macOS i iOS: Core ML, MLX, systemowe modele Apple (framework Foundation Models) i ich dostępność zależna od urządzenia i wersji systemu.
 - Android: systemowe modele Google na urządzeniu (Gemini Nano przez ML Kit i AICore) i ich dostępność, LiteRT (dawniej TensorFlow Lite), ONNX Runtime Mobile, MediaPipe.
 - Windows: Windows ML i akceleracja NPU, DirectML.
-- Systemy wbudowane: TinyML (LiteRT for Microcontrollers, narzędzia typu Edge Impulse), modele w Ruście `no_std` (np. `tract` lub własne sieci po kwantyzacji int8), budżet pamięci, energii i czasu wnioskowania, akceleratory w mikrokontrolerach.
+- Systemy wbudowane (opcjonalny etap TinyML w sekcji 22): TinyML (LiteRT for Microcontrollers, narzędzia typu Edge Impulse), modele w Ruście `no_std` (np. `tract` lub własne sieci po kwantyzacji int8), budżet pamięci, energii i czasu wnioskowania, akceleratory w mikrokontrolerach.
 **Bezpieczeństwo funkcji AI**
 - OWASP Top 10 dla aplikacji LLM: prompt injection bezpośredni i pośredni, niebezpieczna obsługa wyjścia modelu, wyciek danych i promptu systemowego, nadmierna sprawczość agentów, zatrucie danych RAG.
 - Treści z zewnątrz (dokumenty, strony, e-maile) traktowane jako dane, nie instrukcje; separacja uprawnień między modelem a narzędziami.
@@ -61,9 +59,7 @@ Team **LEA** (https://linear.app/daankh/team/LEA/overview). Plan do przeglądu p
 
 **Ścieżka nauki**
 
-Ścieżka ma 5 etapów. Każdy kończy się **dowodem**, czyli małym projektem, który pokazuje, że etap jest opanowany. Etapy 0 i 3 warto przejść w całości, bo bezpośrednio przekładają się na usługi i produkty z biznesplanu. Etap 1 wymaga znajomości platform z sekcji 14–19, więc robi się go po nich. Etap 2 (embedded) robi się po sekcji 22 i jest opcjonalny do czasu decyzji o wejściu w urządzenia (zob. „Gdzie najpewniej będą luki”). Czas podany dla osoby startującej od zera; ceny materiałów płatnych zmieniają się, więc warto je sprawdzić przed zakupem.
-
-Razem od zera do poziomu E: ok. 135–190 h (bez etapu 2: 95–130 h), czyli 3–5 miesięcy przy 10–12 h tygodniowo.
+Ścieżka ma 5 etapów. Każdy kończy się **dowodem**, czyli małym projektem, który pokazuje, że etap jest opanowany. Etapy funkcji AI w aplikacjach oraz prawa i dokumentacji modeli warto przejść w całości, bo bezpośrednio przekładają się na usługi i produkty z biznesplanu. Etap AI na urządzeniu w webie i na desktopie robi się po sekcji 14 (Tauri), a etap iOS i Android po sekcjach 18 i 19. TinyML na mikrokontrolerach jest opcjonalnym etapem sekcji 22. Ceny materiałów płatnych zmieniają się, więc warto je sprawdzić przed zakupem.
 
 **Definicja ukończenia projektu (dowód poziomu E)**
 
@@ -73,21 +69,21 @@ Samodzielnie, bez agenta, w 2 dni dodajesz do istniejącej aplikacji funkcję AI
 
 ## 2. Kamienie milowe
 
-Jeden kamień milowy na etap ścieżki. Kamień milowy jest zamknięty, gdy zamknięte jest zadanie dowodu tego etapu. Daty kamieni milowych ustawiasz przy wdrożeniu według kolejności z pliku głównego.
+Jeden kamień milowy na etap ścieżki. Kamień milowy jest zamknięty, gdy zamknięte jest zadanie dowodu tego etapu.
 
-| # | Kamień milowy | Cel | Czas od zera | Poziom po etapie | Zadania |
-|---|---|---|---|---|---|
-| 1 | Etap 0: funkcje AI w aplikacjach | funkcje AI w aplikacjach: API, streaming, obserwowalność | 30–40 h | E | 6 |
-| 2 | Etap 1: AI na urządzeniu | AI na urządzeniu: web, desktop, iOS, Android, Windows | 50–70 h | W | 9 |
-| 3 | Etap 2: TinyML na mikrokontrolerach (opcjonalnie) (opcjonalny) | TinyML na mikrokontrolerach (opcjonalnie) | 40–60 h | W | 5 |
-| 4 | Etap 3: prawo i dokumentacja modeli | prawo i dokumentacja: AI Act art. 50, ML-BOM | 15–20 h | E | 5 |
-| 5 | Etap 4: ekspert | ekspert: produkt z funkcją AI, aktualność | stale, ok. 1–2 h tygodniowo | E | 5 |
+| # | Kamień milowy | Cel | Poziom po etapie | Zadania |
+|---|---|---|---|---|
+| 1 | Etap 0: funkcje AI w aplikacjach | funkcje AI w aplikacjach: API, streaming, obserwowalność | W | 6 |
+| 2 | Etap 1: AI na urządzeniu: web i desktop | AI na urządzeniu: web (WebGPU, WASM) i desktop (Tauri, Windows) | W | 6 |
+| 3 | Etap 2: AI na urządzeniu: iOS i Android | AI na urządzeniu: iOS (Foundation Models, Core ML) i Android (ML Kit GenAI, LiteRT) | W | 5 |
+| 4 | Etap 3: prawo i dokumentacja modeli | prawo i dokumentacja: AI Act art. 50, ML-BOM | W | 5 |
+| 5 | Etap 4: ekspert | ekspert: produkt z funkcją AI, aktualność | E | 8 |
 
 ## 3. Punkt startu
 
 Zadanie **`S21-START` · Start: 21. Funkcje AI w aplikacjach** to jedyne wejście do projektu: wszystkie zadania pierwszego etapu są przez nie blokowane.
 
-- **Blokowane przez:** `S01-E1-D`, `S05-E1-D`, `S06-E2-D`, `S08-E1-D`, `S10-E1-D`, `S20-E1-D`
+- **Blokowane przez:** `S01-E1-D`, `S05-E1-D`, `S06-E1-D`, `S08-E1-D`, `S10-E1-D`, `S20-E0-D`, `S11-E3-D`, `S11-E4-D`
 - **Odblokowuje:** `S21-E0-M1`, `S21-E0-M2`, `S21-E0-M3`, `S21-E0-M4`, `S21-E0-M5`
 - **Status początkowy:** Backlog do czasu zamknięcia zadań blokujących, potem Todo
 
@@ -99,16 +95,17 @@ Punkt startu projektu „21. Funkcje AI w aplikacjach”.
 
 - `S01-E1-D` · Dowód etapu 1: codzienna praca z Claude Code — sekcja 1 na poziomie podstawowym do pracy (etap 1)
 - `S05-E1-D` · Dowód etapu 1: Node.js po stronie serwera — sekcja 5 na poziomie podstawowym do pracy (etap 1)
-- `S06-E2-D` · Dowód etapu 2: projektowanie testów — sekcja 6 na poziomie podstawowym do pracy (etap 2)
+- `S06-E1-D` · Dowód etapu 1: projektowanie testów i TDD — sekcja 6 na poziomie podstawowym do pracy (etap 1)
 - `S08-E1-D` · Dowód etapu 1: style architektoniczne, atrybuty jakości i kompromisy — sekcja 8 na poziomie podstawowym do pracy (etap 1)
 - `S10-E1-D` · Dowód etapu 1: ataki na web i API w praktyce — sekcja 10 na poziomie podstawowym do pracy (etap 1)
-- `S20-E1-D` · Dowód etapu 1: modele lokalne na stanowisku pracy — sekcja 20 na poziomie podstawowym do pracy (etap 1)
+- `S20-E0-D` · Dowód etapu 0: modele lokalne na stanowisku pracy — sekcja 20 na poziomie podstawowym do pracy (etap 0)
+- `S11-E3-D` · Dowód etapu 3: ewaluacje — ewaluacje z sekcji 11 (etap 3) jako bramka jakości funkcji AI
+- `S11-E4-D` · Dowód etapu 4: bezpieczeństwo agentów i integracji LLM — prompt injection i uprawnienia agentów z sekcji 11 (etap 4)
 
 **Do zrobienia:**
 
 - przeczytać sekcję 21 dokumentu „Umiejętności techniczne”,
-- zaznaczyć etapy, które zaliczasz samym dowodem (zgodnie z akapitem wstępnym ścieżki), i dla nich zamknąć zadania materiałów jako niepotrzebne,
-- ustawić daty kamieni milowych zgodnie z kolejnością z pliku głównego.
+- zaznaczyć etapy, które zaliczasz samym dowodem (zgodnie z akapitem wstępnym ścieżki), i dla nich zamknąć zadania materiałów jako niepotrzebne.
 
 **Folder roboczy:** `21-funkcje-ai-w-aplikacjach/`
 
@@ -120,26 +117,29 @@ Linie ciągłe to zależności wewnątrz projektu, przerywane to zadania z innyc
 flowchart TD
   START["21. Start"]
   E0["Etap 0: funkcje AI w aplikacjach"]
-  E1["Etap 1: AI na urządzeniu"]
-  E2["Etap 2: TinyML na mikrokontrolerach (opcjonalnie)"]
+  E1["Etap 1: AI na urządzeniu: web i desktop"]
+  E2["Etap 2: AI na urządzeniu: iOS i Android"]
   E3["Etap 3: prawo i dokumentacja modeli"]
   E4["Etap 4: ekspert"]
   START --> E0
   E0 --> E1
   XS14E1D(["S14-E1-D"]) -.-> E1
-  XS18E2D(["S18-E2-D"]) -.-> E1
-  XS19E2D(["S19-E2-D"]) -.-> E1
-  E0 --> E2
-  XS22E2D(["S22-E2-D"]) -.-> E2
+  E1 --> E2
+  XS18E2D(["S18-E2-D"]) -.-> E2
+  XS19E2D(["S19-E2-D"]) -.-> E2
   E0 --> E3
+  XS20E3D(["S20-E3-D"]) -.-> E3
   E1 --> E4
+  E2 --> E4
   E3 --> E4
   XS01E1D(["S01-E1-D"]) -.-> START
   XS05E1D(["S05-E1-D"]) -.-> START
-  XS06E2D(["S06-E2-D"]) -.-> START
+  XS06E1D(["S06-E1-D"]) -.-> START
   XS08E1D(["S08-E1-D"]) -.-> START
   XS10E1D(["S10-E1-D"]) -.-> START
-  XS20E1D(["S20-E1-D"]) -.-> START
+  XS20E0D(["S20-E0-D"]) -.-> START
+  XS11E3D(["S11-E3-D"]) -.-> START
+  XS11E4D(["S11-E4-D"]) -.-> START
 ```
 
 ## 5. Zadania według kamieni milowych
@@ -150,112 +150,109 @@ Szablon opisu zadania materiału: nazwa materiału, autor lub wydawca, typ, czas
 
 Opis kamienia milowego (do wklejenia):
 
-**Cel:** funkcje AI w aplikacjach: API, streaming, obserwowalność · **Czas od zera:** 30–40 h · **Poziom po etapie:** E
+**Cel:** funkcje AI w aplikacjach: API, streaming, obserwowalność · **Poziom po etapie:** W
 
 **Szczególnie ważne:** klucz API tylko na backendzie, limity per użytkownik i budżet, cache promptów a koszt na aktywnego użytkownika, walidacja wyjścia modelu schematem przed użyciem, ścieżka zastępcza przy niedostępności modelu, nazwy atrybutów `gen_ai.*` mogą się zmieniać, więc wersję konwencji trzeba przypiąć.
 
-**Dowód:** Funkcja AI w aplikacji Next.js (np. streszczenie raportu z audytu dla klienta) z backendem pośredniczącym, streamingiem, wyjściem strukturalnym, śledzeniem w Langfuse lub przez OpenTelemetry bez danych osobowych w logach i bramką jakości w CI: zestaw referencyjny z progiem, który blokuje scalenie przy spadku wyników.
+**Dowód:** Funkcja AI w aplikacji Next.js (np. streszczenie raportu z audytu dla klienta) z backendem pośredniczącym, streamingiem, wyjściem strukturalnym, śledzeniem w Langfuse lub przez OpenTelemetry bez danych osobowych w logach i bramką jakości w CI: zestaw referencyjny z progiem, który blokuje scalenie przy spadku wyników, oraz co najmniej 20 przypadków adwersarialnych (prompt injection bezpośredni i pośredni przez treść raportu), które blokują scalenie, gdy model ujawni prompt systemowy, zmieni format wyjścia albo wywoła niedozwolone narzędzie.
 
 | Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
 |---|---|---|---|---|---|---|---|---|
-| `S21-E0-M1` | Przerobić: Claude API: tool use, prompt caching, wyjście strukturalne, przetwarzanie wsadowe | materiał, płatny | 8–10 h | 0 zł (zużycie API płatne) | https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview, https://platform.claude.com/docs/en/build-with-claude/prompt-caching | `S21-START` | `S21-E0-D` | `21-funkcje-ai-w-aplikacjach/e0-funkcje-ai-w-aplikacjach/` |
-| `S21-E0-M2` | Przerobić: Kurs „Building with the Claude API” | materiał | 6–8 h | 0 zł | https://anthropic.skilljar.com | `S21-START` | `S21-E0-D` | `21-funkcje-ai-w-aplikacjach/e0-funkcje-ai-w-aplikacjach/` |
+| `S21-E0-M1` | Przerobić: Claude API: prompt caching, wyjście strukturalne, przetwarzanie wsadowe, limity… | materiał, płatny | 8–10 h | 0 zł (zużycie API płatne) | https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview, https://platform.claude.com/docs/en/build-with-claude/prompt-caching | `S21-START` | `S21-E0-D` | `21-funkcje-ai-w-aplikacjach/e0-funkcje-ai-w-aplikacjach/` |
+| `S21-E0-M2` | Przerobić: Kurs „Building with the Claude API” | materiał, opcjonalne | 6–8 h | 0 zł | https://anthropic.skilljar.com | `S21-START` | — | `21-funkcje-ai-w-aplikacjach/e0-funkcje-ai-w-aplikacjach/` |
 | `S21-E0-M3` | Przerobić: AI SDK | materiał | 5–6 h | 0 zł | https://ai-sdk.dev/docs | `S21-START` | `S21-E0-D` | `21-funkcje-ai-w-aplikacjach/e0-funkcje-ai-w-aplikacjach/` |
-| `S21-E0-M4` | Przerobić: Langfuse: śledzenie, ewaluacje, wersjonowanie promptów | materiał, płatny | 4–5 h | 0 zł (własny hosting) / abonament (chmura) | https://langfuse.com/docs | `S21-START` | `S21-E0-D` | `21-funkcje-ai-w-aplikacjach/e0-funkcje-ai-w-aplikacjach/` |
-| `S21-E0-M5` | Przerobić: Konwencje semantyczne OpenTelemetry dla GenAI | materiał | 2–3 h | 0 zł | https://github.com/open-telemetry/semantic-conventions-genai | `S21-START` | `S21-E0-D` | `21-funkcje-ai-w-aplikacjach/e0-funkcje-ai-w-aplikacjach/` |
-| `S21-E0-D` | Dowód etapu 0: funkcje AI w aplikacjach | dowód | — | — | — | `S21-E0-M1`, `S21-E0-M2`, `S21-E0-M3`, `S21-E0-M4`, `S21-E0-M5` | `S21-E1-M1`, `S21-E1-M2`, `S21-E1-M3`, `S21-E1-M4`, `S21-E1-M5`, `S21-E1-M6`, `S21-E1-M7`, `S21-E1-M8`, `S21-E2-M1`, `S21-E2-M2`, `S21-E2-M3`, `S21-E2-M4`, `S21-E3-M1`, `S21-E3-M2`, `S21-E3-M3`, `S21-E3-M4` | `21-funkcje-ai-w-aplikacjach/e0-funkcje-ai-w-aplikacjach/` |
+| `S21-E0-M4` | Przerobić: Langfuse: śledzenie, ewaluacje, wersjonowanie promptów (open source, możliwy własny hosting) | materiał, płatny | 4–5 h | 0 zł (własny hosting) / abonament (chmura) | https://langfuse.com/docs | `S21-START` | `S21-E0-D` | `21-funkcje-ai-w-aplikacjach/e0-funkcje-ai-w-aplikacjach/` |
+| `S21-E0-M5` | Przerobić: Konwencje semantyczne OpenTelemetry dla GenAI… | materiał | 2–3 h | 0 zł | https://github.com/open-telemetry/semantic-conventions-genai | `S21-START` | `S21-E0-D` | `21-funkcje-ai-w-aplikacjach/e0-funkcje-ai-w-aplikacjach/` |
+| `S21-E0-D` | Dowód etapu 0: funkcje AI w aplikacjach | dowód | — | — | — | `S21-E0-M1`, `S21-E0-M3`, `S21-E0-M4`, `S21-E0-M5` | `S21-E1-M1`, `S21-E1-M2`, `S21-E1-M3`, `S21-E1-M4`, `S21-E1-M5`, `S21-E3-M1`, `S21-E3-M2`, `S21-E3-M3`, `S21-E3-M4`, `S22-E9-M1`, `S22-E9-M2`, `S22-E9-M3`, `S22-E9-M4` | `21-funkcje-ai-w-aplikacjach/e0-funkcje-ai-w-aplikacjach/` |
 
 **`S21-E0-D` · Dowód etapu 0: funkcje AI w aplikacjach**
 
-Funkcja AI w aplikacji Next.js (np. streszczenie raportu z audytu dla klienta) z backendem pośredniczącym, streamingiem, wyjściem strukturalnym, śledzeniem w Langfuse lub przez OpenTelemetry bez danych osobowych w logach i bramką jakości w CI: zestaw referencyjny z progiem, który blokuje scalenie przy spadku wyników.
+Funkcja AI w aplikacji Next.js (np. streszczenie raportu z audytu dla klienta) z backendem pośredniczącym, streamingiem, wyjściem strukturalnym, śledzeniem w Langfuse lub przez OpenTelemetry bez danych osobowych w logach i bramką jakości w CI: zestaw referencyjny z progiem, który blokuje scalenie przy spadku wyników, oraz co najmniej 20 przypadków adwersarialnych (prompt injection bezpośredni i pośredni przez treść raportu), które blokują scalenie, gdy model ujawni prompt systemowy, zmieni format wyjścia albo wywoła niedozwolone narzędzie.
 
 **Na co zwrócić uwagę:** klucz API tylko na backendzie, limity per użytkownik i budżet, cache promptów a koszt na aktywnego użytkownika, walidacja wyjścia modelu schematem przed użyciem, ścieżka zastępcza przy niedostępności modelu, nazwy atrybutów `gen_ai.*` mogą się zmieniać, więc wersję konwencji trzeba przypiąć.
 
-**Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+**Kryterium ukończenia:** w CI działa zestaw referencyjny z progiem i zestaw adwersarialny; pull request z celowo pogorszonym promptem zostaje zablokowany; w logach i śladach z przykładowego przebiegu nie ma danych osobowych.
 
 **Folder roboczy:** `21-funkcje-ai-w-aplikacjach/e0-funkcje-ai-w-aplikacjach/`
 
-### Etap 1: AI na urządzeniu
+### Etap 1: AI na urządzeniu: web i desktop
 
 Opis kamienia milowego (do wklejenia):
 
-**Cel:** AI na urządzeniu: web, desktop, iOS, Android, Windows · **Czas od zera:** 50–70 h · **Poziom po etapie:** W
+**Cel:** AI na urządzeniu: web (WebGPU, WASM) i desktop (Tauri, Windows) · **Poziom po etapie:** W
 
-**Szczególnie ważne:** dostępność modeli systemowych zależy od urządzenia, wersji systemu i regionu (Apple Intelligence, lista urządzeń z Gemini Nano), więc ścieżka zastępcza jest obowiązkowa; rozmiar pobieranego modelu i jego aktualizacja poza sklepem; weryfikacja sum kontrolnych i podpisu plików modelu.
+**Szczególnie ważne:** WebGPU nie jest dostępne wszędzie, więc rezerwa WASM lub backend jest obowiązkowa; rozmiar pobieranego modelu, pamięć podręczna przeglądarki i aktualizacja modelu poza instalatorem; weryfikacja sum kontrolnych i podpisu plików modelu; wnioskowanie w rdzeniu w Ruście, a nie w warstwie webowej Tauri.
 
-**Dowód:** Jedna funkcja (np. streszczenie lub klasyfikacja notatki) działająca na urządzeniu na trzech platformach: w przeglądarce (Transformers.js), na iOS (Foundation Models) i na Androidzie (ML Kit GenAI), ze ścieżką zastępczą do backendu i tabelą: dostępność, opóźnienie, rozmiar, jakość na wspólnym zestawie testowym.
+**Dowód:** Jedna funkcja (np. streszczenie lub klasyfikacja notatki) działająca na urządzeniu w przeglądarce (Transformers.js lub WebLLM, WebGPU z rezerwą WASM) i w aplikacji Tauri z wnioskowaniem we wspólnym rdzeniu w Ruście (`ort` albo llama.cpp jako proces poboczny), z modelem pobieranym poza instalatorem i sprawdzaną sumą SHA-256, ścieżką zastępczą do backendu z etapu 0 i tabelą: dostępność, opóźnienie p50 i p95, rozmiar modelu, jakość na wspólnym zestawie testowym względem modelu w chmurze.
 
 | Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
 |---|---|---|---|---|---|---|---|---|
-| `S21-E1-M1` | Przerobić: Transformers.js (WebGPU i WASM) | materiał | 4–6 h | 0 zł | https://huggingface.co/docs/transformers.js | `S21-E0-D`, `S14-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E1-D` | `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu/` |
-| `S21-E1-M2` | Przerobić: WebLLM | materiał | 2–3 h | 0 zł | https://webllm.mlc.ai/docs/ | `S21-E0-D`, `S14-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E1-D` | `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu/` |
-| `S21-E1-M3` | Przerobić: ONNX Runtime: Web, Mobile, dostawcy wykonania | materiał | 8–10 h | 0 zł | https://onnxruntime.ai/docs/ | `S21-E0-D`, `S14-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E1-D` | `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu/` |
-| `S21-E1-M4` | Przerobić: Foundation Models framework | materiał | 4–6 h | 0 zł | https://developer.apple.com/documentation/foundationmodels | `S21-E0-D`, `S14-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E1-D` | `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu/` |
-| `S21-E1-M5` | Przerobić: Core ML | materiał | 4–6 h | 0 zł | https://developer.apple.com/documentation/coreml | `S21-E0-D`, `S14-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E1-D` | `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu/` |
-| `S21-E1-M6` | Przerobić: ML Kit GenAI APIs (Gemini Nano przez AICore, w tym Prompt API) | materiał | 4–6 h | 0 zł | https://developers.google.com/ml-kit/genai | `S21-E0-D`, `S14-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E1-D` | `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu/` |
-| `S21-E1-M7` | Przerobić: LiteRT (dawniej TensorFlow Lite) i LiteRT-LM | materiał | 6–8 h | 0 zł | https://developers.google.com/edge/litert | `S21-E0-D`, `S14-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E1-D` | `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu/` |
-| `S21-E1-M8` | Przerobić: Windows ML (oparty na ONNX Runtime, akceleracja NPU) | materiał | 4–6 h | 0 zł | https://learn.microsoft.com/windows/ai/new-windows-ml/overview | `S21-E0-D`, `S14-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E1-D` | `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu/` |
-| `S21-E1-D` | Dowód etapu 1: AI na urządzeniu | dowód | — | — | — | `S21-E1-M1`, `S21-E1-M2`, `S21-E1-M3`, `S21-E1-M4`, `S21-E1-M5`, `S21-E1-M6`, `S21-E1-M7`, `S21-E1-M8` | `S21-E4-M1`, `S21-E4-P1`, `S21-E4-P2`, `S21-E4-P3` | `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu/` |
+| `S21-E1-M1` | Przerobić: Transformers.js (WebGPU i WASM) | materiał | 4–6 h | 0 zł | https://huggingface.co/docs/transformers.js | `S21-E0-D`, `S14-E1-D` | `S21-E1-D` | `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu-web-i-desktop/` |
+| `S21-E1-M2` | Przerobić: WebLLM | materiał | 2–3 h | 0 zł | https://webllm.mlc.ai/docs/ | `S21-E0-D`, `S14-E1-D` | `S21-E1-D` | `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu-web-i-desktop/` |
+| `S21-E1-M3` | Przerobić: ONNX Runtime: Web, Mobile, dostawcy wykonania (CoreML, DirectML, NNAPI, QNN) | materiał | 8–10 h | 0 zł | https://onnxruntime.ai/docs/ | `S21-E0-D`, `S14-E1-D` | `S21-E1-D` | `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu-web-i-desktop/` |
+| `S21-E1-M4` | Przerobić: Windows ML (oparty na ONNX Runtime, akceleracja NPU) | materiał, opcjonalne | 4–6 h | 0 zł | https://learn.microsoft.com/windows/ai/new-windows-ml/overview | `S21-E0-D`, `S14-E1-D` | — | `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu-web-i-desktop/` |
+| `S21-E1-M5` | Przerobić: Tauri 2: proces poboczny (sidecar) i dołączanie zewnętrznych binariów | materiał | 1–2 h | 0 zł | https://v2.tauri.app/develop/sidecar/ | `S21-E0-D`, `S14-E1-D` | `S21-E1-D` | `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu-web-i-desktop/` |
+| `S21-E1-D` | Dowód etapu 1: AI na urządzeniu: web i desktop | dowód | — | — | — | `S21-E1-M1`, `S21-E1-M2`, `S21-E1-M3`, `S21-E1-M5` | `S21-E2-M1`, `S21-E2-M2`, `S21-E2-M3`, `S21-E2-M4`, `S21-E4-M1`, `S21-E4-M2`, `S21-E4-M3`, `S21-E4-M4`, `S21-E4-P1`, `S21-E4-P2`, `S21-E4-P3` | `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu-web-i-desktop/` |
 
-**`S21-E1-D` · Dowód etapu 1: AI na urządzeniu**
+**`S21-E1-D` · Dowód etapu 1: AI na urządzeniu: web i desktop**
 
-Jedna funkcja (np. streszczenie lub klasyfikacja notatki) działająca na urządzeniu na trzech platformach: w przeglądarce (Transformers.js), na iOS (Foundation Models) i na Androidzie (ML Kit GenAI), ze ścieżką zastępczą do backendu i tabelą: dostępność, opóźnienie, rozmiar, jakość na wspólnym zestawie testowym.
+Jedna funkcja (np. streszczenie lub klasyfikacja notatki) działająca na urządzeniu w przeglądarce (Transformers.js lub WebLLM, WebGPU z rezerwą WASM) i w aplikacji Tauri z wnioskowaniem we wspólnym rdzeniu w Ruście (`ort` albo llama.cpp jako proces poboczny), z modelem pobieranym poza instalatorem i sprawdzaną sumą SHA-256, ścieżką zastępczą do backendu z etapu 0 i tabelą: dostępność, opóźnienie p50 i p95, rozmiar modelu, jakość na wspólnym zestawie testowym względem modelu w chmurze.
 
-**Na co zwrócić uwagę:** dostępność modeli systemowych zależy od urządzenia, wersji systemu i regionu (Apple Intelligence, lista urządzeń z Gemini Nano), więc ścieżka zastępcza jest obowiązkowa; rozmiar pobieranego modelu i jego aktualizacja poza sklepem; weryfikacja sum kontrolnych i podpisu plików modelu.
+**Na co zwrócić uwagę:** WebGPU nie jest dostępne wszędzie, więc rezerwa WASM lub backend jest obowiązkowa; rozmiar pobieranego modelu, pamięć podręczna przeglądarki i aktualizacja modelu poza instalatorem; weryfikacja sum kontrolnych i podpisu plików modelu; wnioskowanie w rdzeniu w Ruście, a nie w warstwie webowej Tauri.
 
-**Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+**Kryterium ukończenia:** obie wersje działają offline; plik modelu ze zmienioną sumą jest odrzucany; ścieżka zastępcza działa przy wyłączonym WebGPU; tabela obejmuje co najmniej 30 przypadków testowych.
 
-**Folder roboczy:** `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu/`
+**Folder roboczy:** `21-funkcje-ai-w-aplikacjach/e1-ai-na-urzadzeniu-web-i-desktop/`
 
-### Etap 2: TinyML na mikrokontrolerach (opcjonalnie) (opcjonalny)
+### Etap 2: AI na urządzeniu: iOS i Android
 
 Opis kamienia milowego (do wklejenia):
 
-**Cel:** TinyML na mikrokontrolerach (opcjonalnie) · **Czas od zera:** 40–60 h · **Poziom po etapie:** W
+**Cel:** AI na urządzeniu: iOS (Foundation Models, Core ML) i Android (ML Kit GenAI, LiteRT) · **Poziom po etapie:** W
 
-**Etap opcjonalny.** Nie blokuje dalszej części ścieżki.
+**Szczególnie ważne:** dostępność modeli systemowych zależy od urządzenia, wersji systemu i regionu (Apple Intelligence, lista urządzeń z Gemini Nano), więc wykrywanie dostępności w czasie działania i ścieżka zastępcza są obowiązkowe; rozmiar pobieranego modelu i jego aktualizacja poza sklepem; limity kontekstu modeli systemowych; weryfikacja sum kontrolnych i podpisu plików modelu.
 
-Książka „TinyML” (Pete Warden, Daniel Situnayake, O’Reilly 2019) dobrze tłumaczy podstawy, ale opisuje TensorFlow Lite for Microcontrollers sprzed zmiany nazwy na LiteRT, więc przykłady kodu trzeba sprawdzać z bieżącą dokumentacją.
-
-**Dowód:** Model wykrywania słowa kluczowego lub gestu skwantyzowany do int8 i uruchomiony na mikrokontrolerze z sekcji 22 (np. nRF lub ESP32), z pomiarem pamięci, czasu wnioskowania i poboru energii; wersja w Ruście `no_std` z `tract` lub uzasadnienie, dlaczego zostaje C.
+**Dowód:** Funkcja z etapu AI na urządzeniu w webie i na desktopie działająca na iOS (Foundation Models) i na Androidzie (ML Kit GenAI z Gemini Nano), z wykrywaniem dostępności modelu systemowego w czasie działania, rezerwą na urządzeniach bez niego (własny mały model przez Core ML i LiteRT albo backend) i tabelą: dostępność, opóźnienie p50 i p95, rozmiar, jakość na tym samym zestawie testowym.
 
 | Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
 |---|---|---|---|---|---|---|---|---|
-| `S21-E2-M1` | Przerobić: Tiny Machine Learning (Fundamentals, Applications, Deploying TinyML) | materiał, płatny | 30–40 h | 0 zł (audyt) / płatny (certyfikat) | https://harvardonline.harvard.edu/course/fundamentals-tinyml | `S21-E0-D`, `S22-E2-D` | `S21-E2-D` | `21-funkcje-ai-w-aplikacjach/e2-tinyml-na-mikrokontrolerach-opcjonalnie/` |
-| `S21-E2-M2` | Przerobić: Machine Learning Systems (podręcznik, otwarty dostęp) | materiał | wg potrzeb | 0 zł online | https://mlsysbook.ai | `S21-E0-D`, `S22-E2-D` | `S21-E2-D` | `21-funkcje-ai-w-aplikacjach/e2-tinyml-na-mikrokontrolerach-opcjonalnie/` |
-| `S21-E2-M3` | Przerobić: LiteRT for Microcontrollers | materiał | 4–6 h | 0 zł | https://developers.google.com/edge/litert/microcontrollers/overview | `S21-E0-D`, `S22-E2-D` | `S21-E2-D` | `21-funkcje-ai-w-aplikacjach/e2-tinyml-na-mikrokontrolerach-opcjonalnie/` |
-| `S21-E2-M4` | Przerobić: Edge Impulse | materiał, płatny | 6–8 h | 0 zł (plan Developer) / płatny (Enterprise) | https://docs.edgeimpulse.com | `S21-E0-D`, `S22-E2-D` | `S21-E2-D` | `21-funkcje-ai-w-aplikacjach/e2-tinyml-na-mikrokontrolerach-opcjonalnie/` |
-| `S21-E2-D` | Dowód etapu 2: TinyML na mikrokontrolerach (opcjonalnie) | dowód | — | — | — | `S21-E2-M1`, `S21-E2-M2`, `S21-E2-M3`, `S21-E2-M4` | — | `21-funkcje-ai-w-aplikacjach/e2-tinyml-na-mikrokontrolerach-opcjonalnie/` |
+| `S21-E2-M1` | Przerobić: Foundation Models framework | materiał | 4–6 h | 0 zł | https://developer.apple.com/documentation/foundationmodels | `S21-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E2-D` | `21-funkcje-ai-w-aplikacjach/e2-ai-na-urzadzeniu-ios-i-android/` |
+| `S21-E2-M2` | Przerobić: Core ML | materiał | 4–6 h | 0 zł | https://developer.apple.com/documentation/coreml | `S21-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E2-D` | `21-funkcje-ai-w-aplikacjach/e2-ai-na-urzadzeniu-ios-i-android/` |
+| `S21-E2-M3` | Przerobić: ML Kit GenAI APIs (Gemini Nano przez AICore, w tym Prompt API) | materiał | 4–6 h | 0 zł | https://developers.google.com/ml-kit/genai | `S21-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E2-D` | `21-funkcje-ai-w-aplikacjach/e2-ai-na-urzadzeniu-ios-i-android/` |
+| `S21-E2-M4` | Przerobić: LiteRT (dawniej TensorFlow Lite) i LiteRT-LM | materiał | 6–8 h | 0 zł | https://developers.google.com/edge/litert | `S21-E1-D`, `S18-E2-D`, `S19-E2-D` | `S21-E2-D` | `21-funkcje-ai-w-aplikacjach/e2-ai-na-urzadzeniu-ios-i-android/` |
+| `S21-E2-D` | Dowód etapu 2: AI na urządzeniu: iOS i Android | dowód | — | — | — | `S21-E2-M1`, `S21-E2-M2`, `S21-E2-M3`, `S21-E2-M4` | `S21-E4-M1`, `S21-E4-M2`, `S21-E4-M3`, `S21-E4-M4`, `S21-E4-P1`, `S21-E4-P2`, `S21-E4-P3` | `21-funkcje-ai-w-aplikacjach/e2-ai-na-urzadzeniu-ios-i-android/` |
 
-**`S21-E2-D` · Dowód etapu 2: TinyML na mikrokontrolerach (opcjonalnie)**
+**`S21-E2-D` · Dowód etapu 2: AI na urządzeniu: iOS i Android**
 
-Model wykrywania słowa kluczowego lub gestu skwantyzowany do int8 i uruchomiony na mikrokontrolerze z sekcji 22 (np. nRF lub ESP32), z pomiarem pamięci, czasu wnioskowania i poboru energii; wersja w Ruście `no_std` z `tract` lub uzasadnienie, dlaczego zostaje C.
+Funkcja z etapu AI na urządzeniu w webie i na desktopie działająca na iOS (Foundation Models) i na Androidzie (ML Kit GenAI z Gemini Nano), z wykrywaniem dostępności modelu systemowego w czasie działania, rezerwą na urządzeniach bez niego (własny mały model przez Core ML i LiteRT albo backend) i tabelą: dostępność, opóźnienie p50 i p95, rozmiar, jakość na tym samym zestawie testowym.
 
-**Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
+**Na co zwrócić uwagę:** dostępność modeli systemowych zależy od urządzenia, wersji systemu i regionu (Apple Intelligence, lista urządzeń z Gemini Nano), więc wykrywanie dostępności w czasie działania i ścieżka zastępcza są obowiązkowe; rozmiar pobieranego modelu i jego aktualizacja poza sklepem; limity kontekstu modeli systemowych; weryfikacja sum kontrolnych i podpisu plików modelu.
 
-**Folder roboczy:** `21-funkcje-ai-w-aplikacjach/e2-tinyml-na-mikrokontrolerach-opcjonalnie/`
+**Kryterium ukończenia:** na każdej platformie ścieżka zastępcza przetestowana na urządzeniu lub symulatorze bez modelu systemowego; tabela na tym samym zestawie co najmniej 30 przypadków co w etapie web i desktop.
+
+**Folder roboczy:** `21-funkcje-ai-w-aplikacjach/e2-ai-na-urzadzeniu-ios-i-android/`
 
 ### Etap 3: prawo i dokumentacja modeli
 
 Opis kamienia milowego (do wklejenia):
 
-**Cel:** prawo i dokumentacja: AI Act art. 50, ML-BOM · **Czas od zera:** 15–20 h · **Poziom po etapie:** E
+**Cel:** prawo i dokumentacja: AI Act art. 50, ML-BOM · **Poziom po etapie:** W
 
 Obowiązki przejrzystości z art. 50 stosuje się od 2 sierpnia 2026 r.; według FAQ Komisji systemy wprowadzone do obrotu przed tą datą mają czas na oznaczanie treści (art. 50 ust. 2) do 2 grudnia 2026 r. Pakiet „Digital Omnibus” zmienia część terminów AI Act, więc przed wdrożeniem trzeba sprawdzić tekst obowiązujący w danym dniu.
 
-**Dowód:** Dla funkcji AI z etapu 0: notatka kwalifikacyjna (czy to system wysokiego ryzyka, które ustępy art. 50 mają zastosowanie, kto jest dostawcą, a kto podmiotem stosującym), wdrożone informowanie użytkownika o interakcji z AI i oznaczenie treści generowanych zgodnie z kodeksem praktyk, wpis ML-BOM w SBOM wydania oraz karta modelu dla modelu dostrojonego w sekcji 20.3, etap 3.
+**Dowód:** Dla funkcji AI z etapu 0: notatka kwalifikacyjna (czy to system wysokiego ryzyka, które ustępy art. 50 mają zastosowanie, kto jest dostawcą, a kto podmiotem stosującym), wdrożone informowanie użytkownika o interakcji z AI i oznaczenie treści generowanych zgodnie z kodeksem praktyk, wpis ML-BOM w SBOM wydania oraz karta modelu dla modelu dostrojonego w sekcji 20 (etap dostrajania, RAG i ewaluacji).
 
 | Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
 |---|---|---|---|---|---|---|---|---|
-| `S21-E3-M1` | Przerobić: Rozporządzenie (UE) 2024/1689 (AI Act), zwłaszcza art. 3, 6, 50 i załącznik III | materiał | 4–6 h | 0 zł | https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng | `S21-E0-D` | `S21-E3-D` | `21-funkcje-ai-w-aplikacjach/e3-prawo-i-dokumentacja-modeli/` |
-| `S21-E3-M2` | Przerobić: Wytyczne w sprawie obowiązków przejrzystości dostawców i podmiotów stosujących systemy AI | materiał | 3–4 h | 0 zł | https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems | `S21-E0-D` | `S21-E3-D` | `21-funkcje-ai-w-aplikacjach/e3-prawo-i-dokumentacja-modeli/` |
-| `S21-E3-M3` | Przerobić: Kodeks praktyk dotyczący oznaczania i etykietowania treści generowanych przez AI (10 czerwca 2026… | materiał | 3–4 h | 0 zł | https://digital-strategy.ec.europa.eu/en/news/commission-publishes-code-practice-marking-and-labelling-ai-generated-content, https://digital-strategy.ec.europa.eu/en/faqs/code-practice-transparency-ai-generated-content | `S21-E0-D` | `S21-E3-D` | `21-funkcje-ai-w-aplikacjach/e3-prawo-i-dokumentacja-modeli/` |
-| `S21-E3-M4` | Przerobić: CycloneDX ML-BOM i „Authoritative Guide to AI/ML-BOM” | materiał | 3–4 h | 0 zł | https://cyclonedx.org/capabilities/mlbom/, https://cyclonedx.org/guides/ | `S21-E0-D` | `S21-E3-D` | `21-funkcje-ai-w-aplikacjach/e3-prawo-i-dokumentacja-modeli/` |
-| `S21-E3-D` | Dowód etapu 3: prawo i dokumentacja modeli | dowód | — | — | — | `S21-E3-M1`, `S21-E3-M2`, `S21-E3-M3`, `S21-E3-M4` | `S21-E4-M1`, `S21-E4-P1`, `S21-E4-P2`, `S21-E4-P3` | `21-funkcje-ai-w-aplikacjach/e3-prawo-i-dokumentacja-modeli/` |
+| `S21-E3-M1` | Przerobić: Rozporządzenie (UE) 2024/1689 (AI Act), zwłaszcza art. 3, 6, 50 i załącznik III | materiał | 4–6 h | 0 zł | https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng | `S21-E0-D`, `S20-E3-D` | `S21-E3-D` | `21-funkcje-ai-w-aplikacjach/e3-prawo-i-dokumentacja-modeli/` |
+| `S21-E3-M2` | Przerobić: Wytyczne w sprawie obowiązków przejrzystości dostawców i podmiotów stosujących systemy AI… | materiał | 3–4 h | 0 zł | https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems | `S21-E0-D`, `S20-E3-D` | `S21-E3-D` | `21-funkcje-ai-w-aplikacjach/e3-prawo-i-dokumentacja-modeli/` |
+| `S21-E3-M3` | Przerobić: Kodeks praktyk dotyczący oznaczania i etykietowania treści generowanych przez AI… | materiał | 3–4 h | 0 zł | https://digital-strategy.ec.europa.eu/en/news/commission-publishes-code-practice-marking-and-labelling-ai-generated-content, https://digital-strategy.ec.europa.eu/en/faqs/code-practice-transparency-ai-generated-content | `S21-E0-D`, `S20-E3-D` | `S21-E3-D` | `21-funkcje-ai-w-aplikacjach/e3-prawo-i-dokumentacja-modeli/` |
+| `S21-E3-M4` | Przerobić: CycloneDX ML-BOM i „Authoritative Guide to AI/ML-BOM” | materiał | 3–4 h | 0 zł | https://cyclonedx.org/capabilities/mlbom/, https://cyclonedx.org/guides/ | `S21-E0-D`, `S20-E3-D` | `S21-E3-D` | `21-funkcje-ai-w-aplikacjach/e3-prawo-i-dokumentacja-modeli/` |
+| `S21-E3-D` | Dowód etapu 3: prawo i dokumentacja modeli | dowód | — | — | — | `S21-E3-M1`, `S21-E3-M2`, `S21-E3-M3`, `S21-E3-M4` | `S21-E4-M1`, `S21-E4-M2`, `S21-E4-M3`, `S21-E4-M4`, `S21-E4-P1`, `S21-E4-P2`, `S21-E4-P3` | `21-funkcje-ai-w-aplikacjach/e3-prawo-i-dokumentacja-modeli/` |
 
 **`S21-E3-D` · Dowód etapu 3: prawo i dokumentacja modeli**
 
-Dla funkcji AI z etapu 0: notatka kwalifikacyjna (czy to system wysokiego ryzyka, które ustępy art. 50 mają zastosowanie, kto jest dostawcą, a kto podmiotem stosującym), wdrożone informowanie użytkownika o interakcji z AI i oznaczenie treści generowanych zgodnie z kodeksem praktyk, wpis ML-BOM w SBOM wydania oraz karta modelu dla modelu dostrojonego w sekcji 20.3, etap 3.
+Dla funkcji AI z etapu 0: notatka kwalifikacyjna (czy to system wysokiego ryzyka, które ustępy art. 50 mają zastosowanie, kto jest dostawcą, a kto podmiotem stosującym), wdrożone informowanie użytkownika o interakcji z AI i oznaczenie treści generowanych zgodnie z kodeksem praktyk, wpis ML-BOM w SBOM wydania oraz karta modelu dla modelu dostrojonego w sekcji 20 (etap dostrajania, RAG i ewaluacji).
 
 **Kryterium ukończenia:** dowód wykonany samodzielnie; w komentarzu link do repozytorium, raportu lub notatki.
 
@@ -265,17 +262,20 @@ Dla funkcji AI z etapu 0: notatka kwalifikacyjna (czy to system wysokiego ryzyka
 
 Opis kamienia milowego (do wklejenia):
 
-**Cel:** ekspert: produkt z funkcją AI, aktualność · **Czas od zera:** stale, ok. 1–2 h tygodniowo · **Poziom po etapie:** E
+**Cel:** ekspert: produkt z funkcją AI, aktualność · **Poziom po etapie:** E
 
 **Dowód poziomu E:** Samodzielnie, bez agenta, w 2 dni dodajesz do istniejącej aplikacji funkcję AI z wyborem miejsca wykonania uzasadnionym w ADR (chmura, urządzenie lub model lokalny), bramką jakości w CI, obserwowalnością bez danych osobowych, oznaczeniem zgodnym z art. 50 i wpisem ML-BOM, i umiesz wyjaśnić klientowi koszt, ryzyka i ograniczenia tej funkcji.
 
 | Klucz | Tytuł | Typ | Czas | Koszt | Link | Blokowane przez | Blokuje | Folder |
 |---|---|---|---|---|---|---|---|---|
-| `S21-E4-M1` | Przerobić: Strony Komisji o AI Act i o kodeksach praktyk | materiał | wg potrzeb | 0 zł | https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai | `S21-E1-D`, `S21-E3-D` | `S21-E4-D` | `21-funkcje-ai-w-aplikacjach/e4-ekspert/` |
-| `S21-E4-P1` | Praktyka: produkt z funkcją AI | praktyka | — | — | — | `S21-E1-D`, `S21-E3-D` | `S21-E4-D` | `21-funkcje-ai-w-aplikacjach/e4-ekspert/` |
-| `S21-E4-P2` | Praktyka: podatności środowisk uruchomieniowych | praktyka | — | — | — | `S21-E1-D`, `S21-E3-D` | `S21-E4-D` | `21-funkcje-ai-w-aplikacjach/e4-ekspert/` |
-| `S21-E4-P3` | Praktyka: koszt funkcji AI | praktyka | — | — | — | `S21-E1-D`, `S21-E3-D` | `S21-E4-D` | `21-funkcje-ai-w-aplikacjach/e4-ekspert/` |
-| `S21-E4-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S21-E4-M1`, `S21-E4-P1`, `S21-E4-P2`, `S21-E4-P3` | — | `21-funkcje-ai-w-aplikacjach/e4-ekspert/` |
+| `S21-E4-M1` | Przerobić: Strony Komisji o AI Act i o kodeksach praktyk | materiał | ok. 1 h miesięcznie | 0 zł | https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai | `S21-E1-D`, `S21-E2-D`, `S21-E3-D` | `S21-E4-D` | `21-funkcje-ai-w-aplikacjach/e4-ekspert/` |
+| `S21-E4-M2` | Przerobić: Strony modeli i cennik dostawców API oraz niezależne porównania jakości, ceny i szybkości modeli | materiał | ok. 0,5 h tygodniowo | 0 zł | https://platform.claude.com/docs/en/about-claude/pricing, https://ai.google.dev/gemini-api/docs/models, https://artificialanalysis.ai | `S21-E1-D`, `S21-E2-D`, `S21-E3-D` | `S21-E4-D` | `21-funkcje-ai-w-aplikacjach/e4-ekspert/` |
+| `S21-E4-M3` | Przerobić: Konwencje semantyczne OpenTelemetry dla GenAI (`gen_ai.*`): zmiany i stan stabilizacji | materiał | ok. 1 h miesięcznie | 0 zł | https://opentelemetry.io/docs/specs/semconv/gen-ai/ | `S21-E1-D`, `S21-E2-D`, `S21-E3-D` | `S21-E4-D` | `21-funkcje-ai-w-aplikacjach/e4-ekspert/` |
+| `S21-E4-M4` | Przerobić: Apple Foundation Models i Google AI Edge: nowe API, modele i dostępność na urządzeniach | materiał | ok. 1 h miesięcznie | 0 zł | https://developer.apple.com/documentation/foundationmodels, https://ai.google.dev/edge | `S21-E1-D`, `S21-E2-D`, `S21-E3-D` | `S21-E4-D` | `21-funkcje-ai-w-aplikacjach/e4-ekspert/` |
+| `S21-E4-P1` | Praktyka: produkt z funkcją AI | praktyka | — | — | — | `S21-E1-D`, `S21-E2-D`, `S21-E3-D` | `S21-E4-D` | `21-funkcje-ai-w-aplikacjach/e4-ekspert/` |
+| `S21-E4-P2` | Praktyka: regresje przy zmianie modelu | praktyka | — | — | — | `S21-E1-D`, `S21-E2-D`, `S21-E3-D` | `S21-E4-D` | `21-funkcje-ai-w-aplikacjach/e4-ekspert/` |
+| `S21-E4-P3` | Praktyka: koszt funkcji AI | praktyka | — | — | — | `S21-E1-D`, `S21-E2-D`, `S21-E3-D` | `S21-E4-D` | `21-funkcje-ai-w-aplikacjach/e4-ekspert/` |
+| `S21-E4-D` | Dowód poziomu E: ekspert | dowód | — | — | — | `S21-E4-M1`, `S21-E4-M2`, `S21-E4-M3`, `S21-E4-M4`, `S21-E4-P1`, `S21-E4-P2`, `S21-E4-P3` | — | `21-funkcje-ai-w-aplikacjach/e4-ekspert/` |
 
 **`S21-E4-P1` · Praktyka: produkt z funkcją AI**
 
@@ -285,9 +285,9 @@ Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako sta�
 
 **Folder roboczy:** `21-funkcje-ai-w-aplikacjach/e4-ekspert/`
 
-**`S21-E4-P2` · Praktyka: podatności środowisk uruchomieniowych**
+**`S21-E4-P2` · Praktyka: regresje przy zmianie modelu**
 
-Llama.cpp, ONNX Runtime i biblioteki tokenizerów objęte tym samym procesem obsługi podatności co reszta zależności (zob. sekcja 10.1).
+Każda zmiana modelu, wersji promptu lub dostawcy (także wymuszona wycofaniem modelu przez dostawcę) przechodzi przez zestaw referencyjny i adwersarialny z etapu funkcji AI w aplikacjach, z porównaniem jakości, kosztu i opóźnienia; terminy wycofania używanych modeli są w kalendarzu, a funkcje na urządzeniu sprawdzane po każdej większej wersji iOS i Androida.
 
 Praktyka ciągła etapu eksperckiego: oznacz jako gotową, gdy działa jako stały element pracy, a nie po jednorazowym wykonaniu.
 
@@ -315,39 +315,33 @@ Samodzielnie, bez agenta, w 2 dni dodajesz do istniejącej aplikacji funkcję AI
 
 - `S01-E1-D` (Dowód etapu 1: codzienna praca z Claude Code) → `S21-START`
 - `S05-E1-D` (Dowód etapu 1: Node.js po stronie serwera) → `S21-START`
-- `S06-E2-D` (Dowód etapu 2: projektowanie testów) → `S21-START`
+- `S06-E1-D` (Dowód etapu 1: projektowanie testów i TDD) → `S21-START`
 - `S08-E1-D` (Dowód etapu 1: style architektoniczne, atrybuty jakości i kompromisy) → `S21-START`
 - `S10-E1-D` (Dowód etapu 1: ataki na web i API w praktyce) → `S21-START`
-- `S20-E1-D` (Dowód etapu 1: modele lokalne na stanowisku pracy) → `S21-START`
+- `S20-E0-D` (Dowód etapu 0: modele lokalne na stanowisku pracy) → `S21-START`
+- `S11-E3-D` (Dowód etapu 3: ewaluacje) → `S21-START`
+- `S11-E4-D` (Dowód etapu 4: bezpieczeństwo agentów i integracji LLM) → `S21-START`
 - `S14-E1-D` (Dowód etapu 1: Tauri 2) → `S21-E1-M1`
-- `S18-E2-D` (Dowód etapu 2: Compose w głębi i architektura) → `S21-E1-M1`
-- `S19-E2-D` (Dowód etapu 2: współbieżność Swift 6 i architektura) → `S21-E1-M1`
 - `S14-E1-D` (Dowód etapu 1: Tauri 2) → `S21-E1-M2`
-- `S18-E2-D` (Dowód etapu 2: Compose w głębi i architektura) → `S21-E1-M2`
-- `S19-E2-D` (Dowód etapu 2: współbieżność Swift 6 i architektura) → `S21-E1-M2`
 - `S14-E1-D` (Dowód etapu 1: Tauri 2) → `S21-E1-M3`
-- `S18-E2-D` (Dowód etapu 2: Compose w głębi i architektura) → `S21-E1-M3`
-- `S19-E2-D` (Dowód etapu 2: współbieżność Swift 6 i architektura) → `S21-E1-M3`
 - `S14-E1-D` (Dowód etapu 1: Tauri 2) → `S21-E1-M4`
-- `S18-E2-D` (Dowód etapu 2: Compose w głębi i architektura) → `S21-E1-M4`
-- `S19-E2-D` (Dowód etapu 2: współbieżność Swift 6 i architektura) → `S21-E1-M4`
 - `S14-E1-D` (Dowód etapu 1: Tauri 2) → `S21-E1-M5`
-- `S18-E2-D` (Dowód etapu 2: Compose w głębi i architektura) → `S21-E1-M5`
-- `S19-E2-D` (Dowód etapu 2: współbieżność Swift 6 i architektura) → `S21-E1-M5`
-- `S14-E1-D` (Dowód etapu 1: Tauri 2) → `S21-E1-M6`
-- `S18-E2-D` (Dowód etapu 2: Compose w głębi i architektura) → `S21-E1-M6`
-- `S19-E2-D` (Dowód etapu 2: współbieżność Swift 6 i architektura) → `S21-E1-M6`
-- `S14-E1-D` (Dowód etapu 1: Tauri 2) → `S21-E1-M7`
-- `S18-E2-D` (Dowód etapu 2: Compose w głębi i architektura) → `S21-E1-M7`
-- `S19-E2-D` (Dowód etapu 2: współbieżność Swift 6 i architektura) → `S21-E1-M7`
-- `S14-E1-D` (Dowód etapu 1: Tauri 2) → `S21-E1-M8`
-- `S18-E2-D` (Dowód etapu 2: Compose w głębi i architektura) → `S21-E1-M8`
-- `S19-E2-D` (Dowód etapu 2: współbieżność Swift 6 i architektura) → `S21-E1-M8`
-- `S22-E2-D` (Dowód etapu 2: fundamenty) → `S21-E2-M1`
-- `S22-E2-D` (Dowód etapu 2: fundamenty) → `S21-E2-M2`
-- `S22-E2-D` (Dowód etapu 2: fundamenty) → `S21-E2-M3`
-- `S22-E2-D` (Dowód etapu 2: fundamenty) → `S21-E2-M4`
+- `S18-E2-D` (Dowód etapu 2: Compose w głębi i architektura) → `S21-E2-M1`
+- `S19-E2-D` (Dowód etapu 2: współbieżność Swift 6 i architektura) → `S21-E2-M1`
+- `S18-E2-D` (Dowód etapu 2: Compose w głębi i architektura) → `S21-E2-M2`
+- `S19-E2-D` (Dowód etapu 2: współbieżność Swift 6 i architektura) → `S21-E2-M2`
+- `S18-E2-D` (Dowód etapu 2: Compose w głębi i architektura) → `S21-E2-M3`
+- `S19-E2-D` (Dowód etapu 2: współbieżność Swift 6 i architektura) → `S21-E2-M3`
+- `S18-E2-D` (Dowód etapu 2: Compose w głębi i architektura) → `S21-E2-M4`
+- `S19-E2-D` (Dowód etapu 2: współbieżność Swift 6 i architektura) → `S21-E2-M4`
+- `S20-E3-D` (Dowód etapu 3: dostrajanie, RAG i ewaluacja modeli) → `S21-E3-M1`
+- `S20-E3-D` (Dowód etapu 3: dostrajanie, RAG i ewaluacja modeli) → `S21-E3-M2`
+- `S20-E3-D` (Dowód etapu 3: dostrajanie, RAG i ewaluacja modeli) → `S21-E3-M3`
+- `S20-E3-D` (Dowód etapu 3: dostrajanie, RAG i ewaluacja modeli) → `S21-E3-M4`
 
 **Wychodzące** (zadanie tego projektu blokuje zadanie w innym projekcie):
 
-- brak
+- `S21-E0-D` → `S22-E9-M1` (22. Systemy wbudowane)
+- `S21-E0-D` → `S22-E9-M2` (22. Systemy wbudowane)
+- `S21-E0-D` → `S22-E9-M3` (22. Systemy wbudowane)
+- `S21-E0-D` → `S22-E9-M4` (22. Systemy wbudowane)
