@@ -47,8 +47,9 @@ Pełny opis kolejności, warstw i zależności między projektami jest w [`linea
 ├── linear/
 │   ├── 00-kolejnosc-i-zaleznosci.md  # przegląd: kolejność projektów i relacje
 │   ├── 01-…md … 22-…md               # opis jednego projektu każdy
-│   ├── linear-plan.json              # plan w formie do wdrożenia
-│   └── deploy_linear.py              # skrypt wdrażający plan do Linear
+│   ├── linear-plan.json              # plan w formie do wdrożenia (źródło prawdy)
+│   ├── deploy_linear.py              # skrypt wdrażający plan do Linear
+│   └── tools/                        # edycja planu, generowanie Markdown, walidacja, test wdrożenia
 ├── CLAUDE.md                         # wskazówki dla Claude Code
 └── README.md
 ```
@@ -113,11 +114,13 @@ Uwagi:
 
 ## Zmiany w planie
 
-Te same dane są w dwóch miejscach: w `linear/linear-plan.json`, z którego korzysta skrypt, i w plikach Markdown do przeglądu. Każdą zmianę projektu, kamienia milowego, zadania lub relacji trzeba wprowadzić w obu, a w `linear/00-kolejnosc-i-zaleznosci.md` także wtedy, gdy zmienia kolejność, relacje między projektami lub liczby. Nowy lub przemianowany kamień milowy wymaga też utworzenia lub zmiany nazwy jego folderu roboczego.
+Źródłem prawdy jest `linear/linear-plan.json`. Pliki Markdown w `linear/`, ten README i foldery robocze są z niego generowane, więc nie edytuje się ich ręcznie. Zmianę zapisuje się jako skrypt edycji i stosuje przez `python3 linear/tools/apply.py edycja.py`: skrypt zapisuje JSON (z przenumerowaniem kluczy), generuje Markdown, tworzy lub usuwa puste foldery etapów i uruchamia walidację. Opis API i przykład są w [`linear/tools/README.md`](linear/tools/README.md).
 
 Po zmianie sprawdź:
 
-- `python3 linear/deploy_linear.py --dry-run` kończy się bez błędów (sprawdza klucze, blokady, etykiety i cykle) i pokazuje oczekiwane liczby,
+- `python3 linear/tools/validate.py` nie zgłasza błędów (uruchamia się też na końcu `apply.py`),
+- `python3 linear/tools/mock_deploy.py` kończy się wynikiem OK (wdrożenie na atrapie API Linear),
+- `python3 linear/deploy_linear.py --dry-run` kończy się bez błędów i pokazuje oczekiwane liczby,
 - bez blokad są tylko `S01-START` i `S02-START`, każdy dowód etapu (poza etapami eksperckimi i opcjonalnymi) coś blokuje, a materiały `opcjonalne` nie blokują dowodu.
 
 Plan nie zawiera dat ani sumarycznych szacunków czasu; jedynym szacunkiem jest pole „Czas” przy każdym materiale.

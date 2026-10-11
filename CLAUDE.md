@@ -4,28 +4,31 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A learning plan (software-engineering skills, written in Polish) prepared for deployment to Linear, team **LEA**. Not an application: the "code" is one deploy script, the data is one JSON file, and the rest is Markdown for human review. Nothing has been created in Linear yet. Everything related to creating the tasks in Linear lives in `linear/`.
+A learning plan (software-engineering skills, written in Polish) prepared for deployment to Linear, team **LEA**. Not an application: the "code" is one deploy script plus the plan tools in `linear/tools/`, the data is one JSON file, and the rest is generated Markdown for human review. Nothing has been created in Linear yet. Everything related to creating the tasks in Linear lives in `linear/`.
 
 - `linear/linear-plan.json` is the machine-readable plan that `linear/deploy_linear.py` consumes. The script's state file (`linear-deploy-state.json`) and key mapping (`mapowanie-kluczy.csv`) are written next to it, in `linear/`.
 - `linear/00-kolejnosc-i-zaleznosci.md` is the overview: how the plan maps to Linear, prerequisites, starting points, project order and the cross-project task relations.
 - `linear/01-…md` to `linear/22-…md` hold one Linear project each: project fields and description, milestones, start task, dependency flow, tasks per milestone, relations to other projects.
-- `01-…/` to `22-…/` in the repository root are the working folders, one per project, named after the section file. Each holds one folder per milestone (`ek-…` for stage k, `uk-…` for supplementary path k, slug without Polish diacritics), with a `.gitkeep` while empty. Every issue description ends with a „**Folder roboczy:**” line with the path in backticks (the milestone folder; the project folder for start tasks), and the task tables in `linear/NN-*.md` have a matching "Folder" column. Adding or renaming a milestone means creating or renaming its folder and updating those lines.
+- `01-…/` to `22-…/` in the repository root are the working folders, one per project, named after the section file. Each holds one folder per milestone (`ek-…` for stage k, `uk-…` for supplementary path k, slug without Polish diacritics), with a `.gitkeep` while empty. Every issue description ends with a „**Folder roboczy:**” line with the path in backticks (the milestone folder; the project folder for start tasks), and the task tables in `linear/NN-*.md` have a matching "Folder" column. `linear/tools/apply.py` creates missing folders and removes empty ones that no longer match the plan; it only warns about folders with content.
 
-The JSON and the Markdown files contain the same data, and the generator that produced them is not in this directory. **An edit to a project, milestone, task or relation has to go into `linear/linear-plan.json` and into the matching `linear/NN-*.md` file, and into `linear/00-…md` when it changes order, cross-project relations or counts.** Counts are quoted in several places: 22 projects, 160 milestones, 1121 tasks, 2139 "blocks" relations, plus per-project totals in each file's "W skrócie" line, in the `00` table and in `README.md`.
+`linear/linear-plan.json` is the source of truth. The Markdown files in `linear/`, the root `README.md` and the working folders are generated from it by `linear/tools/` (see `linear/tools/README.md`). **Don't edit the generated Markdown by hand: write an edit script with `apply(pl)` using the `model.Plan` API and run `python3 linear/tools/apply.py edit.py`** (try it first with `--root <copy of the repo>`). It renumbers keys by stage and task order, rewrites derived text (milestone names, proof numbers, folder lines, start-task blocker lists), regenerates Markdown, syncs folders and validates. Prose in `00-…md` and `README.md` lives in `linear/tools/templates/`; data not in the JSON (section file names, layer names, reasons of partial cross-project relations) lives in `linear/tools/meta.json`. Project `blockedBy` and summaries are not derived: keep them in line with the start blockers (the validator checks this). Counts are quoted in several places: 22 projects, 160 milestones, 1121 tasks, 2139 "blocks" relations, plus per-project totals in each file's "W skrócie" line, in the `00` table and in `README.md`.
 
 The plan has no dates and no aggregated time estimates (per stage, per project, "N months at X h/week"). The only estimate is the "Czas" field of each material; don't add others.
 
 ## Commands
 
-The script needs only Python 3.9+ and the standard library.
+The scripts need only Python 3.9+ and the standard library.
 
 ```bash
-python3 linear/deploy_linear.py --dry-run   # print plan counts and resume state; makes no API calls
+python3 linear/tools/apply.py [edit.py ...]  # apply edits, regenerate Markdown and folders, validate
+python3 linear/tools/validate.py             # graph, stage rules, labels, folders, no time aggregates
+python3 linear/tools/mock_deploy.py [--interrupt N]  # run the deploy script against a fake Linear API
+python3 linear/deploy_linear.py --dry-run   # check the plan, print counts and resume state; makes no API calls
 export LINEAR_API_KEY=lin_api_...
 python3 linear/deploy_linear.py             # deploy to Linear (options: --team LEA, --plan, --pause 0.25)
 ```
 
-There are no tests or linter. `--dry-run` (and every real run, before any API call) checks the plan: every `blockedBy` key exists, labels are in `ISSUE_LABELS`, milestones belong to the issue's project, and there are no cycles. Also check yourself that only `S01-START` and `S02-START` have no blockers, every non-expert, non-optional stage proof blocks something, and each expert proof transitively requires all mandatory stages of its project.
+There is no linter. `--dry-run` (and every real run, before any API call) checks the plan: every `blockedBy` key exists, labels are in `ISSUE_LABELS`, milestones belong to the issue's project, and there are no cycles. `linear/tools/validate.py` adds the plan rules: only `S01-START` and `S02-START` have no blockers, every non-expert, non-optional stage proof blocks something, each expert proof transitively requires all mandatory stages of its project, optional materials don't block proofs, and no dates or time aggregates remain. `mock_deploy.py` runs the real deploy script against a fake API (with `--interrupt N` it also tests resuming) and compares the result with the plan. After any change run `apply.py` (it ends with `validate.py`) and `mock_deploy.py`. Running `apply.py` with no edits on an unchanged plan changes no file.
 
 ## Data model (`linear/linear-plan.json`)
 

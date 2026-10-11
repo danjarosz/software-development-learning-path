@@ -1,0 +1,120 @@
+{
+ "projects": {
+  "S01": {
+   "file": "01-praca-z-ai-w-chmurze.md"
+  },
+  "S02": {
+   "file": "02-jezyki-i-narzedzia-podstawowe.md"
+  },
+  "S03": {
+   "file": "03-frontend-web.md"
+  },
+  "S04": {
+   "file": "04-bazy-danych-i-dane.md"
+  },
+  "S05": {
+   "file": "05-backend-i-api.md"
+  },
+  "S06": {
+   "file": "06-testowanie.md"
+  },
+  "S07": {
+   "file": "07-wymagania-i-specyfikacje.md"
+  },
+  "S08": {
+   "file": "08-architektura-i-projektowanie-systemow.md"
+  },
+  "S09": {
+   "file": "09-devops-ci-cd-i-wydania.md"
+  },
+  "S10": {
+   "file": "10-bezpieczenstwo.md"
+  },
+  "S11": {
+   "file": "11-weryfikacja-pracy-ai-i-budowa-procesu.md"
+  },
+  "S12": {
+   "file": "12-rust-jako-wspolny-fundament.md"
+  },
+  "S13": {
+   "file": "13-ui-ux.md"
+  },
+  "S14": {
+   "file": "14-desktop.md"
+  },
+  "S15": {
+   "file": "15-linux.md"
+  },
+  "S16": {
+   "file": "16-macos.md"
+  },
+  "S17": {
+   "file": "17-windows.md"
+  },
+  "S18": {
+   "file": "18-android.md"
+  },
+  "S19": {
+   "file": "19-ios.md"
+  },
+  "S20": {
+   "file": "20-lokalne-ai-i-rozwoj-modeli.md"
+  },
+  "S21": {
+   "file": "21-funkcje-ai-w-aplikacjach.md"
+  },
+  "S22": {
+   "file": "22-systemy-wbudowane.md"
+  }
+ },
+ "layers": {
+  "warstwa-0": "0: fundamenty",
+  "warstwa-1": "1: dane i serwer",
+  "warstwa-2": "2: jakość i projektowanie",
+  "warstwa-3": "3: ochrona i kontrola",
+  "warstwa-4": "4: rdzeń kompilowany i produkt",
+  "warstwa-5": "5: desktop",
+  "warstwa-6": "6: mobile",
+  "warstwa-7": "7: AI w produktach",
+  "warstwa-8": "8: sprzęt"
+ },
+ "partialReasons": {
+  "S05-E1-D>S04-E4": "cache i limity zapytań na usłudze Node.js z sekcji 5",
+  "S12-E2-D>S04-E7": "local-first w rdzeniu Rust wymaga Rusta na poziomie W",
+  "S14-E1-D>S04-E7": "aplikacja local-first działa w Tauri",
+  "S02-E3-D>S05-E3": "FastAPI wymaga Pythona na poziomie W",
+  "S12-E2-D>S05-E9": "backend w Ruście wymaga Rusta na poziomie W",
+  "S12-E2-D>S06-E4": "testy jednostkowe w Ruście wymagają Rusta na poziomie W (własność, pożyczanie)",
+  "S14-E1-D>S06-E6": "testy aplikacji desktopowej wymagają Tauri",
+  "S01-E1-D>S07-E4": "specyfikacje dla agentów wymagają codziennej pracy z Claude Code",
+  "S09-E2-D>S08-E5": "funkcje dopasowania działają w pipeline’ie CI z sekcji 9",
+  "S12-E5-D>S08-E6": "wspólny rdzeń z powłokami natywnymi wymaga FFI i UniFFI",
+  "S14-E1-D>S09-E4": "wydania desktopowe budują aplikację Tauri",
+  "S12-E5-D>S10-E7": "przegląd `unsafe` i FFI wymaga etapu `unsafe` i FFI z sekcji 12",
+  "S14-E1-D>S10-E7": "bezpieczeństwo Tauri wymaga aplikacji Tauri (sekcja 14, etap 1)",
+  "S11-E2-D>S10-E8": "audyt używa listy kontrolnej recenzji z sekcji 11",
+  "S10-E3-D>S11-E4": "bezpieczeństwo agentów korzysta z modelowania zagrożeń (STRIDE)",
+  "S20-E0-D>S11-E6": "recenzja na modelu lokalnym wymaga modeli lokalnych na stanowisku pracy",
+  "S05-E8-D>S14-E4": "licencje i webhook Merchant of Record po stronie serwera z sekcji 5",
+  "S14-E4-D>S16-E1": "aktualizacja N → N+1 korzysta z updatera Tauri z sekcji 14, etap 4",
+  "S14-E4-D>S17-E1": "aktualizacje korzystają z updatera z sekcji 14, etap 4",
+  "S12-E5-D>S18-E4": "rdzeń w Ruście na urządzeniu wymaga FFI i UniFFI",
+  "S12-U2-D>S18-E4": "integracja z platformą wymaga czytania Javy lub Objective-C",
+  "S08-E6-D>S18-E4": "architektura wspólnego rdzenia z sekcji 8",
+  "S05-E8-D>S18-E5": "weryfikacja zakupów i uprawnień po stronie serwera z sekcji 5",
+  "S10-E6-D>S18-E5": "SBOM i obsługa podatności (CRA) z sekcji 10",
+  "S13-E7-D>S18-E5": "dostępność, onboarding i paywalle z sekcji 13",
+  "S12-E5-D>S19-E4": "rdzeń w Ruście na urządzeniu wymaga FFI i UniFFI",
+  "S12-U2-D>S19-E4": "integracja z platformą wymaga czytania Javy lub Objective-C",
+  "S08-E6-D>S19-E4": "architektura wspólnego rdzenia z sekcji 8",
+  "S05-E8-D>S19-E5": "weryfikacja zakupów i uprawnień po stronie serwera z sekcji 5",
+  "S10-E6-D>S19-E5": "SBOM i obsługa podatności (CRA) z sekcji 10",
+  "S13-E7-D>S19-E5": "dostępność, onboarding i paywalle z sekcji 13",
+  "S02-E3-D>S20-E1": "uczenie maszynowe wymaga Pythona na poziomie W",
+  "S14-E1-D>S21-E1": "AI na urządzeniu wymaga znajomości platform",
+  "S18-E2-D>S21-E2": "AI na urządzeniu wymaga znajomości platform",
+  "S19-E2-D>S21-E2": "AI na urządzeniu wymaga znajomości platform",
+  "S20-E3-D>S21-E3": "karta modelu dotyczy modelu dostrojonego w sekcji 20",
+  "S21-E0-D>S22-E9": "TinyML zakłada znajomość funkcji AI w aplikacjach"
+ }
+}
